@@ -3,5 +3,6 @@ public enum SFXType
     HitDash,
     EnemyPierced,
     PogoHit,
-    WindBlowing
+    WindBlowing,
+    FreeROAMTheme,
 }

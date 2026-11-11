@@ -1066,17 +1066,17 @@ public class GameSceneManager : MonoBehaviour
         if (!scene.IsValid() || string.IsNullOrWhiteSpace(scene.path))
             return null;
 
-        try
+        RoomIdentityResult result = RoomIdentityResolver.ResolveByScenePath(scene.path);
+        if (result.IsSuccess)
+            return result.Room;
+
+        if (result.Status == RoomIdentityStatus.CatalogMissing ||
+            result.Status == RoomIdentityStatus.CatalogInvalid ||
+            result.Status == RoomIdentityStatus.CatalogUnavailable)
         {
-            RuntimeRoomCatalog catalog = RuntimeRoomCatalog.LoadDefault();
-            return catalog.TryGetRoomByScenePath(scene.path, out RoomDefinition definition)
-                ? definition
-                : null;
+            Debug.LogWarning($"[GameSceneManager] Could not resolve room identity for '{scene.path}': {result.Message}");
         }
-        catch (InvalidOperationException exception)
-        {
-            Debug.LogWarning($"[GameSceneManager] Could not resolve room identity for '{scene.path}': {exception.Message}");
-            return null;
-        }
+
+        return null;
     }
 }

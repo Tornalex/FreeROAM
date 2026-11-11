@@ -17,12 +17,6 @@ public partial class Spear : MonoBehaviour
     [Tooltip("DirectionChanger dei nemici: la lancia deve ignorarli")]
     [SerializeField] private string directionChangerTag = "EnemyDirectionChanger";
 
-    [Tooltip("Raycast length to detect wall normal")]
-    [SerializeField] private float tipRaycastLength = 1.5f;
-
-    [Tooltip("How deep the spear embeds into walls")]
-    [SerializeField] private float embedDepth = 0.15f;
-
     private int _spearLayer;
 
     private Collider2D _ignoredEnvironmentCollider;
@@ -50,8 +44,6 @@ public partial class Spear : MonoBehaviour
         gameObject.layer =
             _spearLayer;
 
-        if (embedDepth <= 0f)
-            embedDepth = 0.15f;
     }
 
     private void UpdateRotation()
@@ -324,7 +316,7 @@ public partial class Spear : MonoBehaviour
             hitPoint
             - colliderOffset
             - spearHalfLength
-            + embedDirection * embedDepth;
+            + embedDirection * EmbedDepth;
 
         transform.position =
             targetPosition;
@@ -492,9 +484,9 @@ public partial class Spear : MonoBehaviour
         _rb.bodyType =
             RigidbodyType2D.Dynamic;
         _rb.gravityScale =
-            1.5f;
+            DroppedGravityScale;
         _rb.linearDamping =
-            2f;
+            DroppedLinearDamping;
         _rb.linearVelocity =
             Vector2.zero;
         _rb.angularVelocity =

@@ -26,7 +26,7 @@ public class PlayerEssence : MonoBehaviour
     {
         if (!_player.HasControl) return;
 
-        float amountToAdd = perfectCatch ? 40f : _player.EssenceStats.essencePerBaseCatch;
+        float amountToAdd = perfectCatch ? _player.EssenceStats.essencePerPerfectCatch : _player.EssenceStats.essencePerBaseCatch;
         _currentEssence = Mathf.Clamp(_currentEssence + amountToAdd, 0f, _player.EssenceStats.maxEssence);
     }
 

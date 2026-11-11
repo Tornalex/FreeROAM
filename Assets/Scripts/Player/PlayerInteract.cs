@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using Yarn.Unity;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class PlayerInteract : MonoBehaviour
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
     private Transform _currentInteractable;
     private Camera _mainCamera;
-    private DialogueRunner _dialogueRunner;
 
     [SerializeField] private GameObject _interactPromptRoot;
     [SerializeField] private TextMeshProUGUI _interactPromptText;
@@ -19,7 +17,6 @@ public class PlayerInteract : MonoBehaviour
     {
         _player = GetComponent<Player>();
         _mainCamera = Camera.main;
-        _dialogueRunner = FindFirstObjectByType<DialogueRunner>();
     }
 
     void Update()
@@ -169,5 +166,5 @@ public class PlayerInteract : MonoBehaviour
     }
 
     private bool IsDialogueRunning =>
-        _dialogueRunner != null && _dialogueRunner.IsDialogueRunning;
+        _player.DialogueRunner != null && _player.DialogueRunner.IsDialogueRunning;
 }

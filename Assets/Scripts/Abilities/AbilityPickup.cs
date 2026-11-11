@@ -11,11 +11,11 @@ namespace SpearWander.Abilities
         [Header("Optional Override")]
         [SerializeField] private string overridePrompt;
 
-        void Start()
+        private void Start()
         {
             if (abilityData != null &&
                 AbilityManager.Instance != null &&
-                AbilityManager.Instance.IsUnlocked(abilityData.abilityType))
+                AbilityManager.Instance.IsUnlocked(abilityData.AbilityType))
             {
                 Destroy(gameObject);
             }
@@ -23,54 +23,47 @@ namespace SpearWander.Abilities
 
         public void Interact(Player player)
         {
+            if (player == null)
+                return;
+
             if (abilityData == null)
             {
                 Debug.LogError("[AbilityPickup] No AbilityData assigned!");
                 return;
             }
 
-            if (AbilityManager.Instance != null && AbilityManager.Instance.IsUnlocked(abilityData.abilityType))
+            AbilityManager manager = AbilityManager.Instance;
+            if (manager != null && manager.IsUnlocked(abilityData.AbilityType))
             {
-                Debug.Log($"[AbilityPickup] Ability {abilityData.abilityType} already unlocked");
+                Debug.Log($"[AbilityPickup] Ability {abilityData.AbilityType} already unlocked");
+                RemoveFromPlayer(player);
+                if (abilityData.DestroyOnPickup)
+                    Destroy(gameObject);
                 return;
             }
 
-            // Unlock the ability
-            if (AbilityManager.Instance != null)
-            {
-                AbilityManager.Instance.UnlockAbility(abilityData.abilityType, player);
-            }
-            else
-            {
-                abilityData.Unlock(player);
-            }
+            if (!AbilityManager.TryUnlockAbility(abilityData, player))
+                return;
 
-            // Remove from interactables
+            RemoveFromPlayer(player);
+
+            if (abilityData.DestroyOnPickup)
+                Destroy(gameObject);
+        }
+
+        private void RemoveFromPlayer(Player player)
+        {
             var playerInteract = player.GetComponent<PlayerInteract>();
             if (playerInteract != null)
             {
                 playerInteract.RemoveInteractableFromList(this);
-            }
-
-            // Destroy pickup if configured
-            if (abilityData.destroyOnPickup)
-            {
-                Destroy(gameObject);
             }
         }
 
         public string GetInteractPrompt()
         {
             if (!string.IsNullOrEmpty(overridePrompt)) return overridePrompt;
-            return abilityData != null ? abilityData.promptMessage : "Premi E per interagire";
-        }
-
-        void OnValidate()
-        {
-            if (abilityData != null && string.IsNullOrEmpty(overridePrompt))
-            {
-                // Could auto-set prompt from ability data
-            }
+            return abilityData != null ? abilityData.PromptMessage : "Premi E per interagire";
         }
     }
 }

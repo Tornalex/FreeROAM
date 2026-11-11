@@ -89,7 +89,8 @@ public class PlayerFeet : MonoBehaviour
         for (int i = 0; i < collision.contactCount; i++)
         {
             ContactPoint2D contact = collision.GetContact(i);
-            if (contact.normal.y > 0.9f && contact.point.y <= transform.position.y + 0.2f)
+            if (contact.normal.y > _player.PlayerStats.groundNormalThreshold &&
+                contact.point.y <= transform.position.y + _player.PlayerStats.groundPointOffset)
             {
                 isGround = true;
                 break;

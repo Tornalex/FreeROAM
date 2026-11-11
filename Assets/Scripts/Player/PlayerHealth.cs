@@ -1,13 +1,28 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using SpearWander.Abilities;
+using SpearWander.Boss;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     private int _currentHealth;
     private float _iFramesTimer;
-    private bool _isTouchingEnemy;
-    private Collider2D _lastEnemyCollider;
-    private Vector2 _lastEnemyPosition;
+
+    private readonly List<Collider2D> _playerBodyColliders =
+        new List<Collider2D>();
+    private readonly List<Collider2D> _overlapBuffer =
+        new List<Collider2D>(8);
+    private readonly HashSet<Collider2D> _currentEnemyBodyOverlaps =
+        new HashSet<Collider2D>(ColliderReferenceComparer.Instance);
+    private readonly HashSet<Collider2D> _bypassedEnemyBodyColliders =
+        new HashSet<Collider2D>(ColliderReferenceComparer.Instance);
+    private readonly Dictionary<CollisionPair, bool> _bypassedEnemyBodyCollisions =
+        new Dictionary<CollisionPair, bool>();
+    private readonly List<CollisionPair> _staleBypassedCollisions =
+        new List<CollisionPair>();
+
+    private ContactFilter2D _enemyBodyOverlapFilter;
 
     private Player _player;
 
@@ -20,30 +35,29 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         _player = GetComponent<Player>();
         _currentHealth = _player.PlayerStats.maxHealth;
+
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>(true);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (!colliders[i].isTrigger)
+                _playerBodyColliders.Add(colliders[i]);
+        }
+
+        _enemyBodyOverlapFilter = new ContactFilter2D();
+        _enemyBodyOverlapFilter.SetLayerMask(Physics2D.AllLayers);
+        _enemyBodyOverlapFilter.useTriggers = false;
     }
 
 
     void FixedUpdate()
     {
-        // A destroyed or disabled enemy collider does not always raise
-        // OnCollisionExit2D. Clear the stale contact so the player does not
-        // keep taking contact damage from an enemy that no longer exists.
-        if (_isTouchingEnemy &&
-            (_lastEnemyCollider == null ||
-             !_lastEnemyCollider.enabled ||
-             !_lastEnemyCollider.gameObject.activeInHierarchy))
-        {
-            _isTouchingEnemy = false;
-            _lastEnemyCollider = null;
-        }
-
         if (_iFramesTimer > 0)
         {
             _iFramesTimer -= Time.fixedDeltaTime;
 
             float alpha =
-                (Mathf.Floor(_iFramesTimer / 0.05f) % 2 == 0)
-                    ? 0.2f
+                (Mathf.Floor(_iFramesTimer / _player.PlayerStats.iFramesBlinkInterval) % 2 == 0)
+                    ? _player.PlayerStats.iFramesBlinkMinAlpha
                     : 1f;
 
             _player.Sprite.color =
@@ -53,58 +67,256 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             if (_player.Sprite.color.a < 1f)
                 _player.Sprite.color = Color.white;
+        }
 
-            if (_isTouchingEnemy &&
-                !_player.Dash.IsDashing &&
-                !_player.Dash.HasPostDashProtection &&
-                !_player.Pogo.IsPlunging &&
-                !_player.Pogo.HasPostPogoProtection)
-            {
-                TakeDamage(1, _lastEnemyPosition);
-            }
+        Collider2D overlappingEnemyBody =
+            RefreshEnemyBodyCollisionBypass();
+
+        if (_iFramesTimer <= 0 &&
+            overlappingEnemyBody != null &&
+            CanTakeContactDamage())
+        {
+            TakeDamage(
+                _player.PlayerStats.contactDamage,
+                overlappingEnemyBody.bounds.center);
         }
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            _isTouchingEnemy = true;
-            _lastEnemyCollider = collision.collider;
-            _lastEnemyPosition = collision.transform.position;
+        if (!IsEnemyBodyCollider(collision.collider))
+            return;
 
-            if (!_player.Dash.IsDashing &&
-                !_player.Dash.HasPostDashProtection &&
-                _iFramesTimer <= 0 &&
-                !_player.Pogo.IsPlunging &&
-                !_player.Pogo.HasPostPogoProtection)
+        // Collision callbacks preserve the existing immediate contact-damage
+        // timing. The overlap query also finds bodies contacted while pairs
+        // have already been ignored.
+        RefreshEnemyBodyCollisionBypass();
+
+        if (_iFramesTimer <= 0 && CanTakeContactDamage())
+        {
+            TakeDamage(
+                _player.PlayerStats.contactDamage,
+                collision.collider.bounds.center);
+        }
+    }
+
+
+    private bool CanTakeContactDamage()
+    {
+        return !_player.Dash.IsDashing &&
+               !_player.Dash.HasPostDashProtection &&
+               !_player.Pogo.IsPlunging &&
+               !_player.Pogo.HasPostPogoProtection;
+    }
+
+
+    /// <summary>
+    /// Ignores only overlapping, non-trigger body colliders belonging to an
+    /// enemy or boss. Kept pairs remain ignored until the overlap ends, even
+    /// after the independent i-frame timer expires.
+    /// </summary>
+    private Collider2D RefreshEnemyBodyCollisionBypass()
+    {
+        _currentEnemyBodyOverlaps.Clear();
+        Collider2D firstOverlappingBody = null;
+
+        for (int i = 0; i < _playerBodyColliders.Count; i++)
+        {
+            Collider2D playerBody = _playerBodyColliders[i];
+            if (!IsColliderAvailable(playerBody))
+                continue;
+
+            _overlapBuffer.Clear();
+            playerBody.Overlap(
+                _enemyBodyOverlapFilter,
+                _overlapBuffer);
+
+            for (int j = 0; j < _overlapBuffer.Count; j++)
             {
-                TakeDamage(1, _lastEnemyPosition);
+                Collider2D enemyBody = _overlapBuffer[j];
+                if (!IsEnemyBodyCollider(enemyBody))
+                    continue;
+
+                _currentEnemyBodyOverlaps.Add(enemyBody);
+
+                if (firstOverlappingBody == null)
+                    firstOverlappingBody = enemyBody;
+
+                if (_iFramesTimer > 0 ||
+                    _bypassedEnemyBodyColliders.Contains(enemyBody))
+                {
+                    _bypassedEnemyBodyColliders.Add(enemyBody);
+
+                    // Keep every Player body pair ignored until all of its
+                    // physical colliders have left this enemy body.
+                    for (int k = 0; k < _playerBodyColliders.Count; k++)
+                    {
+                        Collider2D playerCollider = _playerBodyColliders[k];
+                        if (IsColliderAvailable(playerCollider))
+                        {
+                            IgnoreEnemyBodyCollision(
+                                new CollisionPair(playerCollider, enemyBody));
+                        }
+                    }
+                }
+            }
+        }
+
+        _staleBypassedCollisions.Clear();
+        foreach (KeyValuePair<CollisionPair, bool> bypassedPair in
+                 _bypassedEnemyBodyCollisions)
+        {
+            if (!_currentEnemyBodyOverlaps.Contains(
+                    bypassedPair.Key.EnemyBody))
+                _staleBypassedCollisions.Add(bypassedPair.Key);
+        }
+
+        for (int i = 0; i < _staleBypassedCollisions.Count; i++)
+            RestoreEnemyBodyCollision(_staleBypassedCollisions[i]);
+
+        _bypassedEnemyBodyColliders.RemoveWhere(
+            enemyBody => !_currentEnemyBodyOverlaps.Contains(enemyBody));
+
+        return firstOverlappingBody;
+    }
+
+
+    private void IgnoreEnemyBodyCollision(CollisionPair pair)
+    {
+        _bypassedEnemyBodyColliders.Add(pair.EnemyBody);
+
+        if (!_bypassedEnemyBodyCollisions.ContainsKey(pair))
+        {
+            bool wasIgnored =
+                Physics2D.GetIgnoreCollision(
+                    pair.PlayerBody,
+                    pair.EnemyBody);
+
+            _bypassedEnemyBodyCollisions.Add(pair, wasIgnored);
+        }
+
+        if (IsColliderAvailable(pair.PlayerBody) &&
+            IsColliderAvailable(pair.EnemyBody))
+        {
+            Physics2D.IgnoreCollision(
+                pair.PlayerBody,
+                pair.EnemyBody,
+                true);
+        }
+    }
+
+
+    private void RestoreEnemyBodyCollision(CollisionPair pair)
+    {
+        if (!_bypassedEnemyBodyCollisions.TryGetValue(
+                pair,
+                out bool wasIgnored))
+        {
+            return;
+        }
+
+        if (IsColliderAvailable(pair.PlayerBody) &&
+            IsColliderAvailable(pair.EnemyBody))
+        {
+            Physics2D.IgnoreCollision(
+                pair.PlayerBody,
+                pair.EnemyBody,
+                wasIgnored);
+        }
+
+        _bypassedEnemyBodyCollisions.Remove(pair);
+    }
+
+
+    private static bool IsColliderAvailable(Collider2D collider)
+    {
+        return collider != null &&
+               collider.enabled &&
+               collider.gameObject.activeInHierarchy;
+    }
+
+
+    private static bool IsEnemyBodyCollider(Collider2D collider)
+    {
+        if (!IsColliderAvailable(collider) || collider.isTrigger)
+            return false;
+
+        BaseEnemy enemy = collider.GetComponentInParent<BaseEnemy>();
+        if (enemy != null)
+            return !enemy.isDead;
+
+        Boss boss = collider.GetComponentInParent<Boss>();
+        return boss != null && !boss.IsDead;
+    }
+
+
+    private void ClearEnemyBodyCollisionBypass()
+    {
+        _staleBypassedCollisions.Clear();
+        foreach (CollisionPair pair in _bypassedEnemyBodyCollisions.Keys)
+            _staleBypassedCollisions.Add(pair);
+
+        for (int i = 0; i < _staleBypassedCollisions.Count; i++)
+            RestoreEnemyBodyCollision(_staleBypassedCollisions[i]);
+
+        _bypassedEnemyBodyColliders.Clear();
+    }
+
+
+    private void OnDisable()
+    {
+        ClearEnemyBodyCollisionBypass();
+    }
+
+
+    private readonly struct CollisionPair : System.IEquatable<CollisionPair>
+    {
+        public readonly Collider2D PlayerBody;
+        public readonly Collider2D EnemyBody;
+
+        public CollisionPair(Collider2D playerBody, Collider2D enemyBody)
+        {
+            PlayerBody = playerBody;
+            EnemyBody = enemyBody;
+        }
+
+        public bool Equals(CollisionPair other)
+        {
+            return ReferenceEquals(PlayerBody, other.PlayerBody) &&
+                   ReferenceEquals(EnemyBody, other.EnemyBody);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CollisionPair other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (RuntimeHelpers.GetHashCode(PlayerBody) * 397) ^
+                       RuntimeHelpers.GetHashCode(EnemyBody);
             }
         }
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private sealed class ColliderReferenceComparer :
+        IEqualityComparer<Collider2D>
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        public static readonly ColliderReferenceComparer Instance =
+            new ColliderReferenceComparer();
+
+        public bool Equals(Collider2D first, Collider2D second)
         {
-            _isTouchingEnemy = true;
-            _lastEnemyCollider = collision.collider;
-            _lastEnemyPosition = collision.transform.position;
+            return ReferenceEquals(first, second);
         }
-    }
 
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        public int GetHashCode(Collider2D collider)
         {
-            if (_lastEnemyCollider == collision.collider)
-                _lastEnemyCollider = null;
-
-            _isTouchingEnemy = false;
+            return RuntimeHelpers.GetHashCode(collider);
         }
     }
 
@@ -139,6 +351,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _iFramesTimer =
             _player.PlayerStats.iFramesDuration;
 
+        if (_currentHealth > 0)
+            RefreshEnemyBodyCollisionBypass();
+
         if (_player.ImpulseSource != null)
         {
             _player.ImpulseSource.GenerateImpulse();
@@ -167,6 +382,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (_currentHealth <= 0)
         {
+            ClearEnemyBodyCollisionBypass();
+
             _player.AddControlRequest(
                 Player.ControlReason.Death
             );
@@ -188,12 +405,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
                 DeadEnemyTracker.ClearAll();
             }
 
-            GameOverUI ui =
-                FindAnyObjectByType<GameOverUI>();
-
-            if (ui != null)
+            if (_player.GameOverUI != null)
             {
-                ui.Show();
+                _player.GameOverUI.Show();
             }
         }
 
@@ -217,13 +431,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _currentHealth =
             _player.PlayerStats.maxHealth;
 
+        ClearEnemyBodyCollisionBypass();
+
         _iFramesTimer =
             _player.PlayerStats.iFramesDuration;
 
-        _isTouchingEnemy = false;
-        _lastEnemyCollider = null;
-
         _player.Sprite.color = Color.white;
         _player.Collider.enabled = true;
+        RefreshEnemyBodyCollisionBypass();
     }
 }

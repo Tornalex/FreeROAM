@@ -1,0 +1,6 @@
+{
+    "name": "SpearWander.PlayModeTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

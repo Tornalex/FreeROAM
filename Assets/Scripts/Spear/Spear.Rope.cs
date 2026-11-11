@@ -2,17 +2,6 @@ using UnityEngine;
 
 public partial class Spear : MonoBehaviour
 {
-    [Header("Rope Settings")]
-    [Tooltip("Local offset where the rope attaches (handle)")]
-    [SerializeField] private Vector2 ropeAttachOffset =
-        new Vector2(-1.25f, 0f);
-
-    [Tooltip("Visual width of the rope")]
-    [SerializeField] private float ropeWidth = 0.08f;
-
-    [Tooltip("Material used for the rope line renderer")]
-    [SerializeField] private Material ropeMaterial;
-
     private float _ropeLength;
 
     private GameObject _rope;
@@ -36,7 +25,7 @@ public partial class Spear : MonoBehaviour
         );
 
         _rope.transform.localPosition =
-            ropeAttachOffset;
+            RopeAttachOffset;
 
         _rope.transform.rotation =
             Quaternion.identity;
@@ -65,28 +54,20 @@ public partial class Spear : MonoBehaviour
         );
 
         lr.startWidth =
-            ropeWidth;
+            RopeWidth;
 
         lr.endWidth =
-            ropeWidth;
+            RopeWidth;
 
-        if (ropeMaterial != null)
+        if (RopeMaterial != null)
             lr.sharedMaterial =
-                ropeMaterial;
+                RopeMaterial;
 
         lr.startColor =
-            new Color(
-                0.5f,
-                0.35f,
-                0.15f
-            );
+            RopeStartColor;
 
         lr.endColor =
-            new Color(
-                0.5f,
-                0.35f,
-                0.35f
-            );
+            RopeEndColor;
 
         EdgeCollider2D ec =
             _rope.AddComponent<EdgeCollider2D>();

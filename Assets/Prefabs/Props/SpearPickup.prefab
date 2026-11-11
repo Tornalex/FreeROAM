@@ -180,10 +180,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5076808148981505559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df77003ad3a4d7c4ba2ab8484f532a4b, type: 3}
+  m_Script: {fileID: 11500000, guid: ec1ccb40b1413994995905c101e40f1f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityPickup
-  componentName: PlayerCombat
-  enableOnPickup: 1
-  destroyOnPickup: 1
-  promptMessage: Premi E per raccogliere
+  m_EditorClassIdentifier: Assembly-CSharp::SpearWander.Abilities.AbilityPickup
+  abilityData: {fileID: 11400000, guid: f7e172528dbfe8042a4acc44acdcb08e, type: 2}
+  overridePrompt: Premi E per raccogliere

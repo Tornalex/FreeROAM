@@ -39,10 +39,6 @@ public partial class Spear : MonoBehaviour
         }
     }
 
-    [Header("Enemy Bounce")]
-    [SerializeField] private float enemyBounceSpeed = 15f;
-    [SerializeField] private float bounceAngle = 90f;
-
     private int _impactDamage;
     private int _recallDamage;
 
@@ -420,7 +416,7 @@ private void ProcessHit(
         // 90 degrees = -45 to +45 degrees from straight up.
 
         float halfAngle =
-            bounceAngle * 0.5f;
+            BounceAngle * 0.5f;
 
         float randomAngle =
             UnityEngine.Random.Range(
@@ -442,7 +438,7 @@ private void ProcessHit(
 
         _rb.linearVelocity =
             randomDirection *
-            enemyBounceSpeed;
+            EnemyBounceSpeed;
 
         currentState =
             SpearState.BouncedOff;
@@ -469,7 +465,7 @@ private void ProcessHit(
             RigidbodyType2D.Dynamic;
 
         _rb.gravityScale =
-            1.5f;
+            DroppedGravityScale;
 
         _rb.linearVelocity =
             Vector2.zero;
@@ -477,10 +473,10 @@ private void ProcessHit(
         _rb.AddForce(
             new Vector2(
                 UnityEngine.Random.Range(
-                    -6f,
-                    6f
+                    -EnemyDeathHorizontalImpulse,
+                    EnemyDeathHorizontalImpulse
                 ),
-                10f
+                EnemyDeathUpwardImpulse
             ),
             ForceMode2D.Impulse
         );

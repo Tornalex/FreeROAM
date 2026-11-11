@@ -8,32 +8,12 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
         Chase
     }
 
-    [Header("Player Detection")]
-    [SerializeField, Min(0f)]
-    [Tooltip("Maximum distance at which a player in front can start a chase.")]
-    private float playerAcquisitionRadius = 6f;
+    [Header("AI Profile")]
+    [SerializeField]
+    [Tooltip("Authoring tuning for player detection, chase and obstacle probes.")]
+    private WalkingEnemyProfile aiProfile;
 
-    [SerializeField, Min(0f)]
-    [Tooltip("Distance after which a chased player is lost. Should be larger than the acquisition radius.")]
-    private float playerAggroRadius = 10f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip("Horizontal dead zone used to avoid rapid direction changes while chasing.")]
-    private float chaseDirectionDeadzone = 0.4f;
-
-    [Header("Obstacle Detection")]
-    [SerializeField, Min(0f)]
-    [Tooltip("Extra distance beyond the enemy collider used for wall checks.")]
-    private float wallCheckDistance = 0.1f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip("Distance below the front of the enemy used to find ground.")]
-    private float groundCheckDistance = 0.75f;
-
-    [SerializeField, Min(0f)]
-    [Tooltip("Forward offset from the enemy collider edge used for the ground check.")]
-    private float groundCheckForwardOffset = 0.15f;
-
+    [Header("Environment")]
     [SerializeField]
     [Tooltip("Layers containing walkable ground.")]
     private LayerMask groundLayers = 1;
@@ -41,6 +21,15 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
     [SerializeField]
     [Tooltip("Layers containing walls and other solid obstacles.")]
     private LayerMask obstacleLayers = 1;
+
+    // Runtime-created enemies without a profile still work with the values that
+    // were previously serialized on the component. Prefabs always assign a profile.
+    private const float DefaultAcquisitionRadius = 6f;
+    private const float DefaultAggroRadius = 10f;
+    private const float DefaultChaseDirectionDeadzone = 0.4f;
+    private const float DefaultWallCheckDistance = 0.1f;
+    private const float DefaultGroundCheckDistance = 0.75f;
+    private const float DefaultGroundCheckForwardOffset = 0.15f;
 
     // speed preso da enemyData.speed
     private Vector2 movementDirection = Vector2.right;
@@ -53,12 +42,39 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
     // Reused by all queries to avoid per-frame allocations.
     private readonly RaycastHit2D[] raycastHits = new RaycastHit2D[8];
 
-    private float AggroRadius =>
-        Mathf.Max(playerAggroRadius, playerAcquisitionRadius);
+    private float AcquisitionRadius =>
+        aiProfile != null ? aiProfile.DetectionRadius : DefaultAcquisitionRadius;
+
+    private float AggroRadius => Mathf.Max(
+        aiProfile != null ? aiProfile.LoseRadius : DefaultAggroRadius,
+        AcquisitionRadius);
+
+    private float ChaseDirectionDeadzone =>
+        aiProfile != null
+            ? aiProfile.ChaseDirectionDeadzone
+            : DefaultChaseDirectionDeadzone;
+
+    private float WallCheckDistance =>
+        aiProfile != null ? aiProfile.WallCheckDistance : DefaultWallCheckDistance;
+
+    private float GroundCheckDistance =>
+        aiProfile != null ? aiProfile.GroundCheckDistance : DefaultGroundCheckDistance;
+
+    private float GroundCheckForwardOffset =>
+        aiProfile != null
+            ? aiProfile.GroundCheckForwardOffset
+            : DefaultGroundCheckForwardOffset;
 
     protected override void Awake()
     {
         base.Awake();
+
+        if (aiProfile == null)
+        {
+            Debug.LogWarning(
+                $"[WalkingEnemy] {name} has no WalkingEnemyProfile assigned; using built-in defaults.",
+                this);
+        }
 
         bodyCollider = GetComponent<Collider2D>();
         CachePlayer();
@@ -158,7 +174,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
         // Turn toward the player only when the player is clearly on the other
         // side. The dead zone prevents oscillation around the enemy's position.
         float horizontalOffset = player.position.x - transform.position.x;
-        if (Mathf.Abs(horizontalOffset) > chaseDirectionDeadzone)
+        if (Mathf.Abs(horizontalOffset) > ChaseDirectionDeadzone)
         {
             float desiredDirection = Mathf.Sign(horizontalOffset);
             if (!Mathf.Approximately(desiredDirection, movementDirection.x))
@@ -189,7 +205,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
         if (player == null) return false;
 
         Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
-        if (toPlayer.sqrMagnitude > playerAcquisitionRadius * playerAcquisitionRadius) return false;
+        if (toPlayer.sqrMagnitude > AcquisitionRadius * AcquisitionRadius) return false;
 
         // Do not immediately reacquire a player that is still on a platform
         // above solid terrain. It becomes acquirable again once it can be
@@ -304,7 +320,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
 
         Bounds bounds = bodyCollider.bounds;
         Vector2 origin = bounds.center;
-        float distance = bounds.extents.x + wallCheckDistance;
+        float distance = bounds.extents.x + WallCheckDistance;
 
         int hitCount = Physics2D.RaycastNonAlloc(
             origin,
@@ -333,7 +349,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
         float direction = Mathf.Sign(movementDirection.x);
 
         float checkX = (direction > 0f ? bounds.max.x : bounds.min.x)
-            + direction * groundCheckForwardOffset;
+            + direction * GroundCheckForwardOffset;
 
         // Start slightly above the collider bottom so the ray can leave the
         // enemy body and still detect ground when the collider overlaps it.
@@ -344,7 +360,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
             origin,
             Vector2.down,
             raycastHits,
-            groundCheckDistance,
+            GroundCheckDistance,
             groundLayers
         );
 
@@ -361,7 +377,7 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
 
     private void CachePlayer()
     {
-        Player playerComponent = FindAnyObjectByType<Player>();
+        Player playerComponent = FindPlayerObject();
         if (playerComponent != null)
         {
             player = playerComponent.transform;
@@ -373,17 +389,8 @@ public class WalkingEnemy : BaseEnemy, IPlayerDamageReceiver
         GameObject taggedPlayer = GameObject.FindWithTag("Player");
         if (taggedPlayer == null) return;
 
-        playerComponent = taggedPlayer.GetComponentInParent<Player>();
-        if (playerComponent != null)
-        {
-            player = playerComponent.transform;
-            playerCollider = playerComponent.Collider;
-        }
-        else
-        {
-            player = taggedPlayer.transform;
-            playerCollider = taggedPlayer.GetComponent<Collider2D>();
-        }
+        player = taggedPlayer.transform;
+        playerCollider = taggedPlayer.GetComponent<Collider2D>();
     }
 
     private void FlipDirection()

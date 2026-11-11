@@ -16,3 +16,4 @@ MonoBehaviour:
   essencePerBaseCatch: 10
   essenceCostPerHeal: 50
   healthPerHeal: 2
+  essencePerPerfectCatch: 40

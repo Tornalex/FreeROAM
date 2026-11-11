@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class FlyingEnemy : BaseEnemy
 {
-    [Header("Flight Settings")]
-    [SerializeField] private float flySpeed = 2.5f;
-    [SerializeField] private float chaseSpeed = 4.5f;
-    [SerializeField] private float patrolRadius = 3f;
-    [SerializeField] private float detectionRadius = 7f;
-    [SerializeField] private float loseRadius = 12f;
+    [Header("AI Profile")]
+    [SerializeField]
+    [Tooltip("Authoring tuning for patrol, chase and stun behaviour.")]
+    private FlyingEnemyProfile aiProfile;
 
-    [Header("Stun Settings")]
-    [SerializeField] private float stunDuration = 0.5f;
+    // Runtime-created enemies without a profile still work with the values that
+    // were previously serialized on the component. Prefabs always assign a profile.
+    private const float DefaultFlySpeed = 2.5f;
+    private const float DefaultChaseSpeed = 4.5f;
+    private const float DefaultPatrolRadius = 3f;
+    private const float DefaultDetectionRadius = 7f;
+    private const float DefaultLoseRadius = 12f;
+    private const float DefaultStunDuration = 0.5f;
 
     private Vector2 _startPosition;
     private Vector2 _targetPatrolPoint;
@@ -19,14 +23,31 @@ public class FlyingEnemy : BaseEnemy
     private bool _isChasing = false;
     private float _stunTimer = 0f;
 
+    private float FlySpeed => aiProfile != null ? aiProfile.FlySpeed : DefaultFlySpeed;
+    private float ChaseSpeed => aiProfile != null ? aiProfile.ChaseSpeed : DefaultChaseSpeed;
+    private float PatrolRadius =>
+        aiProfile != null ? aiProfile.PatrolRadius : DefaultPatrolRadius;
+    private float DetectionRadius =>
+        aiProfile != null ? aiProfile.DetectionRadius : DefaultDetectionRadius;
+    private float LoseRadius => aiProfile != null ? aiProfile.LoseRadius : DefaultLoseRadius;
+    private float StunDuration =>
+        aiProfile != null ? aiProfile.StunDuration : DefaultStunDuration;
+
     protected override void Awake()
     {
         base.Awake();
-        
+
+        if (aiProfile == null)
+        {
+            Debug.LogWarning(
+                $"[FlyingEnemy] {name} has no FlyingEnemyProfile assigned; using built-in defaults.",
+                this);
+        }
+
         _startPosition = transform.position;
-        
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        if (playerObj != null) _player = playerObj.transform;
+
+        Player playerComponent = FindPlayerObject();
+        if (playerComponent != null) _player = playerComponent.transform;
 
         SetNewPatrolPoint();
     }
@@ -43,7 +64,7 @@ public class FlyingEnemy : BaseEnemy
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, _player.position);
-        _isChasing = distanceToPlayer < (_isChasing ? loseRadius : detectionRadius);
+        _isChasing = distanceToPlayer < (_isChasing ? LoseRadius : DetectionRadius);
 
         if (_isChasing) ChasePlayer();
         else Patrol();
@@ -59,7 +80,7 @@ public class FlyingEnemy : BaseEnemy
         if (!isDead && _player != null)
         {
             ApplyStun();
-            if (Vector2.Distance(transform.position, _player.position) < loseRadius) _isChasing = true;
+            if (Vector2.Distance(transform.position, _player.position) < LoseRadius) _isChasing = true;
         }
 
         return damageApplied;
@@ -74,24 +95,24 @@ public class FlyingEnemy : BaseEnemy
     private void ApplyStun()
     {
         _isStunned = true;
-        _stunTimer = stunDuration;
+        _stunTimer = StunDuration;
         rb.linearVelocity = Vector2.zero;
     }
 
     private void Patrol()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _targetPatrolPoint, flySpeed * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _targetPatrolPoint, FlySpeed * Time.fixedDeltaTime);
         if (Vector2.Distance(transform.position, _targetPatrolPoint) < 0.2f) SetNewPatrolPoint();
     }
 
     private void SetNewPatrolPoint()
     {
-        _targetPatrolPoint = _startPosition + (Random.insideUnitCircle * patrolRadius);
+        _targetPatrolPoint = _startPosition + (Random.insideUnitCircle * PatrolRadius);
     }
 
     private void ChasePlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _player.position, chaseSpeed * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _player.position, ChaseSpeed * Time.fixedDeltaTime);
     }
 
     private void FlipSprite()

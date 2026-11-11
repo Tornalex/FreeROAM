@@ -7,8 +7,6 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private SpearTrajectoryPredictor _trajectoryPredictor;
     [SerializeField] private SpearTrajectoryRenderer _trajectoryRenderer;
-    [SerializeField, Min(0f)] private float aimDeadzone = 0.15f;
-    [SerializeField, Min(0f)] private float aimSmoothing = 12f;
 
     public enum SpearUIState
     {
@@ -133,7 +131,7 @@ public class PlayerCombat : MonoBehaviour
 
         bool controllerIsAiming =
             _player.Input.IsGamepad &&
-            _player.Input.AimInput.sqrMagnitude > 0.1f;
+            _player.Input.AimInput.sqrMagnitude > _player.CombatStats.aimInputThreshold;
         UpdateTrajectoryPreview(controllerIsAiming);
 
         if (!_player.Input.FireTriggered)
@@ -228,7 +226,7 @@ public class PlayerCombat : MonoBehaviour
         {
             dir = _player.Input.AimInput;
 
-            if (dir.magnitude <= aimDeadzone)
+            if (dir.magnitude <= _player.CombatStats.aimDeadzone)
             {
                 dir = new Vector2(
                     Mathf.Sign(transform.localScale.x),
@@ -238,8 +236,8 @@ public class PlayerCombat : MonoBehaviour
             else
             {
                 Vector2 targetDirection = dir.normalized;
-                float smoothingFactor = aimSmoothing > 0f
-                    ? 1f - Mathf.Exp(-aimSmoothing * Time.deltaTime)
+                float smoothingFactor = _player.CombatStats.aimSmoothing > 0f
+                    ? 1f - Mathf.Exp(-_player.CombatStats.aimSmoothing * Time.deltaTime)
                     : 1f;
                 Vector2 smoothedDirection = Vector2.Lerp(
                     _aimDirection,

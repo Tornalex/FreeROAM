@@ -17,6 +17,9 @@ public sealed class SpearTrajectoryPredictor : MonoBehaviour
 
     private Spear _spearTemplate;
     private Rigidbody2D _spearBody;
+    private float _spearMass;
+    private float _spearGravityScale;
+    private float _spearLinearDamping;
     private BoxCollider2D _tipBox;
     private Collider2D _playerCollider;
     private bool _hasTipTrigger;
@@ -34,6 +37,16 @@ public sealed class SpearTrajectoryPredictor : MonoBehaviour
         _spearBody = spearPrefab != null
             ? spearPrefab.GetComponent<Rigidbody2D>()
             : null;
+
+        _spearMass = _spearTemplate != null
+            ? _spearTemplate.EffectiveMass
+            : (_spearBody != null ? _spearBody.mass : 0f);
+        _spearGravityScale = _spearTemplate != null
+            ? _spearTemplate.EffectiveGravityScale
+            : (_spearBody != null ? _spearBody.gravityScale : 0f);
+        _spearLinearDamping = _spearTemplate != null
+            ? _spearTemplate.EffectiveLinearDamping
+            : (_spearBody != null ? _spearBody.linearDamping : 0f);
         _playerCollider = playerCollider;
 
         _rootContactFilter = new ContactFilter2D();
@@ -79,13 +92,13 @@ public sealed class SpearTrajectoryPredictor : MonoBehaviour
         if (_spearTemplate == null ||
             _spearBody == null ||
             launchDirection.sqrMagnitude <= 0.0001f ||
-            _spearBody.mass <= 0f)
+            _spearMass <= 0f)
         {
             return 0;
         }
 
         Vector2 direction = launchDirection.normalized;
-        Vector2 velocity = direction * (impulseMagnitude / _spearBody.mass);
+        Vector2 velocity = direction * (impulseMagnitude / _spearMass);
         Vector2 rootPosition = launchPosition;
         float deltaTime = Time.fixedDeltaTime;
         if (deltaTime <= 0f)
@@ -109,14 +122,14 @@ public sealed class SpearTrajectoryPredictor : MonoBehaviour
                 : lastStepDisplacement.normalized;
 
             Vector2 nextVelocity = velocity +
-                Physics2D.gravity * (_spearBody.gravityScale * deltaTime);
+                Physics2D.gravity * (_spearGravityScale * deltaTime);
 
             // The spear prefab currently has zero linear damping. This
             // implicit damping approximation also tracks non-zero prefab
             // settings without altering the live Rigidbody.
-            if (_spearBody.linearDamping > 0f)
+            if (_spearLinearDamping > 0f)
             {
-                nextVelocity /= 1f + _spearBody.linearDamping * deltaTime;
+                nextVelocity /= 1f + _spearLinearDamping * deltaTime;
             }
 
             Vector2 nextRootPosition = rootPosition + nextVelocity * deltaTime;

@@ -1,5 +1,4 @@
 using UnityEngine;
-using SpearWander.Abilities;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -71,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Dopo il periodo di blocco, il giocatore può
             // interrompere il knockback iniziando a muoversi.
-            if (Mathf.Abs(moveInput) > 0.1f)
+            if (Mathf.Abs(moveInput) > _player.PlayerStats.knockbackInterruptThreshold)
             {
                 _isPlayerKnockedBack = false;
             }
@@ -123,14 +122,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        bool canRun =
-            AbilityManager.Instance != null &&
-            AbilityManager.Instance.IsUnlocked(AbilityType.Dash);
+        bool canRun = _player.Dash.enabled;
 
         float targetSpeed =
             (canRun &&
              _player.Input.IsDashHeld() &&
-             Mathf.Abs(moveInput) > 0.1f)
+             Mathf.Abs(moveInput) > _player.PlayerStats.moveInputThreshold)
                 ? _player.PlayerStats.runSpeed
                 : _player.PlayerStats.walkSpeed;
 
@@ -145,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
                 playerVelocityY
             );
 
-        if (Mathf.Abs(moveInput) > 0.1f)
+        if (Mathf.Abs(moveInput) > _player.PlayerStats.moveInputThreshold)
         {
             Flip(Mathf.Sign(moveInput));
         }

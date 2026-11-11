@@ -65,7 +65,7 @@ private void OnCollisionEnter2D(
             Physics2D.RaycastAll(
                 hitPoint - flyDir * 0.5f,
                 flyDir,
-                tipRaycastLength,
+                TipRaycastLength,
                 1 << other.gameObject.layer
             );
 
@@ -145,11 +145,9 @@ private void OnCollisionEnter2D(
             velocity -
             2 * dot * normal;
 
-        float bounceFactor = 0.6f;
-
         Vector2 bounceVelocity =
             bounceDirection *
-            bounceFactor;
+            BossBounceSpeedMultiplier;
 
         _rb.linearVelocity =
             bounceVelocity;
@@ -164,7 +162,7 @@ private void OnCollisionEnter2D(
             RigidbodyType2D.Dynamic;
 
         _rb.gravityScale =
-            1f;
+            BossBounceGravityScale;
 
         _collider.isTrigger =
             false;
@@ -184,7 +182,7 @@ private void OnCollisionEnter2D(
             StartCoroutine(
                 ReenableCollisionWithBoss(
                     collision.collider,
-                    0.5f
+                    BossCollisionIgnoreDuration
                 )
             );
         }

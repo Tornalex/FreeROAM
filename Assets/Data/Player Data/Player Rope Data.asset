@@ -16,3 +16,7 @@ MonoBehaviour:
   dismountJumpForce: 12
   dismountCooldown: 0.5
   ropeLength: 5
+  horizontalDismountThreshold: 0.5
+  verticalInputThreshold: 0.1
+  autoDismountOffset: 0.15
+  climbInputThreshold: 0.1

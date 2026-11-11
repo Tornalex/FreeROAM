@@ -29,25 +29,25 @@ public class RecallEnemy : BaseEnemy
     [Header("Movement")]
 
     [Tooltip("Preferred distance from the player.")]
-    [SerializeField] private float preferredDistance = 6f;
+    [SerializeField, Min(0f)] private float preferredDistance = 6f;
 
     [Tooltip("Allowed distance around the preferred distance.")]
-    [SerializeField] private float distanceTolerance = 1f;
+    [SerializeField, Min(0f)] private float distanceTolerance = 1f;
 
     [Tooltip("Horizontal movement speed.")]
-    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField, Min(0f)] private float moveSpeed = 2f;
 
 
     [Header("Spear Dodge")]
 
     [Tooltip("Vertical velocity applied when dodging the Spear.")]
-    [SerializeField] private float dodgeJumpForce = 8f;
+    [SerializeField, Min(0f)] private float dodgeJumpForce = 8f;
 
     [Tooltip("Maximum distance at which the enemy reacts to the Spear.")]
-    [SerializeField] private float dodgeDetectionDistance = 5f;
+    [SerializeField, Min(0f)] private float dodgeDetectionDistance = 5f;
 
     [Tooltip("Minimum time between two dodge reactions.")]
-    [SerializeField] private float dodgeCooldown = 0.75f;
+    [SerializeField, Min(0f)] private float dodgeCooldown = 0.75f;
 
     [Tooltip("How strongly the Spear must be moving toward the enemy.")]
     [Range(0f, 1f)]
@@ -61,19 +61,19 @@ public class RecallEnemy : BaseEnemy
     [SerializeField] private Transform firePoint;
 
     [Tooltip("Time between shots.")]
-    [SerializeField] private float attackInterval = 2f;
+    [SerializeField, Min(0f)] private float attackInterval = 2f;
 
     [Tooltip("Projectile movement speed.")]
-    [SerializeField] private float projectileSpeed = 7f;
+    [SerializeField, Min(0f)] private float projectileSpeed = 7f;
 
 
     [Header("Ranged Attack Telegraph")]
 
     [Tooltip("How long the enemy warns the player before shooting.")]
-    [SerializeField] private float attackTelegraphDuration = 0.5f;
+    [SerializeField, Min(0f)] private float attackTelegraphDuration = 0.5f;
 
     [Tooltip("Time between each red/normal flash.")]
-    [SerializeField] private float flashInterval = 0.1f;
+    [SerializeField, Min(0f)] private float flashInterval = 0.1f;
 
     [Tooltip("Color used during the attack warning.")]
     [SerializeField] private Color telegraphColor = Color.red;
@@ -97,14 +97,27 @@ public class RecallEnemy : BaseEnemy
     {
         base.Awake();
 
-        GameObject playerObject =
-            GameObject.FindGameObjectWithTag("Player");
+        Player resolvedPlayer = FindPlayerObject();
 
-        if (playerObject != null)
+        if (resolvedPlayer != null)
         {
-            player = playerObject.transform;
-            playerComponent = playerObject.GetComponentInParent<Player>();
+            player = resolvedPlayer.transform;
+            playerComponent = resolvedPlayer;
         }
+    }
+
+    private void OnValidate()
+    {
+        preferredDistance = Mathf.Max(0f, preferredDistance);
+        distanceTolerance = Mathf.Max(0f, distanceTolerance);
+        moveSpeed = Mathf.Max(0f, moveSpeed);
+        dodgeJumpForce = Mathf.Max(0f, dodgeJumpForce);
+        dodgeDetectionDistance = Mathf.Max(0f, dodgeDetectionDistance);
+        dodgeCooldown = Mathf.Max(0f, dodgeCooldown);
+        attackInterval = Mathf.Max(0f, attackInterval);
+        projectileSpeed = Mathf.Max(0f, projectileSpeed);
+        attackTelegraphDuration = Mathf.Max(0f, attackTelegraphDuration);
+        flashInterval = Mathf.Max(0f, flashInterval);
     }
 
 
@@ -207,147 +220,87 @@ public class RecallEnemy : BaseEnemy
     {
         // We are currently tracking a Spear.
         // Check whether it is still valid.
-        if (trackedSpear != null)
+        if (trackedSpear != null &&
+            trackedSpear.currentState != Spear.SpearState.Flying)
         {
-            if (trackedSpear.currentState != Spear.SpearState.Flying)
-            {
-                trackedSpear = null;
-            }
+            trackedSpear = null;
         }
-
 
         // No Spear currently tracked.
         if (trackedSpear == null)
         {
-            FindIncomingSpear();
+            trackedSpear = FindIncomingSpear();
         }
-
 
         if (trackedSpear == null)
             return;
-
 
         // Cannot dodge again while on cooldown.
         if (dodgeTimer > 0f)
             return;
 
+        // Keep tracking a Spear that is not currently threatening: it may
+        // become dangerous again before it stops flying.
+        if (IsSpearThreatening(trackedSpear))
+        {
+            DodgeSpear();
+        }
+    }
 
-        Rigidbody2D spearRb =
-            trackedSpear.GetComponent<Rigidbody2D>();
+    private Spear FindIncomingSpear()
+    {
+        if (playerComponent == null || playerComponent.Combat == null)
+            return null;
 
+        // The game uses a single player spear: reading it from PlayerCombat
+        // avoids a per-frame FindObjectsByType allocation.
+        Spear spear = playerComponent.Combat.CurrentSpear;
+
+        // IMPORTANT:
+        // Only react to a thrown Spear.
+        // Returning is deliberately ignored.
+        return IsSpearThreatening(spear) ? spear : null;
+    }
+
+    /// <summary>
+    /// Shared threat evaluation used both when acquiring a Spear and when
+    /// deciding whether an already tracked Spear still justifies a dodge.
+    /// </summary>
+    private bool IsSpearThreatening(Spear spear)
+    {
+        if (spear == null || spear.currentState != Spear.SpearState.Flying)
+            return false;
+
+        Rigidbody2D spearRb = spear.GetComponent<Rigidbody2D>();
         if (spearRb == null)
-            return;
+            return false;
 
-
-        Vector2 spearVelocity =
-            spearRb.linearVelocity;
-
+        Vector2 spearVelocity = spearRb.linearVelocity;
 
         // Spear is not moving.
         if (spearVelocity.sqrMagnitude < 0.01f)
-            return;
-
-
-        Vector2 spearPosition =
-            trackedSpear.transform.position;
-
+            return false;
 
         Vector2 toEnemy =
             (Vector2)transform.position -
-            spearPosition;
+            (Vector2)spear.transform.position;
 
-
-        float distance =
-            toEnemy.magnitude;
-
+        float distance = toEnemy.magnitude;
 
         // Too far away to react.
         if (distance > dodgeDetectionDistance)
-            return;
+            return false;
 
-
-        Vector2 spearDirection =
-            spearVelocity.normalized;
-
-
-        Vector2 directionToEnemy =
-            toEnemy.normalized;
-
-
-        float alignment =
-            Vector2.Dot(
-                spearDirection,
-                directionToEnemy
-            );
-
+        float alignment = Vector2.Dot(
+            spearVelocity.normalized,
+            toEnemy.normalized);
 
         // Positive value = Spear is moving toward us.
         //
         // 1.0 = directly toward the enemy
         // 0.0 = perpendicular
         // -1.0 = directly away
-        if (alignment < spearDirectionThreshold)
-            return;
-
-
-        DodgeSpear();
-    }
-
-
-    private void FindIncomingSpear()
-    {
-        if (playerComponent == null || playerComponent.Combat == null)
-            return;
-
-        // The game uses a single player spear: reading it from PlayerCombat
-        // avoids a per-frame FindObjectsByType allocation.
-        Spear spear = playerComponent.Combat.CurrentSpear;
-
-        if (spear == null)
-            return;
-
-        // IMPORTANT:
-        // Only react to a thrown Spear.
-        // Returning is deliberately ignored.
-        if (spear.currentState != Spear.SpearState.Flying)
-            return;
-
-        Rigidbody2D spearRb =
-            spear.GetComponent<Rigidbody2D>();
-
-        if (spearRb == null)
-            return;
-
-        Vector2 velocity =
-            spearRb.linearVelocity;
-
-        if (velocity.sqrMagnitude < 0.01f)
-            return;
-
-        Vector2 toEnemy =
-            (Vector2)transform.position -
-            (Vector2)spear.transform.position;
-
-        float distance =
-            toEnemy.magnitude;
-
-        if (distance > dodgeDetectionDistance)
-            return;
-
-        Vector2 spearDirection =
-            velocity.normalized;
-
-        Vector2 directionToEnemy =
-            toEnemy.normalized;
-
-        float alignment =
-            Vector2.Dot(
-                spearDirection,
-                directionToEnemy
-            );
-
-        if (alignment >= spearDirectionThreshold)
-            trackedSpear = spear;
+        return alignment >= spearDirectionThreshold;
     }
 
 

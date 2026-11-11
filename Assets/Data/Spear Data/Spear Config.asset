@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74507ab835d14ab98640efa6e9616fc1, type: 3}
+  m_Name: Spear Config
+  m_EditorClassIdentifier: Assembly-CSharp::SpearConfig
+  enemyBounceSpeed: 10
+  bounceAngle: 90
+  tipRaycastLength: 1.5
+  embedDepth: 0.15
+  rigidbodyMass: 2
+  flightGravityScale: 3
+  flightLinearDamping: 0
+  bossBounceSpeedMultiplier: 0.6
+  bossBounceGravityScale: 1
+  bossCollisionIgnoreDuration: 0.5
+  returnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  returnDuration: 1
+  maxReturnSpeed: 120
+  catchDistance: 0.75
+  droppedGravityScale: 1.5
+  droppedLinearDamping: 2
+  enemyDeathHorizontalImpulse: 6
+  enemyDeathUpwardImpulse: 10
+  ropeAttachOffset: {x: -0.8, y: 0}
+  ropeWidth: 0.1
+  ropeMaterial: {fileID: 2100000, guid: 79809b4fc57ad41b982c1dd5ceb812b2, type: 2}
+  ropeStartColor: {r: 0.5, g: 0.35, b: 0.15, a: 1}
+  ropeEndColor: {r: 0.5, g: 0.35, b: 0.35, a: 1}

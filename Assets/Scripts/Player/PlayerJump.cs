@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
     private Player _player;
-    private PlayerFeet _feet;
     private bool _isJumping;
     private bool _wasGrounded;
     private bool _hasJumped;
@@ -13,7 +12,6 @@ public class PlayerJump : MonoBehaviour
     void Awake()
     {
         _player = GetComponent<Player>();
-        _feet = GetComponentInChildren<PlayerFeet>();
     }
 
     void Update()
@@ -134,6 +132,6 @@ public class PlayerJump : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return _feet != null && _feet.IsGrounded();
+        return _player.Feet != null && _player.Feet.IsGrounded();
     }
 }

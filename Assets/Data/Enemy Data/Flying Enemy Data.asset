@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91e44128d210554bae484a1bd945365, type: 3}
   m_Name: Flying Enemy Data
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  maxHealth: 3
-  speed: 4
+  maxHealth: 2
+  speed: 6
   knockbackForce: {x: 10, y: 5}
-  knockbackDuration: 0.2
+  knockbackDuration: 0.1

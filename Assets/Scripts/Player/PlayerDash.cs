@@ -27,9 +27,6 @@ public class PlayerDash : MonoBehaviour
     private bool _dashAvailabilityInitialized;
     private bool _wasDashAvailable;
 
-    private const float DashReadyBlinkInterval = 0.05f;
-    private const int DashReadyBlinkCount = 3;
-
     void Awake()
     {
         _player = GetComponent<Player>();
@@ -102,7 +99,7 @@ public class PlayerDash : MonoBehaviour
             float moveInput =
                 _player.Input.MoveInput.x;
 
-            if (Mathf.Abs(moveInput) > 0.1f)
+            if (Mathf.Abs(moveInput) > _player.DashStats.knockbackInterruptThreshold)
             {
                 EndDashKnockback();
                 return;
@@ -226,20 +223,20 @@ public class PlayerDash : MonoBehaviour
 
     private IEnumerator DashReadyBlink()
     {
-        for (int i = 0; i < DashReadyBlinkCount; i++)
+        for (int i = 0; i < _player.DashStats.dashReadyBlinkCount; i++)
         {
             _spriteRenderer.material =
                 dashReadyFlashMaterial;
 
             yield return new WaitForSeconds(
-                DashReadyBlinkInterval
+                _player.DashStats.dashReadyBlinkInterval
             );
 
             _spriteRenderer.material =
                 _originalMaterial;
 
             yield return new WaitForSeconds(
-                DashReadyBlinkInterval
+                _player.DashStats.dashReadyBlinkInterval
             );
         }
 
@@ -278,7 +275,7 @@ public class PlayerDash : MonoBehaviour
             // Il Player subisce invece il normale danno
             // da contatto e viene respinto.
             _player.Health.TakeDamage(
-                1,
+                _player.PlayerStats.contactDamage,
                 collision.transform.position
             );
 

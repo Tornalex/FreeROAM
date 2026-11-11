@@ -18,3 +18,6 @@ MonoBehaviour:
   spearRecallDamage: 1
   dashDamage: 1
   pogoDamage: 1
+  aimDeadzone: 0.15
+  aimSmoothing: 12
+  aimInputThreshold: 0.1

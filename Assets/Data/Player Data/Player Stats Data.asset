@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsData
   walkSpeed: 10
   runSpeed: 16
+  knockbackInterruptThreshold: 0.1
+  moveInputThreshold: 0.1
   jumpForce: 24
   jumpCutMultiplier: 0.2
   jumpBufferTime: 0.1
@@ -22,3 +24,8 @@ MonoBehaviour:
   iFramesDuration: 0.75
   damageForce: {x: 15, y: 10}
   damageKnockbackDuration: 0.3
+  contactDamage: 1
+  iFramesBlinkInterval: 0.05
+  iFramesBlinkMinAlpha: 0.2
+  groundNormalThreshold: 0.9
+  groundPointOffset: 0.2

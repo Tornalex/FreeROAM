@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Cinemachine;
 using System.Collections.Generic;
 using SpearWander.Abilities;
+using Yarn.Unity;
 
 [DefaultExecutionOrder(-100)]
 public class Player : MonoBehaviour
@@ -12,6 +13,10 @@ public class Player : MonoBehaviour
     public SpriteRenderer Sprite { get; private set; }
     public Animator Animator { get; private set; }
     public CinemachineImpulseSource ImpulseSource { get; private set; }
+
+    // --- Scene Services ---
+    public DialogueRunner DialogueRunner { get; private set; }
+    public GameOverUI GameOverUI { get; private set; }
 
     // --- Custom Player Components ---
     public PlayerInputHandler Input { get; private set; }
@@ -76,6 +81,10 @@ public class Player : MonoBehaviour
         Sprite = GetComponentInChildren<SpriteRenderer>();
         Animator = GetComponentInChildren<Animator>();
         ImpulseSource = GetComponent<CinemachineImpulseSource>();
+        DialogueRunner = FindFirstObjectByType<DialogueRunner>();
+        GameOverUI = FindFirstObjectByType<GameOverUI>();
+
+        ValidateConfiguration();
 
         // Cache custom components
         Input = GetComponent<PlayerInputHandler>();
@@ -89,6 +98,22 @@ public class Player : MonoBehaviour
         RopeClimb = GetComponent<PlayerRopeClimb>();
         Essence = GetComponent<PlayerEssence>();
         Feet = GetComponentInChildren<PlayerFeet>();
+    }
+
+    private void ValidateConfiguration()
+    {
+        if (playerStats == null)
+            Debug.LogError("[Player] PlayerStatsData is not assigned.", this);
+        if (combatStats == null)
+            Debug.LogError("[Player] PlayerCombatData is not assigned.", this);
+        if (essenceStats == null)
+            Debug.LogError("[Player] PlayerEssenceData is not assigned.", this);
+        if (dashStats == null)
+            Debug.LogError("[Player] PlayerDashData is not assigned.", this);
+        if (ropeStats == null)
+            Debug.LogError("[Player] PlayerRopeData is not assigned.", this);
+        if (pogoStats == null)
+            Debug.LogError("[Player] PlayerPogoData is not assigned.", this);
     }
 
     public void ResetState()

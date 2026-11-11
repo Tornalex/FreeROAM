@@ -18,3 +18,6 @@ MonoBehaviour:
   postDashInvincibility: 0.05
   knockbackForce: {x: 20, y: 10}
   knockbackDuration: 0.3
+  dashReadyBlinkInterval: 0.05
+  dashReadyBlinkCount: 3
+  knockbackInterruptThreshold: 0.1

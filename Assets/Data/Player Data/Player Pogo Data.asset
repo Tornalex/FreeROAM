@@ -16,3 +16,4 @@ MonoBehaviour:
   bounceForce: 24
   postPogoInvincibility: 0.05
   pogoStunDuration: 0.15
+  bounceOffset: 0.2

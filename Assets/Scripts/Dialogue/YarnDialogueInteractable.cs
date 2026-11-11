@@ -44,5 +44,5 @@ public class YarnDialogueInteractable : MonoBehaviour, IInteractable
         _ = dialogueRunner.StartDialogue(dialogueNode);
     }
 
-    public string GetInteractPrompt() => "PARLA";
+    public string GetInteractPrompt() => "INTERAGISCI";
 }

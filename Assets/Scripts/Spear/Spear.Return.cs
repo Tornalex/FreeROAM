@@ -7,12 +7,6 @@ public partial class Spear : MonoBehaviour
 
     private Transform _playerTransform;
 
-    [Header("Return Settings")]
-    [SerializeField] private AnimationCurve returnCurve;
-    [SerializeField] private float returnDuration = 0.5f;
-    [SerializeField] private float maxReturnSpeed = 50f;
-    [SerializeField] private float catchDistance = 0.7f;    
-
     private void ClearRopeAndIgnoredWall()
     {
         DestroyRope();
@@ -90,10 +84,10 @@ public partial class Spear : MonoBehaviour
             RigidbodyType2D.Dynamic;
 
         _rb.gravityScale =
-            1.5f;
+            DroppedGravityScale;
 
         _rb.linearDamping =
-            2f;
+            DroppedLinearDamping;
 
         _collider.isTrigger =
             false;
@@ -114,14 +108,12 @@ public partial class Spear : MonoBehaviour
         float timeNormalized =
             Mathf.Clamp01(
                 _returnTimer /
-                returnDuration
+                ReturnDuration
             );
 
         float currentSpeed =
-            (returnCurve != null
-                ? returnCurve.Evaluate(timeNormalized)
-                : 1f) *
-            maxReturnSpeed;
+            EvaluateReturnCurve(timeNormalized) *
+            MaxReturnSpeed;
 
         Vector2 toPlayer =
             (Vector2)_playerTransform.position
@@ -131,7 +123,7 @@ public partial class Spear : MonoBehaviour
             toPlayer.magnitude;
 
         if (distanceToPlayer <
-            catchDistance)
+            CatchDistance)
         {
             OnSpearReturned?.Invoke(
                 this

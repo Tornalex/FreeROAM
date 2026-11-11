@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using Yarn.Unity;
 
 [DefaultExecutionOrder(-101)]
 public class PlayerInputHandler : MonoBehaviour
@@ -29,14 +28,14 @@ public class PlayerInputHandler : MonoBehaviour
 
     private PlayerInputActions _actions;
     private ButtonControl _mouseFireHoldControl;
-    private DialogueRunner _dialogueRunner;
+    private Player _player;
 
     private int _suppressInteractFrames;
 
     void Awake()
     {
         _actions = new PlayerInputActions();
-        _dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+        _player = GetComponent<Player>();
     }
 
     private void OnEnable()
@@ -89,7 +88,7 @@ public class PlayerInputHandler : MonoBehaviour
             // AIM INPUT
             // ---------------------------------------------------------
 
-            if (stickInput.sqrMagnitude > 0.1f)
+            if (stickInput.sqrMagnitude > _player.CombatStats.aimInputThreshold)
             {
                 AimInput = stickInput;
                 IsGamepad = true;
@@ -125,7 +124,7 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
             JumpTriggered =
-                (_dialogueRunner == null || !_dialogueRunner.IsDialogueRunning) &&
+                (_player.DialogueRunner == null || !_player.DialogueRunner.IsDialogueRunning) &&
                 _actions.Player.Jump.WasPerformedThisFrame();
 
             DashTriggered =
@@ -166,7 +165,7 @@ public class PlayerInputHandler : MonoBehaviour
                 // Se il Fire arriva dal controller e lo stick
                 // è neutro, la mira deve rimanere neutra.
                 if (IsGamepad &&
-                    stickInput.sqrMagnitude <= 0.1f)
+                    stickInput.sqrMagnitude <= _player.CombatStats.aimInputThreshold)
                 {
                     AimInput = Vector2.zero;
                 }

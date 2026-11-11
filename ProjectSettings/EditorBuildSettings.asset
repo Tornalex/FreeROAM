@@ -74,6 +74,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Yellow Forest/YellowForest_ToMOTHER 1.unity
     guid: 7089b6c8f542bb647b3252c2d33fdb08
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Re-Entry Module/Re-EntryModule_Corridor.unity
+    guid: 41220a553861df64792598950cac0eb3
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Re-Entry Module/Re-EntryModule_WakeRoom.unity
+    guid: ce5033aca87d48d438970c5f77fdc01c
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Re-Entry Module/Re-entryModule_Cliff.unity
+    guid: d9ce06c7aaa71cd4d8557273910dee83
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Yellow Forest/YellowForest_Arena.unity
+    guid: 9317d986153533f4899414046b83322c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0034084e1c777c040b3e449f40cea1a0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c38a0e040731c7743bbf1fbcc7c49e2d, type: 3}

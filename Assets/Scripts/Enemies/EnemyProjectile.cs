@@ -3,14 +3,25 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int damage = 1;
-    [SerializeField] private float lifetime = 5f;
+    [SerializeField, Min(0)]
+    [Tooltip("Damage dealt to the player on contact.")]
+    private int damage = 1;
+
+    [SerializeField, Min(0f)]
+    [Tooltip("Seconds before the projectile is destroyed automatically.")]
+    private float lifetime = 5f;
 
     private Rigidbody2D rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnValidate()
+    {
+        damage = Mathf.Max(0, damage);
+        lifetime = Mathf.Max(0f, lifetime);
     }
 
     private void Start()

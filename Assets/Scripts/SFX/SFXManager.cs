@@ -46,6 +46,7 @@ public class SFXManager : MonoBehaviour
             }
         }
         SFXManager.Instance?.PlaySFX(SFXType.WindBlowing);
+        SFXManager.Instance?.PlaySFX(SFXType.FreeROAMTheme);
     }
 
     public void PlaySFX(SFXType type)

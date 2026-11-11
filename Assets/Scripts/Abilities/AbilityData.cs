@@ -1,64 +1,43 @@
 using UnityEngine;
-using SpearWander.Abilities;
 
 namespace SpearWander.Abilities
 {
+    /// <summary>
+    /// Shared authoring configuration for one ability. Unlock state and the
+    /// state of any configured Player component belong to AbilityManager and
+    /// the Player instance, never to this asset.
+    /// </summary>
     [CreateAssetMenu(fileName = "New Ability", menuName = "Spear Wander/Ability Data")]
     public class AbilityData : ScriptableObject
     {
         [Header("Identity")]
-        public AbilityType abilityType;
-        public string displayName;
-        [TextArea] public string description;
+        [SerializeField] private AbilityType abilityType;
+        [SerializeField] private string displayName;
+        [SerializeField, TextArea] private string description;
 
-        [Header("Interaction")]
-        public string promptMessage = "Premi E per interagire";
-        public bool destroyOnPickup = true;
+        [Header("Pickup")]
+        [SerializeField] private string promptMessage = "Premi E per interagire";
+        [SerializeField] private bool destroyOnPickup = true;
 
-        [Header("Unlock Behavior")]
-        public string componentName;
-        public bool enableComponent = true;
+        [Header("Unlock Configuration")]
+        [SerializeField] private string componentName;
+        [SerializeField] private bool enableComponent = true;
 
-        [Header("Optional: Additional Setup")]
-        public bool requiresPlayerCombat = false;
-        public bool requiresRopeClimb = false;
+        [Header("Legacy Compatibility")]
+        [SerializeField, Tooltip("Retained in existing assets; not currently used by the unlock flow.")]
+        private bool requiresPlayerCombat;
 
-        public void Unlock(Player player)
-        {
-            if (player == null) return;
+        [SerializeField, Tooltip("Retained in existing assets; not currently used by the unlock flow.")]
+        private bool requiresRopeClimb;
 
-            // Enable the target component
-            if (!string.IsNullOrEmpty(componentName))
-            {
-                var component = player.GetComponent(componentName) as Behaviour;
-                if (component != null)
-                {
-                    component.enabled = enableComponent;
-                }
-                else
-                {
-                    Debug.LogWarning($"[AbilityData] Component '{componentName}' not found on Player for ability {abilityType}");
-                }
-            }
-
-            // Special handling for specific abilities
-            switch (abilityType)
-            {
-                case AbilityType.Spear:
-                    // PlayerCombat is enabled by default in the new system
-                    break;
-                case AbilityType.Rope:
-                    if (player.RopeClimb != null)
-                        player.RopeClimb.enabled = true;
-                    break;
-            }
-        }
-
-        public bool IsUnlocked(Player player)
-        {
-            if (player == null || string.IsNullOrEmpty(componentName)) return false;
-            var component = player.GetComponent(componentName) as Behaviour;
-            return component != null && component.enabled == enableComponent;
-        }
+        public AbilityType AbilityType => abilityType;
+        public string DisplayName => displayName;
+        public string Description => description;
+        public string PromptMessage => promptMessage;
+        public bool DestroyOnPickup => destroyOnPickup;
+        public string ComponentName => componentName;
+        public bool EnableComponent => enableComponent;
+        public bool RequiresPlayerCombat => requiresPlayerCombat;
+        public bool RequiresRopeClimb => requiresRopeClimb;
     }
 }

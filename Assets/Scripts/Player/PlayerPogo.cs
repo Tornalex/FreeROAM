@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerPogo : MonoBehaviour
 {
     private Player _player;
-    private PlayerFeet _feet;
     private float _postPogoProtectionTimer;
     private float _pogoStunTimer;
 
@@ -17,7 +16,6 @@ public class PlayerPogo : MonoBehaviour
     void Awake()
     {
         _player = GetComponent<Player>();
-        _feet = GetComponentInChildren<PlayerFeet>();
     }
 
     void Update()
@@ -29,12 +27,12 @@ public class PlayerPogo : MonoBehaviour
             _waitingForInputRelease = false;
         }
 
-        if (!_feet.IsGrounded() && (_player.Input.DownInputHeld || _player.Input.DownTriggered) && _canPlunge && !IsPlunging && !_waitingForInputRelease && !IsPogoStunned)
+        if (!_player.Feet.IsGrounded() && (_player.Input.DownInputHeld || _player.Input.DownTriggered) && _canPlunge && !IsPlunging && !_waitingForInputRelease && !IsPogoStunned)
         {
             StartPlunge();
         }
 
-        if (_feet.IsGrounded())
+        if (_player.Feet.IsGrounded())
         {
             IsPlunging = false;
             _canPlunge = true;
@@ -81,7 +79,7 @@ public class PlayerPogo : MonoBehaviour
 
         bounceable.OnPogoBounce();
 
-        transform.position = new Vector2(transform.position.x, transform.position.y + 0.2f);
+        transform.position = new Vector2(transform.position.x, transform.position.y + _player.PogoStats.bounceOffset);
         
         float finalForce = _player.PogoStats.bounceForce * bounceable.GetBounceMultiplier();
         _player.Rb.linearVelocity = new Vector2(_player.Rb.linearVelocity.x, finalForce);

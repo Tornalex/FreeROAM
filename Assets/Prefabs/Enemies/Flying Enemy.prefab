@@ -196,12 +196,7 @@ MonoBehaviour:
   stableIdentity: 
   roomName: 
   isDead: 0
-  flySpeed: 1
-  chaseSpeed: 6
-  patrolRadius: 1
-  detectionRadius: 7.5
-  loseRadius: 15
-  stunDuration: 0.1
+  aiProfile: {fileID: 11400000, guid: 43c311b8910f4c3282f3871fd6bfa919, type: 2}
 --- !u!50 &128485794362965492
 Rigidbody2D:
   serializedVersion: 5
@@ -264,7 +259,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4
+  m_Radius: 0.75
 --- !u!114 &5975070320503706842
 MonoBehaviour:
   m_ObjectHideFlags: 0

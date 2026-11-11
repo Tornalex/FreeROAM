@@ -39,14 +39,15 @@ public class PlayerRopeClimb : MonoBehaviour
                 return;
             }
 
-            if (Mathf.Abs(_player.Input.MoveInput.x) > 0.5f && Mathf.Abs(_player.Input.MoveInput.y) < 0.1f)
+            if (Mathf.Abs(_player.Input.MoveInput.x) > _player.RopeStats.horizontalDismountThreshold &&
+                Mathf.Abs(_player.Input.MoveInput.y) < _player.RopeStats.verticalInputThreshold)
             {
                 StopClimbing();
                 return;
             }
 
             float ropeTopY = _currentRope.transform.position.y;
-            if (_canAutoDismount && transform.position.y >= ropeTopY - 0.15f)
+            if (_canAutoDismount && transform.position.y >= ropeTopY - _player.RopeStats.autoDismountOffset)
             {
                 _canAutoDismount = false;
                 StopClimbing();
@@ -75,9 +76,9 @@ public class PlayerRopeClimb : MonoBehaviour
             return;
         }
 
-        _canAutoDismount = _player.Input.MoveInput.y > 0.1f;
+        _canAutoDismount = _player.Input.MoveInput.y > _player.RopeStats.climbInputThreshold;
 
-        if (Mathf.Abs(_player.Input.MoveInput.y) > 0.1f)
+        if (Mathf.Abs(_player.Input.MoveInput.y) > _player.RopeStats.climbInputThreshold)
         {
             _player.Rb.linearVelocity = new Vector2(0, _player.Input.MoveInput.y * _player.RopeStats.climbSpeed);
         }
@@ -104,7 +105,7 @@ public class PlayerRopeClimb : MonoBehaviour
 
         if (_dismountCooldownTimer > 0) return;
         if (transform.position.y >= rope.transform.position.y) return;
-        if (_player.Input.MoveInput.y > 0.1f)
+        if (_player.Input.MoveInput.y > _player.RopeStats.climbInputThreshold)
         {
             StartClimbing(rope);
         }
