@@ -30,7 +30,29 @@ public class GameSceneManager : MonoBehaviour
     private string _targetDoorID;
     private bool _isTransitioning;
 
+    // Narrow test-only hook. It is null in production and never changes a
+    // result unless a test installs a delegate that throws for a given stage.
+    private static Action<string> _connectedTransitionFaultInjector = null;
+
     private const float MAX_DELTA_TIME = 0.033f;
+
+    private sealed class TransitionStepResult
+    {
+        public bool Failed { get; private set; }
+        public string Error { get; private set; }
+
+        public void Reset()
+        {
+            Failed = false;
+            Error = null;
+        }
+
+        public void Fail(Exception exception)
+        {
+            Failed = true;
+            Error = exception != null ? exception.Message : "Unknown failure.";
+        }
+    }
 
     private sealed class ConnectedTransitionSnapshot
     {
@@ -136,175 +158,548 @@ public class GameSceneManager : MonoBehaviour
     {
         _isTransitioning = true;
 
-        RoomConnectionResolutionResult resolution;
-        try
-        {
-            resolution = ResolveConnectedRoomTransition(sourceDoor);
-        }
-        catch (Exception exception)
-        {
-            Debug.LogError($"[GameSceneManager] Connected transition failed at source validation: {exception.Message}", this);
-            _isTransitioning = false;
-            yield break;
-        }
-        if (resolution.Status != RoomConnectionResolutionStatus.DestinationValidationPending ||
-            resolution.DestinationRoom == null ||
-            string.IsNullOrEmpty(resolution.DestinationScenePath) ||
-            string.IsNullOrEmpty(resolution.DestinationDoorId))
-        {
-            Debug.LogError(
-                $"[GameSceneManager] Connected transition failed at source validation: " +
-                $"{resolution.Status}: {resolution.Message}", this);
-            _isTransitioning = false;
-            yield break;
-        }
+        // Captured before any mutation so the synchronous cleanup path can
+        // restore the original simulation speed even if snapshot capture fails.
+        float originalTimeScale = Time.timeScale;
 
-        Scene sourceScene = sourceDoor.gameObject.scene;
-        if (!sourceScene.IsValid() || !sourceScene.isLoaded || !IsCurrentSourceRoom(sourceScene, resolution))
-        {
-            Debug.LogError(
-                $"[GameSceneManager] Connected transition failed at source validation: " +
-                $"door '{resolution.SourceDoorId}' is not in the manager's loaded current room.", this);
-            _isTransitioning = false;
-            yield break;
-        }
-
-        ConnectedTransitionSnapshot snapshot = CaptureConnectedTransitionSnapshot(sourceScene);
-        if (snapshot == null)
-        {
-            Debug.LogError("[GameSceneManager] Connected transition failed at source validation: player or source state is unavailable.", this);
-            _isTransitioning = false;
-            yield break;
-        }
-
-        string failedStage = "destination load";
-        string failureReason = null;
+        ConnectedTransitionSnapshot snapshot = null;
+        RoomConnectionResolutionResult resolution = default;
+        Scene sourceScene = default;
         Scene destinationScene = default;
-        bool playerRelocated = false;
+        string destinationScenePath = null;
+        bool destinationLoadStarted = false;
+        bool committed = false;
+        string failedStage = "source validation";
+        string failureReason = null;
 
-        // Keep room simulation from advancing while two room scenes overlap.
-        Time.timeScale = 0f;
-        SetConnectedPlayerControl(snapshot, false);
-        yield return StartCoroutine(FadeToBlack());
-
-        if (HasLoadedScenePath(resolution.DestinationScenePath))
-        {
-            failureReason = $"Destination scene '{resolution.DestinationScenePath}' is already loaded.";
-        }
-        else if (!TryBeginAdditiveLoad(resolution.DestinationScenePath, out AsyncOperation loadOperation, out failureReason))
-        {
-            // The source is intentionally kept loaded until the transaction commits.
-        }
-        else
-        {
-            while (!loadOperation.isDone)
-                yield return null;
-
-            if (!TryGetUniqueLoadedScene(resolution.DestinationScenePath, out destinationScene, out failureReason))
-            {
-                // Handled by the rollback below.
-            }
-        }
-
-        if (failureReason != null)
-        {
-            yield return StartCoroutine(RollbackConnectedTransition(
-                snapshot, destinationScene, playerRelocated, failedStage, failureReason));
-            yield break;
-        }
-
-        failedStage = "destination validation";
-        if (!TryValidateConnectedDestination(destinationScene, resolution, out _,
-                out Transform spawnPoint, out failureReason))
-        {
-            yield return StartCoroutine(RollbackConnectedTransition(
-                snapshot, destinationScene, playerRelocated, failedStage, failureReason));
-            yield break;
-        }
-
-        failedStage = "player relocation";
+        // Exceptions cannot be caught around a yield in a C# iterator. Each
+        // synchronous stage is therefore guarded locally, and this outer
+        // try/finally provides a final synchronous cleanup path for every exit
+        // (completion, yield break, or an exception that reaches the iterator).
+        // Unity does not run the finally block if this coroutine is forcibly
+        // stopped with StopCoroutine/StopAllCoroutines or if the manager is
+        // destroyed; that limitation cannot be avoided from managed code.
         try
         {
-            playerRelocated = true;
-            playerTransform.position = spawnPoint.position;
-            if (snapshot.PlayerRigidbody != null)
+            try
             {
-                snapshot.PlayerRigidbody.bodyType = snapshot.RigidbodyBodyType;
-                snapshot.PlayerRigidbody.linearVelocity = Vector2.zero;
-                snapshot.PlayerRigidbody.angularVelocity = snapshot.RigidbodyAngularVelocity;
+                InjectConnectedTransitionFault("source-validation");
+                resolution = ResolveConnectedRoomTransition(sourceDoor);
             }
-            Physics2D.SyncTransforms();
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason == null &&
+                (resolution.Status != RoomConnectionResolutionStatus.DestinationValidationPending ||
+                 resolution.DestinationRoom == null ||
+                 string.IsNullOrEmpty(resolution.DestinationScenePath) ||
+                 string.IsNullOrEmpty(resolution.DestinationDoorId)))
+            {
+                failureReason = $"{resolution.Status}: {resolution.Message}";
+            }
+
+            if (failureReason == null)
+            {
+                sourceScene = sourceDoor.gameObject.scene;
+                if (!sourceScene.IsValid() || !sourceScene.isLoaded ||
+                    !IsCurrentSourceRoom(sourceScene, resolution))
+                {
+                    failureReason =
+                        $"door '{resolution.SourceDoorId}' is not in the manager's loaded current room.";
+                }
+            }
+
+            if (failureReason != null)
+            {
+                Debug.LogError(
+                    $"[GameSceneManager] Connected transition failed at source validation: " +
+                    failureReason, this);
+                yield break;
+            }
+
+            destinationScenePath = resolution.DestinationScenePath;
+
+            try
+            {
+                InjectConnectedTransitionFault("snapshot-capture");
+                snapshot = CaptureConnectedTransitionSnapshot(sourceScene);
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (snapshot == null)
+            {
+                if (failureReason == null)
+                    failureReason = "player or source state is unavailable.";
+
+                Debug.LogError(
+                    $"[GameSceneManager] Connected transition failed at source validation: " +
+                    failureReason, this);
+                yield break;
+            }
+
+            failedStage = "freeze/control setup";
+            try
+            {
+                InjectConnectedTransitionFault("freeze-control-setup");
+
+                // Keep room simulation from advancing while two room scenes overlap.
+                Time.timeScale = 0f;
+                SetConnectedPlayerControl(snapshot, false);
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            failedStage = "fade-out";
+            TransitionStepResult fadeOutResult = new TransitionStepResult();
+            yield return StartCoroutine(FadeToAlphaGuarded(
+                1f, "fade-out", fadeOutResult, fadeOutDuration));
+            if (fadeOutResult.Failed)
+                failureReason = fadeOutResult.Error;
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            failedStage = "destination load";
+            AsyncOperation loadOperation = null;
+            try
+            {
+                if (HasLoadedScenePath(destinationScenePath))
+                {
+                    failureReason = $"Destination scene '{destinationScenePath}' is already loaded.";
+                }
+                else
+                {
+                    InjectConnectedTransitionFault("destination-load-start");
+                    destinationLoadStarted = true;
+                    if (!TryBeginAdditiveLoad(
+                            destinationScenePath,
+                            out loadOperation,
+                            out failureReason))
+                    {
+                        // The source is intentionally kept loaded until commit.
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason == null && loadOperation != null)
+            {
+                bool loadWaitFailed = false;
+                while (true)
+                {
+                    bool isDone = false;
+                    try
+                    {
+                        isDone = loadOperation.isDone;
+                    }
+                    catch (Exception exception)
+                    {
+                        failureReason = exception.Message;
+                        loadWaitFailed = true;
+                    }
+
+                    if (loadWaitFailed || isDone)
+                        break;
+
+                    yield return null;
+                }
+            }
+
+            if (failureReason == null)
+            {
+                try
+                {
+                    if (!TryGetUniqueLoadedScene(
+                            destinationScenePath,
+                            out destinationScene,
+                            out string sceneError))
+                    {
+                        failureReason = sceneError;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    failureReason = exception.Message;
+                }
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            failedStage = "destination validation";
+            Transform spawnPoint = null;
+            try
+            {
+                InjectConnectedTransitionFault("destination-validation");
+                if (!TryValidateConnectedDestination(
+                        destinationScene,
+                        resolution,
+                        out _,
+                        out spawnPoint,
+                        out failureReason))
+                {
+                    // failureReason was populated by the validation helper.
+                }
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            failedStage = "player relocation";
+            try
+            {
+                InjectConnectedTransitionFault("player-relocation-before-mutation");
+                playerTransform.position = spawnPoint.position;
+                InjectConnectedTransitionFault("player-relocation-after-mutation");
+
+                if (snapshot.PlayerRigidbody != null)
+                {
+                    snapshot.PlayerRigidbody.bodyType = snapshot.RigidbodyBodyType;
+                    snapshot.PlayerRigidbody.linearVelocity = Vector2.zero;
+                    snapshot.PlayerRigidbody.angularVelocity = snapshot.RigidbodyAngularVelocity;
+                }
+
+                Physics2D.SyncTransforms();
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            failedStage = "destination activation and camera setup";
+            try
+            {
+                InjectConnectedTransitionFault("destination-activation");
+                if (!SceneManager.SetActiveScene(destinationScene))
+                {
+                    failureReason =
+                        $"Unity refused to make destination scene '{destinationScene.path}' active.";
+                }
+                else
+                {
+                    InjectConnectedTransitionFault("destination-camera-setup");
+                    if (!TrySetConnectedCameraBounds(destinationScene, out failureReason))
+                    {
+                        // Keep the source room and restore the prior camera state.
+                    }
+                    else
+                    {
+                        PositionCameraAtPlayer();
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            // Last pre-commit checkpoint. A failure here exercises rollback
+            // after relocation, destination activation and camera assignment.
+            failedStage = "pre-commit";
+            try
+            {
+                InjectConnectedTransitionFault("pre-commit");
+            }
+            catch (Exception exception)
+            {
+                failureReason = exception.Message;
+            }
+
+            if (failureReason != null)
+            {
+                yield return StartCoroutine(RollbackConnectedTransition(
+                    snapshot,
+                    destinationScene,
+                    destinationScenePath,
+                    destinationLoadStarted,
+                    failedStage,
+                    failureReason));
+                yield break;
+            }
+
+            // Commit boundary: after this point the destination room is
+            // authoritative and rollback must never run.
+            _currentRoomScene = destinationScene.name;
+            _currentRoomDefinition = resolution.DestinationRoom;
+            committed = true;
+
+            PostCommitSourceUnload(sourceScene, out bool sourceUnloadFailed, out string unloadError,
+                out AsyncOperation unloadOperation);
+
+            if (sourceUnloadFailed && unloadError != null)
+                Debug.LogError(unloadError, this);
+
+            if (unloadOperation != null)
+            {
+                try
+                {
+                    InjectConnectedTransitionFault("post-commit-source-unload-wait");
+                }
+                catch (Exception exception)
+                {
+                    sourceUnloadFailed = true;
+                    Debug.LogError(
+                        "[GameSceneManager] Connected transition committed, but source unload failed " +
+                        $"after the unload operation started: {exception.Message}", this);
+                }
+
+                bool waitFailed = false;
+                while (true)
+                {
+                    bool isDone = false;
+                    try
+                    {
+                        isDone = unloadOperation.isDone;
+                    }
+                    catch (Exception exception)
+                    {
+                        waitFailed = true;
+                        sourceUnloadFailed = true;
+                        Debug.LogError(
+                            "[GameSceneManager] Connected transition committed, but source unload failed " +
+                            $"while waiting for the operation: {exception.Message}", this);
+                    }
+
+                    if (waitFailed || isDone)
+                        break;
+
+                    yield return null;
+                }
+            }
+
+            if (unloadOperation == null && !sourceUnloadFailed &&
+                sourceScene.IsValid() && sourceScene.isLoaded)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Connected transition committed, but source scene " +
+                    $"'{sourceScene.path}' could not be unloaded.", this);
+                sourceUnloadFailed = true;
+            }
+            else if (unloadOperation != null && !sourceUnloadFailed &&
+                     sourceScene.IsValid() && sourceScene.isLoaded)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Connected transition committed, but source scene " +
+                    $"'{sourceScene.path}' remained loaded after the unload operation completed.", this);
+                sourceUnloadFailed = true;
+            }
+
+            failedStage = "fade-in";
+            TransitionStepResult fadeInResult = new TransitionStepResult();
+            yield return StartCoroutine(FadeToAlphaGuarded(
+                0f, "post-commit-fade-in", fadeInResult, fadeInDuration));
+            if (fadeInResult.Failed)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Connected transition committed, but fade-in failed: " +
+                    fadeInResult.Error, this);
+            }
+
+            try
+            {
+                InjectConnectedTransitionFault("post-commit-control-restore");
+                SetConnectedPlayerControl(snapshot, true);
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Connected transition committed, but player control " +
+                    $"restoration failed: {exception.Message}", this);
+            }
+
+            try
+            {
+                InjectConnectedTransitionFault("post-commit-timescale-restore");
+                Time.timeScale = snapshot.TimeScale;
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Connected transition committed, but Time.timeScale " +
+                    $"restoration failed: {exception.Message}", this);
+            }
+
+            if (sourceUnloadFailed && sourceScene.IsValid() && sourceScene.isLoaded)
+            {
+                Debug.LogWarning(
+                    "[GameSceneManager] Connected transition committed with the source scene still " +
+                    "loaded; two room instances may be active.", this);
+            }
+
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+        finally
+        {
+            // Final synchronous cleanup path. Every step is best-effort and
+            // independent so the transition lock is always released.
+            if (snapshot != null && snapshot.Player != null &&
+                !snapshot.HadTransitionControlRequest)
+            {
+                try
+                {
+                    snapshot.Player.RemoveControlRequest(Player.ControlReason.Transition);
+                }
+                catch (Exception exception)
+                {
+                    Debug.LogError(
+                        $"[GameSceneManager] Connected transition {(committed ? "post-commit" : "pre-commit")} " +
+                        $"cleanup could not restore player control: {exception.Message}", this);
+                }
+            }
+
+            if (snapshot != null && snapshot.PlayerRigidbody != null)
+            {
+                try
+                {
+                    if (snapshot.PlayerRigidbody.bodyType == RigidbodyType2D.Kinematic &&
+                        snapshot.RigidbodyBodyType != RigidbodyType2D.Kinematic)
+                    {
+                        snapshot.PlayerRigidbody.bodyType = snapshot.RigidbodyBodyType;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Debug.LogError(
+                        $"[GameSceneManager] Connected transition {(committed ? "post-commit" : "pre-commit")} " +
+                        $"cleanup could not restore the player body type: {exception.Message}", this);
+                }
+            }
+
+            try
+            {
+                Time.timeScale = snapshot != null ? snapshot.TimeScale : originalTimeScale;
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError(
+                    $"[GameSceneManager] Connected transition {(committed ? "post-commit" : "pre-commit")} " +
+                    $"cleanup could not restore Time.timeScale: {exception.Message}", this);
+            }
+
+            _isTransitioning = false;
+        }
+    }
+
+    private static void InjectConnectedTransitionFault(string stage)
+    {
+        Action<string> injector = _connectedTransitionFaultInjector;
+        if (injector != null)
+            injector(stage);
+    }
+
+    /// <summary>
+    /// Starts the source unload after commit. A null operation is reported as a
+    /// failure; an operation that has started is awaited by the caller so that
+    /// a post-start failure can be detected by checking the scene afterwards.
+    /// </summary>
+    private void PostCommitSourceUnload(
+        Scene sourceScene,
+        out bool failed,
+        out string error,
+        out AsyncOperation operation)
+    {
+        failed = false;
+        error = null;
+        operation = null;
+
+        try
+        {
+            InjectConnectedTransitionFault("post-commit-source-unload");
+            operation = SceneManager.UnloadSceneAsync(sourceScene);
         }
         catch (Exception exception)
         {
-            failureReason = exception.Message;
+            failed = true;
+            error =
+                "[GameSceneManager] Connected transition committed, but source unload failed: " +
+                exception.Message;
+            return;
         }
 
-        if (failureReason != null)
+        if (operation == null)
         {
-            yield return StartCoroutine(RollbackConnectedTransition(
-                snapshot, destinationScene, playerRelocated, failedStage, failureReason));
-            yield break;
+            failed = true;
+            error =
+                "[GameSceneManager] Connected transition committed, but source scene " +
+                $"'{sourceScene.path}' could not be unloaded.";
         }
-
-        failedStage = "destination activation and camera setup";
-        try
-        {
-            if (!SceneManager.SetActiveScene(destinationScene))
-            {
-                failureReason = $"Unity refused to make destination scene '{destinationScene.path}' active.";
-            }
-            else if (!TrySetConnectedCameraBounds(destinationScene, out failureReason))
-            {
-                // Keep the source room and restore the prior camera state.
-            }
-            else
-            {
-                PositionCameraAtPlayer();
-            }
-        }
-        catch (Exception exception)
-        {
-            failureReason = exception.Message;
-        }
-
-        if (failureReason != null)
-        {
-            yield return StartCoroutine(RollbackConnectedTransition(
-                snapshot, destinationScene, playerRelocated, failedStage, failureReason));
-            yield break;
-        }
-
-        // Commit only after the destination is loaded, validated, occupied,
-        // active, and its camera bounds are assigned.
-        _currentRoomScene = destinationScene.name;
-        _currentRoomDefinition = resolution.DestinationRoom;
-
-        AsyncOperation unloadOperation = null;
-        try
-        {
-            unloadOperation = SceneManager.UnloadSceneAsync(sourceScene);
-        }
-        catch (Exception exception)
-        {
-            Debug.LogError($"[GameSceneManager] Connected transition committed, but source unload failed: {exception.Message}", this);
-        }
-
-        if (unloadOperation != null)
-        {
-            while (!unloadOperation.isDone)
-                yield return null;
-        }
-        else if (sourceScene.IsValid() && sourceScene.isLoaded)
-        {
-            Debug.LogError($"[GameSceneManager] Connected transition committed, but source scene '{sourceScene.path}' could not be unloaded.", this);
-        }
-
-        yield return StartCoroutine(FadeFromBlack());
-        SetConnectedPlayerControl(snapshot, true);
-        Time.timeScale = snapshot.TimeScale;
-        yield return new WaitForSecondsRealtime(0.1f);
-        _isTransitioning = false;
     }
 
     private bool IsCurrentSourceRoom(Scene sourceScene, RoomConnectionResolutionResult resolution)
@@ -568,70 +963,335 @@ public class GameSceneManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Restores the source room as far as possible. Every step is independently
+    /// guarded: one failed restoration is logged with its step name and never
+    /// prevents the remaining cleanup from running. The original failure was
+    /// already logged by the caller and remains the primary diagnostic.
+    /// </summary>
     private IEnumerator RollbackConnectedTransition(
         ConnectedTransitionSnapshot snapshot,
         Scene destinationScene,
-        bool playerRelocated,
+        string destinationScenePath,
+        bool destinationLoadStarted,
         string failedStage,
         string failureReason)
     {
         Debug.LogError($"[GameSceneManager] Connected transition rolled back at {failedStage}: {failureReason}", this);
 
-        _currentRoomScene = snapshot.CurrentRoomScene;
-        _currentRoomDefinition = snapshot.CurrentRoomDefinition;
-        _targetDoorID = snapshot.TargetDoorId;
+        // A freeze/control setup failure can reach rollback before the
+        // transition has paused the simulation. Pause immediately so physics
+        // cannot continue changing the captured player state while cleanup
+        // awaits scene unloads and fade restoration.
+        Time.timeScale = 0f;
 
-        if (playerRelocated && playerTransform != null)
-        {
-            playerTransform.SetPositionAndRotation(snapshot.PlayerPosition, snapshot.PlayerRotation);
-            for (int i = 0; i < snapshot.PlayerColliders.Length; i++)
+        TryRunRollbackStep(
+            "room identity restoration",
+            "rollback-room-identity",
+            () =>
             {
-                if (snapshot.PlayerColliders[i] != null)
-                    snapshot.PlayerColliders[i].enabled = snapshot.PlayerColliderEnabled[i];
+                _currentRoomScene = snapshot.CurrentRoomScene;
+                _currentRoomDefinition = snapshot.CurrentRoomDefinition;
+                _targetDoorID = snapshot.TargetDoorId;
+            });
+
+        if (playerTransform != null)
+        {
+            TryRunRollbackStep(
+                "player transform restoration",
+                "rollback-player-transform",
+                () => playerTransform.SetPositionAndRotation(
+                    snapshot.PlayerPosition,
+                    snapshot.PlayerRotation));
+
+            TryRunRollbackStep(
+                "collider restoration",
+                "rollback-collider",
+                () =>
+                {
+                    if (snapshot.PlayerColliders == null || snapshot.PlayerColliderEnabled == null)
+                        return;
+
+                    for (int i = 0; i < snapshot.PlayerColliders.Length; i++)
+                    {
+                        if (snapshot.PlayerColliders[i] != null)
+                        {
+                            snapshot.PlayerColliders[i].enabled =
+                                snapshot.PlayerColliderEnabled[i];
+                        }
+                    }
+                });
+        }
+
+        TryRunRollbackStep(
+            "rigidbody restoration",
+            "rollback-rigidbody",
+            () => RestoreRigidbodySnapshot(snapshot));
+
+        TryRunRollbackStep(
+            "physics synchronization",
+            "rollback-physics-sync",
+            () => Physics2D.SyncTransforms());
+
+        TryRunRollbackStep(
+            "active scene restoration",
+            "rollback-active-scene",
+            () =>
+            {
+                if (snapshot.PreviousActiveScene.IsValid() &&
+                    snapshot.PreviousActiveScene.isLoaded &&
+                    SceneManager.GetActiveScene() != snapshot.PreviousActiveScene &&
+                    !SceneManager.SetActiveScene(snapshot.PreviousActiveScene))
+                {
+                    throw new InvalidOperationException(
+                        "Unity refused to restore the previous active scene.");
+                }
+            });
+
+        TryRunRollbackStep(
+            "camera bounds restoration",
+            "rollback-camera",
+            () => RestoreCameraBoundsSnapshot(snapshot));
+
+        TryRunRollbackStep(
+            "camera transform restoration",
+            "rollback-camera-transform",
+            () => RestoreCameraTransformSnapshot(snapshot));
+
+        if (destinationLoadStarted)
+        {
+            yield return StartCoroutine(UnloadDestinationScenesForRollback(
+                destinationScene,
+                destinationScenePath,
+                snapshot.SourceScene));
+        }
+
+        TransitionStepResult fadeResult = new TransitionStepResult();
+        yield return StartCoroutine(FadeToAlphaGuarded(
+            snapshot.FadeAlpha, "rollback-fade", fadeResult));
+        if (fadeResult.Failed)
+        {
+            Debug.LogError(
+                "[GameSceneManager] Rollback step failed (fade state restoration): " +
+                fadeResult.Error, this);
+        }
+
+        TryRunRollbackStep(
+            "player control restoration",
+            "rollback-control",
+            () =>
+            {
+                if (snapshot.Player != null && !snapshot.HadTransitionControlRequest)
+                    snapshot.Player.RemoveControlRequest(Player.ControlReason.Transition);
+            });
+
+        TryRunRollbackStep(
+            "time scale restoration",
+            "rollback-timescale",
+            () => Time.timeScale = snapshot.TimeScale);
+
+        TryRunRollbackStep(
+            "transition lock release",
+            "rollback-transition-lock",
+            () => _isTransitioning = false);
+    }
+
+    private bool TryRunRollbackStep(
+        string stepName,
+        string faultStage,
+        Action step)
+    {
+        try
+        {
+            InjectConnectedTransitionFault(faultStage);
+            step();
+            return true;
+        }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                $"[GameSceneManager] Rollback step failed ({stepName}): {exception.Message}",
+                this);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Unloads only loaded scenes that match the exact destination path (or the
+    /// specific scene handle obtained for this transition). The source scene is
+    /// never unloaded. Multiple destination instances are all cleaned up.
+    /// </summary>
+    private IEnumerator UnloadDestinationScenesForRollback(
+        Scene destinationScene,
+        string destinationScenePath,
+        Scene sourceScene)
+    {
+        List<Scene> scenes = new List<Scene>();
+        bool collectionFailed = false;
+        try
+        {
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Scene candidate = SceneManager.GetSceneAt(i);
+                if (!candidate.IsValid() || !candidate.isLoaded)
+                    continue;
+
+                if (sourceScene.IsValid() && candidate.handle == sourceScene.handle)
+                    continue;
+
+                bool exactPathMatch = !string.IsNullOrEmpty(destinationScenePath) &&
+                    string.Equals(
+                        candidate.path,
+                        destinationScenePath,
+                        StringComparison.Ordinal);
+                bool primaryHandleMatch = destinationScene.IsValid() &&
+                    candidate.handle == destinationScene.handle;
+
+                if (exactPathMatch || primaryHandleMatch)
+                    scenes.Add(candidate);
             }
-            RestoreRigidbodySnapshot(snapshot);
-            Physics2D.SyncTransforms();
+        }
+        catch (Exception exception)
+        {
+            collectionFailed = true;
+            Debug.LogError(
+                "[GameSceneManager] Rollback step failed (destination scene cleanup): " +
+                $"could not enumerate loaded scenes: {exception.Message}", this);
         }
 
-        if (snapshot.PreviousActiveScene.IsValid() && snapshot.PreviousActiveScene.isLoaded &&
-            SceneManager.GetActiveScene() != snapshot.PreviousActiveScene)
-        {
-            SceneManager.SetActiveScene(snapshot.PreviousActiveScene);
-        }
+        if (collectionFailed)
+            yield break;
 
-        RestoreCameraSnapshot(snapshot);
-
-        if (destinationScene.IsValid() && destinationScene.isLoaded && destinationScene != snapshot.SourceScene)
+        for (int i = 0; i < scenes.Count; i++)
         {
+            Scene scene = scenes[i];
             AsyncOperation unloadOperation = null;
             try
             {
-                unloadOperation = SceneManager.UnloadSceneAsync(destinationScene);
+                InjectConnectedTransitionFault("rollback-destination-unload");
+                unloadOperation = SceneManager.UnloadSceneAsync(scene);
             }
             catch (Exception exception)
             {
-                Debug.LogError($"[GameSceneManager] Rollback could not unload destination scene '{destinationScene.path}': {exception.Message}", this);
+                Debug.LogError(
+                    "[GameSceneManager] Rollback step failed (destination scene cleanup of " +
+                    $"'{scene.path}'): {exception.Message}", this);
+                continue;
             }
 
-            if (unloadOperation != null)
+            if (unloadOperation == null)
             {
-                while (!unloadOperation.isDone)
-                    yield return null;
+                Debug.LogError(
+                    "[GameSceneManager] Rollback step failed (destination scene cleanup of " +
+                    $"'{scene.path}'): Unity returned no unload operation.", this);
+                continue;
             }
-            if (destinationScene.IsValid() && destinationScene.isLoaded)
+
+            bool waitFailed = false;
+            while (true)
             {
-                Debug.LogError($"[GameSceneManager] Rollback destination scene '{destinationScene.path}' remained loaded.", this);
+                bool isDone = false;
+                try
+                {
+                    isDone = unloadOperation.isDone;
+                }
+                catch (Exception exception)
+                {
+                    waitFailed = true;
+                    Debug.LogError(
+                        "[GameSceneManager] Rollback step failed (destination scene cleanup of " +
+                        $"'{scene.path}'): the unload operation failed while being awaited: " +
+                        exception.Message, this);
+                }
+
+                if (waitFailed || isDone)
+                    break;
+
+                yield return null;
+            }
+
+            if (scene.IsValid() && scene.isLoaded)
+            {
+                Debug.LogError(
+                    "[GameSceneManager] Rollback step failed (destination scene cleanup of " +
+                    $"'{scene.path}'): the scene remained loaded.", this);
             }
         }
+    }
 
-        if (!playerRelocated)
-            RestoreRigidbodySnapshot(snapshot);
+    private IEnumerator FadeToAlphaGuarded(
+        float targetAlpha,
+        string faultStage,
+        TransitionStepResult result,
+        float durationOverride = -1f)
+    {
+        result.Reset();
 
-        yield return StartCoroutine(FadeToAlpha(snapshot.FadeAlpha));
-        if (snapshot.Player != null && !snapshot.HadTransitionControlRequest)
-            snapshot.Player.RemoveControlRequest(Player.ControlReason.Transition);
-        Time.timeScale = snapshot.TimeScale;
-        _isTransitioning = false;
+        CanvasGroup group = null;
+        float startAlpha = 0f;
+        float duration = 0f;
+        bool skip = false;
+        bool failed = false;
+
+        try
+        {
+            InjectConnectedTransitionFault(faultStage);
+            group = transitionCanvasGroup;
+            if (group == null)
+            {
+                skip = true;
+            }
+            else
+            {
+                startAlpha = group.alpha;
+                duration = durationOverride >= 0f
+                    ? durationOverride
+                    : (targetAlpha > startAlpha ? fadeOutDuration : fadeInDuration);
+                if (duration <= 0f)
+                {
+                    group.alpha = targetAlpha;
+                    skip = true;
+                }
+            }
+        }
+        catch (Exception exception)
+        {
+            result.Fail(exception);
+            failed = true;
+        }
+
+        if (failed || skip)
+            yield break;
+
+        float time = 0f;
+        while (time < duration)
+        {
+            bool frameFailed = false;
+            try
+            {
+                time += Mathf.Min(Time.unscaledDeltaTime, MAX_DELTA_TIME);
+                group.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
+            }
+            catch (Exception exception)
+            {
+                result.Fail(exception);
+                frameFailed = true;
+            }
+
+            if (frameFailed)
+                yield break;
+
+            yield return null;
+        }
+
+        try
+        {
+            group.alpha = targetAlpha;
+        }
+        catch (Exception exception)
+        {
+            result.Fail(exception);
+        }
     }
 
     private static void RestoreRigidbodySnapshot(ConnectedTransitionSnapshot snapshot)
@@ -647,20 +1307,28 @@ public class GameSceneManager : MonoBehaviour
         rb.angularVelocity = snapshot.RigidbodyAngularVelocity;
     }
 
-    private void RestoreCameraSnapshot(ConnectedTransitionSnapshot snapshot)
+    private void RestoreCameraBoundsSnapshot(ConnectedTransitionSnapshot snapshot)
     {
         if (cameraConfiner == null)
             return;
 
         cameraConfiner.BoundingShape2D = snapshot.PreviousCameraBounds;
-        if (snapshot.CameraTransform != null)
-        {
-            snapshot.CameraTransform.SetPositionAndRotation(snapshot.CameraPosition, snapshot.CameraRotation);
-            CinemachineCamera camera = snapshot.CameraTransform.GetComponent<CinemachineCamera>();
-            if (camera != null)
-                camera.ForceCameraPosition(snapshot.CameraPosition, snapshot.CameraRotation);
-        }
         cameraConfiner.InvalidateBoundingShapeCache();
+    }
+
+    private void RestoreCameraTransformSnapshot(ConnectedTransitionSnapshot snapshot)
+    {
+        if (snapshot.CameraTransform == null)
+            return;
+
+        snapshot.CameraTransform.SetPositionAndRotation(
+            snapshot.CameraPosition,
+            snapshot.CameraRotation);
+        CinemachineCamera camera = snapshot.CameraTransform.GetComponent<CinemachineCamera>();
+        if (camera != null)
+            camera.ForceCameraPosition(snapshot.CameraPosition, snapshot.CameraRotation);
+        if (cameraConfiner != null)
+            cameraConfiner.InvalidateBoundingShapeCache();
     }
 
     private IEnumerator FadeToAlpha(float targetAlpha)

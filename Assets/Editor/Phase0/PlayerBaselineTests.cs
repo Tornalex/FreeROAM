@@ -18,6 +18,7 @@ namespace ProjectSpear.Phase0
         private const string PogoPath = "Assets/Data/Player Data/Player Pogo Data.asset";
         private const string RopePath = "Assets/Data/Player Data/Player Rope Data.asset";
         private const string EssencePath = "Assets/Data/Player Data/Player Essence Data.asset";
+        private const string HealPath = "Assets/Data/Player Data/Player Heal Data.asset";
         private const string PlayerPrefabPath = "Assets/Prefabs/Utilities/Player.prefab";
 
         [Test]
@@ -164,8 +165,6 @@ namespace ProjectSpear.Phase0
 
             BaselineTestSupport.AssertClose(100f, data.maxEssence, "maxEssence");
             BaselineTestSupport.AssertClose(10f, data.essencePerBaseCatch, "essencePerBaseCatch");
-            BaselineTestSupport.AssertClose(50f, data.essenceCostPerHeal, "essenceCostPerHeal");
-            Assert.That(data.healthPerHeal, Is.EqualTo(2), "healthPerHeal");
             BaselineTestSupport.AssertClose(
                 40f,
                 data.essencePerPerfectCatch,
@@ -173,7 +172,20 @@ namespace ProjectSpear.Phase0
         }
 
         [Test]
-        public void PlayerPrefabReferencesTheSixCapturedDataAssets()
+        public void PlayerHealDataMatchesCapturedBaseline()
+        {
+            PlayerHealData data = BaselineTestSupport.LoadAsset<PlayerHealData>(HealPath);
+
+            BaselineTestSupport.AssertClose(1f, data.healDuration, "healDuration");
+            Assert.That(data.healthPerHeal, Is.EqualTo(2), "healthPerHeal");
+            BaselineTestSupport.AssertClose(
+                50f,
+                data.essenceCostPerHeal,
+                "essenceCostPerHeal");
+        }
+
+        [Test]
+        public void PlayerPrefabReferencesTheCapturedDataAssets()
         {
             Player player = BaselineTestSupport.PrefabComponent<Player>(PlayerPrefabPath);
 
@@ -189,6 +201,10 @@ namespace ProjectSpear.Phase0
                 player,
                 "essenceStats",
                 BaselineTestSupport.LoadAsset<PlayerEssenceData>(EssencePath));
+            BaselineTestSupport.AssertReference(
+                player,
+                "healStats",
+                BaselineTestSupport.LoadAsset<PlayerHealData>(HealPath));
             BaselineTestSupport.AssertReference(
                 player,
                 "dashStats",

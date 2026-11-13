@@ -31,6 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
     private Player _player;
 
     private int _suppressInteractFrames;
+    private bool _suppressHeldMovementUntilReleased;
 
     void Awake()
     {
@@ -201,6 +202,61 @@ public class PlayerInputHandler : MonoBehaviour
             CancelTriggered =
                 _actions.UI.Cancel.WasPerformedThisFrame();
         }
+
+        ApplyHealingActionLock();
+    }
+
+    private void ApplyHealingActionLock()
+    {
+        if (_player == null)
+            return;
+
+        if (_player.IsHealing)
+        {
+            // Healing has priority over every gameplay input.
+            _suppressHeldMovementUntilReleased = true;
+            ClearGameplayInput();
+            return;
+        }
+
+        if (!_suppressHeldMovementUntilReleased)
+            return;
+
+        if (IsVerticalMovementNeutral())
+        {
+            _suppressHeldMovementUntilReleased = false;
+            return;
+        }
+
+        // A vertical direction or the plunge button held during healing must
+        // not immediately start a rope climb or a pogo plunge. Horizontal
+        // movement and new action presses resume normally.
+        MoveInput = new Vector2(MoveInput.x, 0f);
+        DownTriggered = false;
+    }
+
+    private void ClearGameplayInput()
+    {
+        MoveInput = Vector2.zero;
+
+        InteractTriggered = false;
+        JumpTriggered = false;
+        HealTriggered = false;
+        DashTriggered = false;
+        FireTriggered = false;
+        RecallTriggered = false;
+        DownTriggered = false;
+        MouseFirePressed = false;
+        MouseFireHeld = false;
+        MouseFireReleased = false;
+    }
+
+    private bool IsVerticalMovementNeutral()
+    {
+        Vector2 move = _actions.Player.Move.ReadValue<Vector2>();
+
+        return Mathf.Abs(move.y) <= _player.PlayerStats.moveInputThreshold &&
+               !_actions.Player.Down.IsPressed();
     }
 
     public void SwitchToUI()
@@ -230,6 +286,14 @@ public class PlayerInputHandler : MonoBehaviour
         _actions.Player.Dash.IsPressed();
     public bool IsFireHeld() =>
     _actions.Player.Fire.IsPressed();
+
+    public bool IsHealHeld() =>
+        _actions.Player.Heal.IsPressed();
+
+    public void SuppressHeldMovementUntilReleased()
+    {
+        _suppressHeldMovementUntilReleased = true;
+    }
 
     private void UpdateMouseFireState()
     {

@@ -42,6 +42,10 @@ public partial class Spear : MonoBehaviour
     private int _impactDamage;
     private int _recallDamage;
 
+    // Spear travel direction captured immediately before the impact. The
+    // Essence spray erupts opposite to this direction.
+    private Vector2 _confirmedHitTravelDirection = Vector2.right;
+
     private List<IDamageable> _enemiesHitDuringReturn =
         new List<IDamageable>();
 
@@ -86,7 +90,8 @@ private void ProcessHit(
     Collider2D other,
     Vector2 hitPoint,
     Vector2 normal,
-    bool hasValidSurfaceNormal = true)
+    bool hasValidSurfaceNormal = true,
+    Vector2 travelDirection = default)
 {
     if (other == null)
         return;
@@ -140,6 +145,9 @@ private void ProcessHit(
 
     if (classification.Type == HitClassificationType.Damage)
     {
+        _confirmedHitTravelDirection =
+            ResolveTravelDirection(travelDirection, normal);
+
         if (!ProcessDamageableHit(damageable, hitPoint))
             return;
 
@@ -387,7 +395,10 @@ private void ProcessHit(
             );
 
             if (recallDamageApplied)
+            {
                 HasHitEnemy = true;
+                NotifyConfirmedSpearDamage(hitPoint);
+            }
 
             return false;
         }
@@ -404,9 +415,62 @@ private void ProcessHit(
         );
 
         if (impactDamageApplied)
+        {
             HasHitEnemy = true;
+            NotifyConfirmedSpearDamage(hitPoint);
+        }
 
         return true;
+    }
+
+    /// <summary>
+    /// Dispatches feedback for damage the target actually accepted. Hit stop
+    /// and the Essence spray are independent: either system can be absent or
+    /// fail without preventing the other from running.
+    /// </summary>
+    private void NotifyConfirmedSpearDamage(Vector2 hitPoint)
+    {
+        try
+        {
+            HitStopManager.Instance?.RequestHitStop();
+        }
+        catch (System.Exception exception)
+        {
+            Debug.LogException(exception);
+        }
+
+        try
+        {
+            EssenceExtractionVFXManager.Instance?.Play(
+                hitPoint,
+                _confirmedHitTravelDirection);
+        }
+        catch (System.Exception exception)
+        {
+            Debug.LogException(exception);
+        }
+    }
+
+    /// <summary>
+    /// Resolves the spear's pre-impact travel direction. The caller supplies
+    /// the velocity/direction captured before the collision; the cached
+    /// last-step velocity and the inverted surface normal are fallbacks for
+    /// callbacks without an explicit direction.
+    /// </summary>
+    private Vector2 ResolveTravelDirection(
+        Vector2 travelDirection,
+        Vector2 surfaceNormal)
+    {
+        if (travelDirection.sqrMagnitude > 0.0001f)
+            return travelDirection.normalized;
+
+        if (_lastVelocity.sqrMagnitude > 0.0001f)
+            return _lastVelocity.normalized;
+
+        if (surfaceNormal.sqrMagnitude > 0.0001f)
+            return -surfaceNormal.normalized;
+
+        return (Vector2)transform.right;
     }
 
     private void BounceOffEnemy()

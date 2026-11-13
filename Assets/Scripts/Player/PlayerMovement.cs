@@ -106,11 +106,11 @@ public class PlayerMovement : MonoBehaviour
         // ---------------------------------------------------------
         // NORMAL MOVEMENT
         // ---------------------------------------------------------
-        if (!_player.HasControl || _player.Dash.IsDashing)
+        if (!_player.CanAct || _player.Dash.IsDashing)
         {
             _player.Animator.SetFloat("Speed", 0f);
 
-            if (!_player.HasControl)
+            if (!_player.CanAct)
             {
                 _player.Rb.linearVelocity =
                     new Vector2(

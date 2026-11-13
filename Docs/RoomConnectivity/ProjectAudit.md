@@ -59,7 +59,7 @@ File: `Assets/Scripts/SceneManagement/GameSceneManager.cs`
 
 ## 2. How Master is kept persistent
 
-- `Assets/Scenes/Master.unity` is an enabled Build Settings scene and is the intended startup scene. In the current enabled build list it is the first enabled scene (the only scene before it is disabled `SampleScene`).
+- `Assets/Scenes/Master.unity` is an enabled Build Settings scene and is the intended startup scene. It is the first enabled scene in the current build list.
 - Rooms are loaded additively; `GameSceneManager` only unloads `_currentRoomScene`. Master is never unloaded in the current flow, so everything authored in Master stays alive for the whole session.
 - Master contains the player prefab instance (source prefab `Assets/Prefabs/Utilities/Player.prefab`, GUID `7a951fb9d51b6314db5ebd114d340b49`), camera rig, HUD, textbox, game-over screen, transition canvas and the manager objects:
   - `GameSceneManager` (GUID `657090c6114ed3441994765402473a49`)

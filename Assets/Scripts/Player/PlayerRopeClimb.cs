@@ -96,7 +96,7 @@ public class PlayerRopeClimb : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         if (IsClimbing) return;
-        if (!_player.HasControl) return;
+        if (!_player.CanAct) return;
 
         Rope rope = other.GetComponent<Rope>();
         if (rope == null) return;

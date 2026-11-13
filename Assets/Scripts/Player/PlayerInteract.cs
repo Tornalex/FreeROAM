@@ -53,7 +53,7 @@ public class PlayerInteract : MonoBehaviour
             _interactPromptRoot.transform.position = _mainCamera.WorldToScreenPoint(worldPos);
         }
 
-        if (_player.HasControl &&
+        if (_player.CanAct &&
             !dialogueRunning &&
             _player.Input.InteractTriggered &&
             _interactablesInRange.Count > 0)

@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="158" result="Failed(Child)" total="158" passed="148" failed="10" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="1,1766994">
+  <test-suite type="TestSuite" id="1201" name="Spear Wander" fullname="Spear Wander" runstate="Runnable" testcasecount="158" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="1.176699" total="158" passed="148" failed="10" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1182" name="Assembly-CSharp-Editor.dll" fullname="C:/Users/Ale/Documents/Project Spear/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="158" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="1.171247" total="158" passed="148" failed="10" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="11532" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="BaseEnemyRoomTrackingTests" fullname="BaseEnemyRoomTrackingTests" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.110804" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1006" name="EmptyStableIdentityIsNeverTreatedAsDead" fullname="BaseEnemyRoomTrackingTests.EmptyStableIdentityIsNeverTreatedAsDead" methodname="EmptyStableIdentityIsNeverTreatedAsDead" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" seed="1082564323" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.025834" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1005" name="ReportDeathUsesCachedKeyNotMutableRoomName" fullname="BaseEnemyRoomTrackingTests.ReportDeathUsesCachedKeyNotMutableRoomName" methodname="ReportDeathUsesCachedKeyNotMutableRoomName" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" seed="781750175" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.005030" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1002" name="StartUsesDestinationRoomIdWhileManagerReportsSource" fullname="BaseEnemyRoomTrackingTests.StartUsesDestinationRoomIdWhileManagerReportsSource" methodname="StartUsesDestinationRoomIdWhileManagerReportsSource" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" seed="1662629131" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.060330" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="StartUsesSceneNameForUnregisteredScene" fullname="BaseEnemyRoomTrackingTests.StartUsesSceneNameForUnregisteredScene" methodname="StartUsesSceneNameForUnregisteredScene" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" seed="492102505" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004954" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="StartUsesUnknownWhenManagerIsUnavailable" fullname="BaseEnemyRoomTrackingTests.StartUsesUnknownWhenManagerIsUnavailable" methodname="StartUsesUnknownWhenManagerIsUnavailable" classname="BaseEnemyRoomTrackingTests" runstate="Runnable" seed="1827387354" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004440" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1007" name="DeadEnemyTrackerTests" fullname="DeadEnemyTrackerTests" classname="DeadEnemyTrackerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004917" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1012" name="ClearAllClearsEveryRoomKey" fullname="DeadEnemyTrackerTests.ClearAllClearsEveryRoomKey" methodname="ClearAllClearsEveryRoomKey" classname="DeadEnemyTrackerTests" runstate="Runnable" seed="1618449861" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000369" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1011" name="ClearRoomOnlyAffectsSpecifiedKey" fullname="DeadEnemyTrackerTests.ClearRoomOnlyAffectsSpecifiedKey" methodname="ClearRoomOnlyAffectsSpecifiedKey" classname="DeadEnemyTrackerTests" runstate="Runnable" seed="60013242" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000153" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1008" name="MarkDeadMakesIsDeadTrueForSameRoomAndIdentity" fullname="DeadEnemyTrackerTests.MarkDeadMakesIsDeadTrueForSameRoomAndIdentity" methodname="MarkDeadMakesIsDeadTrueForSameRoomAndIdentity" classname="DeadEnemyTrackerTests" runstate="Runnable" seed="1694465415" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000072" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1010" name="RepeatedMarkDeadIsIdempotent" fullname="DeadEnemyTrackerTests.RepeatedMarkDeadIsIdempotent" methodname="RepeatedMarkDeadIsIdempotent" classname="DeadEnemyTrackerTests" runstate="Runnable" seed="1240272816" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000070" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1009" name="SameIdentityInDifferentRoomIsNotDead" fullname="DeadEnemyTrackerTests.SameIdentityInDifferentRoomIsNotDead" methodname="SameIdentityInDifferentRoomIsNotDead" classname="DeadEnemyTrackerTests" runstate="Runnable" seed="1385004390" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000099" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1013" name="EnemyRoomTrackingKeyTests" fullname="EnemyRoomTrackingKeyTests" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.027342" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1017" name="EmptyScenePathUsesSceneName" fullname="EnemyRoomTrackingKeyTests.EmptyScenePathUsesSceneName" methodname="EmptyScenePathUsesSceneName" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="546180927" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000935" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1019" name="InvalidCatalogFallsBackToSceneNameAndReportsDiagnostic" fullname="EnemyRoomTrackingKeyTests.InvalidCatalogFallsBackToSceneNameAndReportsDiagnostic" methodname="InvalidCatalogFallsBackToSceneNameAndReportsDiagnostic" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="135398894" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.002018" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[[EnemyRoomTrackingKey] Could not resolve room identity for 'Assets/TestRooms/InvalidCatalog.unity' (CatalogInvalid); falling back to the legacy scene-name key. RuntimeRoomCatalog 'Transient Invalid Enemy Tracking Catalog' is invalid: The catalog has no entries.
+]]></output>
+        </test-case>
+        <test-case id="1029" name="ManagerUnavailableFallbackUsesUnknown" fullname="EnemyRoomTrackingKeyTests.ManagerUnavailableFallbackUsesUnknown" methodname="ManagerUnavailableFallbackUsesUnknown" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1996727475" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000078" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1018" name="MissingCatalogFallsBackToSceneNameAndReportsDiagnostic" fullname="EnemyRoomTrackingKeyTests.MissingCatalogFallsBackToSceneNameAndReportsDiagnostic" methodname="MissingCatalogFallsBackToSceneNameAndReportsDiagnostic" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1724789689" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000434" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[[EnemyRoomTrackingKey] Could not resolve room identity for 'Assets/TestRooms/MissingCatalog.unity' (CatalogMissing); falling back to the legacy scene-name key. RuntimeRoomCatalog is missing; the room identity cannot be resolved.
+]]></output>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1028" name="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" fullname="EnemyRoomTrackingKeyTests.PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001375" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1024" name="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;Master&quot;)" fullname="EnemyRoomTrackingKeyTests.PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;Master&quot;)" methodname="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="189084956" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000146" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1025" name="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;DontDestroyOnLoad&quot;)" fullname="EnemyRoomTrackingKeyTests.PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;DontDestroyOnLoad&quot;)" methodname="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1322084813" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000025" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1026" name="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;&quot;)" fullname="EnemyRoomTrackingKeyTests.PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(&quot;&quot;)" methodname="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="382112631" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000019" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1027" name="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(null)" fullname="EnemyRoomTrackingKeyTests.PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath(null)" methodname="PersistentOrUnnamedScenesKeepLegacyFallbackEvenWithRegisteredPath" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="733882279" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000017" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1023" name="PersistentScenesUseCurrentRoomFallback" fullname="EnemyRoomTrackingKeyTests.PersistentScenesUseCurrentRoomFallback" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.018296" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1021" name="PersistentScenesUseCurrentRoomFallback(&quot;Master&quot;)" fullname="EnemyRoomTrackingKeyTests.PersistentScenesUseCurrentRoomFallback(&quot;Master&quot;)" methodname="PersistentScenesUseCurrentRoomFallback" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1952922903" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000202" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1022" name="PersistentScenesUseCurrentRoomFallback(&quot;DontDestroyOnLoad&quot;)" fullname="EnemyRoomTrackingKeyTests.PersistentScenesUseCurrentRoomFallback(&quot;DontDestroyOnLoad&quot;)" methodname="PersistentScenesUseCurrentRoomFallback" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1023710008" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000032" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1014" name="RegisteredScenePathUsesRoomId" fullname="EnemyRoomTrackingKeyTests.RegisteredScenePathUsesRoomId" methodname="RegisteredScenePathUsesRoomId" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="372695035" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000259" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1015" name="RegisteredSceneUsesRoomIdEvenWithoutManager" fullname="EnemyRoomTrackingKeyTests.RegisteredSceneUsesRoomIdEvenWithoutManager" methodname="RegisteredSceneUsesRoomIdEvenWithoutManager" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="373093597" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000143" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1020" name="UnavailableCatalogFallsBackToSceneNameAndReportsDiagnostic" fullname="EnemyRoomTrackingKeyTests.UnavailableCatalogFallsBackToSceneNameAndReportsDiagnostic" methodname="UnavailableCatalogFallsBackToSceneNameAndReportsDiagnostic" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="1179543853" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000508" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[[EnemyRoomTrackingKey] Could not resolve room identity for 'Assets/TestRooms/UnavailableCatalog.unity' (CatalogUnavailable); falling back to the legacy scene-name key. The catalog could not be loaded.
+]]></output>
+        </test-case>
+        <test-case id="1016" name="UnknownScenePathUsesSceneName" fullname="EnemyRoomTrackingKeyTests.UnknownScenePathUsesSceneName" methodname="UnknownScenePathUsesSceneName" classname="EnemyRoomTrackingKeyTests" runstate="Runnable" seed="722780561" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000167" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1030" name="GameSceneManagerConnectionResolutionTests" fullname="GameSceneManagerConnectionResolutionTests" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.165401" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1035" name="AssignedConnectionAlwaysSelectsConnectedRouteAndUnconnectedDoorSelectsLegacyRoute" fullname="GameSceneManagerConnectionResolutionTests.AssignedConnectionAlwaysSelectsConnectedRouteAndUnconnectedDoorSelectsLegacyRoute" methodname="AssignedConnectionAlwaysSelectsConnectedRouteAndUnconnectedDoorSelectsLegacyRoute" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="1760029212" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004057" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1037" name="DestinationValidationAllowsCommitOnlyForUniqueBacklinkedDoorWithSpawnPoint" fullname="GameSceneManagerConnectionResolutionTests.DestinationValidationAllowsCommitOnlyForUniqueBacklinkedDoorWithSpawnPoint" methodname="DestinationValidationAllowsCommitOnlyForUniqueBacklinkedDoorWithSpawnPoint" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="743853948" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.019820" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1041" name="DestinationValidationRejectsBacklinkMismatch" fullname="GameSceneManagerConnectionResolutionTests.DestinationValidationRejectsBacklinkMismatch" methodname="DestinationValidationRejectsBacklinkMismatch" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="1538950464" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.016199" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1039" name="DestinationValidationRejectsDuplicateDestinationDoorIds" fullname="GameSceneManagerConnectionResolutionTests.DestinationValidationRejectsDuplicateDestinationDoorIds" methodname="DestinationValidationRejectsDuplicateDestinationDoorIds" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="322125507" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.016189" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1038" name="DestinationValidationRejectsMissingDestinationDoor" fullname="GameSceneManagerConnectionResolutionTests.DestinationValidationRejectsMissingDestinationDoor" methodname="DestinationValidationRejectsMissingDestinationDoor" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="475558206" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.016102" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1040" name="DestinationValidationRejectsMissingSpawnPoint" fullname="GameSceneManagerConnectionResolutionTests.DestinationValidationRejectsMissingSpawnPoint" methodname="DestinationValidationRejectsMissingSpawnPoint" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="790430531" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.017502" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1033" name="ManagerClassifiesInitialSpawnAsMissingConnection" fullname="GameSceneManagerConnectionResolutionTests.ManagerClassifiesInitialSpawnAsMissingConnection" methodname="ManagerClassifiesInitialSpawnAsMissingConnection" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="469429022" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.018132" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1036" name="ManagerReportsMissingOrInvalidCatalogExplicitly" fullname="GameSceneManagerConnectionResolutionTests.ManagerReportsMissingOrInvalidCatalogExplicitly" methodname="ManagerReportsMissingOrInvalidCatalogExplicitly" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="1903075023" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001845" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1032" name="ManagerResolvesBidirectionalRouteFromEitherEndpoint" fullname="GameSceneManagerConnectionResolutionTests.ManagerResolvesBidirectionalRouteFromEitherEndpoint" methodname="ManagerResolvesBidirectionalRouteFromEitherEndpoint" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="67947579" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.017483" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1031" name="ManagerResolvesConnectedDoorWithoutStartingTransition" fullname="GameSceneManagerConnectionResolutionTests.ManagerResolvesConnectedDoorWithoutStartingTransition" methodname="ManagerResolvesConnectedDoorWithoutStartingTransition" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="1651802428" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.016615" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1034" name="SourceResolutionFailureDoesNotMutateCurrentRoomOrTransitionState" fullname="GameSceneManagerConnectionResolutionTests.SourceResolutionFailureDoesNotMutateCurrentRoomOrTransitionState" methodname="SourceResolutionFailureDoesNotMutateCurrentRoomOrTransitionState" classname="GameSceneManagerConnectionResolutionTests" runstate="Runnable" seed="228007276" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.017956" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestSuite" id="1183" name="ProjectSpear" fullname="ProjectSpear" runstate="Runnable" testcasecount="75" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="0.831775" total="75" passed="65" failed="10" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1190" name="Phase0" fullname="ProjectSpear.Phase0" runstate="Runnable" testcasecount="29" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.117856" total="29" passed="26" failed="3" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1147" name="AbilityAndProgressionBaselineTests" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.021162" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1152" name="AbilityPickupPrefabStillUsesTheNamespacedPickupComponent" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests.AbilityPickupPrefabStillUsesTheNamespacedPickupComponent" methodname="AbilityPickupPrefabStillUsesTheNamespacedPickupComponent" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" seed="260161302" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.008238" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1149" name="DashAbilityDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests.DashAbilityDataMatchesCapturedBaseline" methodname="DashAbilityDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" seed="102484107" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000790" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1150" name="MasterSceneAllAbilitiesListMatchesCurrentProgression" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests.MasterSceneAllAbilitiesListMatchesCurrentProgression" methodname="MasterSceneAllAbilitiesListMatchesCurrentProgression" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" seed="856604866" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.005591" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1148" name="SpearAbilityDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests.SpearAbilityDataMatchesCapturedBaseline" methodname="SpearAbilityDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" seed="1996144154" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000313" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1151" name="SpearPickupPrefabUsesTheAuthoritativeAbilityPickup" fullname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests.SpearPickupPrefabUsesTheAuthoritativeAbilityPickup" methodname="SpearPickupPrefabUsesTheAuthoritativeAbilityPickup" classname="ProjectSpear.Phase0.AbilityAndProgressionBaselineTests" runstate="Runnable" seed="1292236323" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004993" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1153" name="BossBaselineTests" fullname="ProjectSpear.Phase0.BossBaselineTests" classname="ProjectSpear.Phase0.BossBaselineTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.014942" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1154" name="BossDataAssetMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.BossBaselineTests.BossDataAssetMatchesCapturedBaseline" methodname="BossDataAssetMatchesCapturedBaseline" classname="ProjectSpear.Phase0.BossBaselineTests" runstate="Runnable" seed="568747965" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001688" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1156" name="BossWeakPointPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.BossBaselineTests.BossWeakPointPrefabMatchesCapturedBaseline" methodname="BossWeakPointPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.BossBaselineTests" runstate="Runnable" seed="1392967823" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.003755" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1155" name="FreeRoamBossPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.BossBaselineTests.FreeRoamBossPrefabMatchesCapturedBaseline" methodname="FreeRoamBossPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.BossBaselineTests" runstate="Runnable" seed="1867639686" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.003695" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Baseline asset is missing: Assets/Data/Boss Data/Tongue Attack Data.asset
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase0.BaselineTestSupport.LoadAsset[T] (System.String path) [0x00006] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BaselineTestSupport.cs:19
+at ProjectSpear.Phase0.BossBaselineTests.FreeRoamBossPrefabMatchesCapturedBaseline () [0x00015] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BossBaselineTests.cs:88
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1157" name="SporeCloudPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.BossBaselineTests.SporeCloudPrefabMatchesCapturedBaseline" methodname="SporeCloudPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.BossBaselineTests" runstate="Runnable" seed="661433883" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001924" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  cloudColor.a expected 0,75 but was 1.
+  Expected: 0.75f +/- 9.99999975E-05f
+  But was:  1.0f
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase0.BaselineTestSupport.AssertClose (System.Single expected, System.Single actual, System.String label) [0x00000] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BaselineTestSupport.cs:104
+at ProjectSpear.Phase0.BaselineTestSupport.AssertColor (UnityEngine.Color expected, UnityEngine.Color actual, System.String label) [0x00054] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BaselineTestSupport.cs:121
+at ProjectSpear.Phase0.BossBaselineTests.SporeCloudPrefabMatchesCapturedBaseline () [0x00098] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BossBaselineTests.cs:372
+]]></stack-trace>
+              </failure>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1158" name="EnemyBaselineTests" fullname="ProjectSpear.Phase0.EnemyBaselineTests" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.048787" total="6" passed="5" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1160" name="FlyingEnemyDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.EnemyBaselineTests.FlyingEnemyDataMatchesCapturedBaseline" methodname="FlyingEnemyDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="1278749510" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000928" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1163" name="FlyingEnemyPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.EnemyBaselineTests.FlyingEnemyPrefabMatchesCapturedBaseline" methodname="FlyingEnemyPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="921781170" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.014045" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  detectionRadius expected 15 but was 1.
+  Expected: 15.0f +/- 9.99999975E-05f
+  But was:  1.0f
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase0.BaselineTestSupport.AssertClose (System.Single expected, System.Single actual, System.String label) [0x00000] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\BaselineTestSupport.cs:104
+at ProjectSpear.Phase0.EnemyBaselineTests.FlyingEnemyPrefabMatchesCapturedBaseline () [0x00059] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase0\EnemyBaselineTests.cs:135
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1159" name="GroundEnemyDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.EnemyBaselineTests.GroundEnemyDataMatchesCapturedBaseline" methodname="GroundEnemyDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="579700614" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000613" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1164" name="RecallEnemyPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.EnemyBaselineTests.RecallEnemyPrefabMatchesCapturedBaseline" methodname="RecallEnemyPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="1880090701" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.017696" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1161" name="SmallEnemyDataRemainsCapturedEvenThoughItIsCurrentlyUnreferenced" fullname="ProjectSpear.Phase0.EnemyBaselineTests.SmallEnemyDataRemainsCapturedEvenThoughItIsCurrentlyUnreferenced" methodname="SmallEnemyDataRemainsCapturedEvenThoughItIsCurrentlyUnreferenced" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="315666407" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000539" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1162" name="WalkingEnemyPrefabMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.EnemyBaselineTests.WalkingEnemyPrefabMatchesCapturedBaseline" methodname="WalkingEnemyPrefabMatchesCapturedBaseline" classname="ProjectSpear.Phase0.EnemyBaselineTests" runstate="Runnable" seed="665097781" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.010868" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1165" name="PlayerBaselineTests" fullname="ProjectSpear.Phase0.PlayerBaselineTests" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.019923" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1167" name="PlayerCombatDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerCombatDataMatchesCapturedBaseline" methodname="PlayerCombatDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="42914339" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000657" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1168" name="PlayerDashDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerDashDataMatchesCapturedBaseline" methodname="PlayerDashDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="1937380348" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000523" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1174" name="PlayerDataAssetsExplicitlySerializeMigratedParameters" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerDataAssetsExplicitlySerializeMigratedParameters" methodname="PlayerDataAssetsExplicitlySerializeMigratedParameters" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="796477200" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001051" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1171" name="PlayerEssenceDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerEssenceDataMatchesCapturedBaseline" methodname="PlayerEssenceDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="475205713" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000330" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1169" name="PlayerPogoDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerPogoDataMatchesCapturedBaseline" methodname="PlayerPogoDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="1062477877" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000288" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1172" name="PlayerPrefabReferencesTheSixCapturedDataAssets" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerPrefabReferencesTheSixCapturedDataAssets" methodname="PlayerPrefabReferencesTheSixCapturedDataAssets" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="863270102" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.010496" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1173" name="PlayerPrefabRigidbodyAndBodyColliderMatchBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerPrefabRigidbodyAndBodyColliderMatchBaseline" methodname="PlayerPrefabRigidbodyAndBodyColliderMatchBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="318787352" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001203" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1170" name="PlayerRopeDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerRopeDataMatchesCapturedBaseline" methodname="PlayerRopeDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="1205846349" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000163" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1166" name="PlayerStatsDataMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.PlayerBaselineTests.PlayerStatsDataMatchesCapturedBaseline" methodname="PlayerStatsDataMatchesCapturedBaseline" classname="ProjectSpear.Phase0.PlayerBaselineTests" runstate="Runnable" seed="1023232589" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000369" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1175" name="PrefabIntegrityBaselineTests" fullname="ProjectSpear.Phase0.PrefabIntegrityBaselineTests" classname="ProjectSpear.Phase0.PrefabIntegrityBaselineTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.004332" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1176" name="KeyPrefabsHaveNoMissingMonoBehaviourScripts" fullname="ProjectSpear.Phase0.PrefabIntegrityBaselineTests.KeyPrefabsHaveNoMissingMonoBehaviourScripts" methodname="KeyPrefabsHaveNoMissingMonoBehaviourScripts" classname="ProjectSpear.Phase0.PrefabIntegrityBaselineTests" runstate="Runnable" seed="594687447" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000771" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1177" name="SpearBaselineTests" fullname="ProjectSpear.Phase0.SpearBaselineTests" classname="ProjectSpear.Phase0.SpearBaselineTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.005552" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1181" name="PlayerCombatPrefabWiringMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.SpearBaselineTests.PlayerCombatPrefabWiringMatchesCapturedBaseline" methodname="PlayerCombatPrefabWiringMatchesCapturedBaseline" classname="ProjectSpear.Phase0.SpearBaselineTests" runstate="Runnable" seed="551042336" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000346" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1180" name="SpearPrefabPhysicsMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.SpearBaselineTests.SpearPrefabPhysicsMatchesCapturedBaseline" methodname="SpearPrefabPhysicsMatchesCapturedBaseline" classname="ProjectSpear.Phase0.SpearBaselineTests" runstate="Runnable" seed="86356251" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000568" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1178" name="SpearPrefabSerializedTuningMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.SpearBaselineTests.SpearPrefabSerializedTuningMatchesCapturedBaseline" methodname="SpearPrefabSerializedTuningMatchesCapturedBaseline" classname="ProjectSpear.Phase0.SpearBaselineTests" runstate="Runnable" seed="287312979" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000711" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1179" name="SpearReturnCurveMatchesCapturedBaseline" fullname="ProjectSpear.Phase0.SpearBaselineTests.SpearReturnCurveMatchesCapturedBaseline" methodname="SpearReturnCurveMatchesCapturedBaseline" classname="ProjectSpear.Phase0.SpearBaselineTests" runstate="Runnable" seed="1418898839" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001447" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1189" name="Phase1" fullname="ProjectSpear.Phase1" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.013631" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1143" name="PlayerArchitectureTests" fullname="ProjectSpear.Phase1.PlayerArchitectureTests" classname="ProjectSpear.Phase1.PlayerArchitectureTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.011167" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1144" name="PlayerPrefabComponentEnabledStatesMatchBaseline" fullname="ProjectSpear.Phase1.PlayerArchitectureTests.PlayerPrefabComponentEnabledStatesMatchBaseline" methodname="PlayerPrefabComponentEnabledStatesMatchBaseline" classname="ProjectSpear.Phase1.PlayerArchitectureTests" runstate="Runnable" seed="575758830" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000465" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1145" name="PlayerRuntimeStateDoesNotMutateSharedDataAssets" fullname="ProjectSpear.Phase1.PlayerArchitectureTests.PlayerRuntimeStateDoesNotMutateSharedDataAssets" methodname="PlayerRuntimeStateDoesNotMutateSharedDataAssets" classname="ProjectSpear.Phase1.PlayerArchitectureTests" runstate="Runnable" seed="48307184" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.009199" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1146" name="PlayerRuntimeStateIsStoredOnComponentsNotAssets" fullname="ProjectSpear.Phase1.PlayerArchitectureTests.PlayerRuntimeStateIsStoredOnComponentsNotAssets" methodname="PlayerRuntimeStateIsStoredOnComponentsNotAssets" classname="ProjectSpear.Phase1.PlayerArchitectureTests" runstate="Runnable" seed="1513147184" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000439" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1188" name="Phase2" fullname="ProjectSpear.Phase2" runstate="Runnable" testcasecount="11" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.021009" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1131" name="EnemyArchitectureTests" fullname="ProjectSpear.Phase2.EnemyArchitectureTests" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" testcasecount="11" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.018101" total="11" passed="9" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1140" name="EnemyArchetypesStillReadTheirAuthoringData" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.EnemyArchetypesStillReadTheirAuthoringData" methodname="EnemyArchetypesStillReadTheirAuthoringData" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1346519461" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000834" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1132" name="EnemyDataAssetsExposeSharedStats" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.EnemyDataAssetsExposeSharedStats" methodname="EnemyDataAssetsExposeSharedStats" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1741033699" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000349" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1141" name="EnemyPrefabsHaveNoMissingScripts" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.EnemyPrefabsHaveNoMissingScripts" methodname="EnemyPrefabsHaveNoMissingScripts" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1050564842" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000307" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1133" name="EnemyProfilesAreAssignedToPrefabs" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.EnemyProfilesAreAssignedToPrefabs" methodname="EnemyProfilesAreAssignedToPrefabs" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1741944390" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000371" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1137" name="EnemyProfilesExplicitlySerializeMigratedParameters" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.EnemyProfilesExplicitlySerializeMigratedParameters" methodname="EnemyProfilesExplicitlySerializeMigratedParameters" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="883176985" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000755" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Assets/Data/Enemy Data/Flying Enemy AI Profile.asset does not explicitly serialize 'detectionRadius: 15'.
+  Expected: True
+  But was:  False
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase2.EnemyArchitectureTests.AssertAssetContains (System.String assetPath, System.String[] expectedLines) [0x00080] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase2\EnemyArchitectureTests.cs:400
+at ProjectSpear.Phase2.EnemyArchitectureTests.EnemyProfilesExplicitlySerializeMigratedParameters () [0x00040] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase2\EnemyArchitectureTests.cs:143
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1135" name="FlyingProfileMatchesPreviousPrefabTuning" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.FlyingProfileMatchesPreviousPrefabTuning" methodname="FlyingProfileMatchesPreviousPrefabTuning" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="12303868" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000318" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Expected: 15.0f +/- 9.99999975E-05f
+  But was:  1.0f
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase2.EnemyArchitectureTests.FlyingProfileMatchesPreviousPrefabTuning () [0x0000a] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase2\EnemyArchitectureTests.cs:101
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1142" name="GroundEnemyFastWasNotReintroduced" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.GroundEnemyFastWasNotReintroduced" methodname="GroundEnemyFastWasNotReintroduced" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="724369105" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.009309" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1136" name="RecallEnemyKeepsInstanceTuningForSceneOverrides" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.RecallEnemyKeepsInstanceTuningForSceneOverrides" methodname="RecallEnemyKeepsInstanceTuningForSceneOverrides" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1473388005" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000651" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1138" name="RuntimeDamageDoesNotMutateSharedEnemyData" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.RuntimeDamageDoesNotMutateSharedEnemyData" methodname="RuntimeDamageDoesNotMutateSharedEnemyData" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="1732394896" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.002103" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1139" name="SharedEnemyDataKeepsRuntimeHealthIndependent" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.SharedEnemyDataKeepsRuntimeHealthIndependent" methodname="SharedEnemyDataKeepsRuntimeHealthIndependent" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="356351324" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000584" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1134" name="WalkingProfileMatchesPreviousPrefabTuning" fullname="ProjectSpear.Phase2.EnemyArchitectureTests.WalkingProfileMatchesPreviousPrefabTuning" methodname="WalkingProfileMatchesPreviousPrefabTuning" classname="ProjectSpear.Phase2.EnemyArchitectureTests" runstate="Runnable" seed="106831205" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000248" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1187" name="Phase3" fullname="ProjectSpear.Phase3" runstate="Runnable" testcasecount="14" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.136583" total="14" passed="9" failed="5" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1116" name="BossArchitectureTests" fullname="ProjectSpear.Phase3.BossArchitectureTests" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" testcasecount="14" result="Failed" site="Child" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.131956" total="14" passed="9" failed="5" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1123" name="ArenaAssetsPreservePreviousOverrideValues" fullname="ProjectSpear.Phase3.BossArchitectureTests.ArenaAssetsPreservePreviousOverrideValues" methodname="ArenaAssetsPreservePreviousOverrideValues" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="672007753" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000899" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Missing asset: Assets/Data/Boss Data/Arena Boss AI Profile.asset
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase3.BossArchitectureTests.Load[T] (System.String path) [0x00006] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:516
+at ProjectSpear.Phase3.BossArchitectureTests.ArenaAssetsPreservePreviousOverrideValues () [0x00000] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:218
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1130" name="ArenaSceneKeepsBossAnimatorControllerOverride" fullname="ProjectSpear.Phase3.BossArchitectureTests.ArenaSceneKeepsBossAnimatorControllerOverride" methodname="ArenaSceneKeepsBossAnimatorControllerOverride" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="829374009" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.002824" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1124" name="ArenaScenePointsBossAtArenaAssets" fullname="ProjectSpear.Phase3.BossArchitectureTests.ArenaScenePointsBossAtArenaAssets" methodname="ArenaScenePointsBossAtArenaAssets" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1818175903" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.119519" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1120" name="BossAIProfileMatchesPreviousPrefabTuning" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossAIProfileMatchesPreviousPrefabTuning" methodname="BossAIProfileMatchesPreviousPrefabTuning" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1620139420" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000947" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1129" name="BossAssetReferencesResolveToExistingAssets" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossAssetReferencesResolveToExistingAssets" methodname="BossAssetReferencesResolveToExistingAssets" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1491983548" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000302" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1125" name="BossAssetsExplicitlySerializeMigratedParameters" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossAssetsExplicitlySerializeMigratedParameters" methodname="BossAssetsExplicitlySerializeMigratedParameters" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="801083360" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001065" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Asset file not found: C:/Users/Ale/Documents/Project Spear/Assets\Data/Boss Data/Tongue Attack Data.asset
+  Expected: True
+  But was:  False
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase3.BossArchitectureTests.AssertAssetContains (System.String assetPath, System.String[] expectedLines) [0x0001b] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:501
+at ProjectSpear.Phase3.BossArchitectureTests.BossAssetsExplicitlySerializeMigratedParameters () [0x00059] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:311
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1117" name="BossDataKeepsFundamentalStatistics" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossDataKeepsFundamentalStatistics" methodname="BossDataKeepsFundamentalStatistics" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="537744899" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000633" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1118" name="BossDataLegacyConfigurationIsPreserved" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossDataLegacyConfigurationIsPreserved" methodname="BossDataLegacyConfigurationIsPreserved" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="946473909" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000340" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1127" name="BossPrefabsHaveNoMissingScripts" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossPrefabsHaveNoMissingScripts" methodname="BossPrefabsHaveNoMissingScripts" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1336545903" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000190" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1128" name="BossWeakPointStaysWiredToTheBossHierarchy" fullname="ProjectSpear.Phase3.BossArchitectureTests.BossWeakPointStaysWiredToTheBossHierarchy" methodname="BossWeakPointStaysWiredToTheBossHierarchy" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1796325529" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000641" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1119" name="FreeRoamBossPrefabUsesAuthoringAssets" fullname="ProjectSpear.Phase3.BossArchitectureTests.FreeRoamBossPrefabUsesAuthoringAssets" methodname="FreeRoamBossPrefabUsesAuthoringAssets" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="210425408" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000420" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Missing asset: Assets/Data/Boss Data/Tongue Attack Data.asset
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase3.BossArchitectureTests.Load[T] (System.String path) [0x00006] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:516
+at ProjectSpear.Phase3.BossArchitectureTests.FreeRoamBossPrefabUsesAuthoringAssets () [0x00034] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:100
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1126" name="RuntimeStateIsNotStoredInAuthoringAssets" fullname="ProjectSpear.Phase3.BossArchitectureTests.RuntimeStateIsNotStoredInAuthoringAssets" methodname="RuntimeStateIsNotStoredInAuthoringAssets" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1744230171" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000184" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1122" name="SporeAttackDataMatchesPreviousPrefabTuning" fullname="ProjectSpear.Phase3.BossArchitectureTests.SporeAttackDataMatchesPreviousPrefabTuning" methodname="SporeAttackDataMatchesPreviousPrefabTuning" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1722815270" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000292" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Missing asset: Assets/Data/Boss Data/Spore Attack Data.asset
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase3.BossArchitectureTests.Load[T] (System.String path) [0x00006] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:516
+at ProjectSpear.Phase3.BossArchitectureTests.SporeAttackDataMatchesPreviousPrefabTuning () [0x00000] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:200
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1121" name="TongueAttackDataMatchesPreviousPrefabTuning" fullname="ProjectSpear.Phase3.BossArchitectureTests.TongueAttackDataMatchesPreviousPrefabTuning" methodname="TongueAttackDataMatchesPreviousPrefabTuning" classname="ProjectSpear.Phase3.BossArchitectureTests" runstate="Runnable" seed="1715842646" result="Failed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000365" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Missing asset: Assets/Data/Boss Data/Tongue Attack Data.asset
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at ProjectSpear.Phase3.BossArchitectureTests.Load[T] (System.String path) [0x00006] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:516
+at ProjectSpear.Phase3.BossArchitectureTests.TongueAttackDataMatchesPreviousPrefabTuning () [0x00000] in C:\Users\Ale\Documents\Project Spear\Assets\Editor\Phase3\BossArchitectureTests.cs:180
+]]></stack-trace>
+              </failure>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1186" name="Phase4" fullname="ProjectSpear.Phase4" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="0.525883" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1107" name="AbilityArchitectureTests" fullname="ProjectSpear.Phase4.AbilityArchitectureTests" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="0.522613" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1108" name="AbilityDataAssetsMatchSerializedAuthoringBaseline" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.AbilityDataAssetsMatchSerializedAuthoringBaseline" methodname="AbilityDataAssetsMatchSerializedAuthoringBaseline" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1717043925" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.001017" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1109" name="AbilityDataContainsConfigurationButNoRuntimeUnlockState" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.AbilityDataContainsConfigurationButNoRuntimeUnlockState" methodname="AbilityDataContainsConfigurationButNoRuntimeUnlockState" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1064786978" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000227" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1111" name="AbilityPickupPrefabAndSpearPickupPrefabUseTheAuthoritativeComponent" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.AbilityPickupPrefabAndSpearPickupPrefabUseTheAuthoritativeComponent" methodname="AbilityPickupPrefabAndSpearPickupPrefabUseTheAuthoritativeComponent" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="291043414" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000412" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1115" name="AbilityReferencesResolveAndLegacyAbilityAssetsAreNotDeleted" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.AbilityReferencesResolveAndLegacyAbilityAssetsAreNotDeleted" methodname="AbilityReferencesResolveAndLegacyAbilityAssetsAreNotDeleted" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1540308649" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:05Z" duration="0.000425" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1112" name="AllSerializedAbilityPickupScriptsUseTheAuthoritativeGuid" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.AllSerializedAbilityPickupScriptsUseTheAuthoritativeGuid" methodname="AllSerializedAbilityPickupScriptsUseTheAuthoritativeGuid" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1113698815" result="Passed" start-time="2026-11-12 15:07:05Z" end-time="2026-11-12 15:07:06Z" duration="0.074016" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1113" name="MasterProgressionRemainsSpearThenDashOnly" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.MasterProgressionRemainsSpearThenDashOnly" methodname="MasterProgressionRemainsSpearThenDashOnly" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1356860846" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000942" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1114" name="PlayerAbilityComponentEnabledStatesRemainAtBaseline" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.PlayerAbilityComponentEnabledStatesRemainAtBaseline" methodname="PlayerAbilityComponentEnabledStatesRemainAtBaseline" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="43637522" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000439" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1110" name="ThereIsOnlyOneAbilityPickupImplementation" fullname="ProjectSpear.Phase4.AbilityArchitectureTests.ThereIsOnlyOneAbilityPickupImplementation" methodname="ThereIsOnlyOneAbilityPickupImplementation" classname="ProjectSpear.Phase4.AbilityArchitectureTests" runstate="Runnable" seed="1614280666" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.443940" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1185" name="Phase5" fullname="ProjectSpear.Phase5" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.007010" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1100" name="SpearArchitectureTests" fullname="ProjectSpear.Phase5.SpearArchitectureTests" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.005228" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1104" name="PlayerCombatAndRopeDataRemainTheOwnersOfPlayerTuning" fullname="ProjectSpear.Phase5.SpearArchitectureTests.PlayerCombatAndRopeDataRemainTheOwnersOfPlayerTuning" methodname="PlayerCombatAndRopeDataRemainTheOwnersOfPlayerTuning" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="1905453435" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000739" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1105" name="RuntimeStateIsStoredOnSpearInstancesNotInSpearConfig" fullname="ProjectSpear.Phase5.SpearArchitectureTests.RuntimeStateIsStoredOnSpearInstancesNotInSpearConfig" methodname="RuntimeStateIsStoredOnSpearInstancesNotInSpearConfig" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="1275758811" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000222" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1106" name="SpearAndConfigReferencesResolveAndPrefabComponentsRemainPresent" fullname="ProjectSpear.Phase5.SpearArchitectureTests.SpearAndConfigReferencesResolveAndPrefabComponentsRemainPresent" methodname="SpearAndConfigReferencesResolveAndPrefabComponentsRemainPresent" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="504533794" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000300" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1101" name="SpearConfigAssetContainsPreviousEffectiveTuning" fullname="ProjectSpear.Phase5.SpearArchitectureTests.SpearConfigAssetContainsPreviousEffectiveTuning" methodname="SpearConfigAssetContainsPreviousEffectiveTuning" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="108726008" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.001052" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1103" name="SpearConfigExplicitlySerializesEveryMigratedValue" fullname="ProjectSpear.Phase5.SpearArchitectureTests.SpearConfigExplicitlySerializesEveryMigratedValue" methodname="SpearConfigExplicitlySerializesEveryMigratedValue" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="2094514452" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000791" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1102" name="SpearPrefabUsesTheAuthoringConfigAndKeepsStructuralTags" fullname="ProjectSpear.Phase5.SpearArchitectureTests.SpearPrefabUsesTheAuthoringConfigAndKeepsStructuralTags" methodname="SpearPrefabUsesTheAuthoringConfigAndKeepsStructuralTags" classname="ProjectSpear.Phase5.SpearArchitectureTests" runstate="Runnable" seed="680677086" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000408" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+        <test-suite type="TestSuite" id="1184" name="Phase6" fullname="ProjectSpear.Phase6" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.002950" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1095" name="RuntimeStatsDamageArchitectureTests" fullname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" classname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.001598" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1098" name="AuthoringAssetsStillOwnTheirExistingConfigurationValues" fullname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests.AuthoringAssetsStillOwnTheirExistingConfigurationValues" methodname="AuthoringAssetsStillOwnTheirExistingConfigurationValues" classname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" runstate="Runnable" seed="1394231466" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000417" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1099" name="DamageContractsPreservePlayerEnemyAndBossResponsibilities" fullname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests.DamageContractsPreservePlayerEnemyAndBossResponsibilities" methodname="DamageContractsPreservePlayerEnemyAndBossResponsibilities" classname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" runstate="Runnable" seed="360570727" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000222" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1096" name="MutableHealthEssenceAndDeathStateRemainOnRuntimeComponents" fullname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests.MutableHealthEssenceAndDeathStateRemainOnRuntimeComponents" methodname="MutableHealthEssenceAndDeathStateRemainOnRuntimeComponents" classname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" runstate="Runnable" seed="1088130902" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000221" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1097" name="RuntimeStatOwnersAreInstanceComponentsNotAParallelStatsFramework" fullname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests.RuntimeStatOwnersAreInstanceComponentsNotAParallelStatsFramework" methodname="RuntimeStatOwnersAreInstanceComponentsNotAParallelStatsFramework" classname="ProjectSpear.Phase6.RuntimeStatsDamageArchitectureTests" runstate="Runnable" seed="1882427246" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000165" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1042" name="RoomConnectionResolverTests" fullname="RoomConnectionResolverTests" classname="RoomConnectionResolverTests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.014005" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1043" name="BidirectionalConnectionResolvesFromEndpointA" fullname="RoomConnectionResolverTests.BidirectionalConnectionResolvesFromEndpointA" methodname="BidirectionalConnectionResolvesFromEndpointA" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1923994944" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.002162" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1044" name="BidirectionalConnectionResolvesFromEndpointB" fullname="RoomConnectionResolverTests.BidirectionalConnectionResolvesFromEndpointB" methodname="BidirectionalConnectionResolvesFromEndpointB" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1659833511" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.001213" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1048" name="ConnectionWithUnmatchedSourceEndpointIsInvalid" fullname="RoomConnectionResolverTests.ConnectionWithUnmatchedSourceEndpointIsInvalid" methodname="ConnectionWithUnmatchedSourceEndpointIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="2121406379" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000834" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1053" name="DestinationBacklinkMismatchIsInvalid" fullname="RoomConnectionResolverTests.DestinationBacklinkMismatchIsInvalid" methodname="DestinationBacklinkMismatchIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1265814576" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000601" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1055" name="DestinationScenePathMustMatchCatalogPath" fullname="RoomConnectionResolverTests.DestinationScenePathMustMatchCatalogPath" methodname="DestinationScenePathMustMatchCatalogPath" classname="RoomConnectionResolverTests" runstate="Runnable" seed="506491031" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000528" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1058" name="DuplicateSourceDoorIdIsInvalid" fullname="RoomConnectionResolverTests.DuplicateSourceDoorIdIsInvalid" methodname="DuplicateSourceDoorIdIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="154760883" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000511" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1051" name="EmptyDestinationDoorIdIsInvalid" fullname="RoomConnectionResolverTests.EmptyDestinationDoorIdIsInvalid" methodname="EmptyDestinationDoorIdIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1688211809" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000441" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1057" name="EmptySourceDoorIdIsInvalid" fullname="RoomConnectionResolverTests.EmptySourceDoorIdIsInvalid" methodname="EmptySourceDoorIdIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1420645248" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000444" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1054" name="InvalidDestinationEndpointDoorIsRejected" fullname="RoomConnectionResolverTests.InvalidDestinationEndpointDoorIsRejected" methodname="InvalidDestinationEndpointDoorIsRejected" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1038941330" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000535" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1050" name="MissingDestinationRoomDefinitionIsInvalid" fullname="RoomConnectionResolverTests.MissingDestinationRoomDefinitionIsInvalid" methodname="MissingDestinationRoomDefinitionIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="590935693" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000469" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1056" name="MissingSourceRoomPathIsInvalid" fullname="RoomConnectionResolverTests.MissingSourceRoomPathIsInvalid" methodname="MissingSourceRoomPathIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1590598344" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000507" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1047" name="NullConnectionIsClassifiedAsMissing" fullname="RoomConnectionResolverTests.NullConnectionIsClassifiedAsMissing" methodname="NullConnectionIsClassifiedAsMissing" classname="RoomConnectionResolverTests" runstate="Runnable" seed="2125816742" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000486" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1046" name="OneWayConnectionRejectsEndpointBInitiation" fullname="RoomConnectionResolverTests.OneWayConnectionRejectsEndpointBInitiation" methodname="OneWayConnectionRejectsEndpointBInitiation" classname="RoomConnectionResolverTests" runstate="Runnable" seed="868757802" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000547" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1045" name="OneWayConnectionResolvesFromEndpointA" fullname="RoomConnectionResolverTests.OneWayConnectionResolvesFromEndpointA" methodname="OneWayConnectionResolvesFromEndpointA" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1860041794" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000550" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1059" name="ParallelConnectionsResolveIndependently" fullname="RoomConnectionResolverTests.ParallelConnectionsResolveIndependently" methodname="ParallelConnectionsResolveIndependently" classname="RoomConnectionResolverTests" runstate="Runnable" seed="494448764" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000696" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1052" name="SourceBacklinkToConnectionWithDifferentEndpointIsInvalid" fullname="RoomConnectionResolverTests.SourceBacklinkToConnectionWithDifferentEndpointIsInvalid" methodname="SourceBacklinkToConnectionWithDifferentEndpointIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1595698877" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000423" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1049" name="UnknownDestinationRoomIsInvalid" fullname="RoomConnectionResolverTests.UnknownDestinationRoomIsInvalid" methodname="UnknownDestinationRoomIsInvalid" classname="RoomConnectionResolverTests" runstate="Runnable" seed="1863441861" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000424" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1060" name="RoomIdentityResolverTests" fullname="RoomIdentityResolverTests" classname="RoomIdentityResolverTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.006608" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1072" name="BlankRoomIdReturnsInvalidRoomId" fullname="RoomIdentityResolverTests.BlankRoomIdReturnsInvalidRoomId" classname="RoomIdentityResolverTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.001239" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1069" name="BlankRoomIdReturnsInvalidRoomId(null)" fullname="RoomIdentityResolverTests.BlankRoomIdReturnsInvalidRoomId(null)" methodname="BlankRoomIdReturnsInvalidRoomId" classname="RoomIdentityResolverTests" runstate="Runnable" seed="1665098850" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000752" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1070" name="BlankRoomIdReturnsInvalidRoomId(&quot;&quot;)" fullname="RoomIdentityResolverTests.BlankRoomIdReturnsInvalidRoomId(&quot;&quot;)" methodname="BlankRoomIdReturnsInvalidRoomId" classname="RoomIdentityResolverTests" runstate="Runnable" seed="1243086845" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000091" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1071" name="BlankRoomIdReturnsInvalidRoomId(&quot;   &quot;)" fullname="RoomIdentityResolverTests.BlankRoomIdReturnsInvalidRoomId(&quot;   &quot;)" methodname="BlankRoomIdReturnsInvalidRoomId" classname="RoomIdentityResolverTests" runstate="Runnable" seed="1678689566" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000059" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1068" name="BlankScenePathReturnsInvalidScenePath" fullname="RoomIdentityResolverTests.BlankScenePathReturnsInvalidScenePath" classname="RoomIdentityResolverTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.001943" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1065" name="BlankScenePathReturnsInvalidScenePath(null)" fullname="RoomIdentityResolverTests.BlankScenePathReturnsInvalidScenePath(null)" methodname="BlankScenePathReturnsInvalidScenePath" classname="RoomIdentityResolverTests" runstate="Runnable" seed="378087277" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000218" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1066" name="BlankScenePathReturnsInvalidScenePath(&quot;&quot;)" fullname="RoomIdentityResolverTests.BlankScenePathReturnsInvalidScenePath(&quot;&quot;)" methodname="BlankScenePathReturnsInvalidScenePath" classname="RoomIdentityResolverTests" runstate="Runnable" seed="1133055067" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000054" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1067" name="BlankScenePathReturnsInvalidScenePath(&quot;   &quot;)" fullname="RoomIdentityResolverTests.BlankScenePathReturnsInvalidScenePath(&quot;   &quot;)" methodname="BlankScenePathReturnsInvalidScenePath" classname="RoomIdentityResolverTests" runstate="Runnable" seed="251033793" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000044" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1061" name="ExactScenePathResolvesRoomDefinition" fullname="RoomIdentityResolverTests.ExactScenePathResolvesRoomDefinition" methodname="ExactScenePathResolvesRoomDefinition" classname="RoomIdentityResolverTests" runstate="Runnable" seed="2032271687" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000149" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1074" name="InvalidCatalogReturnsCatalogInvalidAndPreservesMessage" fullname="RoomIdentityResolverTests.InvalidCatalogReturnsCatalogInvalidAndPreservesMessage" methodname="InvalidCatalogReturnsCatalogInvalidAndPreservesMessage" classname="RoomIdentityResolverTests" runstate="Runnable" seed="980692470" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000210" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1075" name="LookupIsCaseSensitiveAndExact" fullname="RoomIdentityResolverTests.LookupIsCaseSensitiveAndExact" methodname="LookupIsCaseSensitiveAndExact" classname="RoomIdentityResolverTests" runstate="Runnable" seed="633349777" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000151" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1073" name="NullCatalogReturnsCatalogMissing" fullname="RoomIdentityResolverTests.NullCatalogReturnsCatalogMissing" methodname="NullCatalogReturnsCatalogMissing" classname="RoomIdentityResolverTests" runstate="Runnable" seed="475127610" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000095" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1062" name="RoomIdResolvesDefinitionAndScenePath" fullname="RoomIdentityResolverTests.RoomIdResolvesDefinitionAndScenePath" methodname="RoomIdResolvesDefinitionAndScenePath" classname="RoomIdentityResolverTests" runstate="Runnable" seed="1496475205" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000117" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1076" name="SceneNameIsNotAcceptedAsIdentity" fullname="RoomIdentityResolverTests.SceneNameIsNotAcceptedAsIdentity" methodname="SceneNameIsNotAcceptedAsIdentity" classname="RoomIdentityResolverTests" runstate="Runnable" seed="252083273" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000131" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1064" name="UnknownRoomIdReturnsUnknownStatus" fullname="RoomIdentityResolverTests.UnknownRoomIdReturnsUnknownStatus" methodname="UnknownRoomIdReturnsUnknownStatus" classname="RoomIdentityResolverTests" runstate="Runnable" seed="370367609" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000132" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1063" name="UnknownScenePathReturnsUnknownStatus" fullname="RoomIdentityResolverTests.UnknownScenePathReturnsUnknownStatus" methodname="UnknownScenePathReturnsUnknownStatus" classname="RoomIdentityResolverTests" runstate="Runnable" seed="850319788" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000117" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1077" name="RuntimeRoomCatalogTests" fullname="RuntimeRoomCatalogTests" classname="RuntimeRoomCatalogTests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.007887" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1078" name="DeterministicOrderingAndLookup" fullname="RuntimeRoomCatalogTests.DeterministicOrderingAndLookup" methodname="DeterministicOrderingAndLookup" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1380958555" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.002395" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1082" name="DuplicateRoomIdIsReported" fullname="RuntimeRoomCatalogTests.DuplicateRoomIdIsReported" methodname="DuplicateRoomIdIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="931638160" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000306" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1087" name="DuplicateSceneAssignmentIsReported" fullname="RuntimeRoomCatalogTests.DuplicateSceneAssignmentIsReported" methodname="DuplicateSceneAssignmentIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="345806478" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000165" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1094" name="DuplicateScenePathIsRejected" fullname="RuntimeRoomCatalogTests.DuplicateScenePathIsRejected" methodname="DuplicateScenePathIsRejected" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1957342898" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000273" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1081" name="EmptyRoomIdIsReported" fullname="RuntimeRoomCatalogTests.EmptyRoomIdIsReported" methodname="EmptyRoomIdIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="651268326" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000110" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1092" name="ExactScenePathResolvesDefinition" fullname="RuntimeRoomCatalogTests.ExactScenePathResolvesDefinition" methodname="ExactScenePathResolvesDefinition" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1551679845" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000176" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1088" name="ExcludedBuildSceneIsReported" fullname="RuntimeRoomCatalogTests.ExcludedBuildSceneIsReported" methodname="ExcludedBuildSceneIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1107605840" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000102" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1091" name="IncompleteCatalogEntriesAreRejected" fullname="RuntimeRoomCatalogTests.IncompleteCatalogEntriesAreRejected" methodname="IncompleteCatalogEntriesAreRejected" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="342317819" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000270" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1090" name="InvalidCatalogEntriesFailLookup" fullname="RuntimeRoomCatalogTests.InvalidCatalogEntriesFailLookup" methodname="InvalidCatalogEntriesFailLookup" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1392113695" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000287" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1080" name="MissingDefinitionIsReported" fullname="RuntimeRoomCatalogTests.MissingDefinitionIsReported" methodname="MissingDefinitionIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="901740245" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000156" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1083" name="MissingSceneGuidIsReported" fullname="RuntimeRoomCatalogTests.MissingSceneGuidIsReported" methodname="MissingSceneGuidIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="627755084" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000100" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1086" name="NonSceneAssetIsReported" fullname="RuntimeRoomCatalogTests.NonSceneAssetIsReported" methodname="NonSceneAssetIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1535880315" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000119" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1085" name="ResolvedPathGuidMismatchIsReported" fullname="RuntimeRoomCatalogTests.ResolvedPathGuidMismatchIsReported" methodname="ResolvedPathGuidMismatchIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="483282477" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000126" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1089" name="SourceAssetsRemainUnchanged" fullname="RuntimeRoomCatalogTests.SourceAssetsRemainUnchanged" methodname="SourceAssetsRemainUnchanged" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1812824125" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000168" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1079" name="UnknownRoomIdFailsClearly" fullname="RuntimeRoomCatalogTests.UnknownRoomIdFailsClearly" methodname="UnknownRoomIdFailsClearly" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1181415572" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000262" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1093" name="UnknownScenePathIsRejected" fullname="RuntimeRoomCatalogTests.UnknownScenePathIsRejected" methodname="UnknownScenePathIsRejected" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="2013245806" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000224" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1084" name="UnresolvedSceneGuidIsReported" fullname="RuntimeRoomCatalogTests.UnresolvedSceneGuidIsReported" methodname="UnresolvedSceneGuidIsReported" classname="RuntimeRoomCatalogTests" runstate="Runnable" seed="1903362491" result="Passed" start-time="2026-11-12 15:07:06Z" end-time="2026-11-12 15:07:06Z" duration="0.000116" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/Ale/AppData/LocalLow/DefaultCompany/Spear Wander\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

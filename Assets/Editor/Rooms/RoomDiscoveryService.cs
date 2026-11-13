@@ -15,6 +15,31 @@ public readonly struct DiscoveredDoor
         string targetSceneName,
         string targetDoorID,
         RoomConnection connection)
+        : this(
+            doorID,
+            stableDoorId,
+            gameObjectName,
+            isActive,
+            targetSceneName,
+            targetDoorID,
+            connection,
+            new Vector2(0.5f, 0.5f),
+            false,
+            Vector2.zero)
+    {
+    }
+
+    public DiscoveredDoor(
+        string doorID,
+        string stableDoorId,
+        string gameObjectName,
+        bool isActive,
+        string targetSceneName,
+        string targetDoorID,
+        RoomConnection connection,
+        Vector2 normalizedScenePosition,
+        bool hasSpatialData,
+        Vector2 scenePosition)
     {
         DoorID = doorID;
         StableDoorId = stableDoorId;
@@ -23,6 +48,9 @@ public readonly struct DiscoveredDoor
         TargetSceneName = targetSceneName;
         TargetDoorID = targetDoorID;
         Connection = connection;
+        NormalizedScenePosition = normalizedScenePosition;
+        HasSpatialData = hasSpatialData;
+        ScenePosition = scenePosition;
     }
 
     public string DoorID { get; }
@@ -32,6 +60,9 @@ public readonly struct DiscoveredDoor
     public string TargetSceneName { get; }
     public string TargetDoorID { get; }
     public RoomConnection Connection { get; }
+    public Vector2 NormalizedScenePosition { get; }
+    public bool HasSpatialData { get; }
+    public Vector2 ScenePosition { get; }
 }
 
 internal readonly struct DoorDiscoveryResult
@@ -118,21 +149,37 @@ public static class RoomDiscoveryService
             if (openedByThisPass)
                 scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
 
-            List<DiscoveredDoor> doors = new List<DiscoveredDoor>();
+            List<RoomTransition> transitions = new List<RoomTransition>();
 
             foreach (GameObject root in scene.GetRootGameObjects())
             {
                 foreach (RoomTransition transition in root.GetComponentsInChildren<RoomTransition>(includeInactive: true))
-                {
-                    doors.Add(new DiscoveredDoor(
-                        transition.DoorID,
-                        transition.DoorId,
-                        transition.gameObject.name,
-                        transition.gameObject.activeInHierarchy,
-                        transition.TargetSceneName,
-                        transition.TargetDoorID,
-                        transition.Connection));
-                }
+                    transitions.Add(transition);
+            }
+
+            bool hasRoomBounds = TryGetRoomBounds(scene, out Bounds roomBounds);
+            Dictionary<RoomTransition, Vector2> fallbackPositions = hasRoomBounds
+                ? null
+                : BuildDeterministicFallbackPositions(transitions);
+
+            List<DiscoveredDoor> doors = new List<DiscoveredDoor>(transitions.Count);
+            foreach (RoomTransition transition in transitions)
+            {
+                Vector2 normalizedPosition = hasRoomBounds
+                    ? NormalizePosition(transition.transform.position, roomBounds)
+                    : fallbackPositions[transition];
+
+                doors.Add(new DiscoveredDoor(
+                    transition.DoorID,
+                    transition.DoorId,
+                    transition.gameObject.name,
+                    transition.gameObject.activeInHierarchy,
+                    transition.TargetSceneName,
+                    transition.TargetDoorID,
+                    transition.Connection,
+                    normalizedPosition,
+                    hasRoomBounds,
+                    new Vector2(transition.transform.position.x, transition.transform.position.y)));
             }
 
             message = null;
@@ -152,5 +199,149 @@ public static class RoomDiscoveryService
             if (openedByThisPass && scene.IsValid() && scene.isLoaded)
                 EditorSceneManager.CloseScene(scene, removeScene: true);
         }
+    }
+
+    private static bool TryGetRoomBounds(Scene scene, out Bounds bounds)
+    {
+        bounds = default;
+        if (TryGetCameraBounds(scene, out bounds))
+            return true;
+
+        bool initialized = false;
+
+        if (!scene.IsValid() || !scene.isLoaded)
+            return false;
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            foreach (Renderer renderer in root.GetComponentsInChildren<Renderer>(includeInactive: true))
+            {
+                if (renderer == null || !renderer.enabled || !renderer.gameObject.activeInHierarchy)
+                    continue;
+
+                Encapsulate(renderer.bounds, ref bounds, ref initialized);
+            }
+
+            foreach (Collider2D collider in root.GetComponentsInChildren<Collider2D>(includeInactive: true))
+            {
+                if (collider == null || !collider.enabled || !collider.gameObject.activeInHierarchy || collider.isTrigger)
+                    continue;
+
+                Encapsulate(collider.bounds, ref bounds, ref initialized);
+            }
+        }
+
+        return initialized && IsUsableBounds(bounds);
+    }
+
+    private static bool TryGetCameraBounds(Scene scene, out Bounds bounds)
+    {
+        bounds = default;
+        bool initialized = false;
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            foreach (Collider2D collider in root.GetComponentsInChildren<Collider2D>(includeInactive: true))
+            {
+                if (collider == null || !collider.enabled || !collider.gameObject.activeInHierarchy ||
+                    !collider.gameObject.CompareTag("CameraBounds"))
+                {
+                    continue;
+                }
+
+                Encapsulate(collider.bounds, ref bounds, ref initialized);
+            }
+        }
+
+        return initialized && IsUsableBounds(bounds);
+    }
+
+    private static void Encapsulate(Bounds candidate, ref Bounds bounds, ref bool initialized)
+    {
+        if (!IsFinite(candidate.min) || !IsFinite(candidate.max))
+            return;
+
+        if (!initialized)
+        {
+            bounds = candidate;
+            initialized = true;
+            return;
+        }
+
+        bounds.Encapsulate(candidate);
+    }
+
+    private static bool IsUsableBounds(Bounds bounds)
+    {
+        return IsFinite(bounds.min) && IsFinite(bounds.max) &&
+               (bounds.size.x > 0.001f || bounds.size.y > 0.001f);
+    }
+
+    private static Vector2 NormalizePosition(Vector3 position, Bounds bounds)
+    {
+        float x = bounds.size.x > 0.001f
+            ? Mathf.InverseLerp(bounds.min.x, bounds.max.x, position.x)
+            : 0.5f;
+        float y = bounds.size.y > 0.001f
+            ? Mathf.InverseLerp(bounds.min.y, bounds.max.y, position.y)
+            : 0.5f;
+
+        return new Vector2(Mathf.Clamp01(x), Mathf.Clamp01(y));
+    }
+
+    private static Dictionary<RoomTransition, Vector2> BuildDeterministicFallbackPositions(
+        List<RoomTransition> transitions)
+    {
+        List<RoomTransition> sorted = new List<RoomTransition>(transitions);
+        sorted.Sort((left, right) =>
+        {
+            int id = string.Compare(left.DoorId, right.DoorId, StringComparison.Ordinal);
+            if (id != 0)
+                return id;
+
+            return string.Compare(
+                BuildHierarchyPath(left.transform),
+                BuildHierarchyPath(right.transform),
+                StringComparison.Ordinal);
+        });
+
+        Dictionary<RoomTransition, Vector2> result = new Dictionary<RoomTransition, Vector2>();
+        for (int i = 0; i < sorted.Count; i++)
+            result[sorted[i]] = GetFallbackPosition(i, sorted.Count);
+
+        return result;
+    }
+
+    private static Vector2 GetFallbackPosition(int index, int count)
+    {
+        if (count <= 0)
+            return new Vector2(0.5f, 0.5f);
+
+        float perimeterPosition = (index + 0.5f) * 4f / count;
+        int side = Mathf.Min(3, Mathf.FloorToInt(perimeterPosition));
+        float along = perimeterPosition - side;
+
+        switch (side)
+        {
+            case 0: return new Vector2(along, 1f);
+            case 1: return new Vector2(1f, 1f - along);
+            case 2: return new Vector2(1f - along, 0f);
+            default: return new Vector2(0f, along);
+        }
+    }
+
+    private static string BuildHierarchyPath(Transform transform)
+    {
+        List<string> parts = new List<string>();
+        for (Transform current = transform; current != null; current = current.parent)
+            parts.Add(current.name);
+        parts.Reverse();
+        return string.Join("/", parts);
+    }
+
+    private static bool IsFinite(Vector3 value)
+    {
+        return !float.IsNaN(value.x) && !float.IsInfinity(value.x) &&
+               !float.IsNaN(value.y) && !float.IsInfinity(value.y) &&
+               !float.IsNaN(value.z) && !float.IsInfinity(value.z);
     }
 }

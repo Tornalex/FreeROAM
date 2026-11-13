@@ -16,7 +16,7 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (!_player.HasControl)
+        if (!_player.CanAct)
         {
             _jumpBufferTimer = 0f;
             _coyoteTimer = 0f;

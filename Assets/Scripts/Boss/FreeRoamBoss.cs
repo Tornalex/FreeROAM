@@ -493,6 +493,38 @@ namespace SpearWander.Boss
             UpdateTongueVisual();
         }
 
+        /// <summary>
+        /// Damage must never interrupt the free-roam AI. The base implementation
+        /// applies knockback, which zeroes the current velocity and pushes the
+        /// boss. That side effect is undone here, while health, feedback and
+        /// death keep running through <see cref="Boss.TakeDamage"/>.
+        /// </summary>
+        public override bool TakeDamage(int damage, Vector2 hitPoint, Vector2 damageSourcePosition)
+        {
+            if (rb == null)
+            {
+                return base.TakeDamage(damage, hitPoint, damageSourcePosition);
+            }
+
+            Vector2 velocityBeforeHit = rb.linearVelocity;
+            bool damaged = base.TakeDamage(damage, hitPoint, damageSourcePosition);
+
+            // Let the base death sequence keep its own velocity/physics cleanup.
+            if (isDead)
+            {
+                return damaged;
+            }
+
+            rb.linearVelocity = velocityBeforeHit;
+
+            if (knockbackComponent != null)
+            {
+                knockbackComponent.EndKnockback();
+            }
+
+            return damaged;
+        }
+
         protected override void Die()
         {
             if (isDead) return;

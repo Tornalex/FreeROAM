@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum RoomTransitionActivationMode
+{
+    Automatic = 0,
+    Interact = 1
+}
+
 public class RoomTransition : MonoBehaviour
 {
     [Header("Questa Porta")]
@@ -22,6 +28,10 @@ public class RoomTransition : MonoBehaviour
     [Tooltip("Connessione che possiede questa porta. Assegnata dal creatore di connessioni.")]
     [SerializeField] private RoomConnection connection;
 
+    [Header("Activation")]
+    [Tooltip("Automatic: la transizione parte entrando nel trigger. Interact: richiede l'interazione del player.")]
+    [SerializeField] private RoomTransitionActivationMode activationMode = RoomTransitionActivationMode.Automatic;
+
     public string DoorID => doorID;
     public Transform SpawnPoint => _spawnPoint;
     public string TargetSceneName => targetSceneName;
@@ -29,12 +39,33 @@ public class RoomTransition : MonoBehaviour
 
     public string DoorId => doorId;
     public RoomConnection Connection => connection;
+    public RoomTransitionActivationMode ActivationMode => activationMode;
+
+    private void Awake()
+    {
+        if (activationMode != RoomTransitionActivationMode.Interact)
+            return;
+
+        if (GetComponent<RoomTransitionInteractable>() == null)
+            gameObject.AddComponent<RoomTransitionInteractable>();
+    }
+
+    public void RequestTransition()
+    {
+        if (GameSceneManager.Instance != null)
+        {
+            GameSceneManager.Instance.RequestRoomTransition(this);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && GameSceneManager.Instance != null)
+        if (activationMode != RoomTransitionActivationMode.Automatic)
+            return;
+
+        if (collision.CompareTag("Player"))
         {
-            GameSceneManager.Instance.RequestRoomTransition(this);
+            RequestTransition();
         }
     }
 }

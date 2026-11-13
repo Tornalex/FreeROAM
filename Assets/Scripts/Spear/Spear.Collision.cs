@@ -37,10 +37,20 @@ private void OnCollisionEnter2D(
         Vector2 normal =
             collision.contacts[0].normal;
 
+        // The contact normal points out of the enemy toward the spear, so its
+        // inverse is the penetration direction. The cached velocity is stale
+        // in the Dropped state, so it must not be used here.
+        Vector2 travelDirection =
+            normal.sqrMagnitude > 0.0001f
+                ? -normal.normalized
+                : Vector2.zero;
+
         ProcessHit(
             collision.collider,
             hitPoint,
-            normal
+            normal,
+            true,
+            travelDirection
         );
     }
 }
@@ -94,7 +104,8 @@ private void OnCollisionEnter2D(
             other,
             hitPoint,
             normal,
-            foundActualColliderHit
+            foundActualColliderHit,
+            flyDir
         );
     }
 

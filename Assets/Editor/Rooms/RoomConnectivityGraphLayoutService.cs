@@ -266,6 +266,8 @@ public static class RoomConnectivityGraphLayoutService
             new Dictionary<string, Vector2>(StringComparer.Ordinal);
 
         List<RoomGraphNode> nodes = RoomConnectivityGraphLayout.SortNodesForLayout(model);
+        Dictionary<RoomGraphNode, Vector2> automatic =
+            RoomConnectivityGraphLayout.ComputeAutomaticPositions(model);
 
         for (int i = 0; i < nodes.Count; i++)
         {
@@ -277,7 +279,8 @@ public static class RoomConnectivityGraphLayoutService
             if (positions.ContainsKey(node.NodeKey))
                 continue;
 
-            positions.Add(node.NodeKey, RoomConnectivityGraphLayout.GetGridPosition(i, nodes.Count));
+            if (automatic.TryGetValue(node, out Vector2 position))
+                positions.Add(node.NodeKey, position);
         }
 
         return positions;

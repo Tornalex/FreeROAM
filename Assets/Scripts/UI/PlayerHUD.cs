@@ -7,15 +7,14 @@ public class PlayerHUD : MonoBehaviour
     [Header("Player Reference")]
     [SerializeField] private Player player;
 
-    [Header("Health UI (Vita)")]
-    [SerializeField] private Slider healthSlider;
-    [SerializeField] private TextMeshProUGUI healthText;
+    [Header("Essence UI")]
+    [SerializeField] private GameObject[] nuts;
 
-    [Header("Essence UI (Essenza)")]
+    [Header("Essence UI")]
     [SerializeField] private Slider essenceSlider;
     [SerializeField] private TextMeshProUGUI essenceText;
 
-    [Header("Spear UI (Lancia)")]
+    [Header("Spear UI")]
     [SerializeField] private TextMeshProUGUI spearStateText;
 
     private int _lastHealth = -1;
@@ -49,31 +48,28 @@ public class PlayerHUD : MonoBehaviour
         UpdateEssenceUI();
         UpdateSpearUI();
     }
+private void UpdateHealthUI()
+{
+    if (player.Health == null) return;
 
-    private void UpdateHealthUI()
+    int currentHealth = player.Health.CurrentHealth;
+    int maxHealth = player.Health.MaxHealth;
+
+    if (currentHealth == _lastHealth &&
+        maxHealth == _lastMaxHealth)
+        return;
+
+    _lastHealth = currentHealth;
+    _lastMaxHealth = maxHealth;
+
+    if (nuts == null) return;
+
+    for (int i = 0; i < nuts.Length; i++)
     {
-        if (player.Health == null) return;
-
-        int currentHealth = player.Health.CurrentHealth;
-        int maxHealth = player.Health.MaxHealth;
-
-        if (currentHealth != _lastHealth || maxHealth != _lastMaxHealth)
-        {
-            _lastHealth = currentHealth;
-            _lastMaxHealth = maxHealth;
-
-            if (healthSlider != null)
-            {
-                healthSlider.maxValue = maxHealth;
-                healthSlider.value = currentHealth;
-            }
-
-            if (healthText != null)
-            {
-                healthText.text = $"Life: {currentHealth} / {maxHealth}";
-            }
-        }
+        if (nuts[i] == null) continue;
+        nuts[i].SetActive(i < maxHealth && i < currentHealth);
     }
+}
 
     private void UpdateEssenceUI()
     {

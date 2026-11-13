@@ -22,6 +22,7 @@ public partial class Spear : MonoBehaviour
 
     public bool HasHitEnemy { get; private set; }
     public SpearConfig Configuration => spearConfig;
+
     public float EffectiveMass => spearConfig != null ? spearConfig.RigidbodyMass : 2f;
     public float EffectiveGravityScale => spearConfig != null ? spearConfig.FlightGravityScale : 3f;
     public float EffectiveLinearDamping => spearConfig != null ? spearConfig.FlightLinearDamping : 0f;

@@ -38,6 +38,11 @@ public static class RoomConnectivityGraphLayout
     public const float VerticalGap = 100f;
     public const float Margin = 60f;
     public const float MultiEdgeSpacing = 48f;
+    public const float SocketSpacing = 15f;
+    public const float PreviewTop = 42f;
+    public const float PreviewBottom = 26f;
+    public const float PreviewHorizontalPadding = 12f;
+    public const float PreviewSocketPadding = 8f;
 
     public static RoomConnectivityGraphLayoutResult Compute(RoomConnectivityGraphModel model)
     {
@@ -63,13 +68,15 @@ public static class RoomConnectivityGraphLayout
         }
 
         List<RoomGraphNode> sorted = SortNodesForLayout(model);
+        Dictionary<RoomGraphNode, Vector2> automaticPositions =
+            ComputeAutomaticPositions(sorted);
 
         float maxX = 0f;
         float maxY = 0f;
 
         for (int i = 0; i < sorted.Count; i++)
         {
-            Vector2 position = GetGridPosition(i, sorted.Count);
+            Vector2 position = automaticPositions[sorted[i]];
 
             if (savedPositions != null &&
                 !string.IsNullOrEmpty(sorted[i].NodeKey) &&
@@ -82,8 +89,17 @@ public static class RoomConnectivityGraphLayout
                 position = new Vector2(Mathf.Max(0f, saved.x), Mathf.Max(0f, saved.y));
             }
 
-            Rect rect = new Rect(position.x, position.y, NodeWidth, NodeHeight);
+            Vector2 nodeSize = GetNodeSize(sorted[i]);
+            Rect rect = new Rect(position.x, position.y, nodeSize.x, nodeSize.y);
             result.NodeRects[sorted[i]] = rect;
+
+            Rect previewRect = GetPreviewRect(rect);
+            result.PreviewRects[sorted[i]] = previewRect;
+            foreach (KeyValuePair<RoomGraphDoor, Vector2> socket in
+                     ComputeDoorSocketPositions(sorted[i], previewRect))
+            {
+                result.DoorSocketPositions[socket.Key] = socket.Value;
+            }
 
             maxX = Mathf.Max(maxX, rect.xMax);
             maxY = Mathf.Max(maxY, rect.yMax);
@@ -139,10 +155,21 @@ public static class RoomConnectivityGraphLayout
                 Vector2 sourceCenter = sourceRect.center;
                 Vector2 targetCenter = targetRect.center;
 
+                Vector2 start = edge.EndpointADoor != null && result.DoorSocketPositions.TryGetValue(
+                    edge.EndpointADoor,
+                    out Vector2 socketA)
+                    ? socketA
+                    : BoundaryPoint(sourceRect, targetCenter);
+                Vector2 end = edge.EndpointBDoor != null && result.DoorSocketPositions.TryGetValue(
+                    edge.EndpointBDoor,
+                    out Vector2 socketB)
+                    ? socketB
+                    : BoundaryPoint(targetRect, sourceCenter);
+
                 RoomGraphEdgeGeometry geometry = new RoomGraphEdgeGeometry(edge)
                 {
-                    Start = BoundaryPoint(sourceRect, targetCenter),
-                    End = BoundaryPoint(targetRect, sourceCenter)
+                    Start = start,
+                    End = end
                 };
 
                 Vector2 direction = targetCenter - sourceCenter;
@@ -207,6 +234,265 @@ public static class RoomConnectivityGraphLayout
             Margin + row * (NodeHeight + VerticalGap));
     }
 
+    public static Vector2 GetNodeSize(RoomGraphNode node)
+    {
+        if (node == null || node.Doors == null || node.Doors.Count == 0)
+            return new Vector2(NodeWidth, NodeHeight);
+
+        GetSocketSideCounts(node, out int top, out int right, out int bottom, out int left);
+        int horizontalSockets = Mathf.Max(top, bottom);
+        int verticalSockets = Mathf.Max(left, right);
+
+        float width = Mathf.Max(
+            NodeWidth,
+            PreviewHorizontalPadding * 2f +
+            PreviewSocketPadding * 2f +
+            Mathf.Max(0, horizontalSockets - 1) * SocketSpacing);
+        float previewHeight = Mathf.Max(
+            NodeHeight - PreviewTop - PreviewBottom,
+            PreviewSocketPadding * 2f +
+            Mathf.Max(0, verticalSockets - 1) * SocketSpacing);
+        float height = Mathf.Max(NodeHeight, PreviewTop + previewHeight + PreviewBottom);
+
+        return new Vector2(width, height);
+    }
+
+    public static Rect GetPreviewRect(Rect nodeRect)
+    {
+        return new Rect(
+            nodeRect.x + PreviewHorizontalPadding,
+            nodeRect.y + PreviewTop,
+            Mathf.Max(1f, nodeRect.width - PreviewHorizontalPadding * 2f),
+            Mathf.Max(1f, nodeRect.height - PreviewTop - PreviewBottom));
+    }
+
+    /// <summary>
+    /// Returns node-local socket positions. Scene-derived normalized positions
+    /// retain their relative order along each side; missing spatial data uses a
+    /// stable DoorId/hierarchy-name fallback and remains explicitly flagged on
+    /// the RoomGraphDoor for the UI to report.
+    /// </summary>
+    public static Dictionary<RoomGraphDoor, Vector2> ComputeDoorSocketPositions(
+        RoomGraphNode node,
+        Rect previewRect)
+    {
+        Dictionary<RoomGraphDoor, Vector2> result =
+            new Dictionary<RoomGraphDoor, Vector2>();
+        if (node == null || node.Doors == null || node.Doors.Count == 0)
+            return result;
+
+        Dictionary<RoomGraphDoor, Vector2> normalized = GetEffectiveDoorPositions(node);
+        List<SocketRecord> top = new List<SocketRecord>();
+        List<SocketRecord> right = new List<SocketRecord>();
+        List<SocketRecord> bottom = new List<SocketRecord>();
+        List<SocketRecord> left = new List<SocketRecord>();
+
+        foreach (RoomGraphDoor door in node.Doors)
+        {
+            Vector2 position = normalized[door];
+            float leftDistance = position.x;
+            float rightDistance = 1f - position.x;
+            float topDistance = 1f - position.y;
+            float bottomDistance = position.y;
+            float minimum = Mathf.Min(leftDistance, rightDistance, topDistance, bottomDistance);
+
+            if (Mathf.Approximately(minimum, topDistance))
+                top.Add(new SocketRecord(door, position.x));
+            else if (Mathf.Approximately(minimum, rightDistance))
+                right.Add(new SocketRecord(door, 1f - position.y));
+            else if (Mathf.Approximately(minimum, bottomDistance))
+                bottom.Add(new SocketRecord(door, 1f - position.x));
+            else
+                left.Add(new SocketRecord(door, 1f - position.y));
+        }
+
+        PlaceSide(top, previewRect.x, previewRect.xMax, previewRect.y, horizontal: true, result);
+        PlaceSide(right, previewRect.y, previewRect.yMax, previewRect.xMax, horizontal: false, result);
+        PlaceSide(bottom, previewRect.x, previewRect.xMax, previewRect.yMax, horizontal: true, result);
+        PlaceSide(left, previewRect.y, previewRect.yMax, previewRect.x, horizontal: false, result);
+        return result;
+    }
+
+    internal static Dictionary<RoomGraphNode, Vector2> ComputeAutomaticPositions(
+        RoomConnectivityGraphModel model)
+    {
+        return ComputeAutomaticPositions(SortNodesForLayout(model));
+    }
+
+    private static Dictionary<RoomGraphNode, Vector2> ComputeAutomaticPositions(
+        List<RoomGraphNode> sorted)
+    {
+        Dictionary<RoomGraphNode, Vector2> result =
+            new Dictionary<RoomGraphNode, Vector2>();
+        if (sorted == null || sorted.Count == 0)
+            return result;
+
+        int columns = Mathf.Max(1, Mathf.CeilToInt(Mathf.Sqrt(sorted.Count)));
+        int rows = Mathf.CeilToInt(sorted.Count / (float)columns);
+        float[] columnWidths = new float[columns];
+        float[] rowHeights = new float[rows];
+
+        for (int i = 0; i < sorted.Count; i++)
+        {
+            int column = i % columns;
+            int row = i / columns;
+            Vector2 size = GetNodeSize(sorted[i]);
+            columnWidths[column] = Mathf.Max(columnWidths[column], size.x);
+            rowHeights[row] = Mathf.Max(rowHeights[row], size.y);
+        }
+
+        float[] columnOffsets = new float[columns];
+        float[] rowOffsets = new float[rows];
+        for (int column = 1; column < columns; column++)
+            columnOffsets[column] = columnOffsets[column - 1] + columnWidths[column - 1] + HorizontalGap;
+        for (int row = 1; row < rows; row++)
+            rowOffsets[row] = rowOffsets[row - 1] + rowHeights[row - 1] + VerticalGap;
+
+        for (int i = 0; i < sorted.Count; i++)
+        {
+            int column = i % columns;
+            int row = i / columns;
+            result[sorted[i]] = new Vector2(Margin + columnOffsets[column], Margin + rowOffsets[row]);
+        }
+
+        return result;
+    }
+
+    private static Dictionary<RoomGraphDoor, Vector2> GetEffectiveDoorPositions(RoomGraphNode node)
+    {
+        Dictionary<RoomGraphDoor, Vector2> positions = new Dictionary<RoomGraphDoor, Vector2>();
+        List<RoomGraphDoor> fallbackDoors = new List<RoomGraphDoor>();
+        foreach (RoomGraphDoor door in node.Doors)
+        {
+            if (door.HasSpatialData && IsFinite(door.NormalizedScenePosition))
+            {
+                positions[door] = new Vector2(
+                    Mathf.Clamp01(door.NormalizedScenePosition.x),
+                    Mathf.Clamp01(door.NormalizedScenePosition.y));
+            }
+            else
+            {
+                fallbackDoors.Add(door);
+            }
+        }
+
+        fallbackDoors.Sort((a, b) =>
+        {
+            int id = string.Compare(a.StableDoorId, b.StableDoorId, StringComparison.Ordinal);
+            return id != 0
+                ? id
+                : string.Compare(a.GameObjectName, b.GameObjectName, StringComparison.Ordinal);
+        });
+
+        for (int i = 0; i < fallbackDoors.Count; i++)
+            positions[fallbackDoors[i]] = GetFallbackPosition(i, fallbackDoors.Count);
+
+        return positions;
+    }
+
+    private static Vector2 GetFallbackPosition(int index, int count)
+    {
+        if (count <= 0)
+            return new Vector2(0.5f, 0.5f);
+
+        float perimeter = (index + 0.5f) * 4f / count;
+        int side = Mathf.Min(3, Mathf.FloorToInt(perimeter));
+        float along = perimeter - side;
+        switch (side)
+        {
+            case 0: return new Vector2(along, 1f);
+            case 1: return new Vector2(1f, 1f - along);
+            case 2: return new Vector2(1f - along, 0f);
+            default: return new Vector2(0f, along);
+        }
+    }
+
+    private static void GetSocketSideCounts(
+        RoomGraphNode node,
+        out int top,
+        out int right,
+        out int bottom,
+        out int left)
+    {
+        top = right = bottom = left = 0;
+        if (node == null)
+            return;
+
+        Dictionary<RoomGraphDoor, Vector2> normalized = GetEffectiveDoorPositions(node);
+        foreach (Vector2 position in normalized.Values)
+        {
+            float leftDistance = position.x;
+            float rightDistance = 1f - position.x;
+            float topDistance = 1f - position.y;
+            float bottomDistance = position.y;
+            float minimum = Mathf.Min(leftDistance, rightDistance, topDistance, bottomDistance);
+            if (Mathf.Approximately(minimum, topDistance)) top++;
+            else if (Mathf.Approximately(minimum, rightDistance)) right++;
+            else if (Mathf.Approximately(minimum, bottomDistance)) bottom++;
+            else left++;
+        }
+    }
+
+    private static void PlaceSide(
+        List<SocketRecord> records,
+        float start,
+        float end,
+        float fixedCoordinate,
+        bool horizontal,
+        Dictionary<RoomGraphDoor, Vector2> output)
+    {
+        if (records.Count == 0)
+            return;
+
+        records.Sort((a, b) =>
+        {
+            int position = a.NormalizedAlong.CompareTo(b.NormalizedAlong);
+            if (position != 0)
+                return position;
+            int id = string.Compare(a.Door.StableDoorId, b.Door.StableDoorId, StringComparison.Ordinal);
+            return id != 0 ? id : string.Compare(a.Door.GameObjectName, b.Door.GameObjectName, StringComparison.Ordinal);
+        });
+
+        float length = Mathf.Max(1f, end - start);
+        float[] positions = new float[records.Count];
+        for (int i = 0; i < records.Count; i++)
+        {
+            float desired = Mathf.Clamp01(records[i].NormalizedAlong) * length;
+            float minimum = i == 0
+                ? PreviewSocketPadding
+                : positions[i - 1] + SocketSpacing;
+            positions[i] = Mathf.Max(desired, minimum);
+        }
+
+        float maximum = length - PreviewSocketPadding;
+        float overflow = positions[positions.Length - 1] - maximum;
+        if (overflow > 0f)
+        {
+            for (int i = 0; i < positions.Length; i++)
+                positions[i] -= overflow;
+        }
+
+        for (int i = 0; i < records.Count; i++)
+        {
+            float along = start + Mathf.Clamp(positions[i], PreviewSocketPadding, maximum);
+            output[records[i].Door] = horizontal
+                ? new Vector2(along, fixedCoordinate)
+                : new Vector2(fixedCoordinate, along);
+        }
+    }
+
+    private readonly struct SocketRecord
+    {
+        public SocketRecord(RoomGraphDoor door, float normalizedAlong)
+        {
+            Door = door;
+            NormalizedAlong = normalizedAlong;
+        }
+
+        public RoomGraphDoor Door { get; }
+        public float NormalizedAlong { get; }
+    }
+
     private static bool IsFinite(Vector2 position)
     {
         return !float.IsNaN(position.x) && !float.IsInfinity(position.x) &&
@@ -266,6 +552,12 @@ public sealed class RoomConnectivityGraphLayoutResult
 {
     public Dictionary<RoomGraphNode, Rect> NodeRects { get; } =
         new Dictionary<RoomGraphNode, Rect>();
+
+    public Dictionary<RoomGraphNode, Rect> PreviewRects { get; } =
+        new Dictionary<RoomGraphNode, Rect>();
+
+    public Dictionary<RoomGraphDoor, Vector2> DoorSocketPositions { get; } =
+        new Dictionary<RoomGraphDoor, Vector2>();
 
     public Dictionary<RoomConnection, RoomGraphEdgeGeometry> EdgeGeometries { get; } =
         new Dictionary<RoomConnection, RoomGraphEdgeGeometry>();

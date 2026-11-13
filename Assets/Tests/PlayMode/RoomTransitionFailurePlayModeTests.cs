@@ -24,7 +24,7 @@ namespace SpearWander.PlayModeTests
 
         private const string SourceRoomId = "room_0cd7bdc0537c4f4bb6937de388e8858d";
         private const string DestinationRoomId = "room_f4a2fbe688fb4506af039512474bd0f7";
-        private const string SourceDoorId = "WakeRoom_Right";
+        private const string SourceDoorId = "Re-EntryModule_WakeRoom_Right";
         private const string DestinationDoorId = "Re-EntryModule_Corridor_Left";
 
         private const float TransitionTimeoutSeconds = 30f;
@@ -41,6 +41,32 @@ namespace SpearWander.PlayModeTests
         private const string CheckpointManagerTypeName = "CheckpointManager";
 
         private const string TransitionControlReasonName = "Transition";
+
+        private static class FaultStages
+        {
+            public const string SourceValidation = "source-validation";
+            public const string SnapshotCapture = "snapshot-capture";
+            public const string FreezeControlSetup = "freeze-control-setup";
+            public const string FadeOut = "fade-out";
+            public const string DestinationLoadStart = "destination-load-start";
+            public const string DestinationValidation = "destination-validation";
+            public const string RelocationBeforeMutation = "player-relocation-before-mutation";
+            public const string RelocationAfterMutation = "player-relocation-after-mutation";
+            public const string DestinationActivation = "destination-activation";
+            public const string DestinationCameraSetup = "destination-camera-setup";
+            public const string PreCommit = "pre-commit";
+            public const string RollbackPlayerTransform = "rollback-player-transform";
+            public const string RollbackCamera = "rollback-camera";
+            public const string RollbackDestinationUnload = "rollback-destination-unload";
+            public const string RollbackFade = "rollback-fade";
+            public const string RollbackTimescale = "rollback-timescale";
+            public const string RollbackTransitionLock = "rollback-transition-lock";
+            public const string PostCommitSourceUnload = "post-commit-source-unload";
+            public const string PostCommitSourceUnloadWait = "post-commit-source-unload-wait";
+            public const string PostCommitFadeIn = "post-commit-fade-in";
+            public const string PostCommitControlRestore = "post-commit-control-restore";
+            public const string PostCommitTimescaleRestore = "post-commit-timescale-restore";
+        }
 
         /// <summary>
         /// Mutable state for one failure scenario. It is a class so setup and
@@ -103,6 +129,8 @@ namespace SpearWander.PlayModeTests
             public Transform DestinationOriginalSpawnPoint;
             public ScriptableObject TransientConnection;
 
+            public Action<string> FaultInjector;
+            public bool FaultInjectorInstalled;
             public bool TimedOut;
         }
 
@@ -382,6 +410,833 @@ namespace SpearWander.PlayModeTests
             }
         }
 
+        [UnityTest]
+        public IEnumerator SourceValidationExceptionPreservesPreTransitionState()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.SourceValidation);
+
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A source validation failure must not load the destination.");
+                Assert.That(
+                    scenario.Canvas.alpha,
+                    Is.EqualTo(scenario.CanvasAlpha).Within(0.0001f),
+                    "A source validation failure must not change the fade alpha.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 1,
+                    expectedRollbackErrors: 0,
+                    expectedSourceValidationFragment:
+                        "Injected failure at " + FaultStages.SourceValidation);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: source validation exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator SnapshotCaptureExceptionFailsAtSourceValidation()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.SnapshotCapture);
+
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A snapshot failure must not load the destination.");
+                Assert.That(
+                    scenario.Canvas.alpha,
+                    Is.EqualTo(scenario.CanvasAlpha).Within(0.0001f),
+                    "A snapshot failure must not change the fade alpha.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 1,
+                    expectedRollbackErrors: 0,
+                    expectedSourceValidationFragment:
+                        "Injected failure at " + FaultStages.SnapshotCapture);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: snapshot capture exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator FreezeControlSetupFailureRollsBack()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.FreezeControlSetup);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "freeze/control setup",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.FreezeControlSetup,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: freeze/control setup exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator FadeOutFailureRollsBackBeforeDestinationLoad()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.FadeOut);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "fade-out",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.FadeOut,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: fade-out exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator DestinationLoadStartFailureRollsBack()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.DestinationLoadStart);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "destination load",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.DestinationLoadStart,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: destination load start exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator DestinationValidationExceptionRollsBackAndUnloadsDestination()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.DestinationValidation);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "destination validation",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.DestinationValidation,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: destination validation exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator RelocationBeforeMutationFailureRollsBack()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.RelocationBeforeMutation);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "player relocation",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.RelocationBeforeMutation,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: relocation exception before mutation");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator RelocationAfterPartialMutationFailureRollsBack()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.RelocationAfterMutation);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "player relocation",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.RelocationAfterMutation,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: relocation exception after partial mutation");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator DestinationActivationFailureRollsBack()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.DestinationActivation);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "destination activation and camera setup",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.DestinationActivation,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: destination activation exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator DestinationCameraSetupFailureRestoresActiveScene()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.DestinationCameraSetup);
+
+                AssertRollbackInvariants(scenario);
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "destination activation and camera setup",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.DestinationCameraSetup,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: destination camera setup exception");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator PlayerTransformRollbackFailureDoesNotStopCleanup()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackPlayerTransform);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A failed player transform restoration must not prevent destination cleanup.");
+                Assert.That(
+                    Vector3.Distance(
+                        scenario.PlayerTransform.position,
+                        scenario.PlayerPosition),
+                    Is.GreaterThan(0.1f),
+                    "The injected player transform restoration failure was not observable.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (player transform restoration)"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: player transform rollback failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator CameraRollbackFailureDoesNotStopCleanup()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackCamera);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A failed camera restoration must not prevent destination cleanup.");
+
+                Collider2D activeBounds =
+                    ReflectionTestUtilities.GetInstanceField<Collider2D>(
+                        scenario.CameraConfiner,
+                        "BoundingShape2D");
+                Assert.That(
+                    activeBounds,
+                    Is.Not.SameAs(scenario.CameraBounds),
+                    "The injected camera restoration failure was not observable.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (camera bounds restoration)"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: camera rollback failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator DestinationUnloadRollbackFailureDoesNotStopControlRestore()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackDestinationUnload);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationLoadedOnce(
+                    "The injected destination unload failure must leave the destination loaded.");
+                Assert.That(
+                    scenario.PlayerBody.bodyType,
+                    Is.EqualTo(scenario.BodyType),
+                    "Rigidbody restoration did not continue after the unload failure.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (destination scene cleanup"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: destination unload rollback failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator FadeRollbackFailureDoesNotStopCleanup()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackFade);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A failed fade restoration must not prevent destination cleanup.");
+                Assert.That(
+                    scenario.Canvas.alpha,
+                    Is.Not.EqualTo(scenario.CanvasAlpha).Within(0.0001f),
+                    "The injected fade restoration failure was not observable.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (fade state restoration)"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: fade rollback failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator TimeScaleAndLockRollbackFailuresAreRescuedByFinalCleanup()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackTimescale,
+                    FaultStages.RollbackTransitionLock);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationNotLoaded(
+                    "A failed time scale or lock restoration must not prevent destination cleanup.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (time scale restoration)",
+                        "Rollback step failed (transition lock release)"
+                    },
+                    expectedAdditionalErrorCount: 2);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: time scale and lock rollback failures");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator MultipleRollbackFailuresStillRestoreControlTimeAndLock()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PreCommit,
+                    FaultStages.RollbackPlayerTransform,
+                    FaultStages.RollbackCamera,
+                    FaultStages.RollbackDestinationUnload,
+                    FaultStages.RollbackFade);
+
+                CaptureLoadedDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                AssertSourceStateUnchanged(scenario);
+                AssertSourceLoadedAndActive(scenario);
+                AssertDestinationLoadedOnce(
+                    "The injected destination unload failure must leave the destination loaded.");
+                Assert.That(
+                    Vector3.Distance(
+                        scenario.PlayerTransform.position,
+                        scenario.PlayerPosition),
+                    Is.GreaterThan(0.1f),
+                    "The injected player transform restoration failure was not observable.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: "pre-commit",
+                    expectedRollbackFragment:
+                        "Injected failure at " + FaultStages.PreCommit,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 1,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "Rollback step failed (player transform restoration)",
+                        "Rollback step failed (camera bounds restoration)",
+                        "Rollback step failed (destination scene cleanup",
+                        "Rollback step failed (fade state restoration)"
+                    },
+                    expectedAdditionalErrorCount: 4);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: multiple rollback failures");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator PostCommitSourceUnloadFailureDoesNotRollback()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PostCommitSourceUnload);
+
+                CaptureLoadedDestination(scenario);
+                AssertCommittedToDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                Assert.That(
+                    Fixture.IsSceneLoaded(SourceScenePath),
+                    Is.True,
+                    "An injected source unload failure should leave the source loaded.");
+                Assert.That(
+                    ReflectionTestUtilities.GetProperty<string>(
+                        scenario.Manager,
+                        "CurrentRoom"),
+                    Is.EqualTo(scenario.DestinationScene.name),
+                    "A post-commit source unload failure must not roll back the room identity.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 0,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "source unload failed"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: post-commit source unload failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator PostCommitFadeInFailureStillRestoresControl()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PostCommitFadeIn);
+
+                CaptureLoadedDestination(scenario);
+                AssertCommittedToDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                Assert.That(
+                    Fixture.IsSceneLoaded(SourceScenePath),
+                    Is.False,
+                    "The source scene should have unloaded after commit.");
+                Assert.That(
+                    scenario.Canvas.alpha,
+                    Is.GreaterThan(0.5f),
+                    "The injected fade-in failure was not observable.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 0,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "fade-in failed"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: post-commit fade-in failure");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator PostCommitControlAndTimeFailuresAreRescuedByFinalCleanup()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PostCommitFadeIn,
+                    FaultStages.PostCommitControlRestore,
+                    FaultStages.PostCommitTimescaleRestore);
+
+                CaptureLoadedDestination(scenario);
+                AssertCommittedToDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                Assert.That(
+                    scenario.PlayerBody.bodyType,
+                    Is.EqualTo(scenario.BodyType),
+                    "Final cleanup did not restore the player body type.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 0,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "fade-in failed",
+                        "player control restoration failed",
+                        "Time.timeScale restoration failed"
+                    },
+                    expectedAdditionalErrorCount: 3);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: post-commit control and time failures");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator PostCommitSourceUnloadFailureAfterStartIsReported()
+        {
+            FailureScenario scenario = new FailureScenario();
+
+            try
+            {
+                yield return PrepareScenario(scenario);
+                AssertDestinationNotLoadedBeforeTest();
+
+                yield return TriggerFaultedTransition(
+                    scenario,
+                    FaultStages.PostCommitSourceUnloadWait);
+
+                CaptureLoadedDestination(scenario);
+                AssertCommittedToDestination(scenario);
+                AssertRestoredControlTimeAndLock(scenario);
+                Assert.That(
+                    Fixture.IsSceneLoaded(SourceScenePath),
+                    Is.False,
+                    "The asynchronous source unload should still complete after the reported fault.");
+
+                AssertExpectedLogs(
+                    scenario,
+                    expectedRollbackStage: null,
+                    expectedRollbackFragment: null,
+                    expectedSourceValidationErrors: 0,
+                    expectedRollbackErrors: 0,
+                    expectedAdditionalErrorFragments: new[]
+                    {
+                        "source unload failed after the unload operation started"
+                    },
+                    expectedAdditionalErrorCount: 1);
+
+                TestContext.WriteLine(
+                    "[ExceptionSafety] Scenario: post-commit source unload failure after start");
+            }
+            finally
+            {
+                CleanupScenario(scenario);
+            }
+        }
+
         private IEnumerator PrepareScenario(FailureScenario scenario)
         {
             scenario.ManagerType =
@@ -405,6 +1260,31 @@ namespace SpearWander.PlayModeTests
             scenario.Manager = GetManager(scenario.ManagerType);
             scenario.ManagerExisted = IsAlive(scenario.Manager);
             bool masterExisted = Fixture.IsSceneLoaded(MasterScenePath);
+
+            // A persistent manager without Master can be left over by the
+            // PlayMode test host. It is only usable when its scene-owned player
+            // and camera references are still alive. Replace an orphaned
+            // manager before loading Master so its duplicate-instance guard
+            // cannot discard the valid manager created by that scene.
+            if (!masterExisted && scenario.ManagerExisted)
+            {
+                Transform existingPlayer =
+                    ReflectionTestUtilities.GetInstanceField<Transform>(
+                        scenario.Manager,
+                        "playerTransform");
+                Component existingCamera =
+                    ReflectionTestUtilities.GetInstanceField<Component>(
+                        scenario.Manager,
+                        "cameraConfiner");
+
+                if (existingPlayer == null || existingCamera == null)
+                {
+                    DestroyGameObject(scenario.Manager);
+                    yield return null;
+                    scenario.Manager = null;
+                    scenario.ManagerExisted = false;
+                }
+            }
 
             Assert.That(
                 Fixture.IsSceneLoaded(SourceScenePath),
@@ -498,29 +1378,41 @@ namespace SpearWander.PlayModeTests
                     Is.True,
                     "The pre-loaded Master scene has no live GameSceneManager.");
 
-                ReflectionTestUtilities.SetInstanceField(
-                    scenario.Manager,
-                    "_currentRoomScene",
-                    scenario.SourceScene.name);
-                ReflectionTestUtilities.SetInstanceField(
-                    scenario.Manager,
-                    "_currentRoomDefinition",
-                    scenario.SourceRoom);
-                ReflectionTestUtilities.SetInstanceField(
-                    scenario.Manager,
-                    "_targetDoorID",
-                    null);
-                ReflectionTestUtilities.SetInstanceField(
-                    scenario.Manager,
-                    "_isTransitioning",
-                    false);
-                Assert.That(
-                    SceneManager.SetActiveScene(scenario.SourceScene),
-                    Is.True,
-                    "Could not make the source scene active for the pre-existing manager.");
             }
 
             Assert.That(IsAlive(scenario.Manager), Is.True);
+            // A live manager can outlive Master in DontDestroyOnLoad. Whether
+            // this setup created Master or reused an existing manager, put the
+            // manager and active scene in the exact source-room state needed
+            // by this scenario.
+            ReflectionTestUtilities.SetInstanceField(
+                scenario.Manager,
+                "_currentRoomScene",
+                scenario.SourceScene.name);
+            ReflectionTestUtilities.SetInstanceField(
+                scenario.Manager,
+                "_currentRoomDefinition",
+                scenario.SourceRoom);
+            ReflectionTestUtilities.SetInstanceField(
+                scenario.Manager,
+                "_targetDoorID",
+                null);
+            ReflectionTestUtilities.SetInstanceField(
+                scenario.Manager,
+                "_isTransitioning",
+                false);
+            if (SceneManager.GetActiveScene() != scenario.SourceScene)
+            {
+                Assert.That(
+                    SceneManager.SetActiveScene(scenario.SourceScene),
+                    Is.True,
+                    "Could not make the source scene active for the failure scenario. " +
+                    $"Source path='{scenario.SourceScene.path}', " +
+                    $"valid={scenario.SourceScene.IsValid()}, " +
+                    $"loaded={scenario.SourceScene.isLoaded}, " +
+                    $"active path='{SceneManager.GetActiveScene().path}'.");
+            }
+
             scenario.MasterScene = Fixture.GetLoadedScene(MasterScenePath);
             Assert.That(
                 SceneManager.GetActiveScene().handle,
@@ -643,6 +1535,150 @@ namespace SpearWander.PlayModeTests
                 IsTransitioning(scenario.Manager),
                 Is.True,
                 "RequestRoomTransition did not start the connected transition.");
+        }
+
+        private static void InstallFaultInjector(
+            FailureScenario scenario,
+            params string[] stages)
+        {
+            scenario.FaultInjector = ThrowOnStages(stages);
+            scenario.FaultInjectorInstalled = true;
+            ReflectionTestUtilities.SetStaticField(
+                scenario.ManagerType,
+                "_connectedTransitionFaultInjector",
+                scenario.FaultInjector);
+        }
+
+        private static void ClearFaultInjector(FailureScenario scenario)
+        {
+            if (scenario == null || scenario.ManagerType == null)
+                return;
+
+            ReflectionTestUtilities.SetStaticField(
+                scenario.ManagerType,
+                "_connectedTransitionFaultInjector",
+                null);
+            scenario.FaultInjectorInstalled = false;
+            scenario.FaultInjector = null;
+        }
+
+        private static Action<string> ThrowOnStages(params string[] stages)
+        {
+            HashSet<string> failingStages =
+                new HashSet<string>(stages ?? Array.Empty<string>(), StringComparer.Ordinal);
+            return stage =>
+            {
+                if (failingStages.Contains(stage))
+                    throw new InvalidOperationException("Injected failure at " + stage);
+            };
+        }
+
+        private static IEnumerator TriggerFaultedTransition(
+            FailureScenario scenario,
+            params string[] faultStages)
+        {
+            InstallFaultInjector(scenario, faultStages);
+            TriggerTransition(scenario);
+
+            // Some source-validation and snapshot failures complete
+            // synchronously before StartCoroutine returns, so the lock may
+            // already be clear here. Waiting is valid for both cases.
+            yield return WaitForTransitionEnd(scenario);
+            Assert.That(
+                scenario.TimedOut,
+                Is.False,
+                $"The faulted transition did not settle within {TransitionTimeoutSeconds} seconds.");
+        }
+
+        private void CaptureLoadedDestination(FailureScenario scenario)
+        {
+            if (!Fixture.IsSceneLoaded(DestinationScenePath))
+                return;
+
+            scenario.DestinationScene = Fixture.GetLoadedScene(DestinationScenePath);
+        }
+
+        private static void AssertDestinationNotLoaded(string context)
+        {
+            Assert.That(
+                CountLoadedScenes(DestinationScenePath),
+                Is.EqualTo(0),
+                context);
+        }
+
+        private static void AssertDestinationLoadedOnce(string context)
+        {
+            Assert.That(
+                CountLoadedScenes(DestinationScenePath),
+                Is.EqualTo(1),
+                context);
+        }
+
+        private static void AssertRestoredControlTimeAndLock(FailureScenario scenario)
+        {
+            Assert.That(
+                IsTransitioning(scenario.Manager),
+                Is.False,
+                "The transition lock was not released.");
+            Assert.That(
+                Time.timeScale,
+                Is.EqualTo(scenario.TimeScale).Within(0.0001f),
+                "Time.timeScale was not restored.");
+            Assert.That(
+                ReflectionTestUtilities.GetProperty<bool>(
+                    scenario.Player,
+                    "HasControl"),
+                Is.EqualTo(scenario.HadControl),
+                "Player control was not restored.");
+            Assert.That(
+                ReflectionTestUtilities.InvokeInstance<bool>(
+                    scenario.Player,
+                    "HasControlRequest",
+                    scenario.TransitionControlReason),
+                Is.EqualTo(scenario.HadTransitionControl),
+                "The player's Transition control request was not restored.");
+        }
+
+        private void AssertSourceLoadedAndActive(FailureScenario scenario)
+        {
+            Assert.That(
+                Fixture.IsSceneLoaded(SourceScenePath),
+                Is.True,
+                "The source scene is no longer loaded.");
+            Assert.That(
+                scenario.SourceScene.isLoaded,
+                Is.True,
+                "The source scene handle reports unloaded.");
+            Assert.That(
+                SceneManager.GetActiveScene().handle,
+                Is.EqualTo(scenario.SourceScene.handle),
+                "The source scene is not active.");
+        }
+
+        private void AssertCommittedToDestination(FailureScenario scenario)
+        {
+            Assert.That(
+                IsTransitioning(scenario.Manager),
+                Is.False,
+                "The committed transition did not release the transition lock.");
+            Assert.That(
+                scenario.DestinationScene.IsValid(),
+                Is.True,
+                "The destination scene handle is invalid.");
+            Assert.That(
+                ReflectionTestUtilities.GetProperty<string>(
+                    scenario.Manager,
+                    "CurrentRoom"),
+                Is.EqualTo(scenario.DestinationScene.name),
+                "The manager did not commit the destination room.");
+            Assert.That(
+                ReflectionTestUtilities.GetProperty<string>(
+                    scenario.Manager,
+                    "CurrentRoomId"),
+                Is.EqualTo(DestinationRoomId),
+                "The manager did not commit the destination room identity.");
+            AssertDestinationLoadedOnce(
+                "The destination scene must remain loaded after commit.");
         }
 
         private static IEnumerator WaitForTransitionEnd(FailureScenario scenario)
@@ -810,13 +1846,16 @@ namespace SpearWander.PlayModeTests
             string expectedRollbackFragment,
             int expectedSourceValidationErrors,
             int expectedRollbackErrors,
-            string expectedSourceValidationFragment = null)
+            string expectedSourceValidationFragment = null,
+            string[] expectedAdditionalErrorFragments = null,
+            int expectedAdditionalErrorCount = -1)
         {
             IReadOnlyList<PlayModeLogCapture.Entry> entries =
                 scenario.Log.Entries;
             List<string> unexpected = new List<string>();
             List<string> rollbackMessages = new List<string>();
             List<string> sourceValidationMessages = new List<string>();
+            List<string> additionalMessages = new List<string>();
             int knownYarnExceptions = 0;
             int additiveLightOverlapErrors = 0;
             int warningCount = 0;
@@ -854,6 +1893,12 @@ namespace SpearWander.PlayModeTests
                 {
                     sourceValidationMessages.Add(entry.Message);
                 }
+                else if (MatchesAny(
+                             entry.Message,
+                             expectedAdditionalErrorFragments))
+                {
+                    additionalMessages.Add(entry.Message);
+                }
                 else
                 {
                     unexpected.Add(entry.Type + ": " + entry.Message);
@@ -866,7 +1911,8 @@ namespace SpearWander.PlayModeTests
                 ", known Yarn exceptions=" + knownYarnExceptions +
                 ", known light-overlap errors=" + additiveLightOverlapErrors +
                 ", rollback errors=" + rollbackMessages.Count +
-                ", source-validation errors=" + sourceValidationMessages.Count);
+                ", source-validation errors=" + sourceValidationMessages.Count +
+                ", additional expected errors=" + additionalMessages.Count);
 
             Assert.That(
                 rollbackMessages,
@@ -901,6 +1947,26 @@ namespace SpearWander.PlayModeTests
                 }
             }
 
+            if (expectedAdditionalErrorCount >= 0)
+            {
+                Assert.That(
+                    additionalMessages,
+                    Has.Count.EqualTo(expectedAdditionalErrorCount),
+                    "Unexpected number of additional expected error logs.");
+            }
+
+            if (expectedAdditionalErrorFragments != null)
+            {
+                for (int i = 0; i < expectedAdditionalErrorFragments.Length; i++)
+                {
+                    string fragment = expectedAdditionalErrorFragments[i];
+                    Assert.That(
+                        MatchesAny(string.Join("\n", additionalMessages), new[] { fragment }),
+                        Is.True,
+                        "Expected additional error was not logged: " + fragment);
+                }
+            }
+
             Assert.That(
                 unexpected,
                 Is.Empty,
@@ -909,8 +1975,31 @@ namespace SpearWander.PlayModeTests
                 string.Join(Environment.NewLine, unexpected));
         }
 
+        private static bool MatchesAny(string message, string[] fragments)
+        {
+            if (fragments == null || string.IsNullOrEmpty(message))
+                return false;
+
+            for (int i = 0; i < fragments.Length; i++)
+            {
+                if (Contains(message, fragments[i]))
+                    return true;
+            }
+
+            return false;
+        }
+
         private void CleanupScenario(FailureScenario scenario)
         {
+            try
+            {
+                ClearFaultInjector(scenario);
+            }
+            catch (Exception)
+            {
+                // Best-effort removal of the test-only fault injection hook.
+            }
+
             try
             {
                 if (scenario.SourceDoor != null && scenario.SourceConnection != null)
@@ -965,6 +2054,28 @@ namespace SpearWander.PlayModeTests
                 try
                 {
                     Fixture.TakeOwnership(scenario.DestinationScene);
+                }
+                catch (Exception)
+                {
+                    // Fixture cleanup still protects every fixture-owned scene.
+                }
+            }
+
+            // A failed assertion may abort a test before it captured the
+            // destination handle. Adopt any remaining exact-path instance so
+            // cleanup cannot leave it loaded for the next test.
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Scene candidate = SceneManager.GetSceneAt(i);
+                if (!candidate.IsValid() || !candidate.isLoaded ||
+                    !string.Equals(candidate.path, DestinationScenePath, StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                try
+                {
+                    Fixture.TakeOwnership(candidate);
                 }
                 catch (Exception)
                 {

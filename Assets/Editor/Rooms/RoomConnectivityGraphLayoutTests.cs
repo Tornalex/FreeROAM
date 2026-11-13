@@ -141,6 +141,9 @@ public static class RoomConnectivityGraphLayoutTests
         {
             Test("Empty layout uses deterministic fallback", EmptyLayoutUsesFallback),
             Test("Deterministic automatic positions", DeterministicAutomaticPositions),
+            Test("Scene-derived door sockets preserve relative positions", SceneDerivedDoorSocketsPreserveRelativePositions),
+            Test("Dense door sides expand nodes and retain separate sockets", DenseDoorSidesExpandNodes),
+            Test("Missing scene bounds use deterministic sockets", MissingBoundsUseDeterministicSockets),
             Test("Save, load and resolve a position", SaveLoadPosition),
             Test("Serialization round trip", SerializationRoundTrip),
             Test("Refresh preserves saved positions", RefreshPreservesPositions),
@@ -293,6 +296,121 @@ public static class RoomConnectivityGraphLayoutTests
 
             Check(RoomConnectivityGraphLayoutService.ComputeDeterministicPositions(null).Count == 0,
                 "A null model must produce no automatic positions.");
+        }
+    }
+
+    private static void SceneDerivedDoorSocketsPreserveRelativePositions()
+    {
+        using (Fixture fixture = Fixture.Create())
+        {
+            RoomGraphDoor lower = new RoomGraphDoor(
+                fixture.Alpha.Definition,
+                fixture.Alpha.ScenePath,
+                "door-left-lower",
+                string.Empty,
+                "LeftLower",
+                true,
+                null,
+                new Vector2(0f, 0.25f),
+                true);
+            RoomGraphDoor upper = new RoomGraphDoor(
+                fixture.Alpha.Definition,
+                fixture.Alpha.ScenePath,
+                "door-left-upper",
+                string.Empty,
+                "LeftUpper",
+                true,
+                null,
+                new Vector2(0f, 0.75f),
+                true);
+            fixture.Alpha.Doors.Add(lower);
+            fixture.Alpha.Doors.Add(upper);
+
+            RoomConnectivityGraphLayoutResult layout =
+                RoomConnectivityGraphLayout.Compute(fixture.Model);
+            Rect preview = layout.PreviewRects[fixture.Alpha];
+            Vector2 lowerSocket = layout.DoorSocketPositions[lower];
+            Vector2 upperSocket = layout.DoorSocketPositions[upper];
+
+            Check(Mathf.Approximately(lowerSocket.x, preview.x) &&
+                  Mathf.Approximately(upperSocket.x, preview.x),
+                "Doors on the left side were not placed on the same room perimeter edge.");
+            Check(lowerSocket.y > upperSocket.y,
+                "The relative vertical order from scene Transform positions was not preserved.");
+            Check(Vector2.Distance(lowerSocket, upperSocket) >= RoomConnectivityGraphLayout.SocketSpacing,
+                "Two doors on the same side received overlapping sockets.");
+        }
+    }
+
+    private static void DenseDoorSidesExpandNodes()
+    {
+        using (Fixture fixture = Fixture.Create())
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                fixture.Alpha.Doors.Add(new RoomGraphDoor(
+                    fixture.Alpha.Definition,
+                    fixture.Alpha.ScenePath,
+                    "dense-door-" + i.ToString("D2"),
+                    string.Empty,
+                    "DenseDoor" + i.ToString("D2"),
+                    true,
+                    null,
+                    new Vector2(0.01f, 0.1f + i * 0.08f),
+                    true));
+            }
+
+            Vector2 size = RoomConnectivityGraphLayout.GetNodeSize(fixture.Alpha);
+            RoomConnectivityGraphLayoutResult layout = RoomConnectivityGraphLayout.Compute(fixture.Model);
+            Rect preview = layout.PreviewRects[fixture.Alpha];
+            List<Vector2> sockets = new List<Vector2>();
+            foreach (RoomGraphDoor door in fixture.Alpha.Doors)
+                sockets.Add(layout.DoorSocketPositions[door]);
+            sockets.Sort((a, b) => a.y.CompareTo(b.y));
+
+            Check(size.y > RoomConnectivityGraphLayout.NodeHeight,
+                "A room with many doors on one side did not grow adaptively.");
+            Check(preview.height >= sockets.Count * RoomConnectivityGraphLayout.SocketSpacing,
+                "The adaptive preview is too short for the number of side sockets.");
+            for (int i = 1; i < sockets.Count; i++)
+            {
+                Check(Mathf.Abs(sockets[i].y - sockets[i - 1].y) >=
+                      RoomConnectivityGraphLayout.SocketSpacing - 0.01f,
+                    "Adaptive sockets overlap when many doors share one side.");
+            }
+        }
+    }
+
+    private static void MissingBoundsUseDeterministicSockets()
+    {
+        using (Fixture fixture = Fixture.Create())
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                fixture.Alpha.Doors.Add(new RoomGraphDoor(
+                    fixture.Alpha.Definition,
+                    fixture.Alpha.ScenePath,
+                    "fallback-door-" + i.ToString("D2"),
+                    string.Empty,
+                    "FallbackDoor" + i.ToString("D2"),
+                    true,
+                    null));
+            }
+
+            RoomConnectivityGraphLayoutResult first =
+                RoomConnectivityGraphLayout.Compute(fixture.Model);
+            RoomConnectivityGraphLayoutResult second =
+                RoomConnectivityGraphLayout.Compute(fixture.Model);
+
+            Check(first.DoorSocketPositions.Count == fixture.Alpha.Doors.Count,
+                "Every door without bounds must still receive a deterministic socket.");
+            foreach (RoomGraphDoor door in fixture.Alpha.Doors)
+            {
+                Check(first.DoorSocketPositions[door] == second.DoorSocketPositions[door],
+                    "Fallback socket placement changed between graph refreshes.");
+                Check(!door.HasSpatialData,
+                    "Fallback layout must not claim that scene spatial data was resolved.");
+            }
         }
     }
 

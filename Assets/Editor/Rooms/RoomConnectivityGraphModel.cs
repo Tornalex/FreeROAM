@@ -40,7 +40,10 @@ public sealed class RoomGraphDoor
         string legacyDoorId,
         string gameObjectName,
         bool isActive,
-        RoomConnection connection)
+        RoomConnection connection,
+        Vector2 normalizedScenePosition = default,
+        bool hasSpatialData = false,
+        Vector2 scenePosition = default)
     {
         Room = room;
         ScenePath = scenePath;
@@ -49,6 +52,9 @@ public sealed class RoomGraphDoor
         GameObjectName = gameObjectName;
         IsActive = isActive;
         Connection = connection;
+        NormalizedScenePosition = normalizedScenePosition;
+        HasSpatialData = hasSpatialData;
+        ScenePosition = scenePosition;
     }
 
     public RoomDefinition Room { get; }
@@ -57,6 +63,9 @@ public sealed class RoomGraphDoor
     public string LegacyDoorId { get; }
     public string GameObjectName { get; }
     public bool IsActive { get; }
+    public Vector2 NormalizedScenePosition { get; }
+    public bool HasSpatialData { get; }
+    public Vector2 ScenePosition { get; }
 
     /// <summary>
     /// Scene-derived RoomTransition.connection backlink. This is not the
@@ -173,15 +182,17 @@ public sealed class RoomGraphDoor
 
 public sealed class RoomGraphNode
 {
-    public RoomGraphNode(RoomDefinition definition, string scenePath)
+    public RoomGraphNode(RoomDefinition definition, string scenePath, int registryIndex = -1)
     {
         Definition = definition;
         ScenePath = scenePath;
-        NodeKey = BuildNodeKey(definition, scenePath);
+        RegistryIndex = registryIndex;
+        NodeKey = BuildNodeKey(definition, scenePath, registryIndex);
     }
 
     public RoomDefinition Definition { get; }
     public string ScenePath { get; }
+    public int RegistryIndex { get; }
 
     /// <summary>
     /// Stable identity of this node's RoomDefinition asset. Two definitions with
@@ -418,10 +429,12 @@ public sealed class RoomGraphNode
                 ? "Warnings"
                 : "Valid";
 
-    private static string BuildNodeKey(RoomDefinition definition, string scenePath)
+    private static string BuildNodeKey(RoomDefinition definition, string scenePath, int registryIndex)
     {
         if (definition == null)
-            return string.Empty;
+            return registryIndex >= 0
+                ? "missing-room-registration:" + registryIndex
+                : "missing-room-registration:" + (scenePath ?? string.Empty);
 
         string assetPath = AssetDatabase.GetAssetPath(definition);
 
@@ -762,20 +775,19 @@ public static class RoomConnectivityGraphService
         Dictionary<RoomDefinition, DoorDiscoveryResult> doorSnapshot =
             new Dictionary<RoomDefinition, DoorDiscoveryResult>();
 
-        foreach (RoomDefinition definition in registry.Rooms)
+        for (int registryIndex = 0; registryIndex < registry.Rooms.Count; registryIndex++)
         {
+            RoomDefinition definition = registry.Rooms[registryIndex];
             if (definition == null)
             {
-                model.AddGlobalIssue(new RoomGraphIssue(
-                    RoomConnectionValidator.InvalidRoomDefinition,
-                    RoomValidationSeverity.Error,
-                    "RoomRegistry contains a missing RoomDefinition reference.",
-                    null));
+                // Preserve the actual registry slot as a removable graph node.
+                // The validator issue is attached to this node below.
+                model.Nodes.Add(new RoomGraphNode(null, string.Empty, registryIndex));
                 continue;
             }
 
             string scenePath = AssetDatabase.GUIDToAssetPath(definition.SceneGuid);
-            RoomGraphNode node = new RoomGraphNode(definition, scenePath);
+            RoomGraphNode node = new RoomGraphNode(definition, scenePath, registryIndex);
             model.Nodes.Add(node);
 
             if (string.IsNullOrWhiteSpace(definition.RoomId))
@@ -819,7 +831,10 @@ public static class RoomConnectivityGraphService
                     door.DoorID,
                     door.GameObjectName,
                     door.IsActive,
-                    door.Connection));
+                    door.Connection,
+                    door.NormalizedScenePosition,
+                    door.HasSpatialData,
+                    door.ScenePosition));
             }
 
             MarkDoorIdIssues(node);
@@ -1180,6 +1195,18 @@ public static class RoomConnectivityGraphService
                 {
                     edge.AddIssue(issue);
                     attached = true;
+                }
+            }
+            else if (entry.Context == null && entry.RuleId == RoomConnectionValidator.InvalidRoomDefinition)
+            {
+                foreach (RoomGraphNode missingNode in model.Nodes)
+                {
+                    if (missingNode.Definition == null && missingNode.ErrorCount == 0)
+                    {
+                        missingNode.AddIssue(issue);
+                        attached = true;
+                        break;
+                    }
                 }
             }
 

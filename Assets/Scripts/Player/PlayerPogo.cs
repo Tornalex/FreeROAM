@@ -20,7 +20,7 @@ public class PlayerPogo : MonoBehaviour
 
     void Update()
     {
-        if (!_player.HasControl) return;
+        if (!_player.CanAct) return;
 
         if (!_player.Input.DownInputHeld)
         {
@@ -60,6 +60,15 @@ public class PlayerPogo : MonoBehaviour
         _canPlunge = false;
         _waitingForInputRelease = true;
         _player.Rb.linearVelocity = new Vector2(_player.Rb.linearVelocity.x, -_player.PogoStats.plungeSpeed);
+    }
+
+    public void CancelPlunge()
+    {
+        if (!IsPlunging)
+            return;
+
+        IsPlunging = false;
+        _waitingForInputRelease = true;
     }
 
     public void OnPogoHit(Collision2D hit)

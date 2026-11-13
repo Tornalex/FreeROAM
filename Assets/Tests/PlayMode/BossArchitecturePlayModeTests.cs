@@ -11,7 +11,8 @@ namespace SpearWander.PlayModeTests
     /// Phase 3 runtime coverage for the boss data separation:
     /// - BossData keeps health on the instance and is never mutated;
     /// - two bosses sharing the same assets keep independent state;
-    /// - damage, knockback and death still run through the real lifecycle;
+    /// - damage still runs through the real lifecycle without interrupting the boss;
+    /// - death still runs through the real lifecycle;
     /// - the weak point multiplier reaches the boss health;
     /// - the tongue and spore attacks read their timings, reach and cooldowns
     ///   from the assigned attack assets.
@@ -82,8 +83,8 @@ namespace SpearWander.PlayModeTests
                     ResolveRuntimeType(KnockbackType));
                 Assert.That(
                     ReflectionTestUtilities.GetProperty<bool>(knockback, "IsKnockedBack"),
-                    Is.True,
-                    "Damage did not start the boss knockback.");
+                    Is.False,
+                    "Damage started knockback; the free-roam boss must ignore hit interruption.");
 
                 bool killed = ReflectionTestUtilities.InvokeInstance<bool>(
                     first,

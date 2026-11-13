@@ -10,6 +10,20 @@ public class RoomConnectivityGraphWindow : EditorWindow
 {
     private const float EdgeHitThreshold = 12f;
 
+    private sealed class DoorOption
+    {
+        public DoorOption(RoomGraphNode node, RoomGraphDoor door, string label)
+        {
+            Node = node;
+            Door = door;
+            Label = label;
+        }
+
+        public RoomGraphNode Node { get; }
+        public RoomGraphDoor Door { get; }
+        public string Label { get; }
+    }
+
     private RoomConnectivityGraphModel _model;
     private RoomConnectivityGraphLayoutResult _layout;
 
@@ -70,6 +84,19 @@ public class RoomConnectivityGraphWindow : EditorWindow
         new Dictionary<RoomGraphNode, VisualElement>();
     private readonly Dictionary<RoomGraphEdge, VisualElement> _edgeLabelElements =
         new Dictionary<RoomGraphEdge, VisualElement>();
+    private readonly Dictionary<RoomGraphDoor, VisualElement> _socketElements =
+        new Dictionary<RoomGraphDoor, VisualElement>();
+
+    private RoomGraphDoor _socketDragSource;
+    private RoomGraphNode _socketDragSourceNode;
+    private VisualElement _socketDragElement;
+    private Vector2 _socketDragStart;
+    private Vector2 _socketDragPointer;
+    private int _socketDragPointerId = -1;
+    private bool _socketDragCompleting;
+    private bool _projectRefreshScheduled;
+    private string _authoringError;
+    private RoomConnectionDirection _dragConnectionDirection = RoomConnectionDirection.Bidirectional;
 
     private Vector2 _pan = new Vector2(20f, 20f);
     private float _zoom = 1f;
@@ -105,11 +132,15 @@ public class RoomConnectivityGraphWindow : EditorWindow
     {
         Undo.undoRedoPerformed -= OnUndoRedoPerformed;
         Undo.undoRedoPerformed += OnUndoRedoPerformed;
+        EditorApplication.projectChanged -= OnProjectChanged;
+        EditorApplication.projectChanged += OnProjectChanged;
     }
 
     private void OnDisable()
     {
         Undo.undoRedoPerformed -= OnUndoRedoPerformed;
+        EditorApplication.projectChanged -= OnProjectChanged;
+        ResetSocketDragState();
     }
 
     private void ShowEmptyState()
@@ -124,6 +155,7 @@ public class RoomConnectivityGraphWindow : EditorWindow
         _fitAttempts = 0;
         _nodeElements.Clear();
         _edgeLabelElements.Clear();
+        _socketElements.Clear();
         _searchResults.Clear();
         _searchRevealedNodes.Clear();
         _visibleNodes.Clear();
@@ -132,7 +164,9 @@ public class RoomConnectivityGraphWindow : EditorWindow
         _connectionCreation.Cancel();
         _connectionCreationError = null;
         _connectionCreationNotice = null;
+        _authoringError = null;
         ResetDragState();
+        ResetSocketDragState();
 
         if (_searchField != null)
             _searchField.SetValueWithoutNotify(string.Empty);
@@ -175,6 +209,17 @@ public class RoomConnectivityGraphWindow : EditorWindow
             "Clear all saved manual positions and return to the deterministic automatic layout. " +
             "Single Undo step.";
         toolbar.Add(resetLayoutButton);
+
+        EnumField dragDirection = new EnumField("Dragged links", _dragConnectionDirection);
+        dragDirection.style.width = 190;
+        dragDirection.style.marginLeft = 5;
+        dragDirection.tooltip =
+            "Direction used when connecting two door sockets by dragging. OneWay permits traversal from the drag start (A) to the drop target (B).";
+        dragDirection.RegisterValueChangedCallback(evt =>
+        {
+            _dragConnectionDirection = (RoomConnectionDirection)evt.newValue;
+        });
+        toolbar.Add(dragDirection);
 
         toolbar.Add(MakeButton("Validate", SelectValidationIssues));
         _connectionCreationButton = MakeButton("Create Connection", ToggleConnectionCreation);
@@ -360,6 +405,9 @@ public class RoomConnectivityGraphWindow : EditorWindow
         _viewport.RegisterCallback<PointerMoveEvent>(OnViewportPointerMove);
         _viewport.RegisterCallback<PointerUpEvent>(OnViewportPointerUp);
         _viewport.RegisterCallback<WheelEvent>(OnWheel);
+        _viewport.RegisterCallback<DragUpdatedEvent>(OnSceneDragUpdated);
+        _viewport.RegisterCallback<DragPerformEvent>(OnSceneDragPerform);
+        _viewport.RegisterCallback<DragExitedEvent>(_ => DragAndDrop.visualMode = DragAndDropVisualMode.None);
 
         body.Add(_viewport);
 
@@ -375,6 +423,87 @@ public class RoomConnectivityGraphWindow : EditorWindow
 
         body.Add(_sidePanel);
         root.Add(body);
+    }
+
+    private void OnSceneDragUpdated(DragUpdatedEvent evt)
+    {
+        bool validSceneDrop = TryGetDraggedSceneAsset(out _, out _);
+        DragAndDrop.visualMode = validSceneDrop
+            ? DragAndDropVisualMode.Copy
+            : DragAndDropVisualMode.Rejected;
+        evt.StopPropagation();
+    }
+
+    private void OnSceneDragPerform(DragPerformEvent evt)
+    {
+        if (!TryGetDraggedSceneAsset(out SceneAsset sceneAsset, out string error))
+        {
+            _authoringError = error;
+            UpdateDetails();
+            evt.StopPropagation();
+            return;
+        }
+
+        DragAndDrop.AcceptDrag();
+        if (!RoomRegistrationService.RegisterOrRefreshScene(
+                sceneAsset,
+                out RoomDefinition definition,
+                out _,
+                out string message))
+        {
+            _authoringError = message;
+            _connectionCreationNotice = null;
+            UpdateDetails();
+            evt.StopPropagation();
+            return;
+        }
+
+        _authoringError = null;
+        _connectionCreationNotice = message;
+        _connectionCreation.Cancel();
+        RefreshModel();
+        RoomGraphNode node = _model != null ? _model.FindNode(definition) : null;
+        if (node != null)
+            SelectNode(node);
+        else
+            UpdateDetails();
+
+        evt.StopPropagation();
+    }
+
+    private static bool TryGetDraggedSceneAsset(out SceneAsset sceneAsset, out string error)
+    {
+        sceneAsset = null;
+        UnityEngine.Object[] objects = DragAndDrop.objectReferences;
+        if (objects == null || objects.Length != 1)
+        {
+            error = "Drop one Unity scene asset at a time.";
+            return false;
+        }
+
+        sceneAsset = objects[0] as SceneAsset;
+        if (sceneAsset == null)
+        {
+            error = "Only Unity .unity scene assets can be dropped into the Room Connectivity Graph.";
+            return false;
+        }
+
+        error = null;
+        return true;
+    }
+
+    private void OnProjectChanged()
+    {
+        if (_projectRefreshScheduled || _model == null || rootVisualElement == null)
+            return;
+
+        _projectRefreshScheduled = true;
+        rootVisualElement.schedule.Execute(() =>
+        {
+            _projectRefreshScheduled = false;
+            if (this != null && _model != null)
+                RefreshModel();
+        }).StartingIn(200);
     }
 
     private void RefreshModel()
@@ -467,6 +596,7 @@ public class RoomConnectivityGraphWindow : EditorWindow
             pair.Value.RemoveFromHierarchy();
 
         _edgeLabelElements.Clear();
+        _socketElements.Clear();
         _nodeElements.Clear();
 
         _content.style.width = _layout.ContentSize.x;
@@ -520,53 +650,105 @@ public class RoomConnectivityGraphWindow : EditorWindow
         element.style.backgroundColor = new Color(0.21f, 0.22f, 0.24f);
 
         Color statusColor = StatusColor(GetNodeStatus(_model, node));
+        element.style.borderLeftColor = statusColor;
+        element.style.borderRightColor = statusColor;
+        element.style.borderTopColor = statusColor;
+        element.style.borderBottomColor = statusColor;
 
         Label title = new Label(node.DisplayName);
         title.style.unityFontStyleAndWeight = FontStyle.Bold;
         title.style.fontSize = 14;
         title.style.color = new Color(0.95f, 0.95f, 0.95f);
         title.style.whiteSpace = WhiteSpace.Normal;
+        title.style.position = Position.Absolute;
+        title.style.left = 10;
+        title.style.top = 6;
+        title.style.right = 10;
+        title.style.height = 18;
         element.Add(title);
 
         Label scene = new Label($"Scene: {node.SceneName}");
         scene.style.fontSize = 11;
         scene.style.color = new Color(0.7f, 0.72f, 0.75f);
-        scene.style.whiteSpace = WhiteSpace.Normal;
+        scene.style.whiteSpace = WhiteSpace.NoWrap;
+        scene.style.textOverflow = TextOverflow.Ellipsis;
+        scene.style.position = Position.Absolute;
+        scene.style.left = 10;
+        scene.style.top = 24;
+        scene.style.right = 10;
+        scene.style.height = 14;
         element.Add(scene);
 
-        Label topology = new Label(
-            $"Doors {node.DoorCount}   Topology {node.ReferencedDoorCount}   Unref {node.UnreferencedDoorCount}");
-        topology.style.fontSize = 10;
-        topology.style.marginTop = 6;
-        topology.style.color = new Color(0.82f, 0.84f, 0.86f);
-        topology.style.whiteSpace = WhiteSpace.Normal;
-        element.Add(topology);
+        VisualElement preview = new VisualElement();
+        Rect previewRect = _layout.PreviewRects.TryGetValue(node, out Rect foundPreview)
+            ? foundPreview
+            : RoomConnectivityGraphLayout.GetPreviewRect(rect);
+        preview.style.position = Position.Absolute;
+        preview.style.left = previewRect.x - rect.x;
+        preview.style.top = previewRect.y - rect.y;
+        preview.style.width = previewRect.width;
+        preview.style.height = previewRect.height;
+        preview.style.borderLeftWidth = 1;
+        preview.style.borderRightWidth = 1;
+        preview.style.borderTopWidth = 1;
+        preview.style.borderBottomWidth = 1;
+        preview.style.borderLeftColor = new Color(0.43f, 0.48f, 0.54f);
+        preview.style.borderRightColor = new Color(0.43f, 0.48f, 0.54f);
+        preview.style.borderTopColor = new Color(0.43f, 0.48f, 0.54f);
+        preview.style.borderBottomColor = new Color(0.43f, 0.48f, 0.54f);
+        preview.style.backgroundColor = new Color(0.13f, 0.15f, 0.17f);
+        preview.pickingMode = PickingMode.Ignore;
 
-        Label backlinks = new Label(
-            $"Backlink ok {node.BacklinkConsistentDoorCount}   " +
-            $"miss {node.BacklinkMissingDoorCount}   " +
-            $"mis {node.BacklinkMismatchedDoorCount}   " +
-            $"orphan {node.BacklinkOrphanedDoorCount}");
-        backlinks.style.fontSize = 10;
-        backlinks.style.color = new Color(0.78f, 0.8f, 0.82f);
-        backlinks.style.whiteSpace = WhiteSpace.Normal;
-        element.Add(backlinks);
+        Label roomRepresentation = new Label("ROOM");
+        roomRepresentation.style.position = Position.Absolute;
+        roomRepresentation.style.left = 0;
+        roomRepresentation.style.right = 0;
+        roomRepresentation.style.top = 0;
+        roomRepresentation.style.bottom = 0;
+        roomRepresentation.style.unityTextAlign = TextAnchor.MiddleCenter;
+        roomRepresentation.style.fontSize = 11;
+        roomRepresentation.style.color = new Color(0.46f, 0.52f, 0.57f);
+        roomRepresentation.pickingMode = PickingMode.Ignore;
+        preview.Add(roomRepresentation);
 
-        Label integrity = new Label(
-            $"Unconnected {node.FullyUnconnectedDoorCount}   " +
-            $"Invalid ID {node.InvalidIdentityDoorCount}   " +
-            $"Invalid conn {node.InvalidConnectionDoorCount}");
-        integrity.style.fontSize = 10;
-        integrity.style.color = new Color(0.78f, 0.8f, 0.82f);
-        integrity.style.whiteSpace = WhiteSpace.Normal;
-        element.Add(integrity);
+        bool hasFallbackSockets = false;
+        foreach (RoomGraphDoor door in node.Doors)
+            hasFallbackSockets |= !door.HasSpatialData;
 
-        Label status = new Label(GetNodeStatusLabel(GetNodeStatus(_model, node)));
-        status.style.fontSize = 11;
-        status.style.unityFontStyleAndWeight = FontStyle.Bold;
-        status.style.color = statusColor;
-        status.style.marginTop = 6;
-        element.Add(status);
+        if (hasFallbackSockets)
+        {
+            roomRepresentation.text = "ROOM · FALLBACK";
+            roomRepresentation.style.color = new Color(0.9f, 0.72f, 0.38f);
+        }
+
+        preview.tooltip = hasFallbackSockets
+            ? "Room bounds could not be resolved from scene renderers or solid colliders. " +
+              "Door sockets use a deterministic DoorId fallback; save visible room geometry to derive spatial positions."
+            : "Room preview and door sockets are normalized from scene renderer/collider bounds.";
+        element.Add(preview);
+
+        foreach (RoomGraphDoor door in node.Doors)
+        {
+            if (!_layout.DoorSocketPositions.TryGetValue(door, out Vector2 socketPosition))
+                continue;
+
+            VisualElement socket = BuildDoorSocket(node, door, rect, socketPosition);
+            _socketElements[door] = socket;
+            element.Add(socket);
+        }
+
+        Label summary = new Label(
+            $"Doors {node.DoorCount} · Connected {node.ReferencedDoorCount} · {GetNodeStatusLabel(GetNodeStatus(_model, node))}");
+        summary.style.position = Position.Absolute;
+        summary.style.left = 10;
+        summary.style.right = 10;
+        summary.style.bottom = 3;
+        summary.style.height = 15;
+        summary.style.fontSize = 10;
+        summary.style.color = statusColor;
+        summary.style.whiteSpace = WhiteSpace.NoWrap;
+        summary.style.textOverflow = TextOverflow.Ellipsis;
+        element.Add(summary);
 
         element.RegisterCallback<PointerDownEvent>(evt =>
         {
@@ -584,6 +766,67 @@ public class RoomConnectivityGraphWindow : EditorWindow
 
         element.tooltip = $"{node.DisplayName}\n{node.RoomId}\n{node.SceneName}";
         return element;
+    }
+
+    private VisualElement BuildDoorSocket(
+        RoomGraphNode node,
+        RoomGraphDoor door,
+        Rect nodeRect,
+        Vector2 graphPosition)
+    {
+        const float diameter = 12f;
+        VisualElement socket = new VisualElement();
+        socket.style.position = Position.Absolute;
+        socket.style.left = graphPosition.x - nodeRect.x - diameter * 0.5f;
+        socket.style.top = graphPosition.y - nodeRect.y - diameter * 0.5f;
+        socket.style.width = diameter;
+        socket.style.height = diameter;
+        socket.style.borderTopLeftRadius = diameter * 0.5f;
+        socket.style.borderTopRightRadius = diameter * 0.5f;
+        socket.style.borderBottomLeftRadius = diameter * 0.5f;
+        socket.style.borderBottomRightRadius = diameter * 0.5f;
+        socket.style.borderTopWidth = 1;
+        socket.style.borderRightWidth = 1;
+        socket.style.borderBottomWidth = 1;
+        socket.style.borderLeftWidth = 1;
+        socket.style.borderTopColor = new Color(0.94f, 0.95f, 0.96f);
+        socket.style.borderRightColor = socket.style.borderTopColor;
+        socket.style.borderBottomColor = socket.style.borderTopColor;
+        socket.style.borderLeftColor = socket.style.borderTopColor;
+        socket.style.backgroundColor = GetDoorSocketColor(door);
+        socket.pickingMode = PickingMode.Position;
+
+        string doorId = string.IsNullOrWhiteSpace(door.StableDoorId)
+            ? "<missing DoorId>"
+            : door.StableDoorId;
+        string spatial = door.HasSpatialData
+            ? $"Scene position normalized: ({door.NormalizedScenePosition.x:F2}, {door.NormalizedScenePosition.y:F2})"
+            : "Fallback position: scene bounds unavailable";
+        socket.tooltip = $"{doorId}\n{door.GameObjectName}\n{GetDoorSocketState(door)}\n{spatial}";
+        socket.RegisterCallback<PointerDownEvent>(evt => OnDoorSocketPointerDown(node, door, socket, evt));
+        socket.RegisterCallback<PointerMoveEvent>(OnDoorSocketPointerMove);
+        socket.RegisterCallback<PointerUpEvent>(OnDoorSocketPointerUp);
+        socket.RegisterCallback<PointerCaptureOutEvent>(OnDoorSocketPointerCaptureOut);
+        return socket;
+    }
+
+    private static string GetDoorSocketState(RoomGraphDoor door)
+    {
+        if (door == null)
+            return "Invalid door";
+        if (door.HasIdentityIssue || door.InvolvedInInvalidConnection || door.BacklinkMismatched || door.BacklinkOrphaned)
+            return "Invalid / conflicting";
+        return door.ReferencedByTopology ? "Connected" : "Unconnected";
+    }
+
+    private static Color GetDoorSocketColor(RoomGraphDoor door)
+    {
+        switch (GetDoorSocketState(door))
+        {
+            case "Connected": return new Color(0.25f, 0.82f, 0.57f);
+            case "Unconnected": return new Color(0.9f, 0.7f, 0.28f);
+            default: return new Color(0.92f, 0.38f, 0.34f);
+        }
     }
 
     private Label BuildEdgeLabel(RoomGraphEdge edge, RoomGraphEdgeGeometry geometry)
@@ -674,6 +917,180 @@ public class RoomConnectivityGraphWindow : EditorWindow
             if (geometry.ArrowAtStart)
                 DrawArrow(painter, geometry.Start, geometry.Control, color);
         }
+
+        if (_socketDragSource != null)
+        {
+            painter.lineWidth = 2.5f;
+            painter.strokeColor = new Color(0.92f, 0.78f, 0.38f);
+            Vector2 control = (_socketDragStart + _socketDragPointer) * 0.5f +
+                              Vector2.up * Mathf.Min(55f, Vector2.Distance(_socketDragStart, _socketDragPointer) * 0.2f);
+            Vector2 previous = _socketDragStart;
+            for (int i = 1; i <= 20; i++)
+            {
+                float t = i / 20f;
+                float inverse = 1f - t;
+                Vector2 current = inverse * inverse * _socketDragStart +
+                                  2f * inverse * t * control +
+                                  t * t * _socketDragPointer;
+                painter.BeginPath();
+                painter.MoveTo(previous);
+                painter.LineTo(current);
+                painter.Stroke();
+                previous = current;
+            }
+        }
+    }
+
+    private void OnDoorSocketPointerDown(
+        RoomGraphNode node,
+        RoomGraphDoor door,
+        VisualElement socket,
+        PointerDownEvent evt)
+    {
+        if (evt.button != 0 || node == null || door == null || socket == null)
+            return;
+
+        SelectDoor(node, door);
+        evt.StopPropagation();
+
+        if (_connectionCreation.IsActive)
+        {
+            bool source = _connectionCreation.Step == RoomConnectionCreationStep.SelectSource;
+            if (source || _connectionCreation.Step == RoomConnectionCreationStep.SelectDestination)
+                ChooseCreationEndpoint(node, door, source);
+            return;
+        }
+
+        string reason = RoomConnectionCreationWorkflow.GetIneligibilityReason(_model, node, door);
+        if (reason != null)
+        {
+            _authoringError = reason;
+            UpdateDetails();
+            return;
+        }
+
+        if (_socketDragSource != null)
+            ResetSocketDragState();
+
+        _authoringError = null;
+        _socketDragSource = door;
+        _socketDragSourceNode = node;
+        _socketDragElement = socket;
+        _socketDragPointerId = evt.pointerId;
+        _socketDragStart = _layout != null && _layout.DoorSocketPositions.TryGetValue(door, out Vector2 start)
+            ? start
+            : Vector2.zero;
+        _socketDragPointer = _content != null ? _content.WorldToLocal(evt.position) : _socketDragStart;
+        socket.CapturePointer(evt.pointerId);
+        _edgeLayer?.MarkDirtyRepaint();
+    }
+
+    private void OnDoorSocketPointerMove(PointerMoveEvent evt)
+    {
+        if (_socketDragSource == null || evt.pointerId != _socketDragPointerId || _content == null)
+            return;
+
+        _socketDragPointer = _content.WorldToLocal(evt.position);
+        _edgeLayer?.MarkDirtyRepaint();
+        evt.StopPropagation();
+    }
+
+    private void OnDoorSocketPointerUp(PointerUpEvent evt)
+    {
+        if (_socketDragSource == null || evt.pointerId != _socketDragPointerId)
+            return;
+
+        RoomGraphDoor sourceDoor = _socketDragSource;
+        RoomGraphNode sourceNode = _socketDragSourceNode;
+        RoomGraphDoor targetDoor = null;
+        RoomGraphNode targetNode = null;
+
+        VisualElement picked = _viewport != null && _viewport.panel != null
+            ? _viewport.panel.Pick(evt.position)
+            : null;
+        while (picked != null)
+        {
+            foreach (KeyValuePair<RoomGraphDoor, VisualElement> pair in _socketElements)
+            {
+                if (ReferenceEquals(pair.Value, picked))
+                {
+                    targetDoor = pair.Key;
+                    targetNode = _model != null ? _model.FindNode(targetDoor.Room) : null;
+                    break;
+                }
+            }
+
+            if (targetDoor != null)
+                break;
+            picked = picked.parent;
+        }
+
+        _socketDragCompleting = true;
+        ResetSocketDragState();
+        _socketDragCompleting = false;
+        evt.StopPropagation();
+
+        if (targetDoor == null || targetNode == null)
+        {
+            _authoringError = "Release a door socket on another door socket to create a connection.";
+            UpdateDetails();
+            return;
+        }
+
+        string reason = RoomConnectionCreationWorkflow.GetIneligibilityReason(
+            _model,
+            targetNode,
+            targetDoor,
+            sourceDoor);
+        if (reason != null)
+        {
+            _authoringError = reason;
+            UpdateDetails();
+            return;
+        }
+
+        if (!RoomConnectionService.CreateConnection(
+                sourceDoor.Room,
+                sourceDoor.StableDoorId,
+                targetDoor.Room,
+                targetDoor.StableDoorId,
+                _dragConnectionDirection,
+                null,
+                out RoomConnection connection,
+                out string message))
+        {
+            _authoringError = message;
+            UpdateDetails();
+            return;
+        }
+
+        _authoringError = null;
+        ShowCreatedConnection(connection, message);
+    }
+
+    private void OnDoorSocketPointerCaptureOut(PointerCaptureOutEvent evt)
+    {
+        if (_socketDragCompleting || _socketDragSource == null)
+            return;
+
+        ResetSocketDragState();
+    }
+
+    private void ResetSocketDragState()
+    {
+        VisualElement element = _socketDragElement;
+        int pointerId = _socketDragPointerId;
+        _socketDragSource = null;
+        _socketDragSourceNode = null;
+        _socketDragElement = null;
+        _socketDragPointerId = -1;
+        _socketDragStart = Vector2.zero;
+        _socketDragPointer = Vector2.zero;
+
+        if (element != null && pointerId >= 0 && element.HasPointerCapture(pointerId))
+            element.ReleasePointer(pointerId);
+
+        _edgeLayer?.MarkDirtyRepaint();
     }
 
     private static void DrawArrow(Painter2D painter, Vector2 tip, Vector2 control, Color color)
@@ -1213,11 +1630,42 @@ public class RoomConnectivityGraphWindow : EditorWindow
 
     private void OnUndoRedoPerformed()
     {
-        if (_model != null &&
-            string.Equals(Undo.GetCurrentGroupName(), RoomConnectionService.CreateUndoName, StringComparison.Ordinal))
+        string groupName = Undo.GetCurrentGroupName();
+        if (!string.IsNullOrEmpty(groupName) &&
+            groupName.IndexOf(RoomRemovalService.RemoveUndoName, StringComparison.Ordinal) >= 0)
+        {
+            RoomConnectionService.ReconcileUndoRedo();
+            RuntimeRoomCatalogValidationReport removalCatalog =
+                RoomRegistrationService.SynchronizeRuntimeCatalog();
+            _authoringError = removalCatalog.IsValid || removalCatalog.Issues.Count == 0
+                ? null
+                : "RuntimeRoomCatalog synchronization after room Undo/Redo failed: " +
+                  removalCatalog.Issues[0].Message;
+            if (_model != null)
+                RefreshModel();
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(groupName) &&
+            groupName.IndexOf(RoomRegistrationService.RegisterSceneUndoName, StringComparison.Ordinal) >= 0)
+        {
+            RoomRegistrationService.ReconcileUndoRedo();
+            RuntimeRoomCatalogValidationReport report = RoomRegistrationService.SynchronizeRuntimeCatalog();
+            if (!report.IsValid)
+                _authoringError = report.Issues.Count > 0 ? report.Issues[0].Message : "RuntimeRoomCatalog could not be regenerated after Undo/Redo.";
+            else
+                _authoringError = null;
+
+            if (_model != null)
+                RefreshModel();
+            return;
+        }
+
+        if (_model != null && IsConnectionUndoGroup(groupName))
         {
             // Connection Undo/Redo changes authoritative assets and scene
             // backlinks, so rebuild only for this explicit user operation.
+            RoomConnectionService.ReconcileUndoRedo();
             RefreshModel();
             return;
         }
@@ -1243,6 +1691,13 @@ public class RoomConnectivityGraphWindow : EditorWindow
         // Undo/Redo changed the layout asset in memory. Persist only that
         // dedicated asset so the restored state survives a domain reload.
         RoomConnectivityGraphLayoutService.Persist(_layoutAsset);
+    }
+
+    private static bool IsConnectionUndoGroup(string groupName)
+    {
+        return string.Equals(groupName, RoomConnectionService.CreateUndoName, StringComparison.Ordinal) ||
+               string.Equals(groupName, RoomConnectionService.UpdateUndoName, StringComparison.Ordinal) ||
+               string.Equals(groupName, RoomConnectionService.DeleteUndoName, StringComparison.Ordinal);
     }
 
     private void SelectNode(RoomGraphNode node)
@@ -1696,6 +2151,9 @@ public class RoomConnectivityGraphWindow : EditorWindow
         else if (!string.IsNullOrEmpty(_connectionCreationNotice))
             _sidePanel.Add(HelpBox(_connectionCreationNotice, HelpBoxMessageType.Info));
 
+        if (!string.IsNullOrEmpty(_authoringError))
+            _sidePanel.Add(HelpBox(_authoringError, HelpBoxMessageType.Error));
+
         if (_model == null)
         {
             BuildEmptyDetails();
@@ -1866,6 +2324,72 @@ public class RoomConnectivityGraphWindow : EditorWindow
             foreach (RoomGraphIssue issue in node.Issues)
                 AddIssue(issue);
         }
+
+        _sidePanel.Add(SectionTitle("Room registration"));
+        if (node.Definition == null)
+        {
+            _sidePanel.Add(InfoLabel(
+                $"RoomRegistry entry {node.RegistryIndex} has a missing RoomDefinition reference. Removing it will remove only this registry slot and regenerate the runtime catalog."));
+        }
+        else
+        {
+            _sidePanel.Add(InfoLabel(
+                "Removing this registration never deletes the Unity scene or RoomDefinition asset. Incident RoomConnection assets and their registered door backlinks are removed."));
+        }
+
+        Button removeRoom = MakeButton("Remove Room", () => ConfirmRemoveRoom(node));
+        removeRoom.style.height = 26;
+        removeRoom.style.marginTop = 8;
+        removeRoom.style.backgroundColor = new Color(0.55f, 0.19f, 0.18f);
+        _sidePanel.Add(removeRoom);
+    }
+
+    private void ConfirmRemoveRoom(RoomGraphNode node)
+    {
+        if (_model == null || node == null)
+            return;
+
+        List<RoomConnection> connections = RoomRemovalService.GetConnectionsForRoom(node.RoomId);
+        if (connections.Count > 0)
+        {
+            string[] names = new string[Mathf.Min(6, connections.Count)];
+            for (int i = 0; i < names.Length; i++)
+                names[i] = connections[i] != null ? connections[i].name : "<missing connection>";
+
+            string list = string.Join("\n", names);
+            if (connections.Count > names.Length)
+                list += $"\n…and {connections.Count - names.Length} more";
+
+            bool confirmed = EditorUtility.DisplayDialog(
+                "Remove Room Registration",
+                $"Remove room '{node.DisplayName}' ({node.RoomId})?\n\n" +
+                $"This will also delete {connections.Count} incident RoomConnection asset(s) and clear their registered door backlinks:\n{list}\n\n" +
+                "The Unity scene and RoomDefinition asset will be preserved.",
+                "Remove Room and Connections",
+                "Cancel");
+            if (!confirmed)
+                return;
+        }
+
+        bool removed = RoomRemovalService.RemoveRoomRegistration(
+            node.Definition,
+            node.RoomId,
+            node.Definition != null ? node.Definition.SceneGuid : null,
+            node.RegistryIndex,
+            out string message);
+        if (!removed)
+        {
+            _authoringError = message;
+            UpdateDetails();
+            return;
+        }
+
+        _authoringError = null;
+        _connectionCreationNotice = message;
+        _selectedNode = null;
+        _selectedDoor = null;
+        RefreshModel();
+        UpdateDetails();
     }
 
     private void BuildSelectedDoorBlock(RoomGraphNode node)
@@ -2241,6 +2765,12 @@ public class RoomConnectivityGraphWindow : EditorWindow
 
         _connectionCreation.Cancel();
         _connectionCreationError = null;
+        _authoringError = null;
+        ShowCreatedConnection(connection, message);
+    }
+
+    private void ShowCreatedConnection(RoomConnection connection, string message)
+    {
         _connectionCreationNotice = message;
         RefreshModel();
 
@@ -2343,6 +2873,8 @@ public class RoomConnectivityGraphWindow : EditorWindow
 
         _sidePanel.Add(actions);
 
+        BuildConnectionEditor(edge);
+
         if (edge.EndpointADoor != null)
         {
             RoomGraphDoor captured = edge.EndpointADoor;
@@ -2367,6 +2899,168 @@ public class RoomConnectivityGraphWindow : EditorWindow
             _sidePanel.Add(InfoLabel("No validation issues were reported for this connection."));
         }
 
+    }
+
+    private void BuildConnectionEditor(RoomGraphEdge edge)
+    {
+        if (edge == null || edge.Connection == null)
+            return;
+
+        _sidePanel.Add(SectionTitle("Modify connection"));
+        _sidePanel.Add(InfoLabel(
+            "Change endpoint rooms/doors or direction. Existing DoorIds and the RoomConnection asset identity are preserved."));
+
+        List<DoorOption> optionsA = GetEditableDoorOptions(edge, endpointA: true);
+        List<DoorOption> optionsB = GetEditableDoorOptions(edge, endpointA: false);
+        DoorGraphChoice choiceA = BuildDoorChoice("Endpoint A", optionsA, edge.EndpointADoor);
+        DoorGraphChoice choiceB = BuildDoorChoice("Endpoint B", optionsB, edge.EndpointBDoor);
+        _sidePanel.Add(choiceA.Field);
+        _sidePanel.Add(choiceB.Field);
+
+        EnumField directionField = new EnumField("Direction", edge.Direction);
+        _sidePanel.Add(directionField);
+        _sidePanel.Add(InfoLabel(DirectionSemantics(edge.Direction)));
+
+        Button save = MakeButton("Save Connection Changes", () =>
+        {
+            if (choiceA.Selected == null || choiceB.Selected == null)
+            {
+                _authoringError = "Select valid door sockets for both connection endpoints.";
+                UpdateDetails();
+                return;
+            }
+
+            bool updated = RoomConnectionService.UpdateConnection(
+                edge.Connection,
+                choiceA.Selected.Room,
+                choiceA.Selected.StableDoorId,
+                choiceB.Selected.Room,
+                choiceB.Selected.StableDoorId,
+                (RoomConnectionDirection)directionField.value,
+                out string message);
+
+            if (!updated)
+            {
+                _authoringError = message;
+                UpdateDetails();
+                return;
+            }
+
+            _authoringError = null;
+            _connectionCreationNotice = message;
+            string connectionPath = edge.AssetPath;
+            RefreshModel();
+            RoomGraphEdge refreshed = _model != null ? _model.FindEdgeByPath(connectionPath) : null;
+            if (refreshed != null)
+                SelectEdge(refreshed);
+        });
+        save.SetEnabled(optionsA.Count > 0 && optionsB.Count > 0);
+        _sidePanel.Add(save);
+
+        Button delete = MakeButton("Delete Connection", () =>
+        {
+            if (!EditorUtility.DisplayDialog(
+                    "Delete Room Connection",
+                    $"Delete '{edge.AssetName}' and clear its registered door backlinks?",
+                    "Delete",
+                    "Cancel"))
+            {
+                return;
+            }
+
+            bool deleted = RoomConnectionService.DeleteConnection(edge.Connection, out string message);
+            if (!deleted)
+            {
+                _authoringError = message;
+                UpdateDetails();
+                return;
+            }
+
+            _authoringError = null;
+            _connectionCreationNotice = message;
+            _selectedEdge = null;
+            RefreshModel();
+        });
+        _sidePanel.Add(delete);
+    }
+
+    private sealed class DoorGraphChoice
+    {
+        public DropdownField Field;
+        public RoomGraphDoor Selected;
+    }
+
+    private DoorGraphChoice BuildDoorChoice(
+        string label,
+        List<DoorOption> options,
+        RoomGraphDoor current)
+    {
+        List<string> labels = new List<string>();
+        Dictionary<string, RoomGraphDoor> doorsByLabel = new Dictionary<string, RoomGraphDoor>(StringComparer.Ordinal);
+        int selectedIndex = -1;
+        RoomGraphDoor selected = null;
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            DoorOption option = options[i];
+            labels.Add(option.Label);
+            doorsByLabel[option.Label] = option.Door;
+            if (ReferenceEquals(option.Door, current))
+            {
+                selectedIndex = i;
+                selected = option.Door;
+            }
+        }
+
+        if (labels.Count == 0)
+        {
+            labels.Add("<no valid doors available>");
+            selectedIndex = 0;
+        }
+        else if (selectedIndex < 0)
+        {
+            labels.Insert(0, "<select a valid door>");
+            selectedIndex = 0;
+        }
+
+        DropdownField field = new DropdownField(label, labels, selectedIndex);
+        DoorGraphChoice choice = new DoorGraphChoice { Field = field, Selected = selected };
+        field.RegisterValueChangedCallback(evt =>
+        {
+            choice.Selected = doorsByLabel.TryGetValue(evt.newValue, out RoomGraphDoor door)
+                ? door
+                : null;
+        });
+        return choice;
+    }
+
+    private List<DoorOption> GetEditableDoorOptions(RoomGraphEdge edge, bool endpointA)
+    {
+        List<DoorOption> options = new List<DoorOption>();
+        RoomGraphDoor opposite = endpointA ? edge.EndpointBDoor : edge.EndpointADoor;
+        string oppositeRoomId = endpointA ? edge.EndpointBRoomId : edge.EndpointARoomId;
+        foreach (RoomGraphNode node in RoomConnectivityGraphLayout.SortNodesForLayout(_model))
+        {
+            foreach (RoomGraphDoor door in node.Doors)
+            {
+                if (string.IsNullOrWhiteSpace(door.StableDoorId) || door.IsDuplicateId || !node.SceneAvailable)
+                    continue;
+                if (door.Connection != null && door.Connection != edge.Connection)
+                    continue;
+                if (door.ReferencingEdges.Exists(reference => reference.Connection != edge.Connection))
+                    continue;
+                if (string.Equals(node.RoomId, oppositeRoomId, StringComparison.Ordinal))
+                    continue;
+                if (opposite != null && RoomConnectionCreationWorkflow.AreSameEndpoint(door, opposite))
+                    continue;
+
+                string label = $"{node.DisplayName} / {door.StableDoorId} ({node.RoomId})";
+                options.Add(new DoorOption(node, door, label));
+            }
+        }
+
+        options.Sort((a, b) => string.Compare(a.Label, b.Label, StringComparison.Ordinal));
+        return options;
     }
 
     private void BuildUnresolvedDetails()

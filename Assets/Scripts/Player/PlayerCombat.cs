@@ -86,7 +86,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (!_player.HasControl)
+        if (!_player.CanAct)
         {
             _isMouseAiming = false;
             HideTrajectoryPreview();
@@ -193,7 +193,7 @@ public class PlayerCombat : MonoBehaviour
     private bool CanLaunchSpear()
     {
         return _player != null &&
-               _player.HasControl &&
+               _player.CanAct &&
                _currentSpear == null &&
                !_isSpearReturning &&
                _throwCooldownTimer <= 0f &&

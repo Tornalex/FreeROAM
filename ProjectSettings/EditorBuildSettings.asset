@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Master.unity
     guid: e511698b51977334cb3086c7919d5d85
@@ -86,6 +83,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Yellow Forest/YellowForest_Arena.unity
     guid: 9317d986153533f4899414046b83322c
+  - enabled: 1
+    path: Assets/__RoomConnectionCreationTests_6c9fc66a15844bbb82f4d2477d2dfaa1/Room_A.unity
+    guid: a4476113b1028cb449d771a0cb9e6384
+  - enabled: 1
+    path: Assets/__RoomConnectionCreationTests_6c9fc66a15844bbb82f4d2477d2dfaa1/Room_B.unity
+    guid: f0ea1dea49136184b88df761d5d65467
+  - enabled: 1
+    path: Assets/__RoomConnectionCreationTests_72acb31c07de414393ad213e9b3678b8/Room_A.unity
+    guid: 20f81f335e238084c841e34da8fb6a8b
+  - enabled: 1
+    path: Assets/__RoomConnectionCreationTests_72acb31c07de414393ad213e9b3678b8/Room_B.unity
+    guid: 67f9dd66ea922db418be0e3b01727690
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0034084e1c777c040b3e449f40cea1a0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c38a0e040731c7743bbf1fbcc7c49e2d, type: 3}

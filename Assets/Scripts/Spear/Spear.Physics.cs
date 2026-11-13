@@ -156,7 +156,9 @@ public partial class Spear : MonoBehaviour
                     ProcessHit(
                         nearestHit.collider,
                         nearestHit.point,
-                        nearestHit.normal
+                        nearestHit.normal,
+                        true,
+                        velocityDirection
                     );
 
                     continue;
@@ -172,7 +174,9 @@ public partial class Spear : MonoBehaviour
                 ProcessHit(
                     nearestHit.collider,
                     nearestHit.point,
-                    nearestHit.normal
+                    nearestHit.normal,
+                    true,
+                    velocityDirection
                 );
 
                 _lastPosition =

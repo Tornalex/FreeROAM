@@ -48,6 +48,12 @@ public class Player : MonoBehaviour
 
     public bool HasControlRequest(ControlReason reason) => _activeControlReasons.Contains(reason);
 
+    // Central gameplay action lock. External control requests and the healing
+    // state both prevent input-driven player actions.
+    public bool IsHealing { get; private set; }
+
+    public bool CanAct => HasControl && !IsHealing;
+
     public void AddControlRequest(ControlReason reason)
     {
         _activeControlReasons.Add(reason);
@@ -58,10 +64,48 @@ public class Player : MonoBehaviour
 
     public void RemoveControlRequest(ControlReason reason) => _activeControlReasons.Remove(reason);
 
+    public void BeginHealing()
+    {
+        if (IsHealing)
+            return;
+
+        IsHealing = true;
+
+        // Cancel movement abilities that already own the Rigidbody so they
+        // cannot keep driving the player while healing.
+        if (Dash != null && Dash.IsDashing)
+            Dash.StopDash();
+
+        if (Pogo != null)
+            Pogo.CancelPlunge();
+
+        if (RopeClimb != null && RopeClimb.IsClimbing)
+            RopeClimb.StopClimbing();
+
+        // Clear residual horizontal motion immediately. Vertical velocity is
+        // kept so gravity and grounding continue to work normally.
+        if (Rb != null)
+            Rb.linearVelocity = new Vector2(0f, Rb.linearVelocity.y);
+    }
+
+    public void EndHealing()
+    {
+        if (!IsHealing)
+            return;
+
+        IsHealing = false;
+
+        // Held movement input must not immediately start a rope climb or a
+        // pogo plunge after healing ends.
+        if (Input != null)
+            Input.SuppressHeldMovementUntilReleased();
+    }
+
     [Header("Scriptable Objects")]
     [SerializeField] private PlayerStatsData playerStats;
     [SerializeField] private PlayerCombatData combatStats;
     [SerializeField] private PlayerEssenceData essenceStats;
+    [SerializeField] private PlayerHealData healStats;
     [SerializeField] private PlayerDashData dashStats;
     [SerializeField] private PlayerRopeData ropeStats;
     [SerializeField] private PlayerPogoData pogoStats;
@@ -69,6 +113,7 @@ public class Player : MonoBehaviour
     public PlayerStatsData PlayerStats => playerStats;
     public PlayerCombatData CombatStats => combatStats;
     public PlayerEssenceData EssenceStats => essenceStats;
+    public PlayerHealData HealStats => healStats;
     public PlayerDashData DashStats => dashStats;
     public PlayerRopeData RopeStats => ropeStats;
     public PlayerPogoData PogoStats => pogoStats;
@@ -108,6 +153,8 @@ public class Player : MonoBehaviour
             Debug.LogError("[Player] PlayerCombatData is not assigned.", this);
         if (essenceStats == null)
             Debug.LogError("[Player] PlayerEssenceData is not assigned.", this);
+        if (healStats == null)
+            Debug.LogError("[Player] PlayerHealData is not assigned.", this);
         if (dashStats == null)
             Debug.LogError("[Player] PlayerDashData is not assigned.", this);
         if (ropeStats == null)
@@ -118,6 +165,8 @@ public class Player : MonoBehaviour
 
     public void ResetState()
     {
+        EndHealing();
+
         TextBoxUI.Instance?.Close();
 
         Health.ResetState();

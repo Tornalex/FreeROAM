@@ -23,10 +23,10 @@ namespace SpearWander.PlayModeTests
 
         private const string SourceRoomId = "room_0cd7bdc0537c4f4bb6937de388e8858d";
         private const string DestinationRoomId = "room_f4a2fbe688fb4506af039512474bd0f7";
-        private const string SourceDoorId = "WakeRoom_Right";
+        private const string SourceDoorId = "Re-EntryModule_WakeRoom_Right";
         private const string DestinationDoorId = "Re-EntryModule_Corridor_Left";
         private const string ConnectionAssetName =
-            "Conn_room_0cd7bdc0537c4f4bb6937de388e8858d_WakeRoom_Right_to_room_f4a2fbe688fb4506af039512474bd0f7_Re-EntryModule_Corridor_Left";
+            "Conn_room_0cd7bdc0537c4f4bb6937de388e8858d_Re-EntryModule_WakeRoom_Right_to_room_f4a2fbe688fb4506af039512474bd0f7_Re-EntryModule_Corridor_Left";
 
         private const float TransitionTimeoutSeconds = 30f;
         private const float PlayerRelocationTolerance = 0.001f;
@@ -223,10 +223,13 @@ namespace SpearWander.PlayModeTests
                         sourceRoom);
                     ReflectionTestUtilities.SetInstanceField(manager, "_targetDoorID", null);
                     ReflectionTestUtilities.SetInstanceField(manager, "_isTransitioning", false);
-                    Assert.That(
-                        SceneManager.SetActiveScene(sourceScene),
-                        Is.True,
-                        "Could not make the source scene active for the pre-existing manager.");
+                    if (SceneManager.GetActiveScene() != sourceScene)
+                    {
+                        Assert.That(
+                            SceneManager.SetActiveScene(sourceScene),
+                            Is.True,
+                            "Could not make the source scene active for the pre-existing manager.");
+                    }
                 }
 
                 Assert.That(IsAlive(manager), Is.True);

@@ -35,10 +35,10 @@ MonoBehaviour:
   landingRecovery: 0.35
   preferredDistance: 3.5
   retreatDistance: 2
-  decisionInterval: 0.5
+  decisionInterval: 0.3
   decisionIntervalJitter: 0.15
   maxAirborneDuration: 3
-  recoveryCooldown: 0.3
+  recoveryCooldown: 0.1
   jumpTowardWeight: 4
   jumpAwayWeight: 1
   dashJumpWeight: 5
@@ -50,7 +50,7 @@ MonoBehaviour:
   dashJumpHorizontalSpeed: 100
   dashJumpUpVelocity: 16
   dashJumpLandingOffset: 10
-  dashJumpPreparationTime: 0.45
+  dashJumpPreparationTime: 0.05
   dashJumpRecoveryTime: 0.45
   dashJumpCooldown: 1
   dashJumpMaxAirborneDuration: 4

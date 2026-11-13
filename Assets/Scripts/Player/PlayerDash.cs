@@ -150,7 +150,7 @@ public class PlayerDash : MonoBehaviour
     }
 
     private bool CanDash() =>
-        _player.HasControl &&
+        _player.CanAct &&
         !IsDashing &&
         !_player.Knockback.IsKnockedBack &&
         _dashCooldownTimer <= 0f &&
@@ -290,9 +290,20 @@ public class PlayerDash : MonoBehaviour
 
         HasPostDashProtection = true;
 
+        ApplyDashHit(
+            damageable,
+            collision.contacts[0].point,
+            collision.transform.position);
+    }
+
+    private void ApplyDashHit(
+        IDamageable damageable,
+        Vector2 hitPoint,
+        Vector2 enemyPosition)
+    {
         damageable.TakeDamageFromPlayer(
             _player.CombatStats.dashDamage,
-            collision.contacts[0].point,
+            hitPoint,
             transform.position
         );
 
@@ -301,7 +312,7 @@ public class PlayerDash : MonoBehaviour
         );
 
         _player.Knockback.ApplyKnockback(
-            collision.transform.position,
+            enemyPosition,
             _player.DashStats.knockbackForce,
             _player.DashStats.knockbackDuration,
             true

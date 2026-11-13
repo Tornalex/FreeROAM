@@ -1,8 +1,12 @@
 using UnityEngine;
 
+// Runs before the other player action components so the healing state has
+// priority over any action pressed on the same frame.
+[DefaultExecutionOrder(-99)]
 public class PlayerEssence : MonoBehaviour
 {
     private float _currentEssence;
+    private float _healTimer;
     private Player _player;
 
     public float CurrentEssence => _currentEssence;
@@ -16,10 +20,46 @@ public class PlayerEssence : MonoBehaviour
 
     void Update()
     {
-        if (_player.HasControl && _player.Input.HealTriggered)
+        // Healing is a timed hold state: a fresh press starts the channel and
+        // the button must remain held until the configured duration elapses.
+        if (_player.IsHealing)
         {
-            TryHeal();
+            if (!_player.HasControl || !_player.Input.IsHealHeld())
+            {
+                _player.EndHealing();
+                _healTimer = 0f;
+                return;
+            }
+
+            _healTimer += Time.deltaTime;
+
+            if (_healTimer >= _player.HealStats.healDuration)
+            {
+                TryHeal();
+                _player.EndHealing();
+                _healTimer = 0f;
+            }
+
+            return;
         }
+
+        if (!_player.HasControl || !_player.Input.HealTriggered)
+            return;
+
+        if (!CanHeal())
+            return;
+
+        _player.BeginHealing();
+        _healTimer = 0f;
+    }
+
+    private void OnDisable()
+    {
+        // Never leave the player locked if this component is turned off.
+        if (_player != null && _player.IsHealing)
+            _player.EndHealing();
+
+        _healTimer = 0f;
     }
 
     public void AddEssenceFromCatch(bool perfectCatch)
@@ -32,6 +72,11 @@ public class PlayerEssence : MonoBehaviour
 
     public bool ConsumeEssence(float amount)
     {
+        // Negative costs would increase the runtime balance and bypass the
+        // maximum-essence cap. No gameplay caller uses negative costs.
+        if (amount < 0f)
+            return false;
+
         if (_currentEssence >= amount)
         {
             _currentEssence -= amount;
@@ -40,12 +85,18 @@ public class PlayerEssence : MonoBehaviour
         return false;
     }
 
+    private bool CanHeal()
+    {
+        return _player.Health.CurrentHealth < _player.Health.MaxHealth &&
+               _currentEssence >= _player.HealStats.essenceCostPerHeal;
+    }
+
     private void TryHeal()
     {
-        if (_player.Health.CurrentHealth < _player.Health.MaxHealth && _currentEssence >= _player.EssenceStats.essenceCostPerHeal)
+        if (CanHeal())
         {
-            _currentEssence -= _player.EssenceStats.essenceCostPerHeal;
-            _player.Health.Heal(_player.EssenceStats.healthPerHeal);
+            _currentEssence -= _player.HealStats.essenceCostPerHeal;
+            _player.Health.Heal(_player.HealStats.healthPerHeal);
         }
     }
 
@@ -56,6 +107,10 @@ public class PlayerEssence : MonoBehaviour
 
     public void ResetState()
     {
+        if (_player != null && _player.IsHealing)
+            _player.EndHealing();
+
+        _healTimer = 0f;
         _currentEssence = 0f;
     }
 }

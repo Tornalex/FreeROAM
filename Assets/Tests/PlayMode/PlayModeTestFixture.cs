@@ -26,6 +26,8 @@ namespace SpearWander.PlayModeTests
         private const string CurrentRoomDefinitionField = "_currentRoomDefinition";
         private const string TargetDoorIdField = "_targetDoorID";
         private const string IsTransitioningField = "_isTransitioning";
+        private const string ConnectedTransitionFaultInjectorField =
+            "_connectedTransitionFaultInjector";
         private const string CatalogFailureScenesField = "CatalogFailureScenes";
 
         private readonly List<Scene> _ownedScenes = new List<Scene>();
@@ -79,6 +81,12 @@ namespace SpearWander.PlayModeTests
         /// </summary>
         public static void ResetStaticState()
         {
+            Type managerType = ReflectionTestUtilities.ResolveRuntimeType(GameSceneManagerTypeName);
+            ReflectionTestUtilities.SetStaticField(
+                managerType,
+                ConnectedTransitionFaultInjectorField,
+                null);
+
             Type deadEnemyTracker = ReflectionTestUtilities.ResolveRuntimeType(DeadEnemyTrackerTypeName);
             ReflectionTestUtilities.InvokeStatic(deadEnemyTracker, "ClearAll");
 

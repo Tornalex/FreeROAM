@@ -81,18 +81,24 @@ public static class RoomConnectivityGraphCreationTests
         private readonly string _connectionNamePrefix;
         private readonly RoomRegistry _registry;
         private readonly List<RoomDefinition> _definitions = new List<RoomDefinition>();
+        private readonly Dictionary<RoomDefinition, string> _doorIdsByRoom =
+            new Dictionary<RoomDefinition, string>();
         private readonly Scene _originalActiveScene;
+        private readonly EditorBuildSettingsScene[] _originalBuildScenes;
+        private readonly string _token;
         private bool _registered;
 
         public readonly RoomDefinition RoomA;
         public readonly RoomDefinition RoomB;
         public readonly string DoorAId;
         public readonly string DoorBId;
+        public string DoorCId { get; private set; }
         public string ConnectionNamePrefix => _connectionNamePrefix;
 
         public ServiceFixture()
         {
             string token = Guid.NewGuid().ToString("N");
+            _token = token;
             _folderPath = "Assets/__RoomConnectionCreationTests_" + token;
             _connectionNamePrefix = "P52_" + token;
             AssetDatabase.CreateFolder("Assets", Path.GetFileName(_folderPath));
@@ -102,6 +108,7 @@ public static class RoomConnectivityGraphCreationTests
                 throw new TestFailure("RoomRegistry is required for service integration tests.");
 
             _originalActiveScene = SceneManager.GetActiveScene();
+            _originalBuildScenes = (EditorBuildSettingsScene[])EditorBuildSettings.scenes.Clone();
             string roomAId = "p52_test_" + token + "_a";
             string roomBId = "p52_test_" + token + "_b";
             DoorAId = "p52_door_" + token + "_a";
@@ -114,6 +121,7 @@ public static class RoomConnectivityGraphCreationTests
                 throw new TestFailure("Could not register temporary room definitions for service tests.");
 
             _registered = true;
+            EnsureBuildScenes(RoomA, RoomB);
             EditorUtility.SetDirty(_registry);
             AssetDatabase.SaveAssets();
         }
@@ -146,11 +154,52 @@ public static class RoomConnectivityGraphCreationTests
             string definitionPath = _folderPath + "/Room_" + suffix + ".asset";
             AssetDatabase.CreateAsset(definition, definitionPath);
             _definitions.Add(definition);
+            _doorIdsByRoom[definition] = doorId;
             return definition;
+        }
+
+        public RoomDefinition AddRoomC()
+        {
+            DoorCId = "p52_door_" + _token + "_c";
+            RoomDefinition room = CreateRoom("p52_test_" + _token + "_c", "C", DoorCId);
+            if (!_registry.Add(room))
+                throw new TestFailure("Could not register the third temporary room for endpoint-edit tests.");
+
+            EnsureBuildScenes(room);
+            EditorUtility.SetDirty(_registry);
+            AssetDatabase.SaveAssets();
+            return room;
+        }
+
+        public void ClearDoorUndo(RoomDefinition room, string doorId)
+        {
+            string scenePath = AssetDatabase.GUIDToAssetPath(room.SceneGuid);
+            Scene scene = SceneManager.GetSceneByPath(scenePath);
+            bool openedHere = !scene.IsValid() || !scene.isLoaded;
+            if (openedHere)
+                scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
+
+            try
+            {
+                foreach (GameObject root in scene.GetRootGameObjects())
+                {
+                    foreach (RoomTransition door in root.GetComponentsInChildren<RoomTransition>(includeInactive: true))
+                    {
+                        if (string.Equals(door.DoorId, doorId, StringComparison.Ordinal))
+                            Undo.ClearUndo(door);
+                    }
+                }
+            }
+            finally
+            {
+                if (openedHere && scene.IsValid() && scene.isLoaded)
+                    EditorSceneManager.CloseScene(scene, removeScene: true);
+            }
         }
 
         public void Dispose()
         {
+            RoomConnectionService.ClearUndoRecordsForConnectionNamePrefix(_connectionNamePrefix);
             List<RoomConnection> testConnections = FindConnections(_connectionNamePrefix);
             foreach (RoomConnection connection in testConnections)
             {
@@ -158,8 +207,8 @@ public static class RoomConnectivityGraphCreationTests
                     Undo.ClearUndo(connection);
             }
 
-            ClearTestBacklink(RoomA, DoorAId);
-            ClearTestBacklink(RoomB, DoorBId);
+            foreach (KeyValuePair<RoomDefinition, string> endpoint in _doorIdsByRoom)
+                ClearTestBacklink(endpoint.Key, endpoint.Value);
 
             foreach (RoomDefinition definition in _definitions)
             {
@@ -183,11 +232,48 @@ public static class RoomConnectivityGraphCreationTests
                     AssetDatabase.DeleteAsset(assetPath);
             }
 
+            // Also remove test-prefixed files that Unity could not load as a
+            // RoomConnection after an interrupted Undo/Redo test operation.
+            string testAssetPrefix = _connectionNamePrefix + "_";
+            foreach (string assetPath in Directory.GetFiles(
+                         RoomConnectionService.ConnectionsFolder,
+                         testAssetPrefix + "*.asset"))
+            {
+                AssetDatabase.DeleteAsset(assetPath.Replace('\\', '/'));
+            }
+
             AssetDatabase.DeleteAsset(_folderPath);
+            EditorBuildSettings.scenes = _originalBuildScenes;
             AssetDatabase.Refresh();
 
             if (_originalActiveScene.IsValid() && _originalActiveScene.isLoaded)
                 SceneManager.SetActiveScene(_originalActiveScene);
+        }
+
+        private static void EnsureBuildScenes(params RoomDefinition[] definitions)
+        {
+            List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
+            foreach (RoomDefinition definition in definitions)
+            {
+                string path = definition != null
+                    ? AssetDatabase.GUIDToAssetPath(definition.SceneGuid)
+                    : null;
+                if (string.IsNullOrEmpty(path))
+                    continue;
+
+                int found = scenes.FindIndex(scene => string.Equals(scene.path, path, StringComparison.Ordinal));
+                if (found >= 0)
+                {
+                    if (!scenes[found].enabled)
+                        scenes[found] = new EditorBuildSettingsScene(path, true);
+                }
+                else
+                {
+                    scenes.Add(new EditorBuildSettingsScene(path, true));
+                }
+            }
+
+            EditorBuildSettings.scenes = scenes.ToArray();
         }
 
         private static void ClearTestBacklink(RoomDefinition room, string doorId)
@@ -256,6 +342,11 @@ public static class RoomConnectivityGraphCreationTests
             Test("Going back preserves valid endpoints and mode", GoingBackPreservesSelections),
             Test("Bidirectional service creation and Undo/Redo", BidirectionalCreationUndoRedo),
             Test("OneWay service creation preserves A-to-B semantics", OneWayCreation),
+            Test("Connection endpoint and direction modification supports Undo/Redo", ConnectionModificationUndoRedo),
+            Test("Connection deletion clears backlinks and supports Undo/Redo", ConnectionDeletionUndoRedo),
+            Test("Room removal without connections preserves its definition and supports Undo/Redo", RoomRemovalWithoutConnectionsUndoRedo),
+            Test("Room removal deletes only incident connections and supports Undo/Redo", RoomRemovalWithConnectionsUndoRedo),
+            Test("Missing RoomDefinition registration removal is safe and cataloged", MissingRoomRegistrationRemovalIsSafe),
             Test("Rejecting stale endpoints without partial creation", RejectingStaleEndpoint),
             Test("Partial-save failure rolls back asset and both backlinks", PartialSaveFailureRollsBack),
             Test("Graph rebuild contains the created connection", GraphRefreshAfterCreation),
@@ -488,6 +579,356 @@ public static class RoomConnectivityGraphCreationTests
             Check(connection.Direction == RoomConnectionDirection.OneWay,
                 "The OneWay mode was not saved.");
         }
+    }
+
+    private static void ConnectionModificationUndoRedo()
+    {
+        using (ServiceFixture fixture = new ServiceFixture())
+        {
+            RoomDefinition roomC = fixture.AddRoomC();
+            bool created = RoomConnectionService.CreateConnection(
+                fixture.RoomA,
+                fixture.DoorAId,
+                fixture.RoomB,
+                fixture.DoorBId,
+                RoomConnectionDirection.Bidirectional,
+                fixture.ConnectionNamePrefix + "_Modify",
+                out RoomConnection connection,
+                out string message);
+            Check(created && connection != null, "Could not create the connection for modification: " + message);
+
+            string assetPath = AssetDatabase.GetAssetPath(connection);
+            // The create operation is covered in its own test. Clear only its
+            // test-object Undo records so this case isolates modification Undo.
+            Undo.ClearUndo(connection);
+            fixture.ClearDoorUndo(fixture.RoomA, fixture.DoorAId);
+            fixture.ClearDoorUndo(fixture.RoomB, fixture.DoorBId);
+            fixture.ClearDoorUndo(roomC, fixture.DoorCId);
+            Undo.FlushUndoRecordObjects();
+            Undo.IncrementCurrentGroup();
+            bool updated = RoomConnectionService.UpdateConnection(
+                connection,
+                fixture.RoomA,
+                fixture.DoorAId,
+                roomC,
+                fixture.DoorCId,
+                RoomConnectionDirection.OneWay,
+                out message);
+            Check(updated, "Could not rewire the connection: " + message);
+            Check(AssetDatabase.GetAssetPath(connection) == assetPath,
+                "Modifying a connection replaced its persistent asset identity.");
+            Check(connection.EndpointARoomId == fixture.RoomA.RoomId &&
+                  connection.EndpointADoorId == fixture.DoorAId &&
+                  connection.EndpointBRoomId == roomC.RoomId &&
+                  connection.EndpointBDoorId == fixture.DoorCId &&
+                  connection.Direction == RoomConnectionDirection.OneWay,
+                "The modified endpoints or direction were not persisted.");
+
+            // Exercise the Undo action before scene-discovery helpers open and
+            // close scenes; those editor scene operations can add their own
+            // unrelated Undo groups in the synchronous custom harness.
+            Undo.PerformUndo();
+            RoomConnection undone = AssetDatabase.LoadAssetAtPath<RoomConnection>(assetPath);
+            Check(undone != null && undone.Direction == RoomConnectionDirection.Bidirectional &&
+                  undone.EndpointBRoomId == fixture.RoomB.RoomId && undone.EndpointBDoorId == fixture.DoorBId,
+                "Undo did not restore the original connection endpoints and direction.");
+            Check(ReadBacklink(fixture.RoomA, fixture.DoorAId) == undone &&
+                  ReadBacklink(fixture.RoomB, fixture.DoorBId) == undone &&
+                  ReadBacklink(roomC, fixture.DoorCId) == null,
+                "Undo did not restore the original door backlinks.");
+
+            Undo.PerformRedo();
+            RoomConnection redone = AssetDatabase.LoadAssetAtPath<RoomConnection>(assetPath);
+            Check(redone != null && redone.Direction == RoomConnectionDirection.OneWay &&
+                  redone.EndpointBRoomId == roomC.RoomId && redone.EndpointBDoorId == fixture.DoorCId,
+                "Redo did not restore the modified connection.");
+            Check(ReadBacklink(fixture.RoomA, fixture.DoorAId) == redone &&
+                  ReadBacklink(fixture.RoomB, fixture.DoorBId) == null &&
+                  ReadBacklink(roomC, fixture.DoorCId) == redone,
+                "Redo did not restore the modified door backlinks.");
+        }
+    }
+
+    private static void ConnectionDeletionUndoRedo()
+    {
+        using (ServiceFixture fixture = new ServiceFixture())
+        {
+            bool created = RoomConnectionService.CreateConnection(
+                fixture.RoomA,
+                fixture.DoorAId,
+                fixture.RoomB,
+                fixture.DoorBId,
+                RoomConnectionDirection.Bidirectional,
+                fixture.ConnectionNamePrefix + "_Delete",
+                out RoomConnection connection,
+                out string message);
+            Check(created && connection != null, "Could not create the connection for deletion: " + message);
+
+            string assetPath = AssetDatabase.GetAssetPath(connection);
+            // Isolate deletion Undo from the asset-creation operation already
+            // covered by BidirectionalCreationUndoRedo.
+            Undo.ClearUndo(connection);
+            fixture.ClearDoorUndo(fixture.RoomA, fixture.DoorAId);
+            fixture.ClearDoorUndo(fixture.RoomB, fixture.DoorBId);
+            Undo.FlushUndoRecordObjects();
+            Undo.IncrementCurrentGroup();
+            bool deleted = RoomConnectionService.DeleteConnection(connection, out message);
+            Check(deleted, "Could not delete the connection: " + message);
+            Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(assetPath) == null,
+                "Connection deletion left the asset in place.");
+
+            Undo.PerformUndo();
+            RoomConnection undone = AssetDatabase.LoadAssetAtPath<RoomConnection>(assetPath);
+            Check(undone != null, "Undo did not restore the deleted connection asset.");
+            Check(ReadBacklink(fixture.RoomA, fixture.DoorAId) == undone &&
+                  ReadBacklink(fixture.RoomB, fixture.DoorBId) == undone,
+                "Undo did not restore both deleted-connection backlinks.");
+
+            Undo.PerformRedo();
+            Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(assetPath) == null,
+                "Redo did not delete the connection asset again.");
+            Check(ReadBacklink(fixture.RoomA, fixture.DoorAId) == null &&
+                  ReadBacklink(fixture.RoomB, fixture.DoorBId) == null,
+                "Redo did not clear both door backlinks again.");
+        }
+    }
+
+    private static void RoomRemovalWithoutConnectionsUndoRedo()
+    {
+        string unrelatedConnectionPath = FindFirstPersistentConnectionPath();
+        try
+        {
+            using (ServiceFixture fixture = new ServiceFixture())
+            {
+                RoomRegistry registry = AssetDatabase.LoadAssetAtPath<RoomRegistry>(RoomRegistrationService.RegistryPath);
+                int roomIndex = FindRegistryIndex(registry, fixture.RoomA);
+                string definitionPath = AssetDatabase.GetAssetPath(fixture.RoomA);
+                string scenePath = AssetDatabase.GUIDToAssetPath(fixture.RoomA.SceneGuid);
+                Check(RoomRemovalService.GetConnectionsForRoom(fixture.RoomA.RoomId).Count == 0,
+                    "The no-connection fixture unexpectedly has an incident connection.");
+
+                Undo.FlushUndoRecordObjects();
+                Undo.IncrementCurrentGroup();
+                bool removed = RoomRemovalService.RemoveRoomRegistration(
+                    fixture.RoomA,
+                    fixture.RoomA.RoomId,
+                    fixture.RoomA.SceneGuid,
+                    roomIndex,
+                    out string message);
+                Check(removed, "Could not remove an unconnected room: " + message);
+                Check(!RegistryContains(registry, fixture.RoomA),
+                    "The room registration remained after removal.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomDefinition>(definitionPath) == fixture.RoomA,
+                    "Removing registration deleted the RoomDefinition asset.");
+                Check(File.Exists(scenePath), "Removing registration deleted the Unity scene.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(unrelatedConnectionPath) != null,
+                    "Removing an unconnected room changed an unrelated connection asset.");
+                Check(RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                    "RuntimeRoomCatalog was not synchronized after removing an unconnected room.");
+
+                Undo.PerformUndo();
+                RoomConnectionService.ReconcileUndoRedo();
+                Check(RegistryContains(registry, fixture.RoomA),
+                    "Undo did not restore the room registration.");
+                Check(RoomRegistrationService.SynchronizeRuntimeCatalog().IsValid,
+                    "RuntimeRoomCatalog was not synchronized after room-removal Undo.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomDefinition>(definitionPath) == fixture.RoomA &&
+                      File.Exists(scenePath),
+                    "Undo did not preserve the scene and RoomDefinition asset.");
+
+                Undo.PerformRedo();
+                RoomConnectionService.ReconcileUndoRedo();
+                Check(!RegistryContains(registry, fixture.RoomA),
+                    "Redo did not remove the room registration again.");
+                Check(RoomRegistrationService.SynchronizeRuntimeCatalog().IsValid,
+                    "RuntimeRoomCatalog was not synchronized after room-removal Redo.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(unrelatedConnectionPath) != null,
+                    "Redo changed an unrelated connection asset.");
+            }
+        }
+        finally
+        {
+            RuntimeRoomCatalogValidationReport report = RuntimeRoomCatalogGenerator.GenerateOrUpdate();
+            if (!report.IsValid)
+                throw new TestFailure("Could not restore RuntimeRoomCatalog after room-removal fixture: " + report.FormatSummary());
+        }
+    }
+
+    private static void RoomRemovalWithConnectionsUndoRedo()
+    {
+        string unrelatedConnectionPath = FindFirstPersistentConnectionPath();
+        try
+        {
+            using (ServiceFixture fixture = new ServiceFixture())
+            {
+                RoomRegistry registry = AssetDatabase.LoadAssetAtPath<RoomRegistry>(RoomRegistrationService.RegistryPath);
+                bool created = RoomConnectionService.CreateConnection(
+                    fixture.RoomA,
+                    fixture.DoorAId,
+                    fixture.RoomB,
+                    fixture.DoorBId,
+                    RoomConnectionDirection.OneWay,
+                    fixture.ConnectionNamePrefix + "_RoomRemoval",
+                    out RoomConnection connection,
+                    out string createMessage);
+                Check(created, "Could not create the room-removal fixture connection: " + createMessage);
+
+                string connectionPath = AssetDatabase.GetAssetPath(connection);
+                string connectionGuid = AssetDatabase.AssetPathToGUID(connectionPath);
+                string definitionPath = AssetDatabase.GetAssetPath(fixture.RoomA);
+                string scenePath = AssetDatabase.GUIDToAssetPath(fixture.RoomA.SceneGuid);
+                int roomIndex = FindRegistryIndex(registry, fixture.RoomA);
+
+                // Separate the setup connection creation from the full room
+                // removal Undo group, matching distinct Graph UI operations.
+                Undo.ClearUndo(connection);
+                fixture.ClearDoorUndo(fixture.RoomA, fixture.DoorAId);
+                fixture.ClearDoorUndo(fixture.RoomB, fixture.DoorBId);
+                Undo.FlushUndoRecordObjects();
+                Undo.IncrementCurrentGroup();
+
+                bool removed = RoomRemovalService.RemoveRoomRegistration(
+                    fixture.RoomA,
+                    fixture.RoomA.RoomId,
+                    fixture.RoomA.SceneGuid,
+                    roomIndex,
+                    out string removeMessage);
+                Check(removed, "Could not remove a connected room: " + removeMessage);
+                Check(!RegistryContains(registry, fixture.RoomA),
+                    "The connected room registration remained after removal.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(connectionPath) == null,
+                    "Room removal did not delete its incident connection asset.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(unrelatedConnectionPath) != null,
+                    "Room removal deleted an unrelated RoomConnection asset.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomDefinition>(definitionPath) == fixture.RoomA &&
+                      File.Exists(scenePath),
+                    "Room removal deleted the RoomDefinition or Unity scene.");
+                Check(RoomRemovalService.GetConnectionsForRoom(fixture.RoomB.RoomId).Count == 0,
+                    "The removed connection still appears in the other room's topology.");
+                Check(RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                    "RuntimeRoomCatalog was not synchronized after removing a connected room.");
+
+                Undo.PerformUndo();
+                RoomConnectionService.ReconcileUndoRedo();
+                RoomRegistrationService.SynchronizeRuntimeCatalog();
+                RoomConnection restored = AssetDatabase.LoadAssetAtPath<RoomConnection>(connectionPath);
+                Check(RegistryContains(registry, fixture.RoomA) && restored != null,
+                    "Undo did not restore both the room registration and incident connection.");
+                Check(string.Equals(AssetDatabase.AssetPathToGUID(connectionPath), connectionGuid, StringComparison.Ordinal),
+                    "Undo did not preserve the RoomConnection asset GUID.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(unrelatedConnectionPath) != null,
+                    "Undo changed an unrelated RoomConnection asset.");
+                Check(RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                    "RuntimeRoomCatalog did not match the restored RoomRegistry after Undo.");
+
+                Undo.PerformRedo();
+                RoomConnectionService.ReconcileUndoRedo();
+                RoomRegistrationService.SynchronizeRuntimeCatalog();
+                Check(!RegistryContains(registry, fixture.RoomA) &&
+                      AssetDatabase.LoadAssetAtPath<RoomConnection>(connectionPath) == null,
+                    "Redo did not remove the room and its incident connection again.");
+                Check(AssetDatabase.LoadAssetAtPath<RoomConnection>(unrelatedConnectionPath) != null,
+                    "Redo changed an unrelated RoomConnection asset.");
+            }
+        }
+        finally
+        {
+            RuntimeRoomCatalogValidationReport report = RuntimeRoomCatalogGenerator.GenerateOrUpdate();
+            if (!report.IsValid)
+                throw new TestFailure("Could not restore RuntimeRoomCatalog after connected-room fixture: " + report.FormatSummary());
+        }
+    }
+
+    private static void MissingRoomRegistrationRemovalIsSafe()
+    {
+        RoomRegistry registry = AssetDatabase.LoadAssetAtPath<RoomRegistry>(RoomRegistrationService.RegistryPath);
+        Check(registry != null, "RoomRegistry is required for invalid registration removal coverage.");
+        int initialCount = registry.Rooms.Count;
+        int missingEntryIndex = initialCount;
+        int connectionCount = FindConnections(string.Empty).Count;
+
+        try
+        {
+            Undo.RecordObject(registry, "Add Missing RoomDefinition Test Entry");
+            SerializedObject serialized = new SerializedObject(registry);
+            SerializedProperty rooms = serialized.FindProperty("rooms");
+            rooms.InsertArrayElementAtIndex(rooms.arraySize);
+            rooms.GetArrayElementAtIndex(rooms.arraySize - 1).objectReferenceValue = null;
+            serialized.ApplyModifiedPropertiesWithoutUndo();
+            EditorUtility.SetDirty(registry);
+            AssetDatabase.SaveAssets();
+
+            Undo.FlushUndoRecordObjects();
+            Undo.IncrementCurrentGroup();
+            bool removed = RoomRemovalService.RemoveRoomRegistration(
+                null,
+                null,
+                null,
+                missingEntryIndex,
+                out string message);
+            Check(removed, "Could not remove an invalid registry entry: " + message);
+            Check(registry.Rooms.Count == initialCount,
+                "Invalid registration removal did not remove exactly the null RoomDefinition slot.");
+            Check(FindConnections(string.Empty).Count == connectionCount,
+                "Removing an invalid registration changed a RoomConnection asset.");
+            Check(RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                "RuntimeRoomCatalog was not regenerated after removing the invalid registry entry.");
+
+            Undo.PerformUndo();
+            Check(registry.Rooms.Count == initialCount + 1 && registry.Rooms[missingEntryIndex] == null,
+                "Undo did not restore the invalid null registration slot.");
+            Check(!RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                "The invalid null registration was silently omitted from the validation result after Undo.");
+
+            Undo.PerformRedo();
+            Check(registry.Rooms.Count == initialCount,
+                "Redo did not remove the invalid registry slot again.");
+            Check(RuntimeRoomCatalogGenerator.ValidateForBuild().IsValid,
+                "RuntimeRoomCatalog did not validate after invalid-registration Redo.");
+        }
+        finally
+        {
+            if (registry.Rooms.Count > initialCount &&
+                missingEntryIndex < registry.Rooms.Count &&
+                registry.Rooms[missingEntryIndex] == null)
+            {
+                registry.RemoveMissingAt(missingEntryIndex);
+            }
+
+            EditorUtility.SetDirty(registry);
+            AssetDatabase.SaveAssets();
+            RuntimeRoomCatalogGenerator.GenerateOrUpdate();
+        }
+    }
+
+    private static int FindRegistryIndex(RoomRegistry registry, RoomDefinition definition)
+    {
+        for (int i = 0; i < registry.Rooms.Count; i++)
+            if (registry.Rooms[i] == definition)
+                return i;
+        return -1;
+    }
+
+    private static bool RegistryContains(RoomRegistry registry, RoomDefinition definition)
+    {
+        return FindRegistryIndex(registry, definition) >= 0;
+    }
+
+    private static string FindFirstPersistentConnectionPath()
+    {
+        foreach (string guid in AssetDatabase.FindAssets("t:RoomConnection"))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            RoomConnection connection = string.IsNullOrEmpty(path)
+                ? null
+                : AssetDatabase.LoadAssetAtPath<RoomConnection>(path);
+            if (connection != null && !connection.name.StartsWith("P52_", StringComparison.Ordinal))
+            {
+                return path;
+            }
+        }
+
+        throw new TestFailure("No existing connection asset is available to verify unrelated-connection preservation.");
     }
 
     private static void RejectingStaleEndpoint()

@@ -724,6 +724,7 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: 3acccc3d7e364004dac8de84fed05bdb, type: 2}
   combatStats: {fileID: 11400000, guid: d098263875e868041954205e8b112a46, type: 2}
   essenceStats: {fileID: 11400000, guid: 5bfacd39beeafc64bbd4ca0a686970e6, type: 2}
+  healStats: {fileID: 11400000, guid: f1f7a33cc2d64cefa88003ee9554fbbb, type: 2}
   dashStats: {fileID: 11400000, guid: 4d28a731a4e0ccb4ebde9401be385ee3, type: 2}
   ropeStats: {fileID: 11400000, guid: bc08cb7c629f02a43825dbdf584440ee, type: 2}
   pogoStats: {fileID: 11400000, guid: 71414d51c12a35645a375a781e857a98, type: 2}

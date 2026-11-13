@@ -168,8 +168,6 @@ namespace ProjectSpear.Phase1
                 {
                     F(data.maxEssence),
                     F(data.essencePerBaseCatch),
-                    F(data.essenceCostPerHeal),
-                    data.healthPerHeal.ToString(CultureInfo.InvariantCulture),
                     F(data.essencePerPerfectCatch)
                 });
         }
