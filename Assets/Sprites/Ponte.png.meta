@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 174312e79e1936343b5a94fea762d4ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1744166257002397375
+    second: Ponte_0
+  - first:
+      213: -2594879553568752116
+    second: Ponte_1
+  - first:
+      213: -8487992612259577092
+    second: Ponte_2
+  - first:
+      213: 362637007276305035
+    second: Ponte_3
+  - first:
+      213: 5383163990354586499
+    second: Ponte_4
+  - first:
+      213: -280714344444188697
+    second: Ponte_5
+  - first:
+      213: -6495901548794586109
+    second: Ponte_6
+  - first:
+      213: -4240940196053583359
+    second: Ponte_7
+  - first:
+      213: 8753018532516176690
+    second: Ponte_8
+  - first:
+      213: -8744435790180732615
+    second: Ponte_9
+  - first:
+      213: 6349105453106695651
+    second: Ponte_10
+  - first:
+      213: 5439327968409937955
+    second: Ponte_11
+  - first:
+      213: -9208753741962676781
+    second: Ponte_12
+  - first:
+      213: 6267467391889213379
+    second: Ponte_13
+  - first:
+      213: 7445811083341367921
+    second: Ponte_14
+  - first:
+      213: -6739686262810326163
+    second: Ponte_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ponte_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 358
+        width: 228
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141462eb70a7bc7e0800000000000000
+      internalID: -1744166257002397375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e3c965bc22dfbd0800000000000000
+      internalID: -2594879553568752116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2c022c0b7943a80800000000000000
+      internalID: -8487992612259577092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_3
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a6d11df68580500800000000000000
+      internalID: 362637007276305035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b62c4c027d4ba40800000000000000
+      internalID: 5383163990354586499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_5
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e72c008ac3ba1cf0800000000000000
+      internalID: -280714344444188697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_6
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c503845fbe9d5a0800000000000000
+      internalID: -6495901548794586109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_7
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10afc847c572525c0800000000000000
+      internalID: -4240940196053583359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_8
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233a907daf7f87970800000000000000
+      internalID: 8753018532516176690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_9
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931b0159af585a680800000000000000
+      internalID: -8744435790180732615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_10
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed8be545cd8c1850800000000000000
+      internalID: 6349105453106695651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_11
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328ebede7ff5c7b40800000000000000
+      internalID: 5439327968409937955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_12
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 358
+        width: 243
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5f342034fe33080800000000000000
+      internalID: -9208753741962676781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_13
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 341
+        width: 17
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c786eee2648af650800000000000000
+      internalID: 6267467391889213379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_14
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 358
+        width: 203
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a8a3f0bb5d45760800000000000000
+      internalID: 7445811083341367921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ponte_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 2048
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b4c976d03d772a0800000000000000
+      internalID: -6739686262810326163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ponte_0: -1744166257002397375
+      Ponte_1: -2594879553568752116
+      Ponte_10: 6349105453106695651
+      Ponte_11: 5439327968409937955
+      Ponte_12: -9208753741962676781
+      Ponte_13: 6267467391889213379
+      Ponte_14: 7445811083341367921
+      Ponte_15: -6739686262810326163
+      Ponte_2: -8487992612259577092
+      Ponte_3: 362637007276305035
+      Ponte_4: 5383163990354586499
+      Ponte_5: -280714344444188697
+      Ponte_6: -6495901548794586109
+      Ponte_7: -4240940196053583359
+      Ponte_8: 8753018532516176690
+      Ponte_9: -8744435790180732615
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
