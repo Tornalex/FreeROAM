@@ -40,6 +40,19 @@ public sealed class SpearConfig : ScriptableObject
     [SerializeField, Min(0f), Tooltip("Time the spear ignores the boss collider after being deflected.")]
     private float bossCollisionIgnoreDuration = 0.5f;
 
+    [Header("Camera Impulse")]
+    [SerializeField, Min(0f), Tooltip("Impulse strength for a spear hit that damages an enemy during the throw.")]
+    private float throwImpactImpulse = 0.12f;
+
+    [SerializeField, Min(0f), Tooltip("Impulse strength for a spear hit that damages an enemy during the return.")]
+    private float returnImpactImpulse = 0.07f;
+
+    [SerializeField, Min(0f), Tooltip("Impulse strength when the spear is deflected by a boss body.")]
+    private float bossDeflectImpulse = 0.16f;
+
+    [SerializeField, Min(0f), Tooltip("Minimum seconds between two spear impact impulses. Prevents overlapping shakes during multi-hit returns.")]
+    private float cameraImpulseMinInterval = 0.15f;
+
     [Header("Return")]
     [SerializeField, Tooltip("Speed progression over the normalized return duration.")]
     private AnimationCurve returnCurve = new AnimationCurve(
@@ -95,6 +108,11 @@ public sealed class SpearConfig : ScriptableObject
     public float BossBounceGravityScale => bossBounceGravityScale;
     public float BossCollisionIgnoreDuration => bossCollisionIgnoreDuration;
 
+    public float ThrowImpactImpulse => throwImpactImpulse;
+    public float ReturnImpactImpulse => returnImpactImpulse;
+    public float BossDeflectImpulse => bossDeflectImpulse;
+    public float CameraImpulseMinInterval => cameraImpulseMinInterval;
+
     public float ReturnDuration => returnDuration;
     public float MaxReturnSpeed => maxReturnSpeed;
     public float CatchDistance => catchDistance;
@@ -126,6 +144,11 @@ public sealed class SpearConfig : ScriptableObject
         bossBounceSpeedMultiplier = Mathf.Max(0f, bossBounceSpeedMultiplier);
         bossBounceGravityScale = Mathf.Max(0f, bossBounceGravityScale);
         bossCollisionIgnoreDuration = Mathf.Max(0f, bossCollisionIgnoreDuration);
+
+        throwImpactImpulse = Mathf.Max(0f, throwImpactImpulse);
+        returnImpactImpulse = Mathf.Max(0f, returnImpactImpulse);
+        bossDeflectImpulse = Mathf.Max(0f, bossDeflectImpulse);
+        cameraImpulseMinInterval = Mathf.Max(0f, cameraImpulseMinInterval);
 
         returnDuration = Mathf.Max(0.0001f, returnDuration);
         maxReturnSpeed = Mathf.Max(0f, maxReturnSpeed);

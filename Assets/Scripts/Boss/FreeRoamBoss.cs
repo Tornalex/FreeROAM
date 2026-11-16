@@ -471,7 +471,7 @@ namespace SpearWander.Boss
             }
         }
 
-        protected override void Update()
+        void Update()
         {
             if (isDead) return;
 

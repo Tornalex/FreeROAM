@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 214e5778c27243b9acf749991c1f34ae, type: 3}
-  m_Name: Arena Tongue Attack Data
+  m_Name: Tongue Attack Data
   m_EditorClassIdentifier: Assembly-CSharp::TongueAttackData
   damage: 1
   cooldown: 1
-  windupTime: 0.2
+  windupTime: 0.3
   extendTime: 0.12
   retractTime: 0.22
-  recoveryTime: 0.3
+  recoveryTime: 0.1
   range: 12
   width: 0.3
   tongueColor: {r: 0.9, g: 0.3, b: 0.4, a: 1}

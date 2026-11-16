@@ -248,13 +248,14 @@ namespace SpearWander.PlayModeTests
 
             string[] dataFields =
             {
-                "playerStats", "combatStats", "essenceStats",
+                "playerStats", "combatStats", "essenceStats", "healStats",
                 "dashStats", "ropeStats", "pogoStats"
             };
             string[] dataTypes =
             {
                 "PlayerStatsData", "PlayerCombatData", "PlayerEssenceData",
-                "PlayerDashData", "PlayerRopeData", "PlayerPogoData"
+                "PlayerHealData", "PlayerDashData", "PlayerRopeData",
+                "PlayerPogoData"
             };
             for (int i = 0; i < dataFields.Length; i++)
             {

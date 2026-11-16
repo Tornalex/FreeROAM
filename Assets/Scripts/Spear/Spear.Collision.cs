@@ -146,6 +146,10 @@ private void OnCollisionEnter2D(
         Vector2 velocity =
             _rb.linearVelocity;
 
+        GenerateBossDeflectCameraImpulse(
+            collision.contacts[0].point,
+            velocity);
+
         float dot =
             Vector2.Dot(
                 velocity,

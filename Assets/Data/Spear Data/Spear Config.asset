@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spear Config
   m_EditorClassIdentifier: Assembly-CSharp::SpearConfig
   enemyBounceSpeed: 10
-  bounceAngle: 90
+  bounceAngle: 45
   tipRaycastLength: 1.5
   embedDepth: 0.15
   rigidbodyMass: 2
@@ -22,6 +22,10 @@ MonoBehaviour:
   bossBounceSpeedMultiplier: 0.6
   bossBounceGravityScale: 1
   bossCollisionIgnoreDuration: 0.5
+  throwImpactImpulse: 0.4
+  returnImpactImpulse: 0.1
+  bossDeflectImpulse: 0.16
+  cameraImpulseMinInterval: 0.15
   returnCurve:
     serializedVersion: 2
     m_Curve:
@@ -48,7 +52,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   returnDuration: 1
   maxReturnSpeed: 120
-  catchDistance: 0.75
+  catchDistance: 1
   droppedGravityScale: 1.5
   droppedLinearDamping: 2
   enemyDeathHorizontalImpulse: 6

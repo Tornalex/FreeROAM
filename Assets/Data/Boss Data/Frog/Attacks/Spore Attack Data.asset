@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc10ba2ff8b94bdf8dffba2259f5126b, type: 3}
-  m_Name: Arena Spore Attack Data
+  m_Name: Spore Attack Data
   m_EditorClassIdentifier: Assembly-CSharp::SporeAttackData
   damage: 1
   cooldown: 1

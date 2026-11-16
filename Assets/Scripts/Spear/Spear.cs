@@ -144,6 +144,8 @@ public partial class Spear : MonoBehaviour
         _playerCollider = playerCol;
         _playerTransform = playerCol.transform;
 
+        CacheCameraImpulseSource();
+
         _collider.isTrigger = true;
 
         InitializeCombatState();

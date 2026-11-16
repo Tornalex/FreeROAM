@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +9,10 @@ using UnityEngine;
 /// and resumes it from an unscaled-time timer. It never touches
 /// <see cref="Time.fixedDeltaTime"/> and never starts a freeze while the game is
 /// already frozen, so a hit stop can not accidentally unpause a paused game.
+///
+/// While the freeze is active the Cinemachine brains are kept on an update path
+/// that still runs with a stopped physics clock, so impulse-driven camera shake
+/// starts at the impact instead of waiting for gameplay to resume.
 /// </summary>
 public class HitStopManager : MonoBehaviour
 {
@@ -17,6 +23,18 @@ public class HitStopManager : MonoBehaviour
 
     [Tooltip("Gameplay freeze duration in unscaled seconds.")]
     [SerializeField, Min(0f)] private float hitStopDuration = 0.06f;
+
+    private struct BrainUpdateOverride
+    {
+        public CinemachineBrain Brain;
+        public CinemachineBrain.UpdateMethods OriginalMethod;
+    }
+
+    private readonly List<BrainUpdateOverride> _brainOverrides =
+        new List<BrainUpdateOverride>();
+
+    private readonly List<CinemachineBrain> _brains =
+        new List<CinemachineBrain>();
 
     private bool _isActive;
     private float _remainingDuration;
@@ -35,6 +53,14 @@ public class HitStopManager : MonoBehaviour
         }
 
         Instance = this;
+
+        // Impulse events are timestamped and evaluated against
+        // CinemachineCore.CurrentTime, which follows the scaled clock. While the
+        // freeze holds Time.timeScale at zero that clock stops, so an impulse
+        // created at the impact would not start moving until gameplay resumes.
+        // The impulse system's unscaled clock lets the shake play during the
+        // freeze and continue seamlessly once the freeze ends.
+        CinemachineImpulseManager.Instance.IgnoreTimeScale = true;
     }
 
     private void OnEnable()
@@ -95,6 +121,7 @@ public class HitStopManager : MonoBehaviour
             _remainingDuration = duration;
             _isActive = true;
             Time.timeScale = 0f;
+            BeginCameraUpdatesDuringFreeze();
             return;
         }
 
@@ -115,5 +142,73 @@ public class HitStopManager : MonoBehaviour
         // system in control.
         if (Time.timeScale <= 0f)
             Time.timeScale = _restoreTimeScale;
+
+        EndCameraUpdatesDuringFreeze();
+    }
+
+    /// <summary>
+    /// A CinemachineBrain set to FixedUpdate is only stepped from the physics
+    /// update, and physics does not run while time is stopped. During the freeze
+    /// the brains are moved to LateUpdate, where the camera pipeline (and its
+    /// impulse listener) keeps evaluating even with a stopped physics clock.
+    /// The original update method is restored as soon as the freeze ends.
+    /// </summary>
+    private void BeginCameraUpdatesDuringFreeze()
+    {
+        _brainOverrides.Clear();
+        RefreshBrains();
+
+        for (int i = 0; i < _brains.Count; i++)
+        {
+            CinemachineBrain brain = _brains[i];
+
+            if (brain == null ||
+                !brain.isActiveAndEnabled ||
+                brain.UpdateMethod == CinemachineBrain.UpdateMethods.ManualUpdate)
+            {
+                continue;
+            }
+
+            _brainOverrides.Add(new BrainUpdateOverride
+            {
+                Brain = brain,
+                OriginalMethod = brain.UpdateMethod
+            });
+
+            brain.UpdateMethod = CinemachineBrain.UpdateMethods.LateUpdate;
+        }
+    }
+
+    private void EndCameraUpdatesDuringFreeze()
+    {
+        for (int i = 0; i < _brainOverrides.Count; i++)
+        {
+            BrainUpdateOverride entry = _brainOverrides[i];
+
+            // Do not fight another system that changed the mode in the meantime.
+            if (entry.Brain != null &&
+                entry.Brain.UpdateMethod == CinemachineBrain.UpdateMethods.LateUpdate)
+            {
+                entry.Brain.UpdateMethod = entry.OriginalMethod;
+            }
+        }
+
+        _brainOverrides.Clear();
+    }
+
+    private void RefreshBrains()
+    {
+        bool needsRefresh = _brains.Count == 0;
+
+        for (int i = 0; i < _brains.Count && !needsRefresh; i++)
+            needsRefresh = _brains[i] == null;
+
+        if (!needsRefresh)
+            return;
+
+        _brains.Clear();
+
+        _brains.AddRange(
+            FindObjectsByType<CinemachineBrain>(FindObjectsInactive.Exclude));
     }
 }

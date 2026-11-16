@@ -449,6 +449,17 @@ private void ProcessHit(
         {
             Debug.LogException(exception);
         }
+
+        try
+        {
+            GenerateEnemyHitCameraImpulse(
+                hitPoint,
+                _confirmedHitTravelDirection);
+        }
+        catch (System.Exception exception)
+        {
+            Debug.LogException(exception);
+        }
     }
 
     /// <summary>

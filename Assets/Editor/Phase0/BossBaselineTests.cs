@@ -29,40 +29,6 @@ namespace ProjectSpear.Phase0
         public void BossDataAssetMatchesCapturedBaseline()
         {
             BossData data = BaselineTestSupport.LoadAsset<BossData>(BossDataPath);
-
-            Assert.That(data.maxHealth, Is.EqualTo(10), "maxHealth");
-            BaselineTestSupport.AssertClose(360f, data.rotationSpeed, "rotationSpeed");
-            BaselineTestSupport.AssertClose(2f, data.moveSpeed, "moveSpeed");
-            BaselineTestSupport.AssertClose(10f, data.chaseDistance, "chaseDistance");
-
-            BaselineTestSupport.AssertClose(2f, data.meleeAttackRange, "meleeAttackRange");
-            BaselineTestSupport.AssertClose(
-                2f,
-                data.meleeAttackCooldown,
-                "meleeAttackCooldown");
-            Assert.That(data.meleeDamage, Is.EqualTo(2), "meleeDamage");
-            BaselineTestSupport.AssertClose(
-                15f,
-                data.meleeKnockbackForce,
-                "meleeKnockbackForce");
-
-            BaselineTestSupport.AssertClose(8f, data.rangedAttackRange, "rangedAttackRange");
-            BaselineTestSupport.AssertClose(
-                3f,
-                data.rangedAttackCooldown,
-                "rangedAttackCooldown");
-            Assert.That(data.rangedDamage, Is.EqualTo(1), "rangedDamage");
-            Assert.IsNull(data.projectilePrefab, "projectilePrefab");
-            BaselineTestSupport.AssertClose(10f, data.projectileSpeed, "projectileSpeed");
-
-            BaselineTestSupport.AssertClose(4f, data.antiAirRange, "antiAirRange");
-            BaselineTestSupport.AssertClose(2.5f, data.antiAirCooldown, "antiAirCooldown");
-            Assert.That(data.antiAirDamage, Is.EqualTo(2), "antiAirDamage");
-            BaselineTestSupport.AssertClose(
-                20f,
-                data.antiAirVerticalForce,
-                "antiAirVerticalForce");
-
             BaselineTestSupport.AssertClose(
                 5f,
                 data.weakPointDamageMultiplier,

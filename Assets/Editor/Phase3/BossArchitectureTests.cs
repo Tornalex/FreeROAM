@@ -66,31 +66,6 @@ namespace ProjectSpear.Phase3
         }
 
         [Test]
-        public void BossDataLegacyConfigurationIsPreserved()
-        {
-            // The default Boss controller still reads these fields. They must not
-            // be dropped while the controller exists.
-            BossData data = Load<BossData>(BossDataPath);
-
-            Assert.That(data.rotationSpeed, Is.EqualTo(360f).Within(0.0001f));
-            Assert.That(data.moveSpeed, Is.EqualTo(2f).Within(0.0001f));
-            Assert.That(data.chaseDistance, Is.EqualTo(10f).Within(0.0001f));
-            Assert.That(data.meleeAttackRange, Is.EqualTo(2f).Within(0.0001f));
-            Assert.That(data.meleeAttackCooldown, Is.EqualTo(2f).Within(0.0001f));
-            Assert.That(data.meleeDamage, Is.EqualTo(2));
-            Assert.That(data.meleeKnockbackForce, Is.EqualTo(15f).Within(0.0001f));
-            Assert.That(data.rangedAttackRange, Is.EqualTo(8f).Within(0.0001f));
-            Assert.That(data.rangedAttackCooldown, Is.EqualTo(3f).Within(0.0001f));
-            Assert.That(data.rangedDamage, Is.EqualTo(1));
-            Assert.IsNull(data.projectilePrefab);
-            Assert.That(data.projectileSpeed, Is.EqualTo(10f).Within(0.0001f));
-            Assert.That(data.antiAirRange, Is.EqualTo(4f).Within(0.0001f));
-            Assert.That(data.antiAirCooldown, Is.EqualTo(2.5f).Within(0.0001f));
-            Assert.That(data.antiAirDamage, Is.EqualTo(2));
-            Assert.That(data.antiAirVerticalForce, Is.EqualTo(20f).Within(0.0001f));
-        }
-
-        [Test]
         public void FreeRoamBossPrefabUsesAuthoringAssets()
         {
             FreeRoamBoss boss = PrefabComponent<FreeRoamBoss>(BossPrefabPath);

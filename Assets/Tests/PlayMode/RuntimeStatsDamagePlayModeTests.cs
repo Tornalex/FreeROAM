@@ -19,6 +19,7 @@ namespace SpearWander.PlayModeTests
         private const string PlayerStatsDataTypeName = "PlayerStatsData";
         private const string PlayerCombatDataTypeName = "PlayerCombatData";
         private const string PlayerEssenceDataTypeName = "PlayerEssenceData";
+        private const string PlayerHealDataTypeName = "PlayerHealData";
         private const string PlayerDashDataTypeName = "PlayerDashData";
         private const string PlayerRopeDataTypeName = "PlayerRopeData";
         private const string PlayerPogoDataTypeName = "PlayerPogoData";
@@ -293,10 +294,12 @@ namespace SpearWander.PlayModeTests
             ScriptableObject stats = sharedStats ?? CreateData(PlayerStatsDataTypeName);
             ScriptableObject combat = CreateData(PlayerCombatDataTypeName);
             ScriptableObject essence = sharedEssence ?? CreateData(PlayerEssenceDataTypeName);
+            ScriptableObject healData = CreateData(PlayerHealDataTypeName);
             ScriptableObject dashData = CreateData(PlayerDashDataTypeName);
             ScriptableObject ropeData = CreateData(PlayerRopeDataTypeName);
             ScriptableObject pogoData = CreateData(PlayerPogoDataTypeName);
             owned.Add(combat);
+            owned.Add(healData);
             owned.Add(dashData);
             owned.Add(ropeData);
             owned.Add(pogoData);
@@ -316,6 +319,7 @@ namespace SpearWander.PlayModeTests
             ReflectionTestUtilities.SetInstanceField(player, "playerStats", stats);
             ReflectionTestUtilities.SetInstanceField(player, "combatStats", combat);
             ReflectionTestUtilities.SetInstanceField(player, "essenceStats", essence);
+            ReflectionTestUtilities.SetInstanceField(player, "healStats", healData);
             ReflectionTestUtilities.SetInstanceField(player, "dashStats", dashData);
             ReflectionTestUtilities.SetInstanceField(player, "ropeStats", ropeData);
             ReflectionTestUtilities.SetInstanceField(player, "pogoStats", pogoData);
