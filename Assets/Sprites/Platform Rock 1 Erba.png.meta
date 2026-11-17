@@ -1,0 +1,1261 @@
+fileFormatVersion: 2
+guid: 8087638ca347e254a919fd0a8f084e57
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3077516070171834629
+    second: Platform Rock 1 Erba_0
+  - first:
+      213: -5533479328740601807
+    second: Platform Rock 1 Erba_1
+  - first:
+      213: -2038056550739910212
+    second: Platform Rock 1 Erba_2
+  - first:
+      213: 6207704304565644353
+    second: Platform Rock 1 Erba_3
+  - first:
+      213: -4384354592996373215
+    second: Platform Rock 1 Erba_4
+  - first:
+      213: -4442395900192292733
+    second: Platform Rock 1 Erba_5
+  - first:
+      213: 3135911174150338236
+    second: Platform Rock 1 Erba_6
+  - first:
+      213: -5813624142278946121
+    second: Platform Rock 1 Erba_7
+  - first:
+      213: -268701899094185126
+    second: Platform Rock 1 Erba_8
+  - first:
+      213: 3834345203759780779
+    second: Platform Rock 1 Erba_9
+  - first:
+      213: 8832718230894821953
+    second: Platform Rock 1 Erba_10
+  - first:
+      213: 4587672631141391110
+    second: Platform Rock 1 Erba_11
+  - first:
+      213: 4300671146807828
+    second: Platform Rock 1 Erba_12
+  - first:
+      213: -2598450492688016528
+    second: Platform Rock 1 Erba_13
+  - first:
+      213: 5222850730547373416
+    second: Platform Rock 1 Erba_14
+  - first:
+      213: -6520815047322552121
+    second: Platform Rock 1 Erba_15
+  - first:
+      213: -1336077657307916123
+    second: Platform Rock 1 Erba_16
+  - first:
+      213: -7320958555941232130
+    second: Platform Rock 1 Erba_17
+  - first:
+      213: 3107038534912647229
+    second: Platform Rock 1 Erba_18
+  - first:
+      213: -1147374951781139602
+    second: Platform Rock 1 Erba_19
+  - first:
+      213: 3397404694414726034
+    second: Platform Rock 1 Erba_20
+  - first:
+      213: -3306246822274489216
+    second: Platform Rock 1 Erba_21
+  - first:
+      213: 646425874955194914
+    second: Platform Rock 1 Erba_22
+  - first:
+      213: 4758177130066250955
+    second: Platform Rock 1 Erba_23
+  - first:
+      213: 158767467595676386
+    second: Platform Rock 1 Erba_24
+  - first:
+      213: 7887239312389958246
+    second: Platform Rock 1 Erba_25
+  - first:
+      213: 4562389669084330026
+    second: Platform Rock 1 Erba_26
+  - first:
+      213: -1078928934599774335
+    second: Platform Rock 1 Erba_27
+  - first:
+      213: -7522442294751920639
+    second: Platform Rock 1 Erba_28
+  - first:
+      213: 9145013454673117650
+    second: Platform Rock 1 Erba_29
+  - first:
+      213: -3169468307241612072
+    second: Platform Rock 1 Erba_30
+  - first:
+      213: 6984091038470390824
+    second: Platform Rock 1 Erba_31
+  - first:
+      213: -542308267851713055
+    second: Platform Rock 1 Erba_32
+  - first:
+      213: 1446493774222845465
+    second: Platform Rock 1 Erba_33
+  - first:
+      213: 5483543414249217332
+    second: Platform Rock 1 Erba_34
+  - first:
+      213: -5277869267732187688
+    second: Platform Rock 1 Erba_35
+  - first:
+      213: -557225365624602121
+    second: Platform Rock 1 Erba_36
+  - first:
+      213: -9603957003373840
+    second: Platform Rock 1 Erba_37
+  - first:
+      213: 6396314467171703794
+    second: Platform Rock 1 Erba_38
+  - first:
+      213: 1934799492886450482
+    second: Platform Rock 1 Erba_39
+  - first:
+      213: -3842607030807120809
+    second: Platform Rock 1 Erba_40
+  - first:
+      213: 3909715565415195669
+    second: Platform Rock 1 Erba_41
+  - first:
+      213: -3306661405806270594
+    second: Platform Rock 1 Erba_42
+  - first:
+      213: -9179003304409048297
+    second: Platform Rock 1 Erba_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_0
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 694
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509f5297f8885ba20800000000000000
+      internalID: 3077516070171834629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_1
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 691
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130137e3ed12533b0800000000000000
+      internalID: -5533479328740601807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 559
+        width: 81
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb16dfc7d5e57b3e0800000000000000
+      internalID: -2038056550739910212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_3
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 615
+        width: 51
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c6c48dc22362650800000000000000
+      internalID: 6207704304565644353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_4
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 662
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d491b1ab4a723c0800000000000000
+      internalID: -4384354592996373215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_5
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 491
+        width: 199
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 380036137707952c0800000000000000
+      internalID: -4442395900192292733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_6
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 535
+        width: 43
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6b86e199ef48b20800000000000000
+      internalID: 3135911174150338236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_7
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 627
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b214ddf4abd15fa0800000000000000
+      internalID: -5813624142278946121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_8
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 613
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ba402eb01654cf0800000000000000
+      internalID: -268701899094185126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_9
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 612
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba31358c5a4563530800000000000000
+      internalID: 3834345203759780779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_10
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 615
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1424a99ee6e149a70800000000000000
+      internalID: 8832718230894821953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_11
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 624
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bd6f493ffaaaf30800000000000000
+      internalID: 4587672631141391110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_12
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 607
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412500800774f0000800000000000000
+      internalID: 4300671146807828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_13
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 636
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b54e84b0370fbd0800000000000000
+      internalID: -2598450492688016528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_14
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 600
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8656a2d411b4b7840800000000000000
+      internalID: 5222850730547373416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_15
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 607
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8315263496185a0800000000000000
+      internalID: -6520815047322552121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_16
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 597
+        width: 63
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a853d3137c457de0800000000000000
+      internalID: -1336077657307916123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_17
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 613
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef124c14bfab66a90800000000000000
+      internalID: -7320958555941232130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_18
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 612
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d302be0f51b6e1b20800000000000000
+      internalID: 3107038534912647229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_19
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 607
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b77e67f84b310f0800000000000000
+      internalID: -1147374951781139602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_20
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 611
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29395d0c191062f20800000000000000
+      internalID: 3397404694414726034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_21
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 619
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084a09a480add12d0800000000000000
+      internalID: -3306246822274489216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_22
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 509
+        width: 61
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222535a88e098f800800000000000000
+      internalID: 646425874955194914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_23
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 525
+        width: 99
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc8cffc3e0780240800000000000000
+      internalID: 4758177130066250955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_24
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 503
+        width: 75
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eabdebab2e043200800000000000000
+      internalID: 158767467595676386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_25
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 421
+        width: 94
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66aef71cd5a157d60800000000000000
+      internalID: 7887239312389958246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_26
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 589
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28fea04b3dd05f30800000000000000
+      internalID: 4562389669084330026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_27
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 533
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f2a43b9dfd601f0800000000000000
+      internalID: -1078928934599774335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_28
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 530
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10effe9a69aea9790800000000000000
+      internalID: -7522442294751920639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_29
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 533
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d185ffd84d99ee70800000000000000
+      internalID: 9145013454673117650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_30
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 558
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc410cfd59c304d0800000000000000
+      internalID: -3169468307241612072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_31
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 386
+        width: 57
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8244403dbc97ce060800000000000000
+      internalID: 6984091038470390824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_32
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 507
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5f0ffe0855978f0800000000000000
+      internalID: -542308267851713055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_33
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 517
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916ed5e7c6af21410800000000000000
+      internalID: 1446493774222845465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_34
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 502
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dd1c4aea5791c40800000000000000
+      internalID: 5483543414249217332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_35
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 506
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d53fd54ddd31c6b0800000000000000
+      internalID: -5277869267732187688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_36
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 358
+        width: 76
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1cb167b765448f0800000000000000
+      internalID: -557225365624602121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_37
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 373
+        width: 76
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f230628041eddff0800000000000000
+      internalID: -9603957003373840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 409
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb16776e1644c850800000000000000
+      internalID: 6396314467171703794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_39
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 388
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2315a1543e9c9da10800000000000000
+      internalID: 1934799492886450482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_40
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 382
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754b255b3415caac0800000000000000
+      internalID: -3842607030807120809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_41
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 373
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51463699799124630800000000000000
+      internalID: 3909715565415195669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_42
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 369
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e776c6a88f06c12d0800000000000000
+      internalID: -3306661405806270594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform Rock 1 Erba_43
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 378
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bdf888021ad9080800000000000000
+      internalID: -9179003304409048297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Platform Rock 1 Erba_0: 3077516070171834629
+      Platform Rock 1 Erba_1: -5533479328740601807
+      Platform Rock 1 Erba_10: 8832718230894821953
+      Platform Rock 1 Erba_11: 4587672631141391110
+      Platform Rock 1 Erba_12: 4300671146807828
+      Platform Rock 1 Erba_13: -2598450492688016528
+      Platform Rock 1 Erba_14: 5222850730547373416
+      Platform Rock 1 Erba_15: -6520815047322552121
+      Platform Rock 1 Erba_16: -1336077657307916123
+      Platform Rock 1 Erba_17: -7320958555941232130
+      Platform Rock 1 Erba_18: 3107038534912647229
+      Platform Rock 1 Erba_19: -1147374951781139602
+      Platform Rock 1 Erba_2: -2038056550739910212
+      Platform Rock 1 Erba_20: 3397404694414726034
+      Platform Rock 1 Erba_21: -3306246822274489216
+      Platform Rock 1 Erba_22: 646425874955194914
+      Platform Rock 1 Erba_23: 4758177130066250955
+      Platform Rock 1 Erba_24: 158767467595676386
+      Platform Rock 1 Erba_25: 7887239312389958246
+      Platform Rock 1 Erba_26: 4562389669084330026
+      Platform Rock 1 Erba_27: -1078928934599774335
+      Platform Rock 1 Erba_28: -7522442294751920639
+      Platform Rock 1 Erba_29: 9145013454673117650
+      Platform Rock 1 Erba_3: 6207704304565644353
+      Platform Rock 1 Erba_30: -3169468307241612072
+      Platform Rock 1 Erba_31: 6984091038470390824
+      Platform Rock 1 Erba_32: -542308267851713055
+      Platform Rock 1 Erba_33: 1446493774222845465
+      Platform Rock 1 Erba_34: 5483543414249217332
+      Platform Rock 1 Erba_35: -5277869267732187688
+      Platform Rock 1 Erba_36: -557225365624602121
+      Platform Rock 1 Erba_37: -9603957003373840
+      Platform Rock 1 Erba_38: 6396314467171703794
+      Platform Rock 1 Erba_39: 1934799492886450482
+      Platform Rock 1 Erba_4: -4384354592996373215
+      Platform Rock 1 Erba_40: -3842607030807120809
+      Platform Rock 1 Erba_41: 3909715565415195669
+      Platform Rock 1 Erba_42: -3306661405806270594
+      Platform Rock 1 Erba_43: -9179003304409048297
+      Platform Rock 1 Erba_5: -4442395900192292733
+      Platform Rock 1 Erba_6: 3135911174150338236
+      Platform Rock 1 Erba_7: -5813624142278946121
+      Platform Rock 1 Erba_8: -268701899094185126
+      Platform Rock 1 Erba_9: 3834345203759780779
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
