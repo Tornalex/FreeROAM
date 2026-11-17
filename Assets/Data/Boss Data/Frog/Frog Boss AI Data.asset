@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0f8e4483b34eb5a9b348b34da6ac20, type: 3}
   m_Name: Frog Boss AI Data
   m_EditorClassIdentifier: Assembly-CSharp::BossAIProfile
-  detectionRange: 25
+  detectionRange: 50
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -29,28 +29,29 @@ MonoBehaviour:
   dashJumpObstructionLayers:
     serializedVersion: 2
     m_Bits: 1
-  jumpUpVelocity: 25
-  jumpDistance: 60
+  jumpUpVelocity: 20
+  jumpDistance: 45
   jumpMaxHorizontalSpeed: 60
-  landingRecovery: 0.35
+  landingRecovery: 0.1
   preferredDistance: 3.5
-  retreatDistance: 2
-  decisionInterval: 0.1
+  retreatDistance: 3
+  decisionInterval: 0.3
   decisionIntervalJitter: 0.15
   maxAirborneDuration: 3
   recoveryCooldown: 0.1
   jumpTowardWeight: 2
   jumpAwayWeight: 1
-  dashJumpWeight: 5
+  dashJumpWeight: 10
   tongueWeight: 3
   sporeWeight: 3
+  horizontalTongueWeight: 3
   repeatWeightMultiplier: 0.35
   attackAfterAttackWeightMultiplier: 0.4
-  dashJumpMinDistance: 10
-  dashJumpHorizontalSpeed: 120
+  dashJumpMinDistance: 14
+  dashJumpHorizontalSpeed: 200
   dashJumpUpVelocity: 16
   dashJumpLandingOffset: 10
-  dashJumpPreparationTime: 0.05
-  dashJumpRecoveryTime: 0.45
+  dashJumpPreparationTime: 0.1
+  dashJumpRecoveryTime: 0.2
   dashJumpCooldown: 1
   dashJumpMaxAirborneDuration: 4
