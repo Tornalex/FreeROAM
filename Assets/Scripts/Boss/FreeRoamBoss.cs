@@ -13,6 +13,18 @@ namespace SpearWander.Boss
     public class FreeRoamBoss : Boss
     {
         private const float DashCeilingCastRadius = 0.55f;
+        private const float HorizontalTongueLoweringFraction = 0.5f;
+        private const float MinimumHorizontalTongueReach = 0.05f;
+
+        /// <summary>
+        /// Animator states the horizontal tongue clips are expected to use, and
+        /// the triggers that request them. The FSM remains responsible for all
+        /// gameplay timing; the Animator is presentation only.
+        /// </summary>
+        public const string HorizontalTongueWindupState = "Boss_HorizontalTongueWindup";
+        public const string HorizontalTongueAttackState = "Boss_HorizontalTongueAttack";
+        public const string HorizontalTongueWindupTrigger = "HorizontalTongueWindup";
+        public const string HorizontalTongueAttackTrigger = "HorizontalTongueAttack";
 
         private enum State
         {
@@ -23,6 +35,9 @@ namespace SpearWander.Boss
             TongueWindup,
             TongueExtend,
             TongueRetract,
+            HorizontalTongueWindup,
+            HorizontalTongueExtend,
+            HorizontalTongueRetract,
             Spores,
             Recover
         }
@@ -34,11 +49,15 @@ namespace SpearWander.Boss
             JumpAway,
             DashJump,
             Tongue,
+            HorizontalTongue,
             Spores
         }
 
         [Header("Free Roam - References")]
         [SerializeField] private Transform tongueOrigin;
+        [SerializeField]
+        [Tooltip("Lower, independently movable emission point for the horizontal tongue sweep.")]
+        private Transform horizontalTongueOrigin;
         [SerializeField] private Transform groundCheckPoint;
         [SerializeField] private GameObject sporePrefab;
 
@@ -50,6 +69,10 @@ namespace SpearWander.Boss
         [SerializeField]
         [Tooltip("Timing, reach and visuals of the tongue lunge.")]
         private TongueAttackData tongueAttackData;
+
+        [SerializeField]
+        [Tooltip("Timing, emission height, sweep speed and cooldown of the horizontal tongue.")]
+        private HorizontalTongueAttackData horizontalTongueAttackData;
 
         [SerializeField]
         [Tooltip("Timing, radius and drift of the spore cloud attack.")]
@@ -126,6 +149,9 @@ namespace SpearWander.Boss
         private float SporeWeight =>
             aiProfile != null ? aiProfile.SporeWeight : 2f;
 
+        private float HorizontalTongueWeight =>
+            aiProfile != null ? aiProfile.HorizontalTongueWeight : 2f;
+
         private float RepeatWeightMultiplier =>
             aiProfile != null ? aiProfile.RepeatWeightMultiplier : 0.35f;
 
@@ -188,6 +214,41 @@ namespace SpearWander.Boss
         private int TongueSortingOrder =>
             tongueAttackData != null ? tongueAttackData.SortingOrder : 10;
 
+        private float HorizontalTongueWindupTime =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.WindupTime
+                : 0.55f;
+
+        private float HorizontalTongueHeightOffset =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.HeightOffset
+                : 1f;
+
+        private float HorizontalTongueSpeed =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.Speed
+                : 24f;
+
+        private float HorizontalTongueMaxExtensionTime =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.MaxExtensionTime
+                : 2.5f;
+
+        private float HorizontalTongueRecoveryTime =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.RecoveryTime
+                : 0.35f;
+
+        private int HorizontalTongueDamage =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.Damage
+                : 2;
+
+        private float HorizontalTongueCooldown =>
+            horizontalTongueAttackData != null
+                ? horizontalTongueAttackData.Cooldown
+                : 4f;
+
         private float SporeWindupTime =>
             sporeAttackData != null ? sporeAttackData.WindupTime : 0.6f;
 
@@ -224,6 +285,7 @@ namespace SpearWander.Boss
         private float stateTimer;
         private float decisionTimer;
         private float tongueCooldownTimer;
+        private float horizontalTongueCooldownTimer;
         private float sporeCooldownTimer;
         private float dashJumpCooldownTimer;
         private float playerSearchTimer;
@@ -240,6 +302,13 @@ namespace SpearWander.Boss
         private Vector2 tongueTarget;
         private Vector2 lastGroundedPosition;
         private RigidbodyType2D suspendedBodyType;
+
+        private float horizontalTongueDirection = 1f;
+        private float horizontalTongueReach;
+        private float horizontalTongueExtendTime;
+        private float horizontalTongueRetractTime;
+        private Vector3 horizontalTongueOriginBaseLocalPosition;
+        private bool horizontalTongueOriginBaseCached;
 
         private float dashDirection = 1f;
         private float dashDestinationX;
@@ -264,13 +333,18 @@ namespace SpearWander.Boss
         {
             base.Awake();
 
-            if (aiProfile == null || tongueAttackData == null || sporeAttackData == null)
+            if (aiProfile == null ||
+                tongueAttackData == null ||
+                horizontalTongueAttackData == null ||
+                sporeAttackData == null)
             {
                 Debug.LogWarning(
                     "[FreeRoamBoss] Missing authoring data; using built-in defaults. " +
-                    "Assign a BossAIProfile and the two BossAttackData assets.",
+                    "Assign a BossAIProfile and all BossAttackData assets.",
                     this);
             }
+
+            CacheHorizontalTongueOriginBase();
 
             playerFilter = CreateLayerFilter(PlayerLayers.value);
             groundFilter = CreateLayerFilter(GroundLayers.value & ~PlayerLayers.value);
@@ -298,6 +372,8 @@ namespace SpearWander.Boss
 
         private void OnEnable()
         {
+            RestoreHorizontalTongueOrigin();
+
             if (isDead)
             {
                 suspensionActive = false;
@@ -345,6 +421,7 @@ namespace SpearWander.Boss
         private void OnDisable()
         {
             HideTongue();
+            RestoreHorizontalTongueOrigin();
             DespawnAllSpores();
 
             tongueHitApplied = true;
@@ -448,6 +525,18 @@ namespace SpearWander.Boss
                     }
                     break;
 
+                case State.HorizontalTongueWindup:
+                    TickHorizontalTongueWindup();
+                    break;
+
+                case State.HorizontalTongueExtend:
+                    TickHorizontalTongueExtend();
+                    break;
+
+                case State.HorizontalTongueRetract:
+                    TickHorizontalTongueRetract();
+                    break;
+
                 case State.Spores:
                     stateTimer -= Time.fixedDeltaTime;
                     if (stateTimer <= 0f)
@@ -478,6 +567,11 @@ namespace SpearWander.Boss
             if (tongueCooldownTimer > 0f)
             {
                 tongueCooldownTimer -= Time.deltaTime;
+            }
+
+            if (horizontalTongueCooldownTimer > 0f)
+            {
+                horizontalTongueCooldownTimer -= Time.deltaTime;
             }
 
             if (sporeCooldownTimer > 0f)
@@ -537,6 +631,7 @@ namespace SpearWander.Boss
             suspendedColliders.Clear();
             suspendedColliderStates.Clear();
             HideTongue();
+            RestoreHorizontalTongueOrigin();
             DespawnAllSpores();
 
             base.Die();
@@ -654,6 +749,11 @@ namespace SpearWander.Boss
             bool canDashJump = dashJumpCooldownTimer <= 0f &&
                                isGrounded &&
                                horizontalDistance >= DashJumpMinDistance;
+            // The sweep crosses the room horizontally, so it does not need the
+            // player to be inside the standard tongue range.
+            bool canHorizontalTongue = horizontalTongueCooldownTimer <= 0f &&
+                                       playerTransform != null &&
+                                       horizontalDistance > 0.05f;
 
             float towardWeight = JumpTowardWeight;
             if (distance > PreferredDistance)
@@ -677,16 +777,22 @@ namespace SpearWander.Boss
 
             float dashActionWeight = canDashJump ? DashJumpWeight : 0f;
             float tongueActionWeight = canTongue ? TongueWeight : 0f;
+            float horizontalTongueActionWeight =
+                canHorizontalTongue ? HorizontalTongueWeight : 0f;
             float sporeActionWeight = canSpore ? SporeWeight : 0f;
 
             towardWeight = ApplyHistory(ActionType.JumpToward, towardWeight);
             awayWeight = ApplyHistory(ActionType.JumpAway, awayWeight);
             dashActionWeight = ApplyHistory(ActionType.DashJump, dashActionWeight);
             tongueActionWeight = ApplyHistory(ActionType.Tongue, tongueActionWeight);
+            horizontalTongueActionWeight = ApplyHistory(
+                ActionType.HorizontalTongue,
+                horizontalTongueActionWeight);
             sporeActionWeight = ApplyHistory(ActionType.Spores, sporeActionWeight);
 
             float total = towardWeight + awayWeight + dashActionWeight +
-                          tongueActionWeight + sporeActionWeight;
+                          tongueActionWeight + horizontalTongueActionWeight +
+                          sporeActionWeight;
             if (total <= 0f)
             {
                 return ActionType.JumpToward;
@@ -698,6 +804,8 @@ namespace SpearWander.Boss
             if ((roll -= awayWeight) < 0f) return ActionType.JumpAway;
             if ((roll -= dashActionWeight) < 0f) return ActionType.DashJump;
             if ((roll -= tongueActionWeight) < 0f) return ActionType.Tongue;
+            if ((roll -= horizontalTongueActionWeight) < 0f)
+                return ActionType.HorizontalTongue;
             return ActionType.Spores;
         }
 
@@ -710,7 +818,10 @@ namespace SpearWander.Boss
                 weight *= RepeatWeightMultiplier;
             }
 
-            if (lastActionWasAttack && (action == ActionType.Tongue || action == ActionType.Spores))
+            if (lastActionWasAttack &&
+                (action == ActionType.Tongue ||
+                 action == ActionType.HorizontalTongue ||
+                 action == ActionType.Spores))
             {
                 weight *= AttackAfterAttackWeightMultiplier;
             }
@@ -739,6 +850,10 @@ namespace SpearWander.Boss
 
                 case ActionType.Tongue:
                     StartTongueAttack();
+                    break;
+
+                case ActionType.HorizontalTongue:
+                    StartHorizontalTongueAttack();
                     break;
 
                 case ActionType.Spores:
@@ -1255,6 +1370,11 @@ namespace SpearWander.Boss
 
         private void CheckTongueHit(Vector2 tip)
         {
+            CheckTongueHit(tip, TongueDamage);
+        }
+
+        private void CheckTongueHit(Vector2 tip, int damage)
+        {
             if (tongueHitApplied) return;
 
             float radius = Mathf.Max(0.05f, TongueWidth * 0.5f);
@@ -1299,7 +1419,7 @@ namespace SpearWander.Boss
                 Vector2 hitPoint = tongueOverlapResults[i].ClosestPoint(
                     Vector2.Lerp(tongueStart, tip, 0.5f));
 
-                if (damageable.TakeDamage(TongueDamage, hitPoint, tongueStart))
+                if (damageable.TakeDamage(damage, hitPoint, tongueStart))
                 {
                     tongueHitApplied = true;
                     break;
@@ -1347,7 +1467,10 @@ namespace SpearWander.Boss
 
             if (state != State.TongueWindup &&
                 state != State.TongueExtend &&
-                state != State.TongueRetract)
+                state != State.TongueRetract &&
+                state != State.HorizontalTongueWindup &&
+                state != State.HorizontalTongueExtend &&
+                state != State.HorizontalTongueRetract)
             {
                 if (tongueLine.enabled)
                 {
@@ -1370,12 +1493,39 @@ namespace SpearWander.Boss
                     break;
                 }
 
+                case State.HorizontalTongueWindup:
+                {
+                    float progress = 1f - Mathf.Clamp01(
+                        stateTimer / Mathf.Max(0.0001f, HorizontalTongueWindupTime));
+                    tip = tongueTarget;
+                    alpha = Mathf.Lerp(0.18f, 0.4f, progress);
+                    break;
+                }
+
                 case State.TongueExtend:
                 {
                     float progress = 1f - Mathf.Clamp01(
                         stateTimer / Mathf.Max(0.0001f, TongueExtendTime));
                     tip = Vector2.Lerp(tongueStart, tongueTarget, progress);
                     alpha = 1f;
+                    break;
+                }
+
+                case State.HorizontalTongueExtend:
+                {
+                    float progress = 1f - Mathf.Clamp01(
+                        stateTimer / Mathf.Max(0.0001f, horizontalTongueExtendTime));
+                    tip = Vector2.Lerp(tongueStart, tongueTarget, progress);
+                    alpha = 1f;
+                    break;
+                }
+
+                case State.HorizontalTongueRetract:
+                {
+                    float progress = 1f - Mathf.Clamp01(
+                        stateTimer / Mathf.Max(0.0001f, horizontalTongueRetractTime));
+                    tip = Vector2.Lerp(tongueTarget, tongueStart, progress);
+                    alpha = Mathf.Lerp(1f, 0f, progress);
                     break;
                 }
 
@@ -1389,8 +1539,14 @@ namespace SpearWander.Boss
                 }
             }
 
+            // During the horizontal wind-up the origin itself is descending,
+            // so the telegraph must follow the moving emission point.
+            Vector2 visualOrigin = state == State.HorizontalTongueWindup
+                ? GetHorizontalTongueOrigin()
+                : tongueStart;
+
             tongueLine.enabled = true;
-            tongueLine.SetPosition(0, tongueStart);
+            tongueLine.SetPosition(0, visualOrigin);
             tongueLine.SetPosition(1, tip);
 
             Color color = TongueColor;
@@ -1405,6 +1561,239 @@ namespace SpearWander.Boss
             {
                 tongueLine.enabled = false;
             }
+        }
+
+        #endregion
+
+        #region Horizontal Tongue Attack
+
+        private void StartHorizontalTongueAttack()
+        {
+            RestoreHorizontalTongueOrigin();
+
+            // The direction is sampled once. It never follows the player
+            // afterwards, including through the wind-up and the whole sweep.
+            float horizontalDelta = playerTransform != null
+                ? playerTransform.position.x - transform.position.x
+                : (facingRight ? 1f : -1f);
+
+            horizontalTongueDirection = Mathf.Abs(horizontalDelta) > 0.05f
+                ? Mathf.Sign(horizontalDelta)
+                : (facingRight ? 1f : -1f);
+
+            Vector2 loweredOrigin = GetHorizontalTongueLoweredOrigin();
+            float maxReach = Mathf.Max(
+                0.01f,
+                HorizontalTongueSpeed * Mathf.Max(0.01f, HorizontalTongueMaxExtensionTime));
+            float reach = ClampHorizontalTongueReach(
+                loweredOrigin,
+                horizontalTongueDirection,
+                maxReach);
+
+            if (reach < MinimumHorizontalTongueReach)
+            {
+                AbortHorizontalTongueAttack();
+                return;
+            }
+
+            CacheHorizontalTongueTarget(loweredOrigin, reach);
+            tongueHitApplied = false;
+
+            state = State.HorizontalTongueWindup;
+            stateTimer = Mathf.Max(0.01f, HorizontalTongueWindupTime);
+            isAttacking = true;
+
+            RotateTowardsPlayer(horizontalTongueDirection >= 0f);
+            TrySetTrigger(HorizontalTongueWindupTrigger);
+        }
+
+        private void TickHorizontalTongueWindup()
+        {
+            stateTimer -= Time.fixedDeltaTime;
+
+            float windup = Mathf.Max(0.01f, HorizontalTongueWindupTime);
+            float progress = 1f - Mathf.Clamp01(stateTimer / windup);
+            ApplyHorizontalTongueOriginLowering(
+                Mathf.Clamp01(progress / HorizontalTongueLoweringFraction));
+
+            if (stateTimer > 0f) return;
+
+            // The lowered emission point must be fully settled before launch.
+            ApplyHorizontalTongueOriginLowering(1f);
+
+            Vector2 origin = GetHorizontalTongueOrigin();
+            float reach = ClampHorizontalTongueReach(
+                origin,
+                horizontalTongueDirection,
+                horizontalTongueReach);
+
+            if (reach < MinimumHorizontalTongueReach)
+            {
+                AbortHorizontalTongueAttack();
+                return;
+            }
+
+            // Only the origin/collision distance is refreshed; the direction
+            // stays the one sampled when the action started.
+            CacheHorizontalTongueTarget(origin, reach);
+            tongueHitApplied = false;
+
+            state = State.HorizontalTongueExtend;
+            stateTimer = horizontalTongueExtendTime;
+            TrySetTrigger(HorizontalTongueAttackTrigger);
+        }
+
+        private void TickHorizontalTongueExtend()
+        {
+            stateTimer -= Time.fixedDeltaTime;
+
+            float progress = 1f - Mathf.Clamp01(
+                stateTimer / Mathf.Max(0.0001f, horizontalTongueExtendTime));
+            Vector2 tip = Vector2.Lerp(tongueStart, tongueTarget, progress);
+
+            CheckTongueHit(tip, HorizontalTongueDamage);
+
+            if (stateTimer <= 0f)
+            {
+                state = State.HorizontalTongueRetract;
+                stateTimer = horizontalTongueRetractTime;
+            }
+        }
+
+        private void TickHorizontalTongueRetract()
+        {
+            stateTimer -= Time.fixedDeltaTime;
+            if (stateTimer <= 0f)
+            {
+                RestoreHorizontalTongueOrigin();
+                FinishAttack(
+                    ActionType.HorizontalTongue,
+                    HorizontalTongueRecoveryTime);
+            }
+        }
+
+        private void CacheHorizontalTongueTarget(Vector2 origin, float reach)
+        {
+            horizontalTongueReach = Mathf.Max(0f, reach);
+            tongueStart = origin;
+            tongueTarget = origin + new Vector2(
+                horizontalTongueDirection * horizontalTongueReach,
+                0f);
+
+            horizontalTongueExtendTime = Mathf.Max(
+                0.05f,
+                horizontalTongueReach / Mathf.Max(0.01f, HorizontalTongueSpeed));
+            horizontalTongueRetractTime = horizontalTongueExtendTime;
+        }
+
+        private float ClampHorizontalTongueReach(
+            Vector2 origin,
+            float direction,
+            float maxReach)
+        {
+            if (maxReach <= 0f) return 0f;
+
+            float radius = Mathf.Max(0.05f, TongueWidth * 0.5f);
+            obstructionHits.Clear();
+
+            int hitCount = Physics2D.CircleCast(
+                origin,
+                radius,
+                new Vector2(direction, 0f),
+                tongueObstructionFilter,
+                obstructionHits,
+                maxReach);
+
+            float safeReach = maxReach;
+            for (int i = 0; i < hitCount; i++)
+            {
+                RaycastHit2D hit = obstructionHits[i];
+                if (hit.collider == null || hit.collider.isTrigger) continue;
+                if (hit.collider.transform.IsChildOf(transform)) continue;
+
+                safeReach = Mathf.Min(safeReach, hit.distance);
+            }
+
+            return Mathf.Clamp(safeReach, 0f, maxReach);
+        }
+
+        private void AbortHorizontalTongueAttack()
+        {
+            RestoreHorizontalTongueOrigin();
+            HideTongue();
+
+            tongueHitApplied = true;
+            isAttacking = false;
+            horizontalTongueCooldownTimer = Mathf.Max(0f, HorizontalTongueCooldown);
+            RecordAction(ActionType.HorizontalTongue, true);
+
+            state = State.Recover;
+            stateTimer = Mathf.Max(0f, HorizontalTongueRecoveryTime);
+        }
+
+        private Vector2 GetHorizontalTongueOrigin()
+        {
+            if (horizontalTongueOrigin != null)
+            {
+                return horizontalTongueOrigin.position;
+            }
+
+            return (Vector2)transform.position + Vector2.down * 0.35f;
+        }
+
+        private Vector2 GetHorizontalTongueLoweredOrigin()
+        {
+            if (horizontalTongueOrigin == null)
+            {
+                return (Vector2)transform.position + Vector2.down * 0.35f;
+            }
+
+            CacheHorizontalTongueOriginBase();
+
+            Vector3 loweredLocalPosition =
+                horizontalTongueOriginBaseLocalPosition +
+                Vector3.down * Mathf.Max(0f, HorizontalTongueHeightOffset);
+
+            Transform originParent = horizontalTongueOrigin.parent;
+            return originParent != null
+                ? (Vector2)originParent.TransformPoint(loweredLocalPosition)
+                : (Vector2)loweredLocalPosition;
+        }
+
+        private void ApplyHorizontalTongueOriginLowering(float amount)
+        {
+            if (horizontalTongueOrigin == null) return;
+
+            CacheHorizontalTongueOriginBase();
+
+            float t = Mathf.Clamp01(amount);
+            horizontalTongueOrigin.localPosition =
+                horizontalTongueOriginBaseLocalPosition +
+                Vector3.down * (Mathf.Max(0f, HorizontalTongueHeightOffset) * t);
+        }
+
+        private void CacheHorizontalTongueOriginBase()
+        {
+            if (horizontalTongueOrigin == null) return;
+            if (horizontalTongueOriginBaseCached) return;
+
+            horizontalTongueOriginBaseLocalPosition =
+                horizontalTongueOrigin.localPosition;
+            horizontalTongueOriginBaseCached = true;
+        }
+
+        private void RestoreHorizontalTongueOrigin()
+        {
+            if (horizontalTongueOrigin == null) return;
+
+            if (!horizontalTongueOriginBaseCached)
+            {
+                CacheHorizontalTongueOriginBase();
+                return;
+            }
+
+            horizontalTongueOrigin.localPosition =
+                horizontalTongueOriginBaseLocalPosition;
         }
 
         #endregion
@@ -1545,6 +1934,11 @@ namespace SpearWander.Boss
             if (action == ActionType.Tongue)
             {
                 tongueCooldownTimer = TongueCooldown;
+            }
+            else if (action == ActionType.HorizontalTongue)
+            {
+                RestoreHorizontalTongueOrigin();
+                horizontalTongueCooldownTimer = Mathf.Max(0f, HorizontalTongueCooldown);
             }
             else if (action == ActionType.Spores)
             {

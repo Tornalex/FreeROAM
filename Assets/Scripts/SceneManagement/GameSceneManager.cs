@@ -14,8 +14,8 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
 
     [Header("Configurazione Iniziale")]
-    [SerializeField] private string firstRoomSceneName = "Stanza_01_Tutorial";
-    [SerializeField] private string firstRoomDoorID = "Spawn_Iniziale";
+    //[SerializeField] private string firstRoomSceneName = "Stanza_01_Tutorial";
+    //[SerializeField] private string firstRoomDoorID = "Spawn_Iniziale";
 
     [Header("Telecamera")]
     [SerializeField] private CinemachineConfiner2D cameraConfiner;
@@ -141,12 +141,6 @@ public class GameSceneManager : MonoBehaviour
             StartCoroutine(ConnectedTransitionRoutine(sourceDoor));
             return;
         }
-
-        // Preserve the old trigger's no-op behavior for an unconfigured door.
-        if (string.IsNullOrEmpty(sourceDoor.TargetSceneName))
-            return;
-
-        TransitionToRoom(sourceDoor.TargetSceneName, sourceDoor.TargetDoorID);
     }
 
     private static bool UsesConnectedTransition(RoomTransition sourceDoor)
@@ -1407,8 +1401,8 @@ public class GameSceneManager : MonoBehaviour
                 _currentRoomScene = realScene.name;
                 _currentRoomDefinition = ResolveRoomDefinition(realScene);
             }
-            else
-                LoadInitialRoom(firstRoomSceneName, firstRoomDoorID);
+            //else
+                //LoadInitialRoom(firstRoomSceneName, firstRoomDoorID);
         }
     }
 
@@ -1512,7 +1506,7 @@ public class GameSceneManager : MonoBehaviour
         }
 
         if (!overrideSpawn.HasValue)
-            targetScene = firstRoomSceneName;
+            //targetScene = firstRoomSceneName;
 
         StartCoroutine(ReloadRoomRoutine(targetScene, overrideSpawn, resetState));
     }
@@ -1610,15 +1604,15 @@ public class GameSceneManager : MonoBehaviour
 
         foreach (RoomTransition door in doors)
         {
-            if (door.DoorID == firstRoomDoorID)
+            //if (door.DoorID == firstRoomDoorID)
             {
-                if (playerTransform != null && door.SpawnPoint != null)
+                //if (playerTransform != null && door.SpawnPoint != null)
                 {
-                    playerTransform.position = door.SpawnPoint.position;
-                    Rigidbody2D rb = playerTransform.GetComponent<Rigidbody2D>();
-                    if (rb != null) rb.linearVelocity = Vector2.zero;
+                    //playerTransform.position = door.SpawnPoint.position;
+                    //Rigidbody2D rb = playerTransform.GetComponent<Rigidbody2D>();
+                    //if (rb != null) rb.linearVelocity = Vector2.zero;
                 }
-                return;
+                //return;
             }
         }
 

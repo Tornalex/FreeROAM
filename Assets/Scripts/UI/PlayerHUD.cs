@@ -7,12 +7,11 @@ public class PlayerHUD : MonoBehaviour
     [Header("Player Reference")]
     [SerializeField] private Player player;
 
-    [Header("Essence UI")]
+    [Header("Health UI")]
     [SerializeField] private GameObject[] nuts;
 
     [Header("Essence UI")]
-    [SerializeField] private Slider essenceSlider;
-    [SerializeField] private TextMeshProUGUI essenceText;
+    [SerializeField] private GameObject[] essencePoints;
 
     [Header("Spear UI")]
     [SerializeField] private TextMeshProUGUI spearStateText;
@@ -78,24 +77,19 @@ private void UpdateHealthUI()
         float currentEssence = player.Essence.CurrentEssence;
         float maxEssence = player.Essence.MaxEssence;
 
-        if (!Mathf.Approximately(currentEssence, _lastEssence) || !Mathf.Approximately(maxEssence, _lastMaxEssence))
+        if (currentEssence == _lastEssence &&
+            maxEssence == _lastMaxEssence)
+            return;
+
+        _lastEssence = currentEssence;
+        _lastMaxEssence = maxEssence;
+
+        if (essencePoints == null) return;
+
+        for (int i = 0; i < essencePoints.Length; i++)
         {
-            _lastEssence = currentEssence;
-            _lastMaxEssence = maxEssence;
-
-            if (essenceSlider != null)
-            {
-                essenceSlider.maxValue = maxEssence;
-                essenceSlider.value = currentEssence;
-            }
-
-            if (essenceText != null)
-            {
-                int essencePercentage = maxEssence > 0f
-                    ? Mathf.RoundToInt((currentEssence / maxEssence) * 100f)
-                    : 0;
-                essenceText.text = $"Essence: {essencePercentage}%";
-            }
+            if (essencePoints[i] == null) continue;
+            essencePoints[i].SetActive(i < maxEssence && i < currentEssence);
         }
     }
 

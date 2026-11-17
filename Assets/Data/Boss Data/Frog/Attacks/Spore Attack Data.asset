@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SporeAttackData
   damage: 1
   cooldown: 1
-  windupTime: 0.3
-  recoveryTime: 0.35
+  windupTime: 1
+  recoveryTime: 0.5
   lifetime: 3
   radius: 15
   maxActiveSpores: 1
   drift: {x: 0, y: 0}
-  range: 8
+  range: 12

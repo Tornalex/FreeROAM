@@ -12,16 +12,12 @@ public readonly struct DiscoveredDoor
         string stableDoorId,
         string gameObjectName,
         bool isActive,
-        string targetSceneName,
-        string targetDoorID,
         RoomConnection connection)
         : this(
             doorID,
             stableDoorId,
             gameObjectName,
             isActive,
-            targetSceneName,
-            targetDoorID,
             connection,
             new Vector2(0.5f, 0.5f),
             false,
@@ -34,12 +30,35 @@ public readonly struct DiscoveredDoor
         string stableDoorId,
         string gameObjectName,
         bool isActive,
-        string targetSceneName,
-        string targetDoorID,
         RoomConnection connection,
         Vector2 normalizedScenePosition,
         bool hasSpatialData,
         Vector2 scenePosition)
+        : this(
+            doorID,
+            stableDoorId,
+            gameObjectName,
+            isActive,
+            connection,
+            normalizedScenePosition,
+            hasSpatialData,
+            scenePosition,
+            null,
+            null)
+    {
+    }
+
+    public DiscoveredDoor(
+        string doorID,
+        string stableDoorId,
+        string gameObjectName,
+        bool isActive,
+        RoomConnection connection,
+        Vector2 normalizedScenePosition,
+        bool hasSpatialData,
+        Vector2 scenePosition,
+        string targetSceneName,
+        string targetDoorID)
     {
         DoorID = doorID;
         StableDoorId = stableDoorId;
@@ -161,6 +180,7 @@ public static class RoomDiscoveryService
             Dictionary<RoomTransition, Vector2> fallbackPositions = hasRoomBounds
                 ? null
                 : BuildDeterministicFallbackPositions(transitions);
+            RoomRegistry registry = AssetDatabase.LoadAssetAtPath<RoomRegistry>(RoomRegistrationService.RegistryPath);
 
             List<DiscoveredDoor> doors = new List<DiscoveredDoor>(transitions.Count);
             foreach (RoomTransition transition in transitions)
@@ -168,18 +188,24 @@ public static class RoomDiscoveryService
                 Vector2 normalizedPosition = hasRoomBounds
                     ? NormalizePosition(transition.transform.position, roomBounds)
                     : fallbackPositions[transition];
+                GetTarget(
+                    definition,
+                    transition,
+                    registry,
+                    out string targetSceneName,
+                    out string targetDoorID);
 
                 doors.Add(new DiscoveredDoor(
                     transition.DoorID,
                     transition.DoorId,
                     transition.gameObject.name,
                     transition.gameObject.activeInHierarchy,
-                    transition.TargetSceneName,
-                    transition.TargetDoorID,
                     transition.Connection,
                     normalizedPosition,
                     hasRoomBounds,
-                    new Vector2(transition.transform.position.x, transition.transform.position.y)));
+                    new Vector2(transition.transform.position.x, transition.transform.position.y),
+                    targetSceneName,
+                    targetDoorID));
             }
 
             message = null;
@@ -199,6 +225,54 @@ public static class RoomDiscoveryService
             if (openedByThisPass && scene.IsValid() && scene.isLoaded)
                 EditorSceneManager.CloseScene(scene, removeScene: true);
         }
+    }
+
+    private static void GetTarget(
+        RoomDefinition sourceRoom,
+        RoomTransition sourceDoor,
+        RoomRegistry registry,
+        out string targetSceneName,
+        out string targetDoorID)
+    {
+        targetSceneName = null;
+        targetDoorID = null;
+
+        RoomConnection connection = sourceDoor != null ? sourceDoor.Connection : null;
+        if (sourceRoom == null || connection == null)
+            return;
+
+        bool matchesEndpointA =
+            string.Equals(connection.EndpointARoomId, sourceRoom.RoomId, StringComparison.Ordinal) &&
+            string.Equals(connection.EndpointADoorId, sourceDoor.DoorId, StringComparison.Ordinal);
+        bool matchesEndpointB =
+            string.Equals(connection.EndpointBRoomId, sourceRoom.RoomId, StringComparison.Ordinal) &&
+            string.Equals(connection.EndpointBDoorId, sourceDoor.DoorId, StringComparison.Ordinal);
+
+        if (matchesEndpointA == matchesEndpointB)
+            return;
+
+        string targetRoomId = matchesEndpointA
+            ? connection.EndpointBRoomId
+            : connection.EndpointARoomId;
+        targetDoorID = matchesEndpointA
+            ? connection.EndpointBDoorId
+            : connection.EndpointADoorId;
+
+        if (registry == null)
+            return;
+
+        int targetRoomMatches = 0;
+        foreach (RoomDefinition room in registry.Rooms)
+        {
+            if (room == null || !string.Equals(room.RoomId, targetRoomId, StringComparison.Ordinal))
+                continue;
+
+            targetSceneName = room.SceneName;
+            targetRoomMatches++;
+        }
+
+        if (targetRoomMatches != 1)
+            targetSceneName = null;
     }
 
     private static bool TryGetRoomBounds(Scene scene, out Bounds bounds)

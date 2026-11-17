@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4777c8de445ef1468fe9ea7b44567dd, type: 3}
   m_Name: Player Essence Data
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEssenceData
-  maxEssence: 100
-  essencePerBaseCatch: 10
-  essencePerPerfectCatch: 40
+  maxEssence: 10
+  essencePerBaseCatch: 1
+  essencePerPerfectCatch: 4
