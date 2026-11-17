@@ -126,8 +126,8 @@ public class Player : MonoBehaviour
         Sprite = GetComponentInChildren<SpriteRenderer>();
         Animator = GetComponentInChildren<Animator>();
         ImpulseSource = GetComponent<CinemachineImpulseSource>();
-        DialogueRunner = FindFirstObjectByType<DialogueRunner>();
-        GameOverUI = FindFirstObjectByType<GameOverUI>();
+        DialogueRunner = FindAnyObjectByType<DialogueRunner>();
+        GameOverUI = FindAnyObjectByType<GameOverUI>();
 
         ValidateConfiguration();
 
