@@ -106,6 +106,10 @@ public class BossAIProfile : ScriptableObject
     [Tooltip("Weight of the spore attack when it is available.")]
     private float sporeWeight = 2f;
 
+    [SerializeField, Min(0f)]
+    [Tooltip("Weight of the horizontal tongue sweep when it is available.")]
+    private float horizontalTongueWeight = 2f;
+
     [SerializeField, Range(0f, 1f)]
     [Tooltip("Multiplier applied to the weight of the action that was just used.")]
     private float repeatWeightMultiplier = 0.35f;
@@ -174,6 +178,7 @@ public class BossAIProfile : ScriptableObject
     public float DashJumpWeight => dashJumpWeight;
     public float TongueWeight => tongueWeight;
     public float SporeWeight => sporeWeight;
+    public float HorizontalTongueWeight => horizontalTongueWeight;
     public float RepeatWeightMultiplier => repeatWeightMultiplier;
     public float AttackAfterAttackWeightMultiplier => attackAfterAttackWeightMultiplier;
 
@@ -209,6 +214,7 @@ public class BossAIProfile : ScriptableObject
         dashJumpWeight = Mathf.Max(0f, dashJumpWeight);
         tongueWeight = Mathf.Max(0f, tongueWeight);
         sporeWeight = Mathf.Max(0f, sporeWeight);
+        horizontalTongueWeight = Mathf.Max(0f, horizontalTongueWeight);
         repeatWeightMultiplier = Mathf.Clamp01(repeatWeightMultiplier);
         attackAfterAttackWeightMultiplier =
             Mathf.Clamp01(attackAfterAttackWeightMultiplier);
