@@ -141,12 +141,6 @@ public class GameSceneManager : MonoBehaviour
             StartCoroutine(ConnectedTransitionRoutine(sourceDoor));
             return;
         }
-
-        // Preserve the old trigger's no-op behavior for an unconfigured door.
-        if (string.IsNullOrEmpty(sourceDoor.TargetSceneName))
-            return;
-
-        TransitionToRoom(sourceDoor.TargetSceneName, sourceDoor.TargetDoorID);
     }
 
     private static bool UsesConnectedTransition(RoomTransition sourceDoor)

@@ -16,15 +16,11 @@ public class RoomTransition : MonoBehaviour
     [Tooltip("Child della porta dove il player appare quando arriva in questa stanza")]
     [SerializeField] private Transform _spawnPoint;
 
-    [Header("Destinazione")]
-    [Tooltip("Il nome esatto della scena Unity da caricare")]
-    [SerializeField] private string targetSceneName;
-    [Tooltip("L'ID della porta su cui il player deve apparire nella prossima scena")]
-    [SerializeField] private string targetDoorID;
-
     [Header("Room Connectivity")]
     [Tooltip("Identità stabile della porta usata dagli endpoint di RoomConnection. Deve essere univoca nella stanza.")]
     [SerializeField] private string doorId;
+    [SerializeField] private string targetSceneName;
+    [SerializeField] private string targetDoorID;
     [Tooltip("Connessione che possiede questa porta. Assegnata dal creatore di connessioni.")]
     [SerializeField] private RoomConnection connection;
 
@@ -34,10 +30,10 @@ public class RoomTransition : MonoBehaviour
 
     public string DoorID => doorID;
     public Transform SpawnPoint => _spawnPoint;
-    public string TargetSceneName => targetSceneName;
-    public string TargetDoorID => targetDoorID;
 
     public string DoorId => doorId;
+    public string TargetSceneName => targetSceneName;
+    public string TargetDoorID => targetDoorID;
     public RoomConnection Connection => connection;
     public RoomTransitionActivationMode ActivationMode => activationMode;
 

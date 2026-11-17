@@ -32,7 +32,7 @@ MonoBehaviour:
   jumpUpVelocity: 20
   jumpDistance: 45
   jumpMaxHorizontalSpeed: 60
-  landingRecovery: 0.1
+  landingRecovery: 0.3
   preferredDistance: 3.5
   retreatDistance: 3
   decisionInterval: 0.3
@@ -44,14 +44,14 @@ MonoBehaviour:
   dashJumpWeight: 10
   tongueWeight: 3
   sporeWeight: 3
-  horizontalTongueWeight: 3
+  horizontalTongueWeight: 12
   repeatWeightMultiplier: 0.35
   attackAfterAttackWeightMultiplier: 0.4
   dashJumpMinDistance: 14
   dashJumpHorizontalSpeed: 200
   dashJumpUpVelocity: 16
   dashJumpLandingOffset: 10
-  dashJumpPreparationTime: 0.1
+  dashJumpPreparationTime: 0.3
   dashJumpRecoveryTime: 0.2
   dashJumpCooldown: 1
   dashJumpMaxAirborneDuration: 4

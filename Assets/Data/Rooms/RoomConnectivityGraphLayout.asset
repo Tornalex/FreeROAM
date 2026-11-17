@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - nodeKey: 1d8641c9d04b424449e06b88634309aa
-    x: 1376.5479
-    y: 334.633
+    x: 1091.0284
+    y: 439.9023
   - nodeKey: 261db4d2e939def4c9a85eb4838c1416
-    x: 854.52057
-    y: 494.93262
+    x: 718.97015
+    y: 487.72238
   - nodeKey: 535e941846f140842b7eb00c5e1e5f27
-    x: 1221.2521
-    y: 485.9703
+    x: 951.59485
+    y: 488.8544
   - nodeKey: 5df6c4c46144c4f4ab248f7018c4f5ef
-    x: 852.02386
-    y: 291.67322
+    x: 720.3659
+    y: 334.11807
   - nodeKey: 9436aa5634dd09d41a826862ea9ea36c
-    x: 350.68155
+    x: 242.52808
     y: 0
   - nodeKey: 698cdff8129e90340a971f877a85c541
-    x: 60.242805
+    x: 0
     y: 0
   - nodeKey: 0af60c02674db1e478f969d379551c8e
-    x: 634.35645
+    x: 478.617
     y: 0
   - nodeKey: 022e83b81853e5b4eaba4f95ce07fc40
-    x: 545.2407
-    y: 293.5511
+    x: 303.0193
+    y: 342.91052

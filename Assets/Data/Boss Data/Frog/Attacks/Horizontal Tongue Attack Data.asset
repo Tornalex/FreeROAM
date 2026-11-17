@@ -16,6 +16,6 @@ MonoBehaviour:
   cooldown: 4
   horizontalTongueWindupTime: 0.5
   horizontalTongueRecoveryTime: 0.2
-  horizontalTongueMaxExtensionTime: 0.8
+  horizontalTongueMaxExtensionTime: 0.5
   horizontalTongueHeightOffset: 1
   horizontalTongueSpeed: 150

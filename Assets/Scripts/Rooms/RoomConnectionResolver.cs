@@ -273,14 +273,15 @@ public static class RoomConnectionResolver
         if (resolution.Status != RoomConnectionResolutionStatus.DestinationValidationPending)
             return resolution;
 
-        if (!string.Equals(
+        if (!string.IsNullOrWhiteSpace(loadedDestinationScenePath) &&
+            !string.Equals(
                 resolution.DestinationScenePath,
                 loadedDestinationScenePath,
                 StringComparison.Ordinal))
         {
             return DestinationFailure(
                 resolution,
-                $"Loaded destination path '{loadedDestinationScenePath ?? "<empty>"}' does not match " +
+                $"Loaded destination path '{loadedDestinationScenePath}' does not match " +
                 $"catalog path '{resolution.DestinationScenePath}'.");
         }
 
