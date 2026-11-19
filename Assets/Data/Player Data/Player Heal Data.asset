@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealData
   healDuration: 1
   healthPerHeal: 2
-  essenceCostPerHeal: 50
+  essenceCostPerHeal: 5

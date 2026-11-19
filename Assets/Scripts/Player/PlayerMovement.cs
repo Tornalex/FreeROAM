@@ -154,14 +154,18 @@ public class PlayerMovement : MonoBehaviour
         _knockbackControlTimer = controlDuration;
     }
 
-    private void Flip(float direction)
+private void Flip(float direction)
+{
+    float rotationY = transform.localRotation.eulerAngles.y;
+
+    if ((direction > 0 && rotationY > 90 && rotationY < 270) ||
+        (direction < 0 && (rotationY < 90 || rotationY > 270)))
     {
-        if ((direction > 0 && transform.localScale.x < 0) ||
-            (direction < 0 && transform.localScale.x > 0))
-        {
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
-        }
+        transform.localRotation = Quaternion.Euler(
+            transform.localRotation.eulerAngles.x,
+            rotationY + 180f,
+            transform.localRotation.eulerAngles.z
+        );
     }
+}
 }

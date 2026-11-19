@@ -20,25 +20,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckRadius: 0.22
+  jumpAttackData: {fileID: 11400000, guid: 5dace86f39b44c36960a04ca197ceeba, type: 2}
+  dashJumpAttackData: {fileID: 11400000, guid: de27dcfb07904b1f8663515c9b0101db, type: 2}
   tongueObstructionLayers:
     serializedVersion: 2
     m_Bits: 1
   sporeObstructionLayers:
     serializedVersion: 2
     m_Bits: 1
-  dashJumpObstructionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  jumpUpVelocity: 20
-  jumpDistance: 45
-  jumpMaxHorizontalSpeed: 60
-  landingRecovery: 0.3
   preferredDistance: 3.5
   retreatDistance: 3
   decisionInterval: 0.3
   decisionIntervalJitter: 0.15
-  maxAirborneDuration: 3
-  recoveryCooldown: 0.1
   jumpTowardWeight: 2
   jumpAwayWeight: 1
   dashJumpWeight: 10
@@ -47,11 +40,3 @@ MonoBehaviour:
   horizontalTongueWeight: 12
   repeatWeightMultiplier: 0.35
   attackAfterAttackWeightMultiplier: 0.4
-  dashJumpMinDistance: 14
-  dashJumpHorizontalSpeed: 200
-  dashJumpUpVelocity: 16
-  dashJumpLandingOffset: 10
-  dashJumpPreparationTime: 0.3
-  dashJumpRecoveryTime: 0.2
-  dashJumpCooldown: 1
-  dashJumpMaxAirborneDuration: 4

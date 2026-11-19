@@ -21,10 +21,43 @@ namespace SpearWander.Boss
         /// the triggers that request them. The FSM remains responsible for all
         /// gameplay timing; the Animator is presentation only.
         /// </summary>
-        public const string HorizontalTongueWindupState = "Boss_HorizontalTongueWindup";
-        public const string HorizontalTongueAttackState = "Boss_HorizontalTongueAttack";
+        public const string HorizontalTongueWindupState = "Frog_Horizontal_Tongue_Windup";
+        public const string HorizontalTongueAttackState = "Frog_Horizontal_Tongue_Attack";
         public const string HorizontalTongueWindupTrigger = "HorizontalTongueWindup";
         public const string HorizontalTongueAttackTrigger = "HorizontalTongueAttack";
+
+        // Animator parameters shared with ENEMY_Frog.controller. Every action
+        // state is entered through one of these triggers; the FSM never reads
+        // animation state or timing back.
+        private const string IdleTrigger = "Idle";
+        private const string JumpWindupTrigger = "JumpWindup";
+        private const string JumpExecuteTrigger = "JumpExecute";
+        private const string DashJumpWindupTrigger = "DashWindup";
+        private const string DashJumpAttackTrigger = "DashAttack";
+        private const string TongueWindupTrigger = "TongueWindup";
+        private const string TongueAttackTrigger = "TongueAttack";
+        private const string SporeWindupTrigger = "SporeWindup";
+        private const string SporeAttackTrigger = "SporeAttack";
+
+        /// <summary>
+        /// Every trigger owned by the FSM. They are cleared on death so a
+        /// trigger queued in the same frame cannot pull the Animator out of
+        /// the Death state on a later update.
+        /// </summary>
+        private static readonly string[] ActionTriggers =
+        {
+            IdleTrigger,
+            JumpWindupTrigger,
+            JumpExecuteTrigger,
+            DashJumpWindupTrigger,
+            DashJumpAttackTrigger,
+            TongueWindupTrigger,
+            TongueAttackTrigger,
+            HorizontalTongueWindupTrigger,
+            HorizontalTongueAttackTrigger,
+            SporeWindupTrigger,
+            SporeAttackTrigger
+        };
 
         private enum State
         {
@@ -63,7 +96,7 @@ namespace SpearWander.Boss
 
         [Header("Free Roam - Authoring Data")]
         [SerializeField]
-        [Tooltip("Perception, jump/dash movement, decision timing and action weights.")]
+        [Tooltip("Perception, decision timing, action weights and attack data references.")]
         private BossAIProfile aiProfile;
 
         [SerializeField]
@@ -101,20 +134,26 @@ namespace SpearWander.Boss
         private LayerMask SporeObstructionLayers =>
             aiProfile != null ? aiProfile.SporeObstructionLayers : (LayerMask)1;
 
+        private JumpAttackData JumpData =>
+            aiProfile != null ? aiProfile.JumpAttackData : null;
+
+        private DashJumpAttackData DashJumpData =>
+            aiProfile != null ? aiProfile.DashJumpAttackData : null;
+
         private LayerMask DashJumpObstructionLayers =>
-            aiProfile != null ? aiProfile.DashJumpObstructionLayers : (LayerMask)1;
+            DashJumpData != null ? DashJumpData.DashJumpObstructionLayers : (LayerMask)1;
 
         private float JumpUpVelocity =>
-            aiProfile != null ? aiProfile.JumpUpVelocity : 9f;
+            JumpData != null ? JumpData.JumpUpVelocity : 9f;
 
         private float JumpDistance =>
-            aiProfile != null ? aiProfile.JumpDistance : 4f;
+            JumpData != null ? JumpData.JumpDistance : 4f;
 
         private float JumpMaxHorizontalSpeed =>
-            aiProfile != null ? aiProfile.JumpMaxHorizontalSpeed : 7f;
+            JumpData != null ? JumpData.JumpMaxHorizontalSpeed : 7f;
 
         private float LandingRecovery =>
-            aiProfile != null ? aiProfile.LandingRecovery : 0.35f;
+            JumpData != null ? JumpData.LandingRecovery : 0.35f;
 
         private float PreferredDistance =>
             aiProfile != null ? aiProfile.PreferredDistance : 3.5f;
@@ -129,10 +168,10 @@ namespace SpearWander.Boss
             aiProfile != null ? aiProfile.DecisionIntervalJitter : 0.15f;
 
         private float MaxAirborneDuration =>
-            aiProfile != null ? aiProfile.MaxAirborneDuration : 3f;
+            JumpData != null ? JumpData.MaxAirborneDuration : 3f;
 
         private float RecoveryCooldown =>
-            aiProfile != null ? aiProfile.RecoveryCooldown : 1f;
+            JumpData != null ? JumpData.RecoveryCooldown : 1f;
 
         private float JumpTowardWeight =>
             aiProfile != null ? aiProfile.JumpTowardWeight : 3f;
@@ -159,28 +198,28 @@ namespace SpearWander.Boss
             aiProfile != null ? aiProfile.AttackAfterAttackWeightMultiplier : 0.4f;
 
         private float DashJumpMinDistance =>
-            aiProfile != null ? aiProfile.DashJumpMinDistance : 7f;
+            DashJumpData != null ? DashJumpData.DashJumpMinDistance : 7f;
 
         private float DashJumpHorizontalSpeed =>
-            aiProfile != null ? aiProfile.DashJumpHorizontalSpeed : 18f;
+            DashJumpData != null ? DashJumpData.DashJumpHorizontalSpeed : 18f;
 
         private float DashJumpUpVelocity =>
-            aiProfile != null ? aiProfile.DashJumpUpVelocity : 10f;
+            DashJumpData != null ? DashJumpData.DashJumpUpVelocity : 10f;
 
         private float DashJumpLandingOffset =>
-            aiProfile != null ? aiProfile.DashJumpLandingOffset : 1f;
+            DashJumpData != null ? DashJumpData.DashJumpLandingOffset : 1f;
 
         private float DashJumpPreparationTime =>
-            aiProfile != null ? aiProfile.DashJumpPreparationTime : 0.45f;
+            DashJumpData != null ? DashJumpData.DashJumpPreparationTime : 0.45f;
 
         private float DashJumpRecoveryTime =>
-            aiProfile != null ? aiProfile.DashJumpRecoveryTime : 0.45f;
+            DashJumpData != null ? DashJumpData.DashJumpRecoveryTime : 0.45f;
 
         private float DashJumpCooldown =>
-            aiProfile != null ? aiProfile.DashJumpCooldown : 5f;
+            DashJumpData != null ? DashJumpData.DashJumpCooldown : 5f;
 
         private float DashJumpMaxAirborneDuration =>
-            aiProfile != null ? aiProfile.DashJumpMaxAirborneDuration : 2f;
+            DashJumpData != null ? DashJumpData.DashJumpMaxAirborneDuration : 2f;
 
         private float TongueWindupTime =>
             tongueAttackData != null ? tongueAttackData.WindupTime : 0.45f;
@@ -282,6 +321,14 @@ namespace SpearWander.Boss
         private ActionType lastAction = ActionType.None;
         private bool lastActionWasAttack;
 
+        // Presentation-only bookkeeping. The jump has no wind-up phase in the
+        // FSM, so its execute pose is requested on the tick after launch. The
+        // Idle trigger is only sent when an action animation was actually
+        // started, which prevents a stale trigger from interrupting the next
+        // action.
+        private bool jumpExecuteAnimationPending;
+        private bool actionAnimationActive;
+
         private float stateTimer;
         private float decisionTimer;
         private float tongueCooldownTimer;
@@ -333,14 +380,20 @@ namespace SpearWander.Boss
         {
             base.Awake();
 
+            // The clips animate the SpriteRenderer on the Graphics child, so the
+            // presentation Animator is the one that must receive the triggers.
+            CacheGraphicsAnimator();
+
             if (aiProfile == null ||
+                aiProfile.JumpAttackData == null ||
+                aiProfile.DashJumpAttackData == null ||
                 tongueAttackData == null ||
                 horizontalTongueAttackData == null ||
                 sporeAttackData == null)
             {
                 Debug.LogWarning(
                     "[FreeRoamBoss] Missing authoring data; using built-in defaults. " +
-                    "Assign a BossAIProfile and all BossAttackData assets.",
+                    "Assign a BossAIProfile with jump attack data and all BossAttackData assets.",
                     this);
             }
 
@@ -428,6 +481,7 @@ namespace SpearWander.Boss
             isAttacking = false;
             state = State.Idle;
             stateTimer = 0f;
+            jumpExecuteAnimationPending = false;
             ClearDashJumpState();
 
             if (isDead)
@@ -510,6 +564,7 @@ namespace SpearWander.Boss
                     {
                         state = State.TongueExtend;
                         stateTimer = TongueExtendTime;
+                        TrySetTrigger(TongueAttackTrigger);
                     }
                     break;
 
@@ -541,6 +596,10 @@ namespace SpearWander.Boss
                     stateTimer -= Time.fixedDeltaTime;
                     if (stateTimer <= 0f)
                     {
+                        // The wind-up ends here; the cloud is already active, so
+                        // this only moves the presentation to the attack pose
+                        // before recovery starts.
+                        TrySetTrigger(SporeAttackTrigger);
                         FinishAttack(ActionType.Spores, SporeRecoveryTime);
                     }
                     break;
@@ -555,6 +614,7 @@ namespace SpearWander.Boss
                             DecisionInterval + Random.Range(
                                 -DecisionIntervalJitter,
                                 DecisionIntervalJitter));
+                        EnterIdle();
                     }
                     break;
             }
@@ -625,6 +685,8 @@ namespace SpearWander.Boss
 
             state = State.Idle;
             isAttacking = false;
+            jumpExecuteAnimationPending = false;
+            actionAnimationActive = false;
             ClearDashJumpState();
             suspensionActive = false;
             suspensionChangedBodyType = false;
@@ -633,6 +695,7 @@ namespace SpearWander.Boss
             HideTongue();
             RestoreHorizontalTongueOrigin();
             DespawnAllSpores();
+            ClearActionTriggers();
 
             base.Die();
         }
@@ -719,6 +782,12 @@ namespace SpearWander.Boss
 
         private void TickJumping()
         {
+            if (jumpExecuteAnimationPending)
+            {
+                jumpExecuteAnimationPending = false;
+                TrySetTrigger(JumpExecuteTrigger);
+            }
+
             airborneTimer += Time.fixedDeltaTime;
 
             if (airborneTimer >= Mathf.Max(0.5f, MaxAirborneDuration) &&
@@ -733,6 +802,7 @@ namespace SpearWander.Boss
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             state = State.Idle;
             decisionTimer = LandingRecovery;
+            EnterIdle();
         }
 
         private ActionType ChooseAction(float distance)
@@ -886,7 +956,12 @@ namespace SpearWander.Boss
             {
                 sign = -sign;
             }
-            animator.SetBool("hasJumped", true);
+
+            // The FSM launches the jump immediately, so the wind-up pose is
+            // requested on launch and TickJumping requests the execute pose on
+            // the following physics tick. Neither call affects movement.
+            TrySetTrigger(JumpWindupTrigger);
+            jumpExecuteAnimationPending = true;
 
             float airTime = GetJumpAirTime();
 
@@ -946,9 +1021,9 @@ namespace SpearWander.Boss
             if (isGrounded)
             {
                 lastGroundedPosition = transform.position;
-                animator.SetBool("hasJumped", false);
             }
 
+            jumpExecuteAnimationPending = false;
             airborneTimer = 0f;
             recoveryCooldownTimer = Mathf.Max(0f, RecoveryCooldown);
             jumpGroundGraceTimer = 0f;
@@ -988,6 +1063,7 @@ namespace SpearWander.Boss
             isAttacking = true;
             state = State.DashJumpWindup;
             stateTimer = Mathf.Max(0.05f, DashJumpPreparationTime);
+            TrySetTrigger(DashJumpWindupTrigger);
         }
 
         private void LaunchDashJump()
@@ -1102,6 +1178,7 @@ namespace SpearWander.Boss
             state = State.DashJumping;
 
             RotateTowardsPlayer(direction > 0f);
+            TrySetTrigger(DashJumpAttackTrigger);
         }
 
         private void TickDashJumping()
@@ -1325,7 +1402,7 @@ namespace SpearWander.Boss
             isAttacking = true;
 
             RotateTowardsPlayer(direction.x >= 0f);
-            TrySetTrigger("TongueWindup");
+            TrySetTrigger(TongueWindupTrigger);
         }
 
         private void TickTongueExtend()
@@ -1820,7 +1897,7 @@ namespace SpearWander.Boss
             stateTimer = SporeWindupTime;
             isAttacking = true;
 
-            TrySetTrigger("SporeAttack");
+            TrySetTrigger(SporeWindupTrigger);
         }
 
         private SporeCloud SpawnSpore(Vector2 position, Vector2 drift)
@@ -1960,9 +2037,73 @@ namespace SpearWander.Boss
             return collider == player.Collider ? player : null;
         }
 
-        private void TrySetTrigger(string triggerName)
+        private void CacheGraphicsAnimator()
         {
-            if (animator == null || string.IsNullOrEmpty(triggerName)) return;
+            if (GraphicsTransform == null) return;
+
+            Animator graphicsAnimator = GraphicsTransform.GetComponent<Animator>();
+            if (graphicsAnimator != null && graphicsAnimator != animator)
+            {
+                animator = graphicsAnimator;
+            }
+        }
+
+        /// <summary>
+        /// Returns to the idle pose only after an action animation was started.
+        /// This is called by the FSM when an action has fully finished,
+        /// including recovery, so the Animator never decides when Idle happens.
+        /// </summary>
+        private void EnterIdle()
+        {
+            if (isDead || !actionAnimationActive) return;
+
+            actionAnimationActive = false;
+            TrySetTrigger(IdleTrigger);
+        }
+
+        private bool TrySetTrigger(string triggerName)
+        {
+            if (isDead || !HasTrigger(triggerName))
+            {
+                return false;
+            }
+
+            // A new action must never be interrupted by an Idle trigger
+            // that was left pending while the boss was reset or disabled.
+            if (triggerName != IdleTrigger && HasTrigger(IdleTrigger))
+            {
+                animator.ResetTrigger(IdleTrigger);
+            }
+
+            animator.ResetTrigger(triggerName);
+            animator.SetTrigger(triggerName);
+            actionAnimationActive = triggerName != IdleTrigger;
+            return true;
+        }
+
+        /// <summary>
+        /// Clears every FSM-owned trigger so a pending action cannot fire
+        /// after the boss has entered the Death state.
+        /// </summary>
+        private void ClearActionTriggers()
+        {
+            if (animator == null) return;
+
+            for (int i = 0; i < ActionTriggers.Length; i++)
+            {
+                if (HasTrigger(ActionTriggers[i]))
+                {
+                    animator.ResetTrigger(ActionTriggers[i]);
+                }
+            }
+        }
+
+        private bool HasTrigger(string triggerName)
+        {
+            if (animator == null || string.IsNullOrEmpty(triggerName))
+            {
+                return false;
+            }
 
             AnimatorControllerParameter[] parameters = animator.parameters;
             for (int i = 0; i < parameters.Length; i++)
@@ -1970,10 +2111,11 @@ namespace SpearWander.Boss
                 if (parameters[i].type == AnimatorControllerParameterType.Trigger &&
                     parameters[i].name == triggerName)
                 {
-                    animator.SetTrigger(triggerName);
-                    return;
+                    return true;
                 }
             }
+
+            return false;
         }
 
         #endregion
