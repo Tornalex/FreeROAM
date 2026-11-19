@@ -1,0 +1,7085 @@
+fileFormatVersion: 2
+guid: bbc96fd0db8054d4b95170775e7a8864
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3275433706687689554
+    second: Albero vicino 1_0
+  - first:
+      213: 3592318799223874158
+    second: Albero vicino 1_1
+  - first:
+      213: 5958778787728764717
+    second: Albero vicino 1_2
+  - first:
+      213: 5937234251458924875
+    second: Albero vicino 1_3
+  - first:
+      213: -1669540680767753365
+    second: Albero vicino 1_4
+  - first:
+      213: 6414910676492836257
+    second: Albero vicino 1_5
+  - first:
+      213: 6155293458804190155
+    second: Albero vicino 1_6
+  - first:
+      213: -348907986405464226
+    second: Albero vicino 1_7
+  - first:
+      213: -708850783473312135
+    second: Albero vicino 1_8
+  - first:
+      213: -7389333516829622754
+    second: Albero vicino 1_9
+  - first:
+      213: 6028050453162796995
+    second: Albero vicino 1_10
+  - first:
+      213: 320292048748310320
+    second: Albero vicino 1_11
+  - first:
+      213: 3643252586227327876
+    second: Albero vicino 1_12
+  - first:
+      213: -8746956725482365462
+    second: Albero vicino 1_13
+  - first:
+      213: 9015900265932380345
+    second: Albero vicino 1_14
+  - first:
+      213: 481652972557455277
+    second: Albero vicino 1_15
+  - first:
+      213: -5364055559089746303
+    second: Albero vicino 1_16
+  - first:
+      213: -8611003454228686659
+    second: Albero vicino 1_17
+  - first:
+      213: 1431451680680211081
+    second: Albero vicino 1_18
+  - first:
+      213: 2762039533779225218
+    second: Albero vicino 1_19
+  - first:
+      213: 4384465554123297845
+    second: Albero vicino 1_20
+  - first:
+      213: 145808261304355556
+    second: Albero vicino 1_21
+  - first:
+      213: 4356130695089369330
+    second: Albero vicino 1_22
+  - first:
+      213: -5881474596384292275
+    second: Albero vicino 1_23
+  - first:
+      213: 3649777702769786022
+    second: Albero vicino 1_24
+  - first:
+      213: 6120293569220658721
+    second: Albero vicino 1_25
+  - first:
+      213: 4054891927132889208
+    second: Albero vicino 1_26
+  - first:
+      213: 6241648402276155766
+    second: Albero vicino 1_27
+  - first:
+      213: -4703942900346473728
+    second: Albero vicino 1_28
+  - first:
+      213: 5215877070196981182
+    second: Albero vicino 1_29
+  - first:
+      213: -1922651991704900646
+    second: Albero vicino 1_30
+  - first:
+      213: -7147670333163874148
+    second: Albero vicino 1_31
+  - first:
+      213: 5335383408409890427
+    second: Albero vicino 1_32
+  - first:
+      213: 6049126993873484519
+    second: Albero vicino 1_33
+  - first:
+      213: -1079132394640525710
+    second: Albero vicino 1_34
+  - first:
+      213: -155463963056006766
+    second: Albero vicino 1_35
+  - first:
+      213: -5333094118064372784
+    second: Albero vicino 1_36
+  - first:
+      213: 22479783871931175
+    second: Albero vicino 1_37
+  - first:
+      213: 6629467275438875671
+    second: Albero vicino 1_38
+  - first:
+      213: -1774133618509806977
+    second: Albero vicino 1_39
+  - first:
+      213: -6557544079553410153
+    second: Albero vicino 1_40
+  - first:
+      213: 5779661059939845627
+    second: Albero vicino 1_41
+  - first:
+      213: -1911370067330746132
+    second: Albero vicino 1_42
+  - first:
+      213: 1838541586325326697
+    second: Albero vicino 1_43
+  - first:
+      213: 1789236891477757753
+    second: Albero vicino 1_44
+  - first:
+      213: -365427580491323808
+    second: Albero vicino 1_45
+  - first:
+      213: 3310195648107259632
+    second: Albero vicino 1_46
+  - first:
+      213: -6995135539613991347
+    second: Albero vicino 1_47
+  - first:
+      213: -3146665436918976956
+    second: Albero vicino 1_48
+  - first:
+      213: 3453429867520006925
+    second: Albero vicino 1_49
+  - first:
+      213: 6049474588303547606
+    second: Albero vicino 1_50
+  - first:
+      213: 8755685835760466916
+    second: Albero vicino 1_51
+  - first:
+      213: -5896033883675443277
+    second: Albero vicino 1_52
+  - first:
+      213: 4058743655316856818
+    second: Albero vicino 1_53
+  - first:
+      213: -9184414322478868975
+    second: Albero vicino 1_54
+  - first:
+      213: -357521159342300160
+    second: Albero vicino 1_55
+  - first:
+      213: -8280841870403481474
+    second: Albero vicino 1_56
+  - first:
+      213: -5141421235162572250
+    second: Albero vicino 1_57
+  - first:
+      213: 1246347385885133739
+    second: Albero vicino 1_58
+  - first:
+      213: 1422596525812203945
+    second: Albero vicino 1_59
+  - first:
+      213: -9133607840472210946
+    second: Albero vicino 1_60
+  - first:
+      213: -1468369169378371758
+    second: Albero vicino 1_61
+  - first:
+      213: 3803116350494504357
+    second: Albero vicino 1_62
+  - first:
+      213: -6320422860575878617
+    second: Albero vicino 1_63
+  - first:
+      213: -313650818125686898
+    second: Albero vicino 1_64
+  - first:
+      213: 4576977834866242499
+    second: Albero vicino 1_65
+  - first:
+      213: -6819505262559193011
+    second: Albero vicino 1_66
+  - first:
+      213: 6966772887312644150
+    second: Albero vicino 1_67
+  - first:
+      213: 8611276776623141800
+    second: Albero vicino 1_68
+  - first:
+      213: -1089455304124122244
+    second: Albero vicino 1_69
+  - first:
+      213: 7226280306078405448
+    second: Albero vicino 1_70
+  - first:
+      213: -5099844468847865671
+    second: Albero vicino 1_71
+  - first:
+      213: -267895219782797973
+    second: Albero vicino 1_72
+  - first:
+      213: 3108525524833792698
+    second: Albero vicino 1_73
+  - first:
+      213: -5501980532207479802
+    second: Albero vicino 1_74
+  - first:
+      213: 6607413188385151620
+    second: Albero vicino 1_75
+  - first:
+      213: 7343141967297222247
+    second: Albero vicino 1_76
+  - first:
+      213: 8314475102192218276
+    second: Albero vicino 1_77
+  - first:
+      213: 1990814947911372383
+    second: Albero vicino 1_78
+  - first:
+      213: -233626579686633874
+    second: Albero vicino 1_79
+  - first:
+      213: 2522601754477254845
+    second: Albero vicino 1_80
+  - first:
+      213: 5989941290514094229
+    second: Albero vicino 1_81
+  - first:
+      213: 4639361009911324751
+    second: Albero vicino 1_82
+  - first:
+      213: -3968569037344328597
+    second: Albero vicino 1_83
+  - first:
+      213: -589019445580354414
+    second: Albero vicino 1_84
+  - first:
+      213: 2248397313963762599
+    second: Albero vicino 1_85
+  - first:
+      213: 1940624990752529322
+    second: Albero vicino 1_86
+  - first:
+      213: 8510180689043852783
+    second: Albero vicino 1_87
+  - first:
+      213: -6930027046689605101
+    second: Albero vicino 1_88
+  - first:
+      213: -7541669532533446486
+    second: Albero vicino 1_89
+  - first:
+      213: 1233963929163651805
+    second: Albero vicino 1_90
+  - first:
+      213: -7781380861392288282
+    second: Albero vicino 1_91
+  - first:
+      213: 1824325370050935729
+    second: Albero vicino 1_92
+  - first:
+      213: -8639026768369555311
+    second: Albero vicino 1_93
+  - first:
+      213: -8851070065034438507
+    second: Albero vicino 1_94
+  - first:
+      213: 1247053488347736889
+    second: Albero vicino 1_95
+  - first:
+      213: -7319139639110598853
+    second: Albero vicino 1_96
+  - first:
+      213: 3969275105592856636
+    second: Albero vicino 1_97
+  - first:
+      213: -7065046113549337167
+    second: Albero vicino 1_98
+  - first:
+      213: -3503100579042370496
+    second: Albero vicino 1_99
+  - first:
+      213: -4509374852570421133
+    second: Albero vicino 1_100
+  - first:
+      213: 1499245651788812695
+    second: Albero vicino 1_101
+  - first:
+      213: -4469052076847117364
+    second: Albero vicino 1_102
+  - first:
+      213: -2825596608935906253
+    second: Albero vicino 1_103
+  - first:
+      213: -7342150667654678393
+    second: Albero vicino 1_104
+  - first:
+      213: 1054900118299523990
+    second: Albero vicino 1_105
+  - first:
+      213: -202176748347830454
+    second: Albero vicino 1_106
+  - first:
+      213: -2661854049515299327
+    second: Albero vicino 1_107
+  - first:
+      213: 3903532279767698052
+    second: Albero vicino 1_108
+  - first:
+      213: -1351651415200915016
+    second: Albero vicino 1_109
+  - first:
+      213: 3398305364067984585
+    second: Albero vicino 1_110
+  - first:
+      213: 6518853416492661509
+    second: Albero vicino 1_111
+  - first:
+      213: 4447104361559824105
+    second: Albero vicino 1_112
+  - first:
+      213: 7380234724313950160
+    second: Albero vicino 1_113
+  - first:
+      213: -790283310576966619
+    second: Albero vicino 1_114
+  - first:
+      213: -8381846409624567499
+    second: Albero vicino 1_115
+  - first:
+      213: -2949756705153930282
+    second: Albero vicino 1_116
+  - first:
+      213: -7826965256971430321
+    second: Albero vicino 1_117
+  - first:
+      213: -1083189390909597423
+    second: Albero vicino 1_118
+  - first:
+      213: 1296722679587379262
+    second: Albero vicino 1_119
+  - first:
+      213: -6102381196936466384
+    second: Albero vicino 1_120
+  - first:
+      213: -1620670947372640564
+    second: Albero vicino 1_121
+  - first:
+      213: -8431013722476921491
+    second: Albero vicino 1_122
+  - first:
+      213: 255445757949513186
+    second: Albero vicino 1_123
+  - first:
+      213: -4389955073303707217
+    second: Albero vicino 1_124
+  - first:
+      213: 8140408765109451069
+    second: Albero vicino 1_125
+  - first:
+      213: 7831512982259604061
+    second: Albero vicino 1_126
+  - first:
+      213: -3753320612935691681
+    second: Albero vicino 1_127
+  - first:
+      213: -6161458766357454007
+    second: Albero vicino 1_128
+  - first:
+      213: -3668459335983066111
+    second: Albero vicino 1_129
+  - first:
+      213: 7447575143078470551
+    second: Albero vicino 1_130
+  - first:
+      213: -4020278386057271136
+    second: Albero vicino 1_131
+  - first:
+      213: 3581060201800991135
+    second: Albero vicino 1_132
+  - first:
+      213: -4703589512688393969
+    second: Albero vicino 1_133
+  - first:
+      213: 1690734657961512926
+    second: Albero vicino 1_134
+  - first:
+      213: 8561152382097281012
+    second: Albero vicino 1_135
+  - first:
+      213: 3394933025595877215
+    second: Albero vicino 1_136
+  - first:
+      213: -5363947309925455875
+    second: Albero vicino 1_137
+  - first:
+      213: -4347386273149045022
+    second: Albero vicino 1_138
+  - first:
+      213: 5976092844005803888
+    second: Albero vicino 1_139
+  - first:
+      213: -981342503733417076
+    second: Albero vicino 1_140
+  - first:
+      213: 3160095806416464749
+    second: Albero vicino 1_141
+  - first:
+      213: 2729986939652055924
+    second: Albero vicino 1_142
+  - first:
+      213: 2302501034193007697
+    second: Albero vicino 1_143
+  - first:
+      213: 6860211492300550022
+    second: Albero vicino 1_144
+  - first:
+      213: -2859869180193234062
+    second: Albero vicino 1_145
+  - first:
+      213: 1823540238683155549
+    second: Albero vicino 1_146
+  - first:
+      213: -9172940231304500431
+    second: Albero vicino 1_147
+  - first:
+      213: 7919686608869820615
+    second: Albero vicino 1_148
+  - first:
+      213: -8071305564080379910
+    second: Albero vicino 1_149
+  - first:
+      213: 8242079526630264089
+    second: Albero vicino 1_150
+  - first:
+      213: -6226316885848829233
+    second: Albero vicino 1_151
+  - first:
+      213: -3007497619067192342
+    second: Albero vicino 1_152
+  - first:
+      213: -8164272272939369053
+    second: Albero vicino 1_153
+  - first:
+      213: 387191555372736163
+    second: Albero vicino 1_154
+  - first:
+      213: 5198752146095394026
+    second: Albero vicino 1_155
+  - first:
+      213: 2010103970570589287
+    second: Albero vicino 1_156
+  - first:
+      213: 153268514416691688
+    second: Albero vicino 1_157
+  - first:
+      213: -7496306663632884804
+    second: Albero vicino 1_158
+  - first:
+      213: 8441174395950792179
+    second: Albero vicino 1_159
+  - first:
+      213: 2278471088710689577
+    second: Albero vicino 1_160
+  - first:
+      213: 1714873968908412899
+    second: Albero vicino 1_161
+  - first:
+      213: 6073627671268519381
+    second: Albero vicino 1_162
+  - first:
+      213: -7319781290030809700
+    second: Albero vicino 1_163
+  - first:
+      213: -6370505026321279963
+    second: Albero vicino 1_164
+  - first:
+      213: 5713931865484801244
+    second: Albero vicino 1_165
+  - first:
+      213: -5475041310530957992
+    second: Albero vicino 1_166
+  - first:
+      213: 3345540380731539359
+    second: Albero vicino 1_167
+  - first:
+      213: 6355011289772283104
+    second: Albero vicino 1_168
+  - first:
+      213: 4477067423064637605
+    second: Albero vicino 1_169
+  - first:
+      213: 122965970794603423
+    second: Albero vicino 1_170
+  - first:
+      213: -9021737656470868390
+    second: Albero vicino 1_171
+  - first:
+      213: 6226952677740397531
+    second: Albero vicino 1_172
+  - first:
+      213: -6408888843304705912
+    second: Albero vicino 1_173
+  - first:
+      213: -5921246003838658282
+    second: Albero vicino 1_174
+  - first:
+      213: -5619451915887803674
+    second: Albero vicino 1_175
+  - first:
+      213: -3659963832383462932
+    second: Albero vicino 1_176
+  - first:
+      213: -6024479207107099356
+    second: Albero vicino 1_177
+  - first:
+      213: -1218632362176767944
+    second: Albero vicino 1_178
+  - first:
+      213: -1947640931627494695
+    second: Albero vicino 1_179
+  - first:
+      213: -5862103824991003121
+    second: Albero vicino 1_180
+  - first:
+      213: -3756951005178681649
+    second: Albero vicino 1_181
+  - first:
+      213: -4274008085079734305
+    second: Albero vicino 1_182
+  - first:
+      213: 5759195955360419194
+    second: Albero vicino 1_183
+  - first:
+      213: 5484313499019445894
+    second: Albero vicino 1_184
+  - first:
+      213: 706793309380206260
+    second: Albero vicino 1_185
+  - first:
+      213: -3769399420212607154
+    second: Albero vicino 1_186
+  - first:
+      213: 1509690377923146324
+    second: Albero vicino 1_187
+  - first:
+      213: 7868905100828519769
+    second: Albero vicino 1_188
+  - first:
+      213: -2275340007362291495
+    second: Albero vicino 1_189
+  - first:
+      213: -3219280903239616376
+    second: Albero vicino 1_190
+  - first:
+      213: 1216710029448633917
+    second: Albero vicino 1_191
+  - first:
+      213: 5403492880881802665
+    second: Albero vicino 1_192
+  - first:
+      213: 4423339233534445354
+    second: Albero vicino 1_193
+  - first:
+      213: -2221910906651141706
+    second: Albero vicino 1_194
+  - first:
+      213: 6057340473806491823
+    second: Albero vicino 1_195
+  - first:
+      213: 6255993440667426796
+    second: Albero vicino 1_196
+  - first:
+      213: -5421300873942225163
+    second: Albero vicino 1_197
+  - first:
+      213: -6900490067478745628
+    second: Albero vicino 1_198
+  - first:
+      213: -7744407765425655774
+    second: Albero vicino 1_199
+  - first:
+      213: 4716361772257813342
+    second: Albero vicino 1_200
+  - first:
+      213: -4000446959481104857
+    second: Albero vicino 1_201
+  - first:
+      213: -2896394046771188730
+    second: Albero vicino 1_202
+  - first:
+      213: 7201081378811566759
+    second: Albero vicino 1_203
+  - first:
+      213: 4502906715149590536
+    second: Albero vicino 1_204
+  - first:
+      213: 7351952345027018499
+    second: Albero vicino 1_205
+  - first:
+      213: -1187885529305222324
+    second: Albero vicino 1_206
+  - first:
+      213: -8760568608119276931
+    second: Albero vicino 1_207
+  - first:
+      213: 3026332594745956743
+    second: Albero vicino 1_208
+  - first:
+      213: -6202885505921210595
+    second: Albero vicino 1_209
+  - first:
+      213: 6142821124921701651
+    second: Albero vicino 1_210
+  - first:
+      213: -5389958406755234911
+    second: Albero vicino 1_211
+  - first:
+      213: -4773937381026816608
+    second: Albero vicino 1_212
+  - first:
+      213: -3372098715207344588
+    second: Albero vicino 1_213
+  - first:
+      213: 3672271620277591227
+    second: Albero vicino 1_214
+  - first:
+      213: -4157063392647226763
+    second: Albero vicino 1_215
+  - first:
+      213: 6479024699303058503
+    second: Albero vicino 1_216
+  - first:
+      213: -8606231627578677342
+    second: Albero vicino 1_217
+  - first:
+      213: -4509768737245905433
+    second: Albero vicino 1_218
+  - first:
+      213: 7301118767544225836
+    second: Albero vicino 1_219
+  - first:
+      213: -8692404056975209263
+    second: Albero vicino 1_220
+  - first:
+      213: -989277657093508718
+    second: Albero vicino 1_221
+  - first:
+      213: -286682606422594585
+    second: Albero vicino 1_222
+  - first:
+      213: 1388458621700309196
+    second: Albero vicino 1_223
+  - first:
+      213: 6197692776695338224
+    second: Albero vicino 1_224
+  - first:
+      213: 1457863937034244767
+    second: Albero vicino 1_225
+  - first:
+      213: -5924961497791947371
+    second: Albero vicino 1_226
+  - first:
+      213: -8828974519998355087
+    second: Albero vicino 1_227
+  - first:
+      213: -1398051771276501845
+    second: Albero vicino 1_228
+  - first:
+      213: 2979944133575401313
+    second: Albero vicino 1_229
+  - first:
+      213: -1026499974547231025
+    second: Albero vicino 1_230
+  - first:
+      213: -2889425611503085131
+    second: Albero vicino 1_231
+  - first:
+      213: -7631712344043674761
+    second: Albero vicino 1_232
+  - first:
+      213: 6637596180748322763
+    second: Albero vicino 1_233
+  - first:
+      213: -972924103168791286
+    second: Albero vicino 1_234
+  - first:
+      213: -8936322765283083640
+    second: Albero vicino 1_235
+  - first:
+      213: -4424507473812080567
+    second: Albero vicino 1_236
+  - first:
+      213: -5942495273246128681
+    second: Albero vicino 1_237
+  - first:
+      213: 3518300538882589949
+    second: Albero vicino 1_238
+  - first:
+      213: 394020083048964091
+    second: Albero vicino 1_239
+  - first:
+      213: 1022356921712900609
+    second: Albero vicino 1_240
+  - first:
+      213: 5299651792702159259
+    second: Albero vicino 1_241
+  - first:
+      213: 5682411945845125635
+    second: Albero vicino 1_242
+  - first:
+      213: -6638355134525120923
+    second: Albero vicino 1_243
+  - first:
+      213: 2080894977776620995
+    second: Albero vicino 1_244
+  - first:
+      213: 7387743175466963965
+    second: Albero vicino 1_245
+  - first:
+      213: -8751575227322759871
+    second: Albero vicino 1_246
+  - first:
+      213: -1116097110193532328
+    second: Albero vicino 1_247
+  - first:
+      213: -5031274053031355485
+    second: Albero vicino 1_248
+  - first:
+      213: 2386097039329233254
+    second: Albero vicino 1_249
+  - first:
+      213: -7153293213838066376
+    second: Albero vicino 1_250
+  - first:
+      213: 9087263822970809293
+    second: Albero vicino 1_251
+  - first:
+      213: -648165696678813277
+    second: Albero vicino 1_252
+  - first:
+      213: -988003962871926188
+    second: Albero vicino 1_253
+  - first:
+      213: 5222385330936476993
+    second: Albero vicino 1_254
+  - first:
+      213: 5679361607972807087
+    second: Albero vicino 1_255
+  - first:
+      213: 4443449765533670082
+    second: Albero vicino 1_256
+  - first:
+      213: 7637777344257765161
+    second: Albero vicino 1_257
+  - first:
+      213: -4910207286191918921
+    second: Albero vicino 1_258
+  - first:
+      213: -1381976697653521924
+    second: Albero vicino 1_259
+  - first:
+      213: -239359824704515905
+    second: Albero vicino 1_260
+  - first:
+      213: -7561362752004915364
+    second: Albero vicino 1_261
+  - first:
+      213: -6985323689665626902
+    second: Albero vicino 1_262
+  - first:
+      213: 5552289898313980990
+    second: Albero vicino 1_263
+  - first:
+      213: -6399235060789174953
+    second: Albero vicino 1_264
+  - first:
+      213: -9138963102328693786
+    second: Albero vicino 1_265
+  - first:
+      213: 7280555399147645650
+    second: Albero vicino 1_266
+  - first:
+      213: 5060219702792703031
+    second: Albero vicino 1_267
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Albero vicino 1_0
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 5754
+        width: 66
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253f57c2a9da47d20800000000000000
+      internalID: 3275433706687689554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_1
+      rect:
+        serializedVersion: 2
+        x: 4191
+        y: 5775
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6262bb3aea7ad130800000000000000
+      internalID: 3592318799223874158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_2
+      rect:
+        serializedVersion: 2
+        x: 4342
+        y: 5846
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2fa4b98cb5d1b250800000000000000
+      internalID: 5958778787728764717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_3
+      rect:
+        serializedVersion: 2
+        x: 4371
+        y: 5854
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41dd7a481b456250800000000000000
+      internalID: 5937234251458924875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_4
+      rect:
+        serializedVersion: 2
+        x: 4375
+        y: 5846
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6336c0b89994d8e0800000000000000
+      internalID: -1669540680767753365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_5
+      rect:
+        serializedVersion: 2
+        x: 4386
+        y: 5858
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad573ac547560950800000000000000
+      internalID: 6414910676492836257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_6
+      rect:
+        serializedVersion: 2
+        x: 4386
+        y: 5845
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb2f44e9cefb6550800000000000000
+      internalID: 6155293458804190155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_7
+      rect:
+        serializedVersion: 2
+        x: 4403
+        y: 5844
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e576103f80e682bf0800000000000000
+      internalID: -348907986405464226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_8
+      rect:
+        serializedVersion: 2
+        x: 4415
+        y: 5853
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ed054d7f7a926f0800000000000000
+      internalID: -708850783473312135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_9
+      rect:
+        serializedVersion: 2
+        x: 4428
+        y: 5849
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e7b7a1150d37990800000000000000
+      internalID: -7389333516829622754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_10
+      rect:
+        serializedVersion: 2
+        x: 4430
+        y: 5854
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7a6ecf2ffe7a350800000000000000
+      internalID: 6028050453162796995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_11
+      rect:
+        serializedVersion: 2
+        x: 4468
+        y: 5849
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f660edbe7e17400800000000000000
+      internalID: 320292048748310320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_12
+      rect:
+        serializedVersion: 2
+        x: 4497
+        y: 5849
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4836a15acee6f8230800000000000000
+      internalID: 3643252586227327876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_13
+      rect:
+        serializedVersion: 2
+        x: 4580
+        y: 5853
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aedd8e793319c9680800000000000000
+      internalID: -8746956725482365462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_14
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 5854
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8df390689ee1d70800000000000000
+      internalID: 9015900265932380345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_15
+      rect:
+        serializedVersion: 2
+        x: 4623
+        y: 5855
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf4c4e93dc2fa600800000000000000
+      internalID: 481652972557455277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_16
+      rect:
+        serializedVersion: 2
+        x: 4657
+        y: 5842
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e0ff493eb0f85b0800000000000000
+      internalID: -5364055559089746303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_17
+      rect:
+        serializedVersion: 2
+        x: 4708
+        y: 5848
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8990f3bf19f7880800000000000000
+      internalID: -8611003454228686659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_18
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 5833
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982741c28b98dd310800000000000000
+      internalID: 1431451680680211081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_19
+      rect:
+        serializedVersion: 2
+        x: 4840
+        y: 5857
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a0f72725cb45620800000000000000
+      internalID: 2762039533779225218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_20
+      rect:
+        serializedVersion: 2
+        x: 4863
+        y: 5856
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 534947b0130c8dc30800000000000000
+      internalID: 4384465554123297845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_21
+      rect:
+        serializedVersion: 2
+        x: 4886
+        y: 5850
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea0d5457d3060200800000000000000
+      internalID: 145808261304355556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_22
+      rect:
+        serializedVersion: 2
+        x: 4916
+        y: 5850
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f03af399c5147c30800000000000000
+      internalID: 4356130695089369330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_23
+      rect:
+        serializedVersion: 2
+        x: 4936
+        y: 5851
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42c707140ec06ea0800000000000000
+      internalID: -5881474596384292275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_24
+      rect:
+        serializedVersion: 2
+        x: 4975
+        y: 5835
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acfbbabb7d96a230800000000000000
+      internalID: 3649777702769786022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_25
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 5855
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12641821396afe450800000000000000
+      internalID: 6120293569220658721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_26
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 5858
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870ea5759bed54830800000000000000
+      internalID: 4054891927132889208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_27
+      rect:
+        serializedVersion: 2
+        x: 5017
+        y: 5845
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6710e86f62ace9650800000000000000
+      internalID: 6241648402276155766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_28
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 5850
+        width: 37
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003b02dcadc38beb0800000000000000
+      internalID: -4703942900346473728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_29
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 5815
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd32397f84826840800000000000000
+      internalID: 5215877070196981182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_30
+      rect:
+        serializedVersion: 2
+        x: 5077
+        y: 5847
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb6bbf333e5155e0800000000000000
+      internalID: -1922651991704900646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_31
+      rect:
+        serializedVersion: 2
+        x: 5094
+        y: 5856
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c985b24b3bf5ecc90800000000000000
+      internalID: -7147670333163874148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_32
+      rect:
+        serializedVersion: 2
+        x: 5096
+        y: 5851
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ec8ce11f61b0a40800000000000000
+      internalID: 5335383408409890427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_33
+      rect:
+        serializedVersion: 2
+        x: 5126
+        y: 5852
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea3e0783f0d2f350800000000000000
+      internalID: 6049126993873484519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_34
+      rect:
+        serializedVersion: 2
+        x: 5141
+        y: 5852
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276b5d7fdc62601f0800000000000000
+      internalID: -1079132394640525710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_35
+      rect:
+        serializedVersion: 2
+        x: 5171
+        y: 5855
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2991caa695ea7ddf0800000000000000
+      internalID: -155463963056006766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_36
+      rect:
+        serializedVersion: 2
+        x: 5188
+        y: 5806
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d34c03d72b0df5b0800000000000000
+      internalID: -5333094118064372784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_37
+      rect:
+        serializedVersion: 2
+        x: 5239
+        y: 5829
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723605c8e3ddf4000800000000000000
+      internalID: 22479783871931175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_38
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 5849
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7146c92dc59900c50800000000000000
+      internalID: 6629467275438875671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_39
+      rect:
+        serializedVersion: 2
+        x: 5318
+        y: 5850
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7205acafd20167e0800000000000000
+      internalID: -1774133618509806977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_40
+      rect:
+        serializedVersion: 2
+        x: 5326
+        y: 5858
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79bc04b276ceef4a0800000000000000
+      internalID: -6557544079553410153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 7552
+        height: 5802
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf54fdfac1b753050800000000000000
+      internalID: 5779661059939845627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_42
+      rect:
+        serializedVersion: 2
+        x: 4351
+        y: 5837
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8bf66fc037975e0800000000000000
+      internalID: -1911370067330746132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_43
+      rect:
+        serializedVersion: 2
+        x: 4369
+        y: 5843
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b44bde4dfc38910800000000000000
+      internalID: 1838541586325326697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_44
+      rect:
+        serializedVersion: 2
+        x: 4415
+        y: 5827
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f4e871975a4d810800000000000000
+      internalID: 1789236891477757753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_45
+      rect:
+        serializedVersion: 2
+        x: 4436
+        y: 5841
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0662fa93d8dbdeaf0800000000000000
+      internalID: -365427580491323808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_46
+      rect:
+        serializedVersion: 2
+        x: 4468
+        y: 5842
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f62a7e576d20fd20800000000000000
+      internalID: 3310195648107259632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_47
+      rect:
+        serializedVersion: 2
+        x: 4525
+        y: 5849
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ef89dd9494cee90800000000000000
+      internalID: -6995135539613991347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_48
+      rect:
+        serializedVersion: 2
+        x: 4729
+        y: 5844
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ee175f47cc454d0800000000000000
+      internalID: -3146665436918976956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_49
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 5844
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b114eda2c0def20800000000000000
+      internalID: 3453429867520006925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_50
+      rect:
+        serializedVersion: 2
+        x: 4866
+        y: 5843
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dcd599261d04f350800000000000000
+      internalID: 6049474588303547606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_51
+      rect:
+        serializedVersion: 2
+        x: 4875
+        y: 5843
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebfb65c0e1728970800000000000000
+      internalID: 8755685835760466916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_52
+      rect:
+        serializedVersion: 2
+        x: 4938
+        y: 5843
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfbbdbdb641d2ea0800000000000000
+      internalID: -5896033883675443277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_53
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 5846
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff1881b9dd835830800000000000000
+      internalID: 4058743655316856818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_54
+      rect:
+        serializedVersion: 2
+        x: 5009
+        y: 5846
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11613a6b5d76a8080800000000000000
+      internalID: -9184414322478868975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_55
+      rect:
+        serializedVersion: 2
+        x: 5130
+        y: 5831
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00467b95664d90bf0800000000000000
+      internalID: -357521159342300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_56
+      rect:
+        serializedVersion: 2
+        x: 5151
+        y: 5836
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e705b61513a841d80800000000000000
+      internalID: -8280841870403481474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_57
+      rect:
+        serializedVersion: 2
+        x: 5172
+        y: 5828
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a1c7580a006a8b0800000000000000
+      internalID: -5141421235162572250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_58
+      rect:
+        serializedVersion: 2
+        x: 5252
+        y: 5843
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab8b62185aeb4110800000000000000
+      internalID: 1246347385885133739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_59
+      rect:
+        serializedVersion: 2
+        x: 5282
+        y: 5832
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1cdb3c0041eb310800000000000000
+      internalID: 1422596525812203945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_60
+      rect:
+        serializedVersion: 2
+        x: 5295
+        y: 5844
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef16eee9f08ee3180800000000000000
+      internalID: -9133607840472210946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_61
+      rect:
+        serializedVersion: 2
+        x: 5319
+        y: 5840
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257111c250e4f9be0800000000000000
+      internalID: -1468369169378371758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_62
+      rect:
+        serializedVersion: 2
+        x: 5347
+        y: 5827
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a574b6cb2267c430800000000000000
+      internalID: 3803116350494504357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_63
+      rect:
+        serializedVersion: 2
+        x: 4367
+        y: 5834
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722dd1535e85948a0800000000000000
+      internalID: -6320422860575878617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_64
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 5824
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e879b122e30b5abf0800000000000000
+      internalID: -313650818125686898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_65
+      rect:
+        serializedVersion: 2
+        x: 4437
+        y: 5825
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3f9084711b48f30800000000000000
+      internalID: 4576977834866242499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_66
+      rect:
+        serializedVersion: 2
+        x: 4702
+        y: 5840
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48904158104c51a0800000000000000
+      internalID: -6819505262559193011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_67
+      rect:
+        serializedVersion: 2
+        x: 4736
+        y: 5833
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638b71b8703fea060800000000000000
+      internalID: 6966772887312644150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_68
+      rect:
+        serializedVersion: 2
+        x: 4876
+        y: 5832
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a371359a96618770800000000000000
+      internalID: 8611276776623141800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_69
+      rect:
+        serializedVersion: 2
+        x: 4889
+        y: 5838
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b340f4c2a71e0f0800000000000000
+      internalID: -1089455304124122244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_70
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 5837
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8435433e6a7e84460800000000000000
+      internalID: 7226280306078405448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_71
+      rect:
+        serializedVersion: 2
+        x: 5004
+        y: 5837
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b01598c976b939b0800000000000000
+      internalID: -5099844468847865671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_72
+      rect:
+        serializedVersion: 2
+        x: 5076
+        y: 5823
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6532db87be384cf0800000000000000
+      internalID: -267895219782797973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_73
+      rect:
+        serializedVersion: 2
+        x: 5153
+        y: 5826
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2f3f2ce73b32b20800000000000000
+      internalID: 3108525524833792698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_74
+      rect:
+        serializedVersion: 2
+        x: 5252
+        y: 5834
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60498a05bd905a3b0800000000000000
+      internalID: -5501980532207479802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_75
+      rect:
+        serializedVersion: 2
+        x: 5268
+        y: 5842
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a9de9894f32bb50800000000000000
+      internalID: 6607413188385151620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_76
+      rect:
+        serializedVersion: 2
+        x: 4360
+        y: 5827
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7669300b6b418e560800000000000000
+      internalID: 7343141967297222247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_77
+      rect:
+        serializedVersion: 2
+        x: 4368
+        y: 5808
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a03fffad03f26370800000000000000
+      internalID: 8314475102192218276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_78
+      rect:
+        serializedVersion: 2
+        x: 4403
+        y: 5828
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e8bc7b5abc0ab10800000000000000
+      internalID: 1990814947911372383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_79
+      rect:
+        serializedVersion: 2
+        x: 4726
+        y: 5831
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e40b31dddf1ccf0800000000000000
+      internalID: -233626579686633874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_80
+      rect:
+        serializedVersion: 2
+        x: 4926
+        y: 5833
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8d46d2ee4120320800000000000000
+      internalID: 2522601754477254845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_81
+      rect:
+        serializedVersion: 2
+        x: 4953
+        y: 5833
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598998e1edb802350800000000000000
+      internalID: 5989941290514094229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_82
+      rect:
+        serializedVersion: 2
+        x: 5128
+        y: 5833
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40ef841242526040800000000000000
+      internalID: 4639361009911324751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_83
+      rect:
+        serializedVersion: 2
+        x: 5263
+        y: 5830
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b643a76ac7fcce8c0800000000000000
+      internalID: -3968569037344328597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_84
+      rect:
+        serializedVersion: 2
+        x: 5375
+        y: 5829
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ca26c5fe163d7f0800000000000000
+      internalID: -589019445580354414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_85
+      rect:
+        serializedVersion: 2
+        x: 4189
+        y: 5799
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3a0ccc179e33f10800000000000000
+      internalID: 2248397313963762599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_86
+      rect:
+        serializedVersion: 2
+        x: 4349
+        y: 5801
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabdc00b52c7eea10800000000000000
+      internalID: 1940624990752529322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_87
+      rect:
+        serializedVersion: 2
+        x: 4436
+        y: 5813
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed09d07f3c3a1670800000000000000
+      internalID: 8510180689043852783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_88
+      rect:
+        serializedVersion: 2
+        x: 4717
+        y: 5813
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a773e2e1993df90800000000000000
+      internalID: -6930027046689605101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_89
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 5824
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa825f3848b965790800000000000000
+      internalID: -7541669532533446486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_90
+      rect:
+        serializedVersion: 2
+        x: 4875
+        y: 5822
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddad17fd7abef1110800000000000000
+      internalID: 1233963929163651805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_91
+      rect:
+        serializedVersion: 2
+        x: 4926
+        y: 5824
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e580b6855bf20490800000000000000
+      internalID: -7781380861392288282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_92
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 5824
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb7e94224e415910800000000000000
+      internalID: 1824325370050935729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_93
+      rect:
+        serializedVersion: 2
+        x: 5001
+        y: 5818
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198ed3afce20c1880800000000000000
+      internalID: -8639026768369555311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_94
+      rect:
+        serializedVersion: 2
+        x: 5024
+        y: 5814
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598578bbbaeaa2580800000000000000
+      internalID: -8851070065034438507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_95
+      rect:
+        serializedVersion: 2
+        x: 5085
+        y: 5818
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93be0ec5a8c6e4110800000000000000
+      internalID: 1247053488347736889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_96
+      rect:
+        serializedVersion: 2
+        x: 5103
+        y: 5808
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ff455d6413d6a90800000000000000
+      internalID: -7319139639110598853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_97
+      rect:
+        serializedVersion: 2
+        x: 5136
+        y: 5819
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30d9acada2b51730800000000000000
+      internalID: 3969275105592856636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_98
+      rect:
+        serializedVersion: 2
+        x: 5141
+        y: 5812
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd3320fdf9e3fd90800000000000000
+      internalID: -7065046113549337167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_99
+      rect:
+        serializedVersion: 2
+        x: 5368
+        y: 5823
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cd6b5659c726fc0800000000000000
+      internalID: -3503100579042370496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_100
+      rect:
+        serializedVersion: 2
+        x: 6014
+        y: 5811
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378e579967b7b61c0800000000000000
+      internalID: -4509374852570421133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_101
+      rect:
+        serializedVersion: 2
+        x: 6036
+        y: 5796
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791dbe91af36ec410800000000000000
+      internalID: 1499245651788812695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_102
+      rect:
+        serializedVersion: 2
+        x: 6095
+        y: 5820
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb4ecc60dcbaf1c0800000000000000
+      internalID: -4469052076847117364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_103
+      rect:
+        serializedVersion: 2
+        x: 6161
+        y: 5814
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334b3d5dad679c8d0800000000000000
+      internalID: -2825596608935906253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_104
+      rect:
+        serializedVersion: 2
+        x: 6169
+        y: 5824
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788bb0f3ed07b1a90800000000000000
+      internalID: -7342150667654678393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_105
+      rect:
+        serializedVersion: 2
+        x: 6205
+        y: 5822
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69bb2c88112c3ae00800000000000000
+      internalID: 1054900118299523990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_106
+      rect:
+        serializedVersion: 2
+        x: 6221
+        y: 5807
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f42ec8159b13df0800000000000000
+      internalID: -202176748347830454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_107
+      rect:
+        serializedVersion: 2
+        x: 6232
+        y: 5815
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e94b658d13f0bd0800000000000000
+      internalID: -2661854049515299327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_108
+      rect:
+        serializedVersion: 2
+        x: 4384
+        y: 5810
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a03d83de12c2630800000000000000
+      internalID: 3903532279767698052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_109
+      rect:
+        serializedVersion: 2
+        x: 4526
+        y: 5808
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1abc00338fd3de0800000000000000
+      internalID: -1351651415200915016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_110
+      rect:
+        serializedVersion: 2
+        x: 4706
+        y: 5812
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4a39f39b4392f20800000000000000
+      internalID: 3398305364067984585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_111
+      rect:
+        serializedVersion: 2
+        x: 4901
+        y: 5801
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50bf2e8d4ae977a50800000000000000
+      internalID: 6518853416492661509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_112
+      rect:
+        serializedVersion: 2
+        x: 4958
+        y: 5807
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e61dd5ead947bd30800000000000000
+      internalID: 4447104361559824105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_113
+      rect:
+        serializedVersion: 2
+        x: 4997
+        y: 5802
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d76cbd216cdb6660800000000000000
+      internalID: 7380234724313950160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_114
+      rect:
+        serializedVersion: 2
+        x: 5331
+        y: 5813
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524e32124895805f0800000000000000
+      internalID: -790283310576966619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_115
+      rect:
+        serializedVersion: 2
+        x: 5348
+        y: 5815
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531c1707913bdab80800000000000000
+      internalID: -8381846409624567499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_116
+      rect:
+        serializedVersion: 2
+        x: 5726
+        y: 5813
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db2977b7eb5017d0800000000000000
+      internalID: -2949756705153930282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_117
+      rect:
+        serializedVersion: 2
+        x: 5733
+        y: 5815
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46d4ec5198016390800000000000000
+      internalID: -7826965256971430321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_118
+      rect:
+        serializedVersion: 2
+        x: 5900
+        y: 5812
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1199c5aecfcb7f0f0800000000000000
+      internalID: -1083189390909597423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_119
+      rect:
+        serializedVersion: 2
+        x: 6065
+        y: 5813
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e389ff02862eef110800000000000000
+      internalID: 1296722679587379262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_120
+      rect:
+        serializedVersion: 2
+        x: 6120
+        y: 5801
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030349812acff4ba0800000000000000
+      internalID: -6102381196936466384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_121
+      rect:
+        serializedVersion: 2
+        x: 6189
+        y: 5812
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc6de0c2c583289e0800000000000000
+      internalID: -1620670947372640564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_122
+      rect:
+        serializedVersion: 2
+        x: 6208
+        y: 5808
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6db15750b50ffa80800000000000000
+      internalID: -8431013722476921491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_123
+      rect:
+        serializedVersion: 2
+        x: 6270
+        y: 5801
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed06fd30968b8300800000000000000
+      internalID: 255445757949513186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_124
+      rect:
+        serializedVersion: 2
+        x: 4365
+        y: 5804
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa10fcbae1fb313c0800000000000000
+      internalID: -4389955073303707217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_125
+      rect:
+        serializedVersion: 2
+        x: 4381
+        y: 5791
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3933d264aa88f070800000000000000
+      internalID: 8140408765109451069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_126
+      rect:
+        serializedVersion: 2
+        x: 4441
+        y: 5801
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a9171709f1fac60800000000000000
+      internalID: 7831512982259604061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_127
+      rect:
+        serializedVersion: 2
+        x: 4835
+        y: 5786
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5211d9d9c689ebc0800000000000000
+      internalID: -3753320612935691681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_128
+      rect:
+        serializedVersion: 2
+        x: 5021
+        y: 5800
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9432c0595e91e7aa0800000000000000
+      internalID: -6161458766357454007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_129
+      rect:
+        serializedVersion: 2
+        x: 5031
+        y: 5806
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10493c59ba3071dc0800000000000000
+      internalID: -3668459335983066111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_130
+      rect:
+        serializedVersion: 2
+        x: 5046
+        y: 5801
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793a839322a1b5760800000000000000
+      internalID: 7447575143078470551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_131
+      rect:
+        serializedVersion: 2
+        x: 5076
+        y: 5801
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a820e4bb1a1538c0800000000000000
+      internalID: -4020278386057271136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_132
+      rect:
+        serializedVersion: 2
+        x: 5117
+        y: 5805
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9103afb74b72b130800000000000000
+      internalID: 3581060201800991135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_133
+      rect:
+        serializedVersion: 2
+        x: 5165
+        y: 5802
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01a4f6424e79beb0800000000000000
+      internalID: -4703589512688393969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_134
+      rect:
+        serializedVersion: 2
+        x: 5180
+        y: 5800
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfcc39a632b67710800000000000000
+      internalID: 1690734657961512926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_135
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 5794
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffc5ea8bb25fc670800000000000000
+      internalID: 8561152382097281012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_136
+      rect:
+        serializedVersion: 2
+        x: 5213
+        y: 5799
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5762e289993d1f20800000000000000
+      internalID: 3394933025595877215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_137
+      rect:
+        serializedVersion: 2
+        x: 5390
+        y: 5800
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df72bfd475e6f85b0800000000000000
+      internalID: -5363947309925455875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_138
+      rect:
+        serializedVersion: 2
+        x: 5512
+        y: 5804
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6ba8fc73bfaa3c0800000000000000
+      internalID: -4347386273149045022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_139
+      rect:
+        serializedVersion: 2
+        x: 5631
+        y: 5805
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07748b767c85fe250800000000000000
+      internalID: 5976092844005803888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_140
+      rect:
+        serializedVersion: 2
+        x: 5891
+        y: 5807
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b2af531329162f0800000000000000
+      internalID: -981342503733417076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_141
+      rect:
+        serializedVersion: 2
+        x: 5907
+        y: 5796
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ba7ad946aeadb20800000000000000
+      internalID: 3160095806416464749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_142
+      rect:
+        serializedVersion: 2
+        x: 5936
+        y: 5799
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473aa6358acd2e520800000000000000
+      internalID: 2729986939652055924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_143
+      rect:
+        serializedVersion: 2
+        x: 6061
+        y: 5801
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1543b0ecd7024ff10800000000000000
+      internalID: 2302501034193007697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_144
+      rect:
+        serializedVersion: 2
+        x: 6173
+        y: 5795
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f60aa510e543f50800000000000000
+      internalID: 6860211492300550022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_145
+      rect:
+        serializedVersion: 2
+        x: 6193
+        y: 5800
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273ae720224bf48d0800000000000000
+      internalID: -2859869180193234062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_146
+      rect:
+        serializedVersion: 2
+        x: 6250
+        y: 5802
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c27508f248e4910800000000000000
+      internalID: 1823540238683155549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_147
+      rect:
+        serializedVersion: 2
+        x: 4367
+        y: 5794
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ba43fb57b23b080800000000000000
+      internalID: -9172940231304500431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_148
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c88a1ea20168ed60800000000000000
+      internalID: 7919686608869820615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_149
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 5796
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7ea536a56fcff80800000000000000
+      internalID: -8071305564080379910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_150
+      rect:
+        serializedVersion: 2
+        x: 4823
+        y: 5796
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d015b39afb16270800000000000000
+      internalID: 8242079526630264089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_151
+      rect:
+        serializedVersion: 2
+        x: 4952
+        y: 5792
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc2d6ffd7cda799a0800000000000000
+      internalID: -6226316885848829233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_152
+      rect:
+        serializedVersion: 2
+        x: 4965
+        y: 5799
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebbaa099d83346d0800000000000000
+      internalID: -3007497619067192342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_153
+      rect:
+        serializedVersion: 2
+        x: 5005
+        y: 5786
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3adb0e9bf9da2be80800000000000000
+      internalID: -8164272272939369053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_154
+      rect:
+        serializedVersion: 2
+        x: 5113
+        y: 5787
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aed50e0ba49f5500800000000000000
+      internalID: 387191555372736163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_155
+      rect:
+        serializedVersion: 2
+        x: 5143
+        y: 5795
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aecc05f588da52840800000000000000
+      internalID: 5198752146095394026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_156
+      rect:
+        serializedVersion: 2
+        x: 5174
+        y: 5791
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764567749e255eb10800000000000000
+      internalID: 2010103970570589287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_157
+      rect:
+        serializedVersion: 2
+        x: 5318
+        y: 5786
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e90f0dd6e4802200800000000000000
+      internalID: 153268514416691688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_158
+      rect:
+        serializedVersion: 2
+        x: 5343
+        y: 5794
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbba4ca7ec4c7f790800000000000000
+      internalID: -7496306663632884804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_159
+      rect:
+        serializedVersion: 2
+        x: 5399
+        y: 5786
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdf4cdc363152570800000000000000
+      internalID: 8441174395950792179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_160
+      rect:
+        serializedVersion: 2
+        x: 5410
+        y: 5798
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92329912261ce9f10800000000000000
+      internalID: 2278471088710689577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_161
+      rect:
+        serializedVersion: 2
+        x: 5830
+        y: 5796
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7a957f9c47cc710800000000000000
+      internalID: 1714873968908412899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_162
+      rect:
+        serializedVersion: 2
+        x: 5950
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd61f3003cd94450800000000000000
+      internalID: 6073627671268519381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_163
+      rect:
+        serializedVersion: 2
+        x: 6041
+        y: 5789
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9db926d2b9ea6a90800000000000000
+      internalID: -7319781290030809700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_164
+      rect:
+        serializedVersion: 2
+        x: 6059
+        y: 5796
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52497425e6b6797a0800000000000000
+      internalID: -6370505026321279963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_165
+      rect:
+        serializedVersion: 2
+        x: 6077
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4b10902c6fb4f40800000000000000
+      internalID: 5713931865484801244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_166
+      rect:
+        serializedVersion: 2
+        x: 6108
+        y: 5793
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d8633afeeb404b0800000000000000
+      internalID: -5475041310530957992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_167
+      rect:
+        serializedVersion: 2
+        x: 6208
+        y: 5771
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f7a37304fbd6e20800000000000000
+      internalID: 3345540380731539359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_168
+      rect:
+        serializedVersion: 2
+        x: 6280
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e459760919813850800000000000000
+      internalID: 6355011289772283104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_169
+      rect:
+        serializedVersion: 2
+        x: 6296
+        y: 5797
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0cd3bc91db12e30800000000000000
+      internalID: 4477067423064637605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_170
+      rect:
+        serializedVersion: 2
+        x: 6804
+        y: 5799
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f936ca026ecd4b100800000000000000
+      internalID: 122965970794603423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_171
+      rect:
+        serializedVersion: 2
+        x: 6828
+        y: 5792
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ee94196695cc280800000000000000
+      internalID: -9021737656470868390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_172
+      rect:
+        serializedVersion: 2
+        x: 6917
+        y: 5797
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd342e5f7749a6650800000000000000
+      internalID: 6226952677740397531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_173
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 5790
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880ebd18d8d0f07a0800000000000000
+      internalID: -6408888843304705912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_174
+      rect:
+        serializedVersion: 2
+        x: 4190
+        y: 5788
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619de71b12283dda0800000000000000
+      internalID: -5921246003838658282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_175
+      rect:
+        serializedVersion: 2
+        x: 4372
+        y: 5770
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e28e117142b302b0800000000000000
+      internalID: -5619451915887803674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_176
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 5791
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce1a1082942353dc0800000000000000
+      internalID: -3659963832383462932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_177
+      rect:
+        serializedVersion: 2
+        x: 4979
+        y: 5790
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42587a78410c46ca0800000000000000
+      internalID: -6024479207107099356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_178
+      rect:
+        serializedVersion: 2
+        x: 4997
+        y: 5791
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83898acb25c861fe0800000000000000
+      internalID: -1218632362176767944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_179
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 5780
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2155844e698f4e0800000000000000
+      internalID: -1947640931627494695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_180
+      rect:
+        serializedVersion: 2
+        x: 5037
+        y: 5786
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ed3f241af95aea0800000000000000
+      internalID: -5862103824991003121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_181
+      rect:
+        serializedVersion: 2
+        x: 5156
+        y: 5780
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc627c947f0acdbc0800000000000000
+      internalID: -3756951005178681649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_182
+      rect:
+        serializedVersion: 2
+        x: 5208
+        y: 5758
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd7cca19a4cafa4c0800000000000000
+      internalID: -4274008085079734305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_183
+      rect:
+        serializedVersion: 2
+        x: 5302
+        y: 5789
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dcf173536ccef40800000000000000
+      internalID: 5759195955360419194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_184
+      rect:
+        serializedVersion: 2
+        x: 5814
+        y: 5788
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6860fe9f1123c1c40800000000000000
+      internalID: 5484313499019445894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_185
+      rect:
+        serializedVersion: 2
+        x: 6030
+        y: 5787
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4beda3725c80fc900800000000000000
+      internalID: 706793309380206260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_186
+      rect:
+        serializedVersion: 2
+        x: 6050
+        y: 5781
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e470aadc23760bbc0800000000000000
+      internalID: -3769399420212607154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_187
+      rect:
+        serializedVersion: 2
+        x: 6193
+        y: 5776
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4523fe8666f73f410800000000000000
+      internalID: 1509690377923146324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_188
+      rect:
+        serializedVersion: 2
+        x: 6281
+        y: 5785
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95da42a7f77f33d60800000000000000
+      internalID: 7868905100828519769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_189
+      rect:
+        serializedVersion: 2
+        x: 6342
+        y: 5783
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d89fed815e5c60e0800000000000000
+      internalID: -2275340007362291495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_190
+      rect:
+        serializedVersion: 2
+        x: 6946
+        y: 5788
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88834323311d253d0800000000000000
+      internalID: -3219280903239616376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_191
+      rect:
+        serializedVersion: 2
+        x: 6959
+        y: 5792
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ed0fb435f92e010800000000000000
+      internalID: 1216710029448633917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_192
+      rect:
+        serializedVersion: 2
+        x: 6965
+        y: 5786
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9addf4f65201dfa40800000000000000
+      internalID: 5403492880881802665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_193
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 5783
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a278ed7d89bd26d30800000000000000
+      internalID: 4423339233534445354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_194
+      rect:
+        serializedVersion: 2
+        x: 7103
+        y: 5790
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b91e767dcf2a21e0800000000000000
+      internalID: -2221910906651141706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_195
+      rect:
+        serializedVersion: 2
+        x: 4166
+        y: 5775
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa015d8511fff0450800000000000000
+      internalID: 6057340473806491823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_196
+      rect:
+        serializedVersion: 2
+        x: 4177
+        y: 5776
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefd72c73e0c1d650800000000000000
+      internalID: 6255993440667426796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_197
+      rect:
+        serializedVersion: 2
+        x: 4222
+        y: 5773
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fea824149ba3c4b0800000000000000
+      internalID: -5421300873942225163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_198
+      rect:
+        serializedVersion: 2
+        x: 4366
+        y: 5780
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed61df08d88c30a0800000000000000
+      internalID: -6900490067478745628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_199
+      rect:
+        serializedVersion: 2
+        x: 4911
+        y: 5783
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220f6024b26568490800000000000000
+      internalID: -7744407765425655774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_200
+      rect:
+        serializedVersion: 2
+        x: 4943
+        y: 5774
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53a8a32b02e37140800000000000000
+      internalID: 4716361772257813342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_201
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 5779
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72656558fae8b78c0800000000000000
+      internalID: -4000446959481104857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_202
+      rect:
+        serializedVersion: 2
+        x: 5305
+        y: 5781
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ca5a0d5f0fdc7d0800000000000000
+      internalID: -2896394046771188730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_203
+      rect:
+        serializedVersion: 2
+        x: 5569
+        y: 5781
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa5ebe6c516fe360800000000000000
+      internalID: 7201081378811566759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_204
+      rect:
+        serializedVersion: 2
+        x: 6126
+        y: 5778
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800663dccc98d7e30800000000000000
+      internalID: 4502906715149590536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_205
+      rect:
+        serializedVersion: 2
+        x: 6151
+        y: 5782
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f7fea94b1670660800000000000000
+      internalID: 7351952345027018499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_206
+      rect:
+        serializedVersion: 2
+        x: 6308
+        y: 5779
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c437fef9768c38fe0800000000000000
+      internalID: -1187885529305222324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_207
+      rect:
+        serializedVersion: 2
+        x: 6320
+        y: 5775
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7abc9234453c6680800000000000000
+      internalID: -8760568608119276931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_208
+      rect:
+        serializedVersion: 2
+        x: 6359
+        y: 5773
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789d402f571bff920800000000000000
+      internalID: 3026332594745956743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_209
+      rect:
+        serializedVersion: 2
+        x: 6365
+        y: 5756
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17a5252f7ceae9a0800000000000000
+      internalID: -6202885505921210595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_210
+      rect:
+        serializedVersion: 2
+        x: 4282
+        y: 5774
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31539bd544faf3550800000000000000
+      internalID: 6142821124921701651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_211
+      rect:
+        serializedVersion: 2
+        x: 4338
+        y: 5761
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab4933e2650335b0800000000000000
+      internalID: -5389958406755234911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_212
+      rect:
+        serializedVersion: 2
+        x: 4902
+        y: 5771
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad10ffce319fbdb0800000000000000
+      internalID: -4773937381026816608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_213
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 5771
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ed38ca516e331d0800000000000000
+      internalID: -3372098715207344588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_214
+      rect:
+        serializedVersion: 2
+        x: 5134
+        y: 5776
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcd465059786f230800000000000000
+      internalID: 3672271620277591227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_215
+      rect:
+        serializedVersion: 2
+        x: 5344
+        y: 5771
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a5b749ed42f46c0800000000000000
+      internalID: -4157063392647226763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_216
+      rect:
+        serializedVersion: 2
+        x: 5371
+        y: 5773
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74cd0fcf2ae1ae950800000000000000
+      internalID: 6479024699303058503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_217
+      rect:
+        serializedVersion: 2
+        x: 5387
+        y: 5767
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7e077bee5809880800000000000000
+      internalID: -8606231627578677342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_218
+      rect:
+        serializedVersion: 2
+        x: 7029
+        y: 5770
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edbb4d2a351a61c0800000000000000
+      internalID: -4509768737245905433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_219
+      rect:
+        serializedVersion: 2
+        x: 3582
+        y: 5769
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20596a06d8c25560800000000000000
+      internalID: 7301118767544225836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_220
+      rect:
+        serializedVersion: 2
+        x: 4053
+        y: 5759
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc04d380906e5780800000000000000
+      internalID: -8692404056975209263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_221
+      rect:
+        serializedVersion: 2
+        x: 4087
+        y: 5745
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291f5b856316542f0800000000000000
+      internalID: -989277657093508718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_222
+      rect:
+        serializedVersion: 2
+        x: 4119
+        y: 5744
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebe5e830bf750cf0800000000000000
+      internalID: -286682606422594585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_223
+      rect:
+        serializedVersion: 2
+        x: 4169
+        y: 5766
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc086c392cbc44310800000000000000
+      internalID: 1388458621700309196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_224
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 5762
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f41eed5eb0a20650800000000000000
+      internalID: 6197692776695338224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_225
+      rect:
+        serializedVersion: 2
+        x: 4241
+        y: 5763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9257c1d68f5b3410800000000000000
+      internalID: 1457863937034244767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_226
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 5768
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d9e38d8ee46cda0800000000000000
+      internalID: -5924961497791947371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_227
+      rect:
+        serializedVersion: 2
+        x: 4325
+        y: 5769
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179e584b37e297580800000000000000
+      internalID: -8828974519998355087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_228
+      rect:
+        serializedVersion: 2
+        x: 4331
+        y: 5760
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac557b325f199ce0800000000000000
+      internalID: -1398051771276501845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_229
+      rect:
+        serializedVersion: 2
+        x: 4768
+        y: 5769
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f554ca663ea5920800000000000000
+      internalID: 2979944133575401313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_230
+      rect:
+        serializedVersion: 2
+        x: 4976
+        y: 5758
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce2a2736b321c1f0800000000000000
+      internalID: -1026499974547231025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_231
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 5765
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b9517517b2b6e7d0800000000000000
+      internalID: -2889425611503085131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_232
+      rect:
+        serializedVersion: 2
+        x: 5339
+        y: 5766
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7732051ce06b61690800000000000000
+      internalID: -7631712344043674761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_233
+      rect:
+        serializedVersion: 2
+        x: 5689
+        y: 5765
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc74ef31f8a7d1c50800000000000000
+      internalID: 6637596180748322763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_234
+      rect:
+        serializedVersion: 2
+        x: 6155
+        y: 5763
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d6535deaa7f72f0800000000000000
+      internalID: -972924103168791286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_235
+      rect:
+        serializedVersion: 2
+        x: 6181
+        y: 5750
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ab019aacdcbf380800000000000000
+      internalID: -8936322765283083640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_236
+      rect:
+        serializedVersion: 2
+        x: 6236
+        y: 5763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948be5505edf892c0800000000000000
+      internalID: -4424507473812080567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_237
+      rect:
+        serializedVersion: 2
+        x: 6237
+        y: 5768
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d50abe9804088da0800000000000000
+      internalID: -5942495273246128681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_238
+      rect:
+        serializedVersion: 2
+        x: 6292
+        y: 5756
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4892903b383d030800000000000000
+      internalID: 3518300538882589949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_239
+      rect:
+        serializedVersion: 2
+        x: 6311
+        y: 5765
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bffd08c8d27d77500800000000000000
+      internalID: 394020083048964091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_240
+      rect:
+        serializedVersion: 2
+        x: 6325
+        y: 5755
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10afb502434203e00800000000000000
+      internalID: 1022356921712900609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_241
+      rect:
+        serializedVersion: 2
+        x: 6395
+        y: 5767
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9936490a352c8940800000000000000
+      internalID: 5299651792702159259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_242
+      rect:
+        serializedVersion: 2
+        x: 6412
+        y: 5769
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 302f88bde8bfbde40800000000000000
+      internalID: 5682411945845125635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_243
+      rect:
+        serializedVersion: 2
+        x: 6418
+        y: 5743
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e5db93d23dfd3a0800000000000000
+      internalID: -6638355134525120923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_244
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 5757
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5154d05f2d0ec10800000000000000
+      internalID: 2080894977776620995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_245
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 5760
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df35681b649868660800000000000000
+      internalID: 7387743175466963965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_246
+      rect:
+        serializedVersion: 2
+        x: 4506
+        y: 5758
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1458156d2b82c8680800000000000000
+      internalID: -8751575227322759871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_247
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 5757
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85213147793d280f0800000000000000
+      internalID: -1116097110193532328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_248
+      rect:
+        serializedVersion: 2
+        x: 5318
+        y: 5762
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab1d65d7e25d2ab0800000000000000
+      internalID: -5031274053031355485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_249
+      rect:
+        serializedVersion: 2
+        x: 6156
+        y: 5744
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66984dc7d9e1d1120800000000000000
+      internalID: 2386097039329233254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_250
+      rect:
+        serializedVersion: 2
+        x: 6396
+        y: 5752
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d38f6c8b56abc90800000000000000
+      internalID: -7153293213838066376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_251
+      rect:
+        serializedVersion: 2
+        x: 6436
+        y: 5757
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbee64fc427c1e70800000000000000
+      internalID: 9087263822970809293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_252
+      rect:
+        serializedVersion: 2
+        x: 6443
+        y: 5756
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1add5abb04107f0800000000000000
+      internalID: -648165696678813277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_253
+      rect:
+        serializedVersion: 2
+        x: 4316
+        y: 5751
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452375461a7e942f0800000000000000
+      internalID: -988003962871926188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_254
+      rect:
+        serializedVersion: 2
+        x: 5401
+        y: 5749
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145fda20ac3a97840800000000000000
+      internalID: 5222385330936476993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_255
+      rect:
+        serializedVersion: 2
+        x: 6332
+        y: 5749
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1e53aba4521de40800000000000000
+      internalID: 5679361607972807087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_256
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 5743
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca5de3f40e4aad30800000000000000
+      internalID: 4443449765533670082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_257
+      rect:
+        serializedVersion: 2
+        x: 6467
+        y: 5753
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fa2062706def960800000000000000
+      internalID: 7637777344257765161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_258
+      rect:
+        serializedVersion: 2
+        x: 7529
+        y: 5099
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0fef41d707bdbb0800000000000000
+      internalID: -4910207286191918921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_259
+      rect:
+        serializedVersion: 2
+        x: 7377
+        y: 4945
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf19e78f38b32dce0800000000000000
+      internalID: -1381976697653521924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_260
+      rect:
+        serializedVersion: 2
+        x: 7477
+        y: 4872
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0dcf2f18f9dacf0800000000000000
+      internalID: -239359824704515905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_261
+      rect:
+        serializedVersion: 2
+        x: 7429
+        y: 4837
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f70ec83a4a01790800000000000000
+      internalID: -7561362752004915364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_262
+      rect:
+        serializedVersion: 2
+        x: 7480
+        y: 4731
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aecfb543d152f0f90800000000000000
+      internalID: -6985323689665626902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_263
+      rect:
+        serializedVersion: 2
+        x: 7533
+        y: 4652
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3c9ef6ce32bd0d40800000000000000
+      internalID: 5552289898313980990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_264
+      rect:
+        serializedVersion: 2
+        x: 7531
+        y: 4407
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d9f67ed995137a0800000000000000
+      internalID: -6399235060789174953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_265
+      rect:
+        serializedVersion: 2
+        x: 7335
+        y: 3783
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebdb4e8a71eb2180800000000000000
+      internalID: -9138963102328693786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_266
+      rect:
+        serializedVersion: 2
+        x: 7332
+        y: 3498
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da6fbdbf8ab90560800000000000000
+      internalID: 7280555399147645650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1_267
+      rect:
+        serializedVersion: 2
+        x: 7346
+        y: 3462
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c446e6203893640800000000000000
+      internalID: 5060219702792703031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Albero vicino 1_0: 3275433706687689554
+      Albero vicino 1_1: 3592318799223874158
+      Albero vicino 1_10: 6028050453162796995
+      Albero vicino 1_100: -4509374852570421133
+      Albero vicino 1_101: 1499245651788812695
+      Albero vicino 1_102: -4469052076847117364
+      Albero vicino 1_103: -2825596608935906253
+      Albero vicino 1_104: -7342150667654678393
+      Albero vicino 1_105: 1054900118299523990
+      Albero vicino 1_106: -202176748347830454
+      Albero vicino 1_107: -2661854049515299327
+      Albero vicino 1_108: 3903532279767698052
+      Albero vicino 1_109: -1351651415200915016
+      Albero vicino 1_11: 320292048748310320
+      Albero vicino 1_110: 3398305364067984585
+      Albero vicino 1_111: 6518853416492661509
+      Albero vicino 1_112: 4447104361559824105
+      Albero vicino 1_113: 7380234724313950160
+      Albero vicino 1_114: -790283310576966619
+      Albero vicino 1_115: -8381846409624567499
+      Albero vicino 1_116: -2949756705153930282
+      Albero vicino 1_117: -7826965256971430321
+      Albero vicino 1_118: -1083189390909597423
+      Albero vicino 1_119: 1296722679587379262
+      Albero vicino 1_12: 3643252586227327876
+      Albero vicino 1_120: -6102381196936466384
+      Albero vicino 1_121: -1620670947372640564
+      Albero vicino 1_122: -8431013722476921491
+      Albero vicino 1_123: 255445757949513186
+      Albero vicino 1_124: -4389955073303707217
+      Albero vicino 1_125: 8140408765109451069
+      Albero vicino 1_126: 7831512982259604061
+      Albero vicino 1_127: -3753320612935691681
+      Albero vicino 1_128: -6161458766357454007
+      Albero vicino 1_129: -3668459335983066111
+      Albero vicino 1_13: -8746956725482365462
+      Albero vicino 1_130: 7447575143078470551
+      Albero vicino 1_131: -4020278386057271136
+      Albero vicino 1_132: 3581060201800991135
+      Albero vicino 1_133: -4703589512688393969
+      Albero vicino 1_134: 1690734657961512926
+      Albero vicino 1_135: 8561152382097281012
+      Albero vicino 1_136: 3394933025595877215
+      Albero vicino 1_137: -5363947309925455875
+      Albero vicino 1_138: -4347386273149045022
+      Albero vicino 1_139: 5976092844005803888
+      Albero vicino 1_14: 9015900265932380345
+      Albero vicino 1_140: -981342503733417076
+      Albero vicino 1_141: 3160095806416464749
+      Albero vicino 1_142: 2729986939652055924
+      Albero vicino 1_143: 2302501034193007697
+      Albero vicino 1_144: 6860211492300550022
+      Albero vicino 1_145: -2859869180193234062
+      Albero vicino 1_146: 1823540238683155549
+      Albero vicino 1_147: -9172940231304500431
+      Albero vicino 1_148: 7919686608869820615
+      Albero vicino 1_149: -8071305564080379910
+      Albero vicino 1_15: 481652972557455277
+      Albero vicino 1_150: 8242079526630264089
+      Albero vicino 1_151: -6226316885848829233
+      Albero vicino 1_152: -3007497619067192342
+      Albero vicino 1_153: -8164272272939369053
+      Albero vicino 1_154: 387191555372736163
+      Albero vicino 1_155: 5198752146095394026
+      Albero vicino 1_156: 2010103970570589287
+      Albero vicino 1_157: 153268514416691688
+      Albero vicino 1_158: -7496306663632884804
+      Albero vicino 1_159: 8441174395950792179
+      Albero vicino 1_16: -5364055559089746303
+      Albero vicino 1_160: 2278471088710689577
+      Albero vicino 1_161: 1714873968908412899
+      Albero vicino 1_162: 6073627671268519381
+      Albero vicino 1_163: -7319781290030809700
+      Albero vicino 1_164: -6370505026321279963
+      Albero vicino 1_165: 5713931865484801244
+      Albero vicino 1_166: -5475041310530957992
+      Albero vicino 1_167: 3345540380731539359
+      Albero vicino 1_168: 6355011289772283104
+      Albero vicino 1_169: 4477067423064637605
+      Albero vicino 1_17: -8611003454228686659
+      Albero vicino 1_170: 122965970794603423
+      Albero vicino 1_171: -9021737656470868390
+      Albero vicino 1_172: 6226952677740397531
+      Albero vicino 1_173: -6408888843304705912
+      Albero vicino 1_174: -5921246003838658282
+      Albero vicino 1_175: -5619451915887803674
+      Albero vicino 1_176: -3659963832383462932
+      Albero vicino 1_177: -6024479207107099356
+      Albero vicino 1_178: -1218632362176767944
+      Albero vicino 1_179: -1947640931627494695
+      Albero vicino 1_18: 1431451680680211081
+      Albero vicino 1_180: -5862103824991003121
+      Albero vicino 1_181: -3756951005178681649
+      Albero vicino 1_182: -4274008085079734305
+      Albero vicino 1_183: 5759195955360419194
+      Albero vicino 1_184: 5484313499019445894
+      Albero vicino 1_185: 706793309380206260
+      Albero vicino 1_186: -3769399420212607154
+      Albero vicino 1_187: 1509690377923146324
+      Albero vicino 1_188: 7868905100828519769
+      Albero vicino 1_189: -2275340007362291495
+      Albero vicino 1_19: 2762039533779225218
+      Albero vicino 1_190: -3219280903239616376
+      Albero vicino 1_191: 1216710029448633917
+      Albero vicino 1_192: 5403492880881802665
+      Albero vicino 1_193: 4423339233534445354
+      Albero vicino 1_194: -2221910906651141706
+      Albero vicino 1_195: 6057340473806491823
+      Albero vicino 1_196: 6255993440667426796
+      Albero vicino 1_197: -5421300873942225163
+      Albero vicino 1_198: -6900490067478745628
+      Albero vicino 1_199: -7744407765425655774
+      Albero vicino 1_2: 5958778787728764717
+      Albero vicino 1_20: 4384465554123297845
+      Albero vicino 1_200: 4716361772257813342
+      Albero vicino 1_201: -4000446959481104857
+      Albero vicino 1_202: -2896394046771188730
+      Albero vicino 1_203: 7201081378811566759
+      Albero vicino 1_204: 4502906715149590536
+      Albero vicino 1_205: 7351952345027018499
+      Albero vicino 1_206: -1187885529305222324
+      Albero vicino 1_207: -8760568608119276931
+      Albero vicino 1_208: 3026332594745956743
+      Albero vicino 1_209: -6202885505921210595
+      Albero vicino 1_21: 145808261304355556
+      Albero vicino 1_210: 6142821124921701651
+      Albero vicino 1_211: -5389958406755234911
+      Albero vicino 1_212: -4773937381026816608
+      Albero vicino 1_213: -3372098715207344588
+      Albero vicino 1_214: 3672271620277591227
+      Albero vicino 1_215: -4157063392647226763
+      Albero vicino 1_216: 6479024699303058503
+      Albero vicino 1_217: -8606231627578677342
+      Albero vicino 1_218: -4509768737245905433
+      Albero vicino 1_219: 7301118767544225836
+      Albero vicino 1_22: 4356130695089369330
+      Albero vicino 1_220: -8692404056975209263
+      Albero vicino 1_221: -989277657093508718
+      Albero vicino 1_222: -286682606422594585
+      Albero vicino 1_223: 1388458621700309196
+      Albero vicino 1_224: 6197692776695338224
+      Albero vicino 1_225: 1457863937034244767
+      Albero vicino 1_226: -5924961497791947371
+      Albero vicino 1_227: -8828974519998355087
+      Albero vicino 1_228: -1398051771276501845
+      Albero vicino 1_229: 2979944133575401313
+      Albero vicino 1_23: -5881474596384292275
+      Albero vicino 1_230: -1026499974547231025
+      Albero vicino 1_231: -2889425611503085131
+      Albero vicino 1_232: -7631712344043674761
+      Albero vicino 1_233: 6637596180748322763
+      Albero vicino 1_234: -972924103168791286
+      Albero vicino 1_235: -8936322765283083640
+      Albero vicino 1_236: -4424507473812080567
+      Albero vicino 1_237: -5942495273246128681
+      Albero vicino 1_238: 3518300538882589949
+      Albero vicino 1_239: 394020083048964091
+      Albero vicino 1_24: 3649777702769786022
+      Albero vicino 1_240: 1022356921712900609
+      Albero vicino 1_241: 5299651792702159259
+      Albero vicino 1_242: 5682411945845125635
+      Albero vicino 1_243: -6638355134525120923
+      Albero vicino 1_244: 2080894977776620995
+      Albero vicino 1_245: 7387743175466963965
+      Albero vicino 1_246: -8751575227322759871
+      Albero vicino 1_247: -1116097110193532328
+      Albero vicino 1_248: -5031274053031355485
+      Albero vicino 1_249: 2386097039329233254
+      Albero vicino 1_25: 6120293569220658721
+      Albero vicino 1_250: -7153293213838066376
+      Albero vicino 1_251: 9087263822970809293
+      Albero vicino 1_252: -648165696678813277
+      Albero vicino 1_253: -988003962871926188
+      Albero vicino 1_254: 5222385330936476993
+      Albero vicino 1_255: 5679361607972807087
+      Albero vicino 1_256: 4443449765533670082
+      Albero vicino 1_257: 7637777344257765161
+      Albero vicino 1_258: -4910207286191918921
+      Albero vicino 1_259: -1381976697653521924
+      Albero vicino 1_26: 4054891927132889208
+      Albero vicino 1_260: -239359824704515905
+      Albero vicino 1_261: -7561362752004915364
+      Albero vicino 1_262: -6985323689665626902
+      Albero vicino 1_263: 5552289898313980990
+      Albero vicino 1_264: -6399235060789174953
+      Albero vicino 1_265: -9138963102328693786
+      Albero vicino 1_266: 7280555399147645650
+      Albero vicino 1_267: 5060219702792703031
+      Albero vicino 1_27: 6241648402276155766
+      Albero vicino 1_28: -4703942900346473728
+      Albero vicino 1_29: 5215877070196981182
+      Albero vicino 1_3: 5937234251458924875
+      Albero vicino 1_30: -1922651991704900646
+      Albero vicino 1_31: -7147670333163874148
+      Albero vicino 1_32: 5335383408409890427
+      Albero vicino 1_33: 6049126993873484519
+      Albero vicino 1_34: -1079132394640525710
+      Albero vicino 1_35: -155463963056006766
+      Albero vicino 1_36: -5333094118064372784
+      Albero vicino 1_37: 22479783871931175
+      Albero vicino 1_38: 6629467275438875671
+      Albero vicino 1_39: -1774133618509806977
+      Albero vicino 1_4: -1669540680767753365
+      Albero vicino 1_40: -6557544079553410153
+      Albero vicino 1_41: 5779661059939845627
+      Albero vicino 1_42: -1911370067330746132
+      Albero vicino 1_43: 1838541586325326697
+      Albero vicino 1_44: 1789236891477757753
+      Albero vicino 1_45: -365427580491323808
+      Albero vicino 1_46: 3310195648107259632
+      Albero vicino 1_47: -6995135539613991347
+      Albero vicino 1_48: -3146665436918976956
+      Albero vicino 1_49: 3453429867520006925
+      Albero vicino 1_5: 6414910676492836257
+      Albero vicino 1_50: 6049474588303547606
+      Albero vicino 1_51: 8755685835760466916
+      Albero vicino 1_52: -5896033883675443277
+      Albero vicino 1_53: 4058743655316856818
+      Albero vicino 1_54: -9184414322478868975
+      Albero vicino 1_55: -357521159342300160
+      Albero vicino 1_56: -8280841870403481474
+      Albero vicino 1_57: -5141421235162572250
+      Albero vicino 1_58: 1246347385885133739
+      Albero vicino 1_59: 1422596525812203945
+      Albero vicino 1_6: 6155293458804190155
+      Albero vicino 1_60: -9133607840472210946
+      Albero vicino 1_61: -1468369169378371758
+      Albero vicino 1_62: 3803116350494504357
+      Albero vicino 1_63: -6320422860575878617
+      Albero vicino 1_64: -313650818125686898
+      Albero vicino 1_65: 4576977834866242499
+      Albero vicino 1_66: -6819505262559193011
+      Albero vicino 1_67: 6966772887312644150
+      Albero vicino 1_68: 8611276776623141800
+      Albero vicino 1_69: -1089455304124122244
+      Albero vicino 1_7: -348907986405464226
+      Albero vicino 1_70: 7226280306078405448
+      Albero vicino 1_71: -5099844468847865671
+      Albero vicino 1_72: -267895219782797973
+      Albero vicino 1_73: 3108525524833792698
+      Albero vicino 1_74: -5501980532207479802
+      Albero vicino 1_75: 6607413188385151620
+      Albero vicino 1_76: 7343141967297222247
+      Albero vicino 1_77: 8314475102192218276
+      Albero vicino 1_78: 1990814947911372383
+      Albero vicino 1_79: -233626579686633874
+      Albero vicino 1_8: -708850783473312135
+      Albero vicino 1_80: 2522601754477254845
+      Albero vicino 1_81: 5989941290514094229
+      Albero vicino 1_82: 4639361009911324751
+      Albero vicino 1_83: -3968569037344328597
+      Albero vicino 1_84: -589019445580354414
+      Albero vicino 1_85: 2248397313963762599
+      Albero vicino 1_86: 1940624990752529322
+      Albero vicino 1_87: 8510180689043852783
+      Albero vicino 1_88: -6930027046689605101
+      Albero vicino 1_89: -7541669532533446486
+      Albero vicino 1_9: -7389333516829622754
+      Albero vicino 1_90: 1233963929163651805
+      Albero vicino 1_91: -7781380861392288282
+      Albero vicino 1_92: 1824325370050935729
+      Albero vicino 1_93: -8639026768369555311
+      Albero vicino 1_94: -8851070065034438507
+      Albero vicino 1_95: 1247053488347736889
+      Albero vicino 1_96: -7319139639110598853
+      Albero vicino 1_97: 3969275105592856636
+      Albero vicino 1_98: -7065046113549337167
+      Albero vicino 1_99: -3503100579042370496
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

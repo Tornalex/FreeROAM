@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: b9a643458c351ab4882bc4b066540fb3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5774135959320826852
+    second: Free ROAM_0
+  - first:
+      213: 8483161427581404656
+    second: Free ROAM_1
+  - first:
+      213: 4290084150090053220
+    second: Free ROAM_2
+  - first:
+      213: 3387092774457323345
+    second: Free ROAM_3
+  - first:
+      213: -5609426339874492186
+    second: Free ROAM_4
+  - first:
+      213: -2678716768181716264
+    second: Free ROAM_5
+  - first:
+      213: -5662426191479537554
+    second: Free ROAM_6
+  - first:
+      213: -3704895916579022353
+    second: Free ROAM_7
+  - first:
+      213: 7464052564186909793
+    second: Free ROAM_8
+  - first:
+      213: 3009473985547494925
+    second: Free ROAM_9
+  - first:
+      213: 6587804724754569558
+    second: Free ROAM_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Free ROAM_0
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1353
+        width: 421
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c6fdb00f52edfa0800000000000000
+      internalID: -5774135959320826852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_1
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 2032
+        width: 376
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f509476f5e3ab570800000000000000
+      internalID: 8483161427581404656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_2
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 2032
+        width: 303
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466b6aefdc0798b30800000000000000
+      internalID: 4290084150090053220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_3
+      rect:
+        serializedVersion: 2
+        x: 2822
+        y: 1346
+        width: 594
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f22daceee510f20800000000000000
+      internalID: 3387092774457323345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_4
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 1336
+        width: 737
+        height: 754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e0bf02c6705722b0800000000000000
+      internalID: -5609426339874492186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_5
+      rect:
+        serializedVersion: 2
+        x: 4159
+        y: 1353
+        width: 715
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da75a2ba4943dad0800000000000000
+      internalID: -2678716768181716264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_6
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 1342
+        width: 885
+        height: 745
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e608ef131650b61b0800000000000000
+      internalID: -5662426191479537554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_7
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1345
+        width: 621
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe913821bc0959cc0800000000000000
+      internalID: -3704895916579022353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_8
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 1353
+        width: 484
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c4439c244a59760800000000000000
+      internalID: 7464052564186909793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_9
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 1353
+        width: 485
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06665d15acc3c920800000000000000
+      internalID: 3009473985547494925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free ROAM_10
+      rect:
+        serializedVersion: 2
+        x: 5262
+        y: 1309
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659d2a45e759c6b50800000000000000
+      internalID: 6587804724754569558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Free ROAM_0: -5774135959320826852
+      Free ROAM_1: 8483161427581404656
+      Free ROAM_10: 6587804724754569558
+      Free ROAM_2: 4290084150090053220
+      Free ROAM_3: 3387092774457323345
+      Free ROAM_4: -5609426339874492186
+      Free ROAM_5: -2678716768181716264
+      Free ROAM_6: -5662426191479537554
+      Free ROAM_7: -3704895916579022353
+      Free ROAM_8: 7464052564186909793
+      Free ROAM_9: 3009473985547494925
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

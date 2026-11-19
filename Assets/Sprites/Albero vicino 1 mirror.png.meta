@@ -1,0 +1,7085 @@
+fileFormatVersion: 2
+guid: 2f24ddce57fcda7448e48c5189bfbd65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 931157802096006592
+    second: Albero vicino 1 mirror_0
+  - first:
+      213: 1290279718846249896
+    second: Albero vicino 1 mirror_1
+  - first:
+      213: 2742309669628656855
+    second: Albero vicino 1 mirror_2
+  - first:
+      213: -9148199899901890077
+    second: Albero vicino 1 mirror_3
+  - first:
+      213: -1196443458345008467
+    second: Albero vicino 1 mirror_4
+  - first:
+      213: 7494107772877474043
+    second: Albero vicino 1 mirror_5
+  - first:
+      213: 7501931986512369493
+    second: Albero vicino 1 mirror_6
+  - first:
+      213: 4497047653292756460
+    second: Albero vicino 1 mirror_7
+  - first:
+      213: -6866260858014009482
+    second: Albero vicino 1 mirror_8
+  - first:
+      213: 2801173625291580504
+    second: Albero vicino 1 mirror_9
+  - first:
+      213: 8204749016564444171
+    second: Albero vicino 1 mirror_10
+  - first:
+      213: -6920668934283345777
+    second: Albero vicino 1 mirror_11
+  - first:
+      213: 5167664789223413742
+    second: Albero vicino 1 mirror_12
+  - first:
+      213: 224185829886399279
+    second: Albero vicino 1 mirror_13
+  - first:
+      213: 5725586270137680390
+    second: Albero vicino 1 mirror_14
+  - first:
+      213: -7859733651109478085
+    second: Albero vicino 1 mirror_15
+  - first:
+      213: 7149348898985416427
+    second: Albero vicino 1 mirror_16
+  - first:
+      213: -2172478579505730199
+    second: Albero vicino 1 mirror_17
+  - first:
+      213: -7543598913719653942
+    second: Albero vicino 1 mirror_18
+  - first:
+      213: -5058667605259124057
+    second: Albero vicino 1 mirror_19
+  - first:
+      213: 1428280008942519954
+    second: Albero vicino 1 mirror_20
+  - first:
+      213: 3569834337235266816
+    second: Albero vicino 1 mirror_21
+  - first:
+      213: 7291841695656938716
+    second: Albero vicino 1 mirror_22
+  - first:
+      213: 1696465793212248575
+    second: Albero vicino 1 mirror_23
+  - first:
+      213: 5020384837404710052
+    second: Albero vicino 1 mirror_24
+  - first:
+      213: -518104468385874842
+    second: Albero vicino 1 mirror_25
+  - first:
+      213: 2567532996500546330
+    second: Albero vicino 1 mirror_26
+  - first:
+      213: 7967327364031784507
+    second: Albero vicino 1 mirror_27
+  - first:
+      213: 9086746092692736906
+    second: Albero vicino 1 mirror_28
+  - first:
+      213: -2294122065123564667
+    second: Albero vicino 1 mirror_29
+  - first:
+      213: -4427064763661284195
+    second: Albero vicino 1 mirror_30
+  - first:
+      213: 6840821519313125865
+    second: Albero vicino 1 mirror_31
+  - first:
+      213: -2187354822111706728
+    second: Albero vicino 1 mirror_32
+  - first:
+      213: 695833709956493559
+    second: Albero vicino 1 mirror_33
+  - first:
+      213: 4783913213882048680
+    second: Albero vicino 1 mirror_34
+  - first:
+      213: -5972759041963940323
+    second: Albero vicino 1 mirror_35
+  - first:
+      213: 5684101929975689466
+    second: Albero vicino 1 mirror_36
+  - first:
+      213: 6323525385744280028
+    second: Albero vicino 1 mirror_37
+  - first:
+      213: -7613135368154210318
+    second: Albero vicino 1 mirror_38
+  - first:
+      213: -4340298076628982715
+    second: Albero vicino 1 mirror_39
+  - first:
+      213: 3134717721253725930
+    second: Albero vicino 1 mirror_40
+  - first:
+      213: 5409689305529279982
+    second: Albero vicino 1 mirror_41
+  - first:
+      213: -1466123358407591368
+    second: Albero vicino 1 mirror_42
+  - first:
+      213: -1196630313522547805
+    second: Albero vicino 1 mirror_43
+  - first:
+      213: 1660250933069898154
+    second: Albero vicino 1 mirror_44
+  - first:
+      213: 2925591762454100310
+    second: Albero vicino 1 mirror_45
+  - first:
+      213: -5558234410175649825
+    second: Albero vicino 1 mirror_46
+  - first:
+      213: -4531454226683941938
+    second: Albero vicino 1 mirror_47
+  - first:
+      213: 4718060929638407661
+    second: Albero vicino 1 mirror_48
+  - first:
+      213: 4104112148717929287
+    second: Albero vicino 1 mirror_49
+  - first:
+      213: 1791341260314764973
+    second: Albero vicino 1 mirror_50
+  - first:
+      213: -1361886509529064496
+    second: Albero vicino 1 mirror_51
+  - first:
+      213: 5678257598266439167
+    second: Albero vicino 1 mirror_52
+  - first:
+      213: 8244851566149277813
+    second: Albero vicino 1 mirror_53
+  - first:
+      213: -1320600214365824565
+    second: Albero vicino 1 mirror_54
+  - first:
+      213: -559998534703498134
+    second: Albero vicino 1 mirror_55
+  - first:
+      213: 1035741590009769242
+    second: Albero vicino 1 mirror_56
+  - first:
+      213: 4495049644358181940
+    second: Albero vicino 1 mirror_57
+  - first:
+      213: 8876877124172522781
+    second: Albero vicino 1 mirror_58
+  - first:
+      213: -7208878485595406874
+    second: Albero vicino 1 mirror_59
+  - first:
+      213: -8314443156897255927
+    second: Albero vicino 1 mirror_60
+  - first:
+      213: 2235364972696267248
+    second: Albero vicino 1 mirror_61
+  - first:
+      213: 5308448784301753875
+    second: Albero vicino 1 mirror_62
+  - first:
+      213: -310382804579907412
+    second: Albero vicino 1 mirror_63
+  - first:
+      213: -1122225218244996699
+    second: Albero vicino 1 mirror_64
+  - first:
+      213: 6914074854860439535
+    second: Albero vicino 1 mirror_65
+  - first:
+      213: -8929122324411281192
+    second: Albero vicino 1 mirror_66
+  - first:
+      213: 6016211307926757441
+    second: Albero vicino 1 mirror_67
+  - first:
+      213: -6727227327293051889
+    second: Albero vicino 1 mirror_68
+  - first:
+      213: 3367472425560071550
+    second: Albero vicino 1 mirror_69
+  - first:
+      213: 3836837500964115527
+    second: Albero vicino 1 mirror_70
+  - first:
+      213: -1971651946507793398
+    second: Albero vicino 1 mirror_71
+  - first:
+      213: -8694992392256304794
+    second: Albero vicino 1 mirror_72
+  - first:
+      213: 258888338251759800
+    second: Albero vicino 1 mirror_73
+  - first:
+      213: 7714682083444759770
+    second: Albero vicino 1 mirror_74
+  - first:
+      213: 7036739068703968147
+    second: Albero vicino 1 mirror_75
+  - first:
+      213: 4896188383052654482
+    second: Albero vicino 1 mirror_76
+  - first:
+      213: -8232529428173640421
+    second: Albero vicino 1 mirror_77
+  - first:
+      213: -7209954574865261656
+    second: Albero vicino 1 mirror_78
+  - first:
+      213: -3973952438957637060
+    second: Albero vicino 1 mirror_79
+  - first:
+      213: 7369263000037559573
+    second: Albero vicino 1 mirror_80
+  - first:
+      213: 1655038125955689478
+    second: Albero vicino 1 mirror_81
+  - first:
+      213: 7759695380297914178
+    second: Albero vicino 1 mirror_82
+  - first:
+      213: -3717504715262472893
+    second: Albero vicino 1 mirror_83
+  - first:
+      213: -2833183464518717906
+    second: Albero vicino 1 mirror_84
+  - first:
+      213: 7316772271057299929
+    second: Albero vicino 1 mirror_85
+  - first:
+      213: 7495826097382921007
+    second: Albero vicino 1 mirror_86
+  - first:
+      213: 2794272754709625698
+    second: Albero vicino 1 mirror_87
+  - first:
+      213: 8279015972704474136
+    second: Albero vicino 1 mirror_88
+  - first:
+      213: 5817168237158302182
+    second: Albero vicino 1 mirror_89
+  - first:
+      213: -1892340054121673197
+    second: Albero vicino 1 mirror_90
+  - first:
+      213: -6611703566267920102
+    second: Albero vicino 1 mirror_91
+  - first:
+      213: 1224254739233881261
+    second: Albero vicino 1 mirror_92
+  - first:
+      213: -1407982893434283917
+    second: Albero vicino 1 mirror_93
+  - first:
+      213: -606075899342030947
+    second: Albero vicino 1 mirror_94
+  - first:
+      213: 5159978343845534067
+    second: Albero vicino 1 mirror_95
+  - first:
+      213: 8020337544208149604
+    second: Albero vicino 1 mirror_96
+  - first:
+      213: 1781610028556241959
+    second: Albero vicino 1 mirror_97
+  - first:
+      213: -6721216113873470034
+    second: Albero vicino 1 mirror_98
+  - first:
+      213: -8274994891629891581
+    second: Albero vicino 1 mirror_99
+  - first:
+      213: -8515140548081877268
+    second: Albero vicino 1 mirror_100
+  - first:
+      213: -2112083246244816901
+    second: Albero vicino 1 mirror_101
+  - first:
+      213: 8952677303448018471
+    second: Albero vicino 1 mirror_102
+  - first:
+      213: 891559617319304514
+    second: Albero vicino 1 mirror_103
+  - first:
+      213: -2883012541970382073
+    second: Albero vicino 1 mirror_104
+  - first:
+      213: -1364195309435251412
+    second: Albero vicino 1 mirror_105
+  - first:
+      213: -3513339115125083300
+    second: Albero vicino 1 mirror_106
+  - first:
+      213: 9043863617739846350
+    second: Albero vicino 1 mirror_107
+  - first:
+      213: 5972556889874170356
+    second: Albero vicino 1 mirror_108
+  - first:
+      213: -8187217609859694884
+    second: Albero vicino 1 mirror_109
+  - first:
+      213: 2292595158299903636
+    second: Albero vicino 1 mirror_110
+  - first:
+      213: -5956274945924415429
+    second: Albero vicino 1 mirror_111
+  - first:
+      213: -6345479104871004215
+    second: Albero vicino 1 mirror_112
+  - first:
+      213: 7095195675408503185
+    second: Albero vicino 1 mirror_113
+  - first:
+      213: -8011198653861765510
+    second: Albero vicino 1 mirror_114
+  - first:
+      213: 2676248249854498016
+    second: Albero vicino 1 mirror_115
+  - first:
+      213: 3839920575909341987
+    second: Albero vicino 1 mirror_116
+  - first:
+      213: -8221298062248397564
+    second: Albero vicino 1 mirror_117
+  - first:
+      213: -1746682609438204659
+    second: Albero vicino 1 mirror_118
+  - first:
+      213: -1065697667321897734
+    second: Albero vicino 1 mirror_119
+  - first:
+      213: 4140861372766071146
+    second: Albero vicino 1 mirror_120
+  - first:
+      213: 8296982609600359239
+    second: Albero vicino 1 mirror_121
+  - first:
+      213: -8480273327694911821
+    second: Albero vicino 1 mirror_122
+  - first:
+      213: 2483718814028763758
+    second: Albero vicino 1 mirror_123
+  - first:
+      213: -6365132782920075634
+    second: Albero vicino 1 mirror_124
+  - first:
+      213: 6469516432369273781
+    second: Albero vicino 1 mirror_125
+  - first:
+      213: 1437872324239548560
+    second: Albero vicino 1 mirror_126
+  - first:
+      213: 4408879113990249390
+    second: Albero vicino 1 mirror_127
+  - first:
+      213: -5452013264433351658
+    second: Albero vicino 1 mirror_128
+  - first:
+      213: 8762377306897917697
+    second: Albero vicino 1 mirror_129
+  - first:
+      213: -336045446155218880
+    second: Albero vicino 1 mirror_130
+  - first:
+      213: -5846432035337511963
+    second: Albero vicino 1 mirror_131
+  - first:
+      213: -4131084487586815322
+    second: Albero vicino 1 mirror_132
+  - first:
+      213: -3755993158964211083
+    second: Albero vicino 1 mirror_133
+  - first:
+      213: 1621981598418606878
+    second: Albero vicino 1 mirror_134
+  - first:
+      213: -1977923616111421845
+    second: Albero vicino 1 mirror_135
+  - first:
+      213: -2818434856634119072
+    second: Albero vicino 1 mirror_136
+  - first:
+      213: 8467797983028428253
+    second: Albero vicino 1 mirror_137
+  - first:
+      213: -6593027073737007084
+    second: Albero vicino 1 mirror_138
+  - first:
+      213: 6776812202862155156
+    second: Albero vicino 1 mirror_139
+  - first:
+      213: -3959672011693696050
+    second: Albero vicino 1 mirror_140
+  - first:
+      213: -7858279307645437691
+    second: Albero vicino 1 mirror_141
+  - first:
+      213: 7550202892874201290
+    second: Albero vicino 1 mirror_142
+  - first:
+      213: -131719925560653709
+    second: Albero vicino 1 mirror_143
+  - first:
+      213: -2078518969623086347
+    second: Albero vicino 1 mirror_144
+  - first:
+      213: 950135979382126046
+    second: Albero vicino 1 mirror_145
+  - first:
+      213: 4548469372972507616
+    second: Albero vicino 1 mirror_146
+  - first:
+      213: 2314687124861753309
+    second: Albero vicino 1 mirror_147
+  - first:
+      213: 4154165981486555458
+    second: Albero vicino 1 mirror_148
+  - first:
+      213: 7645121411885106157
+    second: Albero vicino 1 mirror_149
+  - first:
+      213: 6489805187825921223
+    second: Albero vicino 1 mirror_150
+  - first:
+      213: 5697634734013116872
+    second: Albero vicino 1 mirror_151
+  - first:
+      213: 1472771915202469327
+    second: Albero vicino 1 mirror_152
+  - first:
+      213: 1409837744666848745
+    second: Albero vicino 1 mirror_153
+  - first:
+      213: 8708479771912442637
+    second: Albero vicino 1 mirror_154
+  - first:
+      213: -7267071334777788044
+    second: Albero vicino 1 mirror_155
+  - first:
+      213: -2397891829909033161
+    second: Albero vicino 1 mirror_156
+  - first:
+      213: -2542868241869802832
+    second: Albero vicino 1 mirror_157
+  - first:
+      213: 4526370215449746165
+    second: Albero vicino 1 mirror_158
+  - first:
+      213: -5827406814605636967
+    second: Albero vicino 1 mirror_159
+  - first:
+      213: 2340022337609971894
+    second: Albero vicino 1 mirror_160
+  - first:
+      213: -4560414686961015208
+    second: Albero vicino 1 mirror_161
+  - first:
+      213: -6618893107772515247
+    second: Albero vicino 1 mirror_162
+  - first:
+      213: 1884324721169544252
+    second: Albero vicino 1 mirror_163
+  - first:
+      213: 7896829253948516315
+    second: Albero vicino 1 mirror_164
+  - first:
+      213: 4285055287168826055
+    second: Albero vicino 1 mirror_165
+  - first:
+      213: -4053508793383124057
+    second: Albero vicino 1 mirror_166
+  - first:
+      213: -466489353992772091
+    second: Albero vicino 1 mirror_167
+  - first:
+      213: -7497030986787047891
+    second: Albero vicino 1 mirror_168
+  - first:
+      213: -1721178888798166723
+    second: Albero vicino 1 mirror_169
+  - first:
+      213: -3781236263418352100
+    second: Albero vicino 1 mirror_170
+  - first:
+      213: -5803636884553949021
+    second: Albero vicino 1 mirror_171
+  - first:
+      213: -6023079294181658051
+    second: Albero vicino 1 mirror_172
+  - first:
+      213: 2489975732682689205
+    second: Albero vicino 1 mirror_173
+  - first:
+      213: -7924945114585839613
+    second: Albero vicino 1 mirror_174
+  - first:
+      213: -6702351748719019255
+    second: Albero vicino 1 mirror_175
+  - first:
+      213: 8196110742489579945
+    second: Albero vicino 1 mirror_176
+  - first:
+      213: 3438591465446636433
+    second: Albero vicino 1 mirror_177
+  - first:
+      213: 3672260806878561205
+    second: Albero vicino 1 mirror_178
+  - first:
+      213: -3016039854497557739
+    second: Albero vicino 1 mirror_179
+  - first:
+      213: 8477817930235424037
+    second: Albero vicino 1 mirror_180
+  - first:
+      213: 1349148004250355401
+    second: Albero vicino 1 mirror_181
+  - first:
+      213: -6575469022910976065
+    second: Albero vicino 1 mirror_182
+  - first:
+      213: 5978345535436500823
+    second: Albero vicino 1 mirror_183
+  - first:
+      213: -6311962542573375264
+    second: Albero vicino 1 mirror_184
+  - first:
+      213: 6376361368645737054
+    second: Albero vicino 1 mirror_185
+  - first:
+      213: 2957938394034743734
+    second: Albero vicino 1 mirror_186
+  - first:
+      213: -1014556932080712783
+    second: Albero vicino 1 mirror_187
+  - first:
+      213: 6546052685038030122
+    second: Albero vicino 1 mirror_188
+  - first:
+      213: -6574673763823391853
+    second: Albero vicino 1 mirror_189
+  - first:
+      213: -6421702245214313063
+    second: Albero vicino 1 mirror_190
+  - first:
+      213: 8036565313069804727
+    second: Albero vicino 1 mirror_191
+  - first:
+      213: -1048610519872389303
+    second: Albero vicino 1 mirror_192
+  - first:
+      213: -4455876532820206072
+    second: Albero vicino 1 mirror_193
+  - first:
+      213: 5855730801962506001
+    second: Albero vicino 1 mirror_194
+  - first:
+      213: 7360831181745832301
+    second: Albero vicino 1 mirror_195
+  - first:
+      213: 5439738623664429865
+    second: Albero vicino 1 mirror_196
+  - first:
+      213: 4111343650433313010
+    second: Albero vicino 1 mirror_197
+  - first:
+      213: -6575521075443467011
+    second: Albero vicino 1 mirror_198
+  - first:
+      213: -8553869323852247877
+    second: Albero vicino 1 mirror_199
+  - first:
+      213: 3978980876274643170
+    second: Albero vicino 1 mirror_200
+  - first:
+      213: -3778678734993437088
+    second: Albero vicino 1 mirror_201
+  - first:
+      213: -7503128272523477874
+    second: Albero vicino 1 mirror_202
+  - first:
+      213: 8242080050090188698
+    second: Albero vicino 1 mirror_203
+  - first:
+      213: -3931304230260686799
+    second: Albero vicino 1 mirror_204
+  - first:
+      213: -4400945086861194060
+    second: Albero vicino 1 mirror_205
+  - first:
+      213: 8121940504981888834
+    second: Albero vicino 1 mirror_206
+  - first:
+      213: 8993887159009940975
+    second: Albero vicino 1 mirror_207
+  - first:
+      213: -6345371469886993417
+    second: Albero vicino 1 mirror_208
+  - first:
+      213: -1866860156956142717
+    second: Albero vicino 1 mirror_209
+  - first:
+      213: -3139399665067460131
+    second: Albero vicino 1 mirror_210
+  - first:
+      213: -6522870805844690771
+    second: Albero vicino 1 mirror_211
+  - first:
+      213: -3126538973013042791
+    second: Albero vicino 1 mirror_212
+  - first:
+      213: 8723843823769807779
+    second: Albero vicino 1 mirror_213
+  - first:
+      213: 6684045343695370550
+    second: Albero vicino 1 mirror_214
+  - first:
+      213: -3663518076316391537
+    second: Albero vicino 1 mirror_215
+  - first:
+      213: -4114614515132357726
+    second: Albero vicino 1 mirror_216
+  - first:
+      213: -1728649624077415431
+    second: Albero vicino 1 mirror_217
+  - first:
+      213: -7232977734411168939
+    second: Albero vicino 1 mirror_218
+  - first:
+      213: 1084713729779372147
+    second: Albero vicino 1 mirror_219
+  - first:
+      213: 8790149724826836085
+    second: Albero vicino 1 mirror_220
+  - first:
+      213: -8441296075469333218
+    second: Albero vicino 1 mirror_221
+  - first:
+      213: -7242743235838442111
+    second: Albero vicino 1 mirror_222
+  - first:
+      213: 6061949452627955513
+    second: Albero vicino 1 mirror_223
+  - first:
+      213: 7185721134599149723
+    second: Albero vicino 1 mirror_224
+  - first:
+      213: 3662746467371727925
+    second: Albero vicino 1 mirror_225
+  - first:
+      213: -4293610537640205846
+    second: Albero vicino 1 mirror_226
+  - first:
+      213: -2142385049013070112
+    second: Albero vicino 1 mirror_227
+  - first:
+      213: -3802514047861901532
+    second: Albero vicino 1 mirror_228
+  - first:
+      213: -5816443478723250103
+    second: Albero vicino 1 mirror_229
+  - first:
+      213: -1301774838831242350
+    second: Albero vicino 1 mirror_230
+  - first:
+      213: 8632540682369327429
+    second: Albero vicino 1 mirror_231
+  - first:
+      213: -6527963803020025706
+    second: Albero vicino 1 mirror_232
+  - first:
+      213: -3219396413483355605
+    second: Albero vicino 1 mirror_233
+  - first:
+      213: 4408883274989098784
+    second: Albero vicino 1 mirror_234
+  - first:
+      213: 1611503908535374247
+    second: Albero vicino 1 mirror_235
+  - first:
+      213: 162406064961133082
+    second: Albero vicino 1 mirror_236
+  - first:
+      213: 648570142000091599
+    second: Albero vicino 1 mirror_237
+  - first:
+      213: -8272912205996612273
+    second: Albero vicino 1 mirror_238
+  - first:
+      213: -2893289172073796557
+    second: Albero vicino 1 mirror_239
+  - first:
+      213: -4202374967594420497
+    second: Albero vicino 1 mirror_240
+  - first:
+      213: -7948223286708051559
+    second: Albero vicino 1 mirror_241
+  - first:
+      213: -6109692552786384407
+    second: Albero vicino 1 mirror_242
+  - first:
+      213: -1272239640858407358
+    second: Albero vicino 1 mirror_243
+  - first:
+      213: 7982582071498655340
+    second: Albero vicino 1 mirror_244
+  - first:
+      213: 8498048155704066331
+    second: Albero vicino 1 mirror_245
+  - first:
+      213: -3936183942650936726
+    second: Albero vicino 1 mirror_246
+  - first:
+      213: -8645788468172743379
+    second: Albero vicino 1 mirror_247
+  - first:
+      213: 2466115305526049832
+    second: Albero vicino 1 mirror_248
+  - first:
+      213: 350274352642673116
+    second: Albero vicino 1 mirror_249
+  - first:
+      213: -6068468418569679695
+    second: Albero vicino 1 mirror_250
+  - first:
+      213: -228525065309292071
+    second: Albero vicino 1 mirror_251
+  - first:
+      213: 3050308534075301781
+    second: Albero vicino 1 mirror_252
+  - first:
+      213: -1513249019630186153
+    second: Albero vicino 1 mirror_253
+  - first:
+      213: -5031961567711279097
+    second: Albero vicino 1 mirror_254
+  - first:
+      213: -68527455358878010
+    second: Albero vicino 1 mirror_255
+  - first:
+      213: -469933129398615402
+    second: Albero vicino 1 mirror_256
+  - first:
+      213: -6113447611773740190
+    second: Albero vicino 1 mirror_257
+  - first:
+      213: -5232242951493456166
+    second: Albero vicino 1 mirror_258
+  - first:
+      213: 8473897952453366789
+    second: Albero vicino 1 mirror_259
+  - first:
+      213: -4196002899873443434
+    second: Albero vicino 1 mirror_260
+  - first:
+      213: -4755889547617788677
+    second: Albero vicino 1 mirror_261
+  - first:
+      213: -1510431597950235489
+    second: Albero vicino 1 mirror_262
+  - first:
+      213: 605923367238509750
+    second: Albero vicino 1 mirror_263
+  - first:
+      213: -6503587590438423537
+    second: Albero vicino 1 mirror_264
+  - first:
+      213: 8689551337849655875
+    second: Albero vicino 1 mirror_265
+  - first:
+      213: 656724673454361345
+    second: Albero vicino 1 mirror_266
+  - first:
+      213: -4088868030288199136
+    second: Albero vicino 1 mirror_267
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_0
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 5858
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c514c766132cec00800000000000000
+      internalID: 931157802096006592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_1
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 5850
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8abb8be619ef7e110800000000000000
+      internalID: 1290279718846249896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_2
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 5849
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcb55a7d14ae0620800000000000000
+      internalID: 2742309669628656855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_3
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 5829
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1751809a01b0180800000000000000
+      internalID: -9148199899901890077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_4
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 5806
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2818f7301656fe0800000000000000
+      internalID: -1196443458345008467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_5
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 5855
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf80bde505b600860800000000000000
+      internalID: 7494107772877474043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_6
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 5852
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557d53115673c1860800000000000000
+      internalID: 7501931986512369493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_7
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 5852
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cedc488a309b86e30800000000000000
+      internalID: 4497047653292756460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_8
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 5851
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 677f7eee02426b0a0800000000000000
+      internalID: -6866260858014009482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_9
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 5856
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854a2b92294cfd620800000000000000
+      internalID: 2801173625291580504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_10
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 5847
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c2f8b82cf1dd170800000000000000
+      internalID: 8204749016564444171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_11
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 5815
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80c5f38548d4ff90800000000000000
+      internalID: -6920668934283345777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_12
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 5850
+        width: 37
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee794ff0fbb37b740800000000000000
+      internalID: 5167664789223413742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_13
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 5845
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f231e0213d77c1300800000000000000
+      internalID: 224185829886399279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_14
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 5858
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6020962906e557f40800000000000000
+      internalID: 5725586270137680390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_15
+      rect:
+        serializedVersion: 2
+        x: 2540
+        y: 5855
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b318f6013ed9ce290800000000000000
+      internalID: -7859733651109478085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_16
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 5835
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be61b5bd1f6973360800000000000000
+      internalID: 7149348898985416427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_17
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 5851
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d6a620e3ec9d1e0800000000000000
+      internalID: -2172478579505730199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_18
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 5850
+        width: 28
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9a7b371c0cf4790800000000000000
+      internalID: -7543598913719653942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_19
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 5850
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a201cf6d900cc9b0800000000000000
+      internalID: -5058667605259124057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_20
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 5856
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2968fccc91542d310800000000000000
+      internalID: 1428280008942519954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_21
+      rect:
+        serializedVersion: 2
+        x: 2697
+        y: 5857
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d66e97a699a8130800000000000000
+      internalID: 3569834337235266816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_22
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 5833
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc830c6363d13560800000000000000
+      internalID: 7291841695656938716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_23
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 5848
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1740296ae0b8710800000000000000
+      internalID: 1696465793212248575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_24
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 5842
+        width: 39
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4d345196dfba540800000000000000
+      internalID: 5020384837404710052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_25
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 5855
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c31552bb25fc8f0800000000000000
+      internalID: -518104468385874842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_26
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 5854
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13628d28a5b1a320800000000000000
+      internalID: 2567532996500546330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_27
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 5853
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b362d5e5602a19e60800000000000000
+      internalID: 7967327364031784507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_28
+      rect:
+        serializedVersion: 2
+        x: 3047
+        y: 5849
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b8e1b7d6b9a1e70800000000000000
+      internalID: 9086746092692736906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_29
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 5849
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583ace4f224a920e0800000000000000
+      internalID: -2294122065123564667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_30
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 5854
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c02549d08ef82c0800000000000000
+      internalID: -4427064763661284195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_31
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 5849
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e1c1867dea7fee50800000000000000
+      internalID: 6840821519313125865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_32
+      rect:
+        serializedVersion: 2
+        x: 3122
+        y: 5853
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8914b4ed064f4a1e0800000000000000
+      internalID: -2187354822111706728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_33
+      rect:
+        serializedVersion: 2
+        x: 3133
+        y: 5844
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0f2b0921918a900800000000000000
+      internalID: 695833709956493559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_34
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 5845
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a0acb5c8bfd36240800000000000000
+      internalID: 4783913213882048680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_35
+      rect:
+        serializedVersion: 2
+        x: 3159
+        y: 5858
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16acbedb4f7c1da0800000000000000
+      internalID: -5972759041963940323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_36
+      rect:
+        serializedVersion: 2
+        x: 3164
+        y: 5846
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af03053f69cf1ee40800000000000000
+      internalID: 5684101929975689466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_37
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 5854
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9e379b5dca1c750800000000000000
+      internalID: 6323525385744280028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_38
+      rect:
+        serializedVersion: 2
+        x: 3175
+        y: 5846
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff943208b5b85690800000000000000
+      internalID: -7613135368154210318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_39
+      rect:
+        serializedVersion: 2
+        x: 3197
+        y: 5775
+        width: 164
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544e73b25e924c3c0800000000000000
+      internalID: -4340298076628982715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_40
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 5754
+        width: 66
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae64376b821c08b20800000000000000
+      internalID: 3134717721253725930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 7552
+        height: 5802
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee56d49f2c3131b40800000000000000
+      internalID: 5409689305529279982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_42
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 5827
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a7639c29847abe0800000000000000
+      internalID: -1466123358407591368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_43
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 5840
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a33603e117b46fe0800000000000000
+      internalID: -1196630313522547805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_44
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 5832
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa164af5d656a0710800000000000000
+      internalID: 1660250933069898154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_45
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 5844
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659b2ee153ac99820800000000000000
+      internalID: 2925591762454100310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_46
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 5843
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd7a023b04f2dd2b0800000000000000
+      internalID: -5558234410175649825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_47
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 5828
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbaf86b36a0d11c0800000000000000
+      internalID: -4531454226683941938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_48
+      rect:
+        serializedVersion: 2
+        x: 2381
+        y: 5836
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded1fbb0b6be97140800000000000000
+      internalID: 4718060929638407661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_49
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 5831
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74382b6314cb4f830800000000000000
+      internalID: 4104112148717929287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_50
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 5846
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6ef84a26f1cd810800000000000000
+      internalID: 1791341260314764973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_51
+      rect:
+        serializedVersion: 2
+        x: 2544
+        y: 5846
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db9f176f6b991de0800000000000000
+      internalID: -1361886509529064496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_52
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 5843
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff575df63393dce40800000000000000
+      internalID: 5678257598266439167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_53
+      rect:
+        serializedVersion: 2
+        x: 2662
+        y: 5843
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578962af0d89b6270800000000000000
+      internalID: 8244851566149277813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_54
+      rect:
+        serializedVersion: 2
+        x: 2678
+        y: 5843
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc99b641a194cade0800000000000000
+      internalID: -1320600214365824565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_55
+      rect:
+        serializedVersion: 2
+        x: 2799
+        y: 5844
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c3248bc4c7a38f0800000000000000
+      internalID: -559998534703498134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_56
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 5844
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d61af0d71bf5e00800000000000000
+      internalID: 1035741590009769242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_57
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 5849
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43427b3f5df916e30800000000000000
+      internalID: 4495049644358181940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_58
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 5842
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15281576b0013b70800000000000000
+      internalID: 8876877124172522781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_59
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 5841
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed312d263be4fb90800000000000000
+      internalID: -7208878485595406874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_60
+      rect:
+        serializedVersion: 2
+        x: 3122
+        y: 5827
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e26f7200a2d9c80800000000000000
+      internalID: -8314443156897255927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_61
+      rect:
+        serializedVersion: 2
+        x: 3176
+        y: 5843
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f969e4699c950f10800000000000000
+      internalID: 2235364972696267248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_62
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 5837
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31609a04b066ba940800000000000000
+      internalID: 5308448784301753875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_63
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 5842
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca800a4db7c41bbf0800000000000000
+      internalID: -310382804579907412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_64
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 5834
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1958c1c1e0d60f0800000000000000
+      internalID: -1122225218244996699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_65
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 5826
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefba6ab27ab3ff50800000000000000
+      internalID: 6914074854860439535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_66
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 5823
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d09471fd82651480800000000000000
+      internalID: -8929122324411281192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_67
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 5837
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140a9ae2f40ed7350800000000000000
+      internalID: 6016211307926757441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_68
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 5837
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ca561636614a2a0800000000000000
+      internalID: -6727227327293051889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_69
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 5838
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d5e64545aabbe20800000000000000
+      internalID: 3367472425560071550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_70
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 5832
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7441dd1f06f2f3530800000000000000
+      internalID: 3836837500964115527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_71
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 5833
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c02bb300943a4e0800000000000000
+      internalID: -1971651946507793398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_72
+      rect:
+        serializedVersion: 2
+        x: 2844
+        y: 5840
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669c6debc7e255780800000000000000
+      internalID: -8694992392256304794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_73
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 5825
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0ccfd6291c79300800000000000000
+      internalID: 258888338251759800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_74
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 5824
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc9bc21b7e001b60800000000000000
+      internalID: 7714682083444759770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_75
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 5834
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b863796e487a160800000000000000
+      internalID: 7036739068703968147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_76
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 5829
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2976f3da461c2f340800000000000000
+      internalID: 4896188383052654482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_77
+      rect:
+        serializedVersion: 2
+        x: 2281
+        y: 5830
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1da2c65a1e20cd80800000000000000
+      internalID: -8232529428173640421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_78
+      rect:
+        serializedVersion: 2
+        x: 2418
+        y: 5833
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab147e938811fb90800000000000000
+      internalID: -7209954574865261656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_79
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 5833
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3202a9cf4fa9d8c0800000000000000
+      internalID: -3973952438957637060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_80
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 5833
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d0bad87a1e44660800000000000000
+      internalID: 7369263000037559573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_81
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 5831
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c21532860e7f610800000000000000
+      internalID: 1655038125955689478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_82
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 5828
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24795e3f5d9ffab60800000000000000
+      internalID: 7759695380297914178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_83
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 5808
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34dc0fb5825c86cc0800000000000000
+      internalID: -3717504715262472893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_84
+      rect:
+        serializedVersion: 2
+        x: 3179
+        y: 5827
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ee9dd56a28ea8d0800000000000000
+      internalID: -2833183464518717906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_85
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 5815
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d96cc65d956a8560800000000000000
+      internalID: 7316772271057299929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_86
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 5807
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f239c98fe16860860800000000000000
+      internalID: 7495826097382921007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_87
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 5822
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bf406044047c620800000000000000
+      internalID: 2794272754709625698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_88
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 5814
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814d5deb929f4e270800000000000000
+      internalID: 8279015972704474136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_89
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 5824
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e18186e0bbbab050800000000000000
+      internalID: 5817168237158302182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_90
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 5820
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e85df2fbe0db5e0800000000000000
+      internalID: -1892340054121673197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_91
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 5796
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11da6403a28e34a0800000000000000
+      internalID: -6611703566267920102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_92
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 5811
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacbf9ee23d6df010800000000000000
+      internalID: 1224254739233881261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_93
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 5823
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378d50ba407d57ce0800000000000000
+      internalID: -1407982893434283917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_94
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5812
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d97fac04e29c697f0800000000000000
+      internalID: -606075899342030947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_95
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 5819
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3791f9907fceb9740800000000000000
+      internalID: 5159978343845534067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_96
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 5808
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c614db086fd4f60800000000000000
+      internalID: 8020337544208149604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_97
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 5818
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c4e50b1ec89b810800000000000000
+      internalID: 1781610028556241959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_98
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 5814
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eadb0f11e8179b2a0800000000000000
+      internalID: -6721216113873470034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_99
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 5818
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3007a362dff492d80800000000000000
+      internalID: -8274994891629891581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_100
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 5824
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceefd0369c424d980800000000000000
+      internalID: -8515140548081877268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_101
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 5824
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf716835a7f50b2e0800000000000000
+      internalID: -2112083246244816901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_102
+      rect:
+        serializedVersion: 2
+        x: 2671
+        y: 5822
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e98bcf29c4e3c70800000000000000
+      internalID: 8952677303448018471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_103
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 5824
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d766e8fb47f5c00800000000000000
+      internalID: 891559617319304514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_104
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 5813
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7030cd03e5b7df7d0800000000000000
+      internalID: -2883012541970382073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_105
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 5813
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c259bd80897611de0800000000000000
+      internalID: -1364195309435251412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_106
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 5801
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53fb7370bc1e3fc0800000000000000
+      internalID: -3513339115125083300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_107
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 5799
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2767c3b02428d70800000000000000
+      internalID: 9043863617739846350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_108
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 5801
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f103cde8d8c2e250800000000000000
+      internalID: 5972556889874170356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_109
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 5808
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde7d7926f8216e80800000000000000
+      internalID: -8187217609859694884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_110
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 5812
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4960f38562fe0df10800000000000000
+      internalID: 2292595158299903636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_111
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 5801
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30cd9f8e7f075da0800000000000000
+      internalID: -5956274945924415429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_112
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 5813
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c70088bf5450f7a0800000000000000
+      internalID: -6345479104871004215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_113
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 5812
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1919c94ffd2377260800000000000000
+      internalID: 7095195675408503185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_114
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 5815
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e5b7bf44182d090800000000000000
+      internalID: -8011198653861765510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_115
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 5813
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e496579a91f32520800000000000000
+      internalID: 2676248249854498016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_116
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 5815
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b2ac44b632a4530800000000000000
+      internalID: 3839920575909341987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_117
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 5813
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405b31f78f418ed80800000000000000
+      internalID: -8221298062248397564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_118
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 5802
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d5519cb6982c7e0800000000000000
+      internalID: -1746682609438204659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_119
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 5807
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcd05d2e91e531f0800000000000000
+      internalID: -1065697667321897734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_120
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 5801
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a69abd3ba7b477930800000000000000
+      internalID: 4140861372766071146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_121
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 5812
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ba2d069bdc42370800000000000000
+      internalID: 8296982609600359239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_122
+      rect:
+        serializedVersion: 2
+        x: 3018
+        y: 5808
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b66680c654005a80800000000000000
+      internalID: -8480273327694911821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_123
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 5810
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6293202a11f77220800000000000000
+      internalID: 2483718814028763758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_124
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 5802
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86fad535718aa7a0800000000000000
+      internalID: -6365132782920075634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_125
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 5800
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb4ce31be658c950800000000000000
+      internalID: 6469516432369273781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_126
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 5795
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090e9aeb24954f310800000000000000
+      internalID: 1437872324239548560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_127
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 5801
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab1707e13c7f2d30800000000000000
+      internalID: 4408879113990249390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_128
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 5799
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6147bbe62de8654b0800000000000000
+      internalID: -5452013264433351658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_129
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 5796
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107289d4cb73a9970800000000000000
+      internalID: 8762377306897917697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_130
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 5807
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040d7897270265bf0800000000000000
+      internalID: -336045446155218880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_131
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 5805
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb5e322a0d4ddea0800000000000000
+      internalID: -5846432035337511963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_132
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 5804
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2e244cb807ba6c0800000000000000
+      internalID: -4131084487586815322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_133
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 5800
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572142d3f1800ebc0800000000000000
+      internalID: -3755993158964211083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_134
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 5799
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b16fd8baf628610800000000000000
+      internalID: 1621981598418606878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_135
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 5794
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6692dc53f00d84e0800000000000000
+      internalID: -1977923616111421845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_136
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 5800
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c8ebb3e68e2e8d0800000000000000
+      internalID: -2818434856634119072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_137
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 5802
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddbd28b669a38570800000000000000
+      internalID: 8467797983028428253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_138
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 5805
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4106f5bceccd084a0800000000000000
+      internalID: -6593027073737007084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_139
+      rect:
+        serializedVersion: 2
+        x: 2469
+        y: 5801
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495912d1bc21c0e50800000000000000
+      internalID: 6776812202862155156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_140
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 5801
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbd0fbd84b6c09c0800000000000000
+      internalID: -3959672011693696050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_141
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 5806
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509bdf9ca98c1f290800000000000000
+      internalID: -7858279307645437691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_142
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 5800
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8b4e34785b7c860800000000000000
+      internalID: 7550202892874201290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_143
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 5786
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378cd13fc690c2ef0800000000000000
+      internalID: -131719925560653709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_144
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 5801
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa74b4720e9723e0800000000000000
+      internalID: -2078518969623086347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_145
+      rect:
+        serializedVersion: 2
+        x: 3154
+        y: 5791
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5b363a3af8f2d00800000000000000
+      internalID: 950135979382126046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_146
+      rect:
+        serializedVersion: 2
+        x: 3180
+        y: 5804
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e125cfbbc86f1f30800000000000000
+      internalID: 4548469372972507616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_147
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 5797
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd71e832dab6f1020800000000000000
+      internalID: 2314687124861753309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_148
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 5790
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241a48053ff86a930800000000000000
+      internalID: 4154165981486555458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_149
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 5792
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de305242b6de81a60800000000000000
+      internalID: 7645121411885106157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_150
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 5799
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cce9d11f6b601a50800000000000000
+      internalID: 6489805187825921223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_151
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 5797
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c177cc6a90121f40800000000000000
+      internalID: 5697634734013116872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_152
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd90d8f046507410800000000000000
+      internalID: 1472771915202469327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_153
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 5771
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed2ec985ffb09310800000000000000
+      internalID: 1409837744666848745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_154
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 5793
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03148a863cbad870800000000000000
+      internalID: 8708479771912442637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_155
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4796525af1d262b90800000000000000
+      internalID: -7267071334777788044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_156
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 5796
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fe574d51af8bed0800000000000000
+      internalID: -2397891829909033161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_157
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 5789
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b27ab48ecae5bcd0800000000000000
+      internalID: -2542868241869802832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_158
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa5acdaab5e0de30800000000000000
+      internalID: 4526370215449746165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_159
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 5796
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a8db58064e02fa0800000000000000
+      internalID: -5827406814605636967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_160
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 5798
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8b8b70bed697020800000000000000
+      internalID: 2340022337609971894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_161
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 5786
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856e63b110726b0c0800000000000000
+      internalID: -4560414686961015208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_162
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 5794
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c10f079c7f424a0800000000000000
+      internalID: -6618893107772515247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_163
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 5786
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c343ccea957762a10800000000000000
+      internalID: 1884324721169544252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_164
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 5791
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7a3850e5c279d60800000000000000
+      internalID: 7896829253948516315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_165
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 5795
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca7b9a9413977b30800000000000000
+      internalID: 4285055287168826055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_166
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 5787
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a30a749a3b0fb7c0800000000000000
+      internalID: -4053508793383124057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_167
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 5786
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50662c37762b689f0800000000000000
+      internalID: -466489353992772091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_168
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 5799
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26367ad90235f790800000000000000
+      internalID: -7497030986787047891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_169
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 5792
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31a84a7be42d18e0800000000000000
+      internalID: -1721178888798166723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_170
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 5796
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1eaf1bf6a9568bc0800000000000000
+      internalID: -3781236263418352100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_171
+      rect:
+        serializedVersion: 2
+        x: 2805
+        y: 5796
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0aec2a007557fa0800000000000000
+      internalID: -5803636884553949021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_172
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 5800
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ba482b49b96ca0800000000000000
+      internalID: -6023079294181658051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_173
+      rect:
+        serializedVersion: 2
+        x: 3175
+        y: 5794
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba05e58cbb2e8220800000000000000
+      internalID: 2489975732682689205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_174
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 5790
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308c4ac0860f40290800000000000000
+      internalID: -7924945114585839613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_175
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 5783
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b72e958967cf2a0800000000000000
+      internalID: -6702351748719019255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_176
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 5786
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1cad1ab4f6eb170800000000000000
+      internalID: 8196110742489579945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_177
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 5792
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bf2a928b458bf20800000000000000
+      internalID: 3438591465446636433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_178
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 5788
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b306945fbd76f230800000000000000
+      internalID: 3672260806878561205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_179
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5783
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51390446bbfd426d0800000000000000
+      internalID: -3016039854497557739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_180
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 5785
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52dae1a7d7247a570800000000000000
+      internalID: 8477817930235424037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_181
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 5776
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c605c636f229b210800000000000000
+      internalID: 1349148004250355401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_182
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 5781
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf6ec113cd3fb4a0800000000000000
+      internalID: -6575469022910976065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_183
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 5787
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f2c30079957f250800000000000000
+      internalID: 5978345535436500823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_184
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 5788
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e0b75e72876768a0800000000000000
+      internalID: -6311962542573375264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_185
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 5789
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a17a1a1e26d7850800000000000000
+      internalID: 6376361368645737054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_186
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 5758
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b92eeb2c45bc0920800000000000000
+      internalID: 2957938394034743734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_187
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 5780
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b34bea78d19be1f0800000000000000
+      internalID: -1014556932080712783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_188
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 5786
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d0fac0c3048da50800000000000000
+      internalID: 6546052685038030122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_189
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 5780
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39be931cb0112c4a0800000000000000
+      internalID: -6574673763823391853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_190
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 5791
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9952ca4e4d781e6a0800000000000000
+      internalID: -6421702245214313063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_191
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 5790
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc60cb929d978f60800000000000000
+      internalID: 8036565313069804727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_192
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 5791
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fb447b9469271f0800000000000000
+      internalID: -1048610519872389303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_193
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 5770
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e9042d6eb8922c0800000000000000
+      internalID: -4455876532820206072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_194
+      rect:
+        serializedVersion: 2
+        x: 3355
+        y: 5788
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117d94fa32cb34150800000000000000
+      internalID: 5855730801962506001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_195
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 5756
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61449fd5fce62660800000000000000
+      internalID: 7360831181745832301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_196
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 5773
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b9d7e0575dd7b40800000000000000
+      internalID: 5439738623664429865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_197
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 5775
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8a2a9644d6e0930800000000000000
+      internalID: 4111343650433313010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_198
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 5779
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfcf815ab6e0fb4a0800000000000000
+      internalID: -6575521075443467011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_199
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 5782
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc0da89b2d8a4980800000000000000
+      internalID: -8553869323852247877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_200
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 5778
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e03c62860e283730800000000000000
+      internalID: 3978980876274643170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_201
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 5781
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ec468f5bf6f8bc0800000000000000
+      internalID: -3778678734993437088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_202
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 5781
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c3c04e6988fd790800000000000000
+      internalID: -7503128272523477874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_203
+      rect:
+        serializedVersion: 2
+        x: 2404
+        y: 5779
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f95fb1320c16270800000000000000
+      internalID: 8242080050090188698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_204
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 5774
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130425ba1a33179c0800000000000000
+      internalID: -3931304230260686799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_205
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 5783
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc43adb2c3bce2c0800000000000000
+      internalID: -4400945086861194060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_206
+      rect:
+        serializedVersion: 2
+        x: 3180
+        y: 5780
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f5d4e7bdde6b070800000000000000
+      internalID: 8121940504981888834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_207
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 5773
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe51cbe28b4b0dc70800000000000000
+      internalID: 8993887159009940975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_208
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 5776
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbcc717446b0f7a0800000000000000
+      internalID: -6345371469886993417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_209
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 5775
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3839c4b04949716e0800000000000000
+      internalID: -1866860156956142717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_210
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 5770
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd97cab43ac9e64d0800000000000000
+      internalID: -3139399665067460131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_211
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 5767
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da87cddcf8b1a75a0800000000000000
+      internalID: -6522870805844690771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_212
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 5773
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99994218e5d4c94d0800000000000000
+      internalID: -3126538973013042791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_213
+      rect:
+        serializedVersion: 2
+        x: 2201
+        y: 5771
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abe8cf9cb1511970800000000000000
+      internalID: 8723843823769807779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_214
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 5776
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639f09593df72cc50800000000000000
+      internalID: 6684045343695370550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_215
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 5771
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8760f048b1982dc0800000000000000
+      internalID: -3663518076316391537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_216
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 5771
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3aedd06e3f5e6c0800000000000000
+      internalID: -4114614515132357726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_217
+      rect:
+        serializedVersion: 2
+        x: 3207
+        y: 5761
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbc0cf535a9208e0800000000000000
+      internalID: -1728649624077415431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_218
+      rect:
+        serializedVersion: 2
+        x: 3262
+        y: 5774
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553dc10921d4f9b90800000000000000
+      internalID: -7232977734411168939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_219
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 5743
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3701d72e36dad0f00800000000000000
+      internalID: 1084713729779372147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_220
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 5769
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c1dce3a92ecf970800000000000000
+      internalID: 8790149724826836085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_221
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 5767
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d50c971fd7ada80800000000000000
+      internalID: -8441296075469333218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_222
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 5755
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1858c74966b9c7b90800000000000000
+      internalID: -7242743235838442111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_223
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 5765
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f434ad8ee502450800000000000000
+      internalID: 6061949452627955513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_224
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 5756
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b989cc2ec4fc8b360800000000000000
+      internalID: 7185721134599149723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_225
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 5768
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c320a8180b4d230800000000000000
+      internalID: 3662746467371727925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_226
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 5763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1e41ce6f70a64c0800000000000000
+      internalID: -4293610537640205846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_227
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 5750
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6d7751628b442e0800000000000000
+      internalID: -2142385049013070112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_228
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 5763
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42732cbbe91ca3bc0800000000000000
+      internalID: -3802514047861901532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_229
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 5765
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94830921977d74fa0800000000000000
+      internalID: -5816443478723250103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_230
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 5766
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2932ce16eaa2fede0800000000000000
+      internalID: -1301774838831242350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_231
+      rect:
+        serializedVersion: 2
+        x: 2504
+        y: 5765
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5416bb17302fcc770800000000000000
+      internalID: 8632540682369327429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_232
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 5758
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690226ef1830865a0800000000000000
+      internalID: -6527963803020025706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_233
+      rect:
+        serializedVersion: 2
+        x: 2778
+        y: 5769
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22782fd4086253d0800000000000000
+      internalID: -3219396413483355605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_234
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 5760
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027d2e5baff7f2d30800000000000000
+      internalID: 4408883274989098784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_235
+      rect:
+        serializedVersion: 2
+        x: 3220
+        y: 5769
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1976644463d5610800000000000000
+      internalID: 1611503908535374247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_236
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 5768
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a9063a47bf04200800000000000000
+      internalID: 162406064961133082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_237
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 5763
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc117dd9b1f200900800000000000000
+      internalID: 648570142000091599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_238
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 5762
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45249f2e26b03d80800000000000000
+      internalID: -8272912205996612273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_239
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 5766
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cae0ac3d8f8d7d0800000000000000
+      internalID: -2893289172073796557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_240
+      rect:
+        serializedVersion: 2
+        x: 3418
+        y: 5744
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe67a8b6b3a2ea5c0800000000000000
+      internalID: -4202374967594420497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_241
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 5745
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9916740480d32b190800000000000000
+      internalID: -7948223286708051559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_242
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 5759
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e961586ef2063ba0800000000000000
+      internalID: -6109692552786384407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_243
+      rect:
+        serializedVersion: 2
+        x: 3963
+        y: 5769
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ec67989c8185ee0800000000000000
+      internalID: -1272239640858407358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_244
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 5756
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66441ab914d7ce60800000000000000
+      internalID: 7982582071498655340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_245
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 5757
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1187e4e5c12fe570800000000000000
+      internalID: 8498048155704066331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_246
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 5752
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62c1b71f8ddf59c0800000000000000
+      internalID: -3936183942650936726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_247
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 5744
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d156f023df30880800000000000000
+      internalID: -8645788468172743379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_248
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 5762
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cb809edc6693220800000000000000
+      internalID: 2466115305526049832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_249
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 5757
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9423bfaac6cd400800000000000000
+      internalID: 350274352642673116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_250
+      rect:
+        serializedVersion: 2
+        x: 3039
+        y: 5758
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc4a7c102878cba0800000000000000
+      internalID: -6068468418569679695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_251
+      rect:
+        serializedVersion: 2
+        x: 3601
+        y: 5760
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d977f3f9ad14dcf0800000000000000
+      internalID: -228525065309292071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_252
+      rect:
+        serializedVersion: 2
+        x: 5664
+        y: 5757
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f96e4537fd45a20800000000000000
+      internalID: 3050308534075301781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_253
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 5753
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7511c30c80cdffae0800000000000000
+      internalID: -1513249019630186153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_254
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 5743
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708c6295d91ea2ab0800000000000000
+      internalID: -5031961567711279097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_255
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 5749
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cef8f574aa8c0ff0800000000000000
+      internalID: -68527455358878010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_256
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 5749
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69202020f467a79f0800000000000000
+      internalID: -469933129398615402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_257
+      rect:
+        serializedVersion: 2
+        x: 3215
+        y: 5751
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b144b99cba82ba0800000000000000
+      internalID: -6113447611773740190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_258
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 5099
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adee0b9d1c65367b0800000000000000
+      internalID: -5232242951493456166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_259
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 4945
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50494e68a45599570800000000000000
+      internalID: 8473897952453366789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_260
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 4872
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691d88c089dc4c5c0800000000000000
+      internalID: -4196002899873443434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_261
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 4837
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc9f3b77afaffdb0800000000000000
+      internalID: -4755889547617788677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_262
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 4731
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c86aad67ed90be0800000000000000
+      internalID: -1510431597950235489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_263
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 4652
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b42c59971ca86800800000000000000
+      internalID: 605923367238509750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_264
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4407
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0477424b8d9eb5a0800000000000000
+      internalID: -6503587590438423537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_265
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 3783
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3429c0e07ec779870800000000000000
+      internalID: 8689551337849655875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_266
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 3498
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b4b7c6c972d1900800000000000000
+      internalID: 656724673454361345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albero vicino 1 mirror_267
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 3462
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0228831b03c6147c0800000000000000
+      internalID: -4088868030288199136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Albero vicino 1 mirror_0: 931157802096006592
+      Albero vicino 1 mirror_1: 1290279718846249896
+      Albero vicino 1 mirror_10: 8204749016564444171
+      Albero vicino 1 mirror_100: -8515140548081877268
+      Albero vicino 1 mirror_101: -2112083246244816901
+      Albero vicino 1 mirror_102: 8952677303448018471
+      Albero vicino 1 mirror_103: 891559617319304514
+      Albero vicino 1 mirror_104: -2883012541970382073
+      Albero vicino 1 mirror_105: -1364195309435251412
+      Albero vicino 1 mirror_106: -3513339115125083300
+      Albero vicino 1 mirror_107: 9043863617739846350
+      Albero vicino 1 mirror_108: 5972556889874170356
+      Albero vicino 1 mirror_109: -8187217609859694884
+      Albero vicino 1 mirror_11: -6920668934283345777
+      Albero vicino 1 mirror_110: 2292595158299903636
+      Albero vicino 1 mirror_111: -5956274945924415429
+      Albero vicino 1 mirror_112: -6345479104871004215
+      Albero vicino 1 mirror_113: 7095195675408503185
+      Albero vicino 1 mirror_114: -8011198653861765510
+      Albero vicino 1 mirror_115: 2676248249854498016
+      Albero vicino 1 mirror_116: 3839920575909341987
+      Albero vicino 1 mirror_117: -8221298062248397564
+      Albero vicino 1 mirror_118: -1746682609438204659
+      Albero vicino 1 mirror_119: -1065697667321897734
+      Albero vicino 1 mirror_12: 5167664789223413742
+      Albero vicino 1 mirror_120: 4140861372766071146
+      Albero vicino 1 mirror_121: 8296982609600359239
+      Albero vicino 1 mirror_122: -8480273327694911821
+      Albero vicino 1 mirror_123: 2483718814028763758
+      Albero vicino 1 mirror_124: -6365132782920075634
+      Albero vicino 1 mirror_125: 6469516432369273781
+      Albero vicino 1 mirror_126: 1437872324239548560
+      Albero vicino 1 mirror_127: 4408879113990249390
+      Albero vicino 1 mirror_128: -5452013264433351658
+      Albero vicino 1 mirror_129: 8762377306897917697
+      Albero vicino 1 mirror_13: 224185829886399279
+      Albero vicino 1 mirror_130: -336045446155218880
+      Albero vicino 1 mirror_131: -5846432035337511963
+      Albero vicino 1 mirror_132: -4131084487586815322
+      Albero vicino 1 mirror_133: -3755993158964211083
+      Albero vicino 1 mirror_134: 1621981598418606878
+      Albero vicino 1 mirror_135: -1977923616111421845
+      Albero vicino 1 mirror_136: -2818434856634119072
+      Albero vicino 1 mirror_137: 8467797983028428253
+      Albero vicino 1 mirror_138: -6593027073737007084
+      Albero vicino 1 mirror_139: 6776812202862155156
+      Albero vicino 1 mirror_14: 5725586270137680390
+      Albero vicino 1 mirror_140: -3959672011693696050
+      Albero vicino 1 mirror_141: -7858279307645437691
+      Albero vicino 1 mirror_142: 7550202892874201290
+      Albero vicino 1 mirror_143: -131719925560653709
+      Albero vicino 1 mirror_144: -2078518969623086347
+      Albero vicino 1 mirror_145: 950135979382126046
+      Albero vicino 1 mirror_146: 4548469372972507616
+      Albero vicino 1 mirror_147: 2314687124861753309
+      Albero vicino 1 mirror_148: 4154165981486555458
+      Albero vicino 1 mirror_149: 7645121411885106157
+      Albero vicino 1 mirror_15: -7859733651109478085
+      Albero vicino 1 mirror_150: 6489805187825921223
+      Albero vicino 1 mirror_151: 5697634734013116872
+      Albero vicino 1 mirror_152: 1472771915202469327
+      Albero vicino 1 mirror_153: 1409837744666848745
+      Albero vicino 1 mirror_154: 8708479771912442637
+      Albero vicino 1 mirror_155: -7267071334777788044
+      Albero vicino 1 mirror_156: -2397891829909033161
+      Albero vicino 1 mirror_157: -2542868241869802832
+      Albero vicino 1 mirror_158: 4526370215449746165
+      Albero vicino 1 mirror_159: -5827406814605636967
+      Albero vicino 1 mirror_16: 7149348898985416427
+      Albero vicino 1 mirror_160: 2340022337609971894
+      Albero vicino 1 mirror_161: -4560414686961015208
+      Albero vicino 1 mirror_162: -6618893107772515247
+      Albero vicino 1 mirror_163: 1884324721169544252
+      Albero vicino 1 mirror_164: 7896829253948516315
+      Albero vicino 1 mirror_165: 4285055287168826055
+      Albero vicino 1 mirror_166: -4053508793383124057
+      Albero vicino 1 mirror_167: -466489353992772091
+      Albero vicino 1 mirror_168: -7497030986787047891
+      Albero vicino 1 mirror_169: -1721178888798166723
+      Albero vicino 1 mirror_17: -2172478579505730199
+      Albero vicino 1 mirror_170: -3781236263418352100
+      Albero vicino 1 mirror_171: -5803636884553949021
+      Albero vicino 1 mirror_172: -6023079294181658051
+      Albero vicino 1 mirror_173: 2489975732682689205
+      Albero vicino 1 mirror_174: -7924945114585839613
+      Albero vicino 1 mirror_175: -6702351748719019255
+      Albero vicino 1 mirror_176: 8196110742489579945
+      Albero vicino 1 mirror_177: 3438591465446636433
+      Albero vicino 1 mirror_178: 3672260806878561205
+      Albero vicino 1 mirror_179: -3016039854497557739
+      Albero vicino 1 mirror_18: -7543598913719653942
+      Albero vicino 1 mirror_180: 8477817930235424037
+      Albero vicino 1 mirror_181: 1349148004250355401
+      Albero vicino 1 mirror_182: -6575469022910976065
+      Albero vicino 1 mirror_183: 5978345535436500823
+      Albero vicino 1 mirror_184: -6311962542573375264
+      Albero vicino 1 mirror_185: 6376361368645737054
+      Albero vicino 1 mirror_186: 2957938394034743734
+      Albero vicino 1 mirror_187: -1014556932080712783
+      Albero vicino 1 mirror_188: 6546052685038030122
+      Albero vicino 1 mirror_189: -6574673763823391853
+      Albero vicino 1 mirror_19: -5058667605259124057
+      Albero vicino 1 mirror_190: -6421702245214313063
+      Albero vicino 1 mirror_191: 8036565313069804727
+      Albero vicino 1 mirror_192: -1048610519872389303
+      Albero vicino 1 mirror_193: -4455876532820206072
+      Albero vicino 1 mirror_194: 5855730801962506001
+      Albero vicino 1 mirror_195: 7360831181745832301
+      Albero vicino 1 mirror_196: 5439738623664429865
+      Albero vicino 1 mirror_197: 4111343650433313010
+      Albero vicino 1 mirror_198: -6575521075443467011
+      Albero vicino 1 mirror_199: -8553869323852247877
+      Albero vicino 1 mirror_2: 2742309669628656855
+      Albero vicino 1 mirror_20: 1428280008942519954
+      Albero vicino 1 mirror_200: 3978980876274643170
+      Albero vicino 1 mirror_201: -3778678734993437088
+      Albero vicino 1 mirror_202: -7503128272523477874
+      Albero vicino 1 mirror_203: 8242080050090188698
+      Albero vicino 1 mirror_204: -3931304230260686799
+      Albero vicino 1 mirror_205: -4400945086861194060
+      Albero vicino 1 mirror_206: 8121940504981888834
+      Albero vicino 1 mirror_207: 8993887159009940975
+      Albero vicino 1 mirror_208: -6345371469886993417
+      Albero vicino 1 mirror_209: -1866860156956142717
+      Albero vicino 1 mirror_21: 3569834337235266816
+      Albero vicino 1 mirror_210: -3139399665067460131
+      Albero vicino 1 mirror_211: -6522870805844690771
+      Albero vicino 1 mirror_212: -3126538973013042791
+      Albero vicino 1 mirror_213: 8723843823769807779
+      Albero vicino 1 mirror_214: 6684045343695370550
+      Albero vicino 1 mirror_215: -3663518076316391537
+      Albero vicino 1 mirror_216: -4114614515132357726
+      Albero vicino 1 mirror_217: -1728649624077415431
+      Albero vicino 1 mirror_218: -7232977734411168939
+      Albero vicino 1 mirror_219: 1084713729779372147
+      Albero vicino 1 mirror_22: 7291841695656938716
+      Albero vicino 1 mirror_220: 8790149724826836085
+      Albero vicino 1 mirror_221: -8441296075469333218
+      Albero vicino 1 mirror_222: -7242743235838442111
+      Albero vicino 1 mirror_223: 6061949452627955513
+      Albero vicino 1 mirror_224: 7185721134599149723
+      Albero vicino 1 mirror_225: 3662746467371727925
+      Albero vicino 1 mirror_226: -4293610537640205846
+      Albero vicino 1 mirror_227: -2142385049013070112
+      Albero vicino 1 mirror_228: -3802514047861901532
+      Albero vicino 1 mirror_229: -5816443478723250103
+      Albero vicino 1 mirror_23: 1696465793212248575
+      Albero vicino 1 mirror_230: -1301774838831242350
+      Albero vicino 1 mirror_231: 8632540682369327429
+      Albero vicino 1 mirror_232: -6527963803020025706
+      Albero vicino 1 mirror_233: -3219396413483355605
+      Albero vicino 1 mirror_234: 4408883274989098784
+      Albero vicino 1 mirror_235: 1611503908535374247
+      Albero vicino 1 mirror_236: 162406064961133082
+      Albero vicino 1 mirror_237: 648570142000091599
+      Albero vicino 1 mirror_238: -8272912205996612273
+      Albero vicino 1 mirror_239: -2893289172073796557
+      Albero vicino 1 mirror_24: 5020384837404710052
+      Albero vicino 1 mirror_240: -4202374967594420497
+      Albero vicino 1 mirror_241: -7948223286708051559
+      Albero vicino 1 mirror_242: -6109692552786384407
+      Albero vicino 1 mirror_243: -1272239640858407358
+      Albero vicino 1 mirror_244: 7982582071498655340
+      Albero vicino 1 mirror_245: 8498048155704066331
+      Albero vicino 1 mirror_246: -3936183942650936726
+      Albero vicino 1 mirror_247: -8645788468172743379
+      Albero vicino 1 mirror_248: 2466115305526049832
+      Albero vicino 1 mirror_249: 350274352642673116
+      Albero vicino 1 mirror_25: -518104468385874842
+      Albero vicino 1 mirror_250: -6068468418569679695
+      Albero vicino 1 mirror_251: -228525065309292071
+      Albero vicino 1 mirror_252: 3050308534075301781
+      Albero vicino 1 mirror_253: -1513249019630186153
+      Albero vicino 1 mirror_254: -5031961567711279097
+      Albero vicino 1 mirror_255: -68527455358878010
+      Albero vicino 1 mirror_256: -469933129398615402
+      Albero vicino 1 mirror_257: -6113447611773740190
+      Albero vicino 1 mirror_258: -5232242951493456166
+      Albero vicino 1 mirror_259: 8473897952453366789
+      Albero vicino 1 mirror_26: 2567532996500546330
+      Albero vicino 1 mirror_260: -4196002899873443434
+      Albero vicino 1 mirror_261: -4755889547617788677
+      Albero vicino 1 mirror_262: -1510431597950235489
+      Albero vicino 1 mirror_263: 605923367238509750
+      Albero vicino 1 mirror_264: -6503587590438423537
+      Albero vicino 1 mirror_265: 8689551337849655875
+      Albero vicino 1 mirror_266: 656724673454361345
+      Albero vicino 1 mirror_267: -4088868030288199136
+      Albero vicino 1 mirror_27: 7967327364031784507
+      Albero vicino 1 mirror_28: 9086746092692736906
+      Albero vicino 1 mirror_29: -2294122065123564667
+      Albero vicino 1 mirror_3: -9148199899901890077
+      Albero vicino 1 mirror_30: -4427064763661284195
+      Albero vicino 1 mirror_31: 6840821519313125865
+      Albero vicino 1 mirror_32: -2187354822111706728
+      Albero vicino 1 mirror_33: 695833709956493559
+      Albero vicino 1 mirror_34: 4783913213882048680
+      Albero vicino 1 mirror_35: -5972759041963940323
+      Albero vicino 1 mirror_36: 5684101929975689466
+      Albero vicino 1 mirror_37: 6323525385744280028
+      Albero vicino 1 mirror_38: -7613135368154210318
+      Albero vicino 1 mirror_39: -4340298076628982715
+      Albero vicino 1 mirror_4: -1196443458345008467
+      Albero vicino 1 mirror_40: 3134717721253725930
+      Albero vicino 1 mirror_41: 5409689305529279982
+      Albero vicino 1 mirror_42: -1466123358407591368
+      Albero vicino 1 mirror_43: -1196630313522547805
+      Albero vicino 1 mirror_44: 1660250933069898154
+      Albero vicino 1 mirror_45: 2925591762454100310
+      Albero vicino 1 mirror_46: -5558234410175649825
+      Albero vicino 1 mirror_47: -4531454226683941938
+      Albero vicino 1 mirror_48: 4718060929638407661
+      Albero vicino 1 mirror_49: 4104112148717929287
+      Albero vicino 1 mirror_5: 7494107772877474043
+      Albero vicino 1 mirror_50: 1791341260314764973
+      Albero vicino 1 mirror_51: -1361886509529064496
+      Albero vicino 1 mirror_52: 5678257598266439167
+      Albero vicino 1 mirror_53: 8244851566149277813
+      Albero vicino 1 mirror_54: -1320600214365824565
+      Albero vicino 1 mirror_55: -559998534703498134
+      Albero vicino 1 mirror_56: 1035741590009769242
+      Albero vicino 1 mirror_57: 4495049644358181940
+      Albero vicino 1 mirror_58: 8876877124172522781
+      Albero vicino 1 mirror_59: -7208878485595406874
+      Albero vicino 1 mirror_6: 7501931986512369493
+      Albero vicino 1 mirror_60: -8314443156897255927
+      Albero vicino 1 mirror_61: 2235364972696267248
+      Albero vicino 1 mirror_62: 5308448784301753875
+      Albero vicino 1 mirror_63: -310382804579907412
+      Albero vicino 1 mirror_64: -1122225218244996699
+      Albero vicino 1 mirror_65: 6914074854860439535
+      Albero vicino 1 mirror_66: -8929122324411281192
+      Albero vicino 1 mirror_67: 6016211307926757441
+      Albero vicino 1 mirror_68: -6727227327293051889
+      Albero vicino 1 mirror_69: 3367472425560071550
+      Albero vicino 1 mirror_7: 4497047653292756460
+      Albero vicino 1 mirror_70: 3836837500964115527
+      Albero vicino 1 mirror_71: -1971651946507793398
+      Albero vicino 1 mirror_72: -8694992392256304794
+      Albero vicino 1 mirror_73: 258888338251759800
+      Albero vicino 1 mirror_74: 7714682083444759770
+      Albero vicino 1 mirror_75: 7036739068703968147
+      Albero vicino 1 mirror_76: 4896188383052654482
+      Albero vicino 1 mirror_77: -8232529428173640421
+      Albero vicino 1 mirror_78: -7209954574865261656
+      Albero vicino 1 mirror_79: -3973952438957637060
+      Albero vicino 1 mirror_8: -6866260858014009482
+      Albero vicino 1 mirror_80: 7369263000037559573
+      Albero vicino 1 mirror_81: 1655038125955689478
+      Albero vicino 1 mirror_82: 7759695380297914178
+      Albero vicino 1 mirror_83: -3717504715262472893
+      Albero vicino 1 mirror_84: -2833183464518717906
+      Albero vicino 1 mirror_85: 7316772271057299929
+      Albero vicino 1 mirror_86: 7495826097382921007
+      Albero vicino 1 mirror_87: 2794272754709625698
+      Albero vicino 1 mirror_88: 8279015972704474136
+      Albero vicino 1 mirror_89: 5817168237158302182
+      Albero vicino 1 mirror_9: 2801173625291580504
+      Albero vicino 1 mirror_90: -1892340054121673197
+      Albero vicino 1 mirror_91: -6611703566267920102
+      Albero vicino 1 mirror_92: 1224254739233881261
+      Albero vicino 1 mirror_93: -1407982893434283917
+      Albero vicino 1 mirror_94: -606075899342030947
+      Albero vicino 1 mirror_95: 5159978343845534067
+      Albero vicino 1 mirror_96: 8020337544208149604
+      Albero vicino 1 mirror_97: 1781610028556241959
+      Albero vicino 1 mirror_98: -6721216113873470034
+      Albero vicino 1 mirror_99: -8274994891629891581
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
