@@ -17,5 +17,5 @@ MonoBehaviour:
   horizontalTongueWindupTime: 0.5
   horizontalTongueRecoveryTime: 0.2
   horizontalTongueMaxExtensionTime: 0.5
-  horizontalTongueHeightOffset: 1
+  horizontalTongueHeightOffset: 0
   horizontalTongueSpeed: 150

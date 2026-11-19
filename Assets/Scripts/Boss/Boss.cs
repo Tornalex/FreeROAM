@@ -51,6 +51,8 @@ namespace SpearWander.Boss
         public int MaxHealth => bossData?.maxHealth ?? 10;
         public WeakPoint WeakPoint => weakPoint;
 
+        protected Transform GraphicsTransform => graphicsTransform;
+
         protected virtual void Awake()
         {
             rb = GetComponent<Rigidbody2D>();

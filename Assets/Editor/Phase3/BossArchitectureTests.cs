@@ -23,12 +23,20 @@ namespace ProjectSpear.Phase3
             "Assets/Data/Boss Data/Tongue Attack Data.asset";
         private const string SporeDataPath =
             "Assets/Data/Boss Data/Spore Attack Data.asset";
+        private const string JumpDataPath =
+            "Assets/Data/Boss Data/Frog/Attacks/Jump Attack Data.asset";
+        private const string DashJumpDataPath =
+            "Assets/Data/Boss Data/Frog/Attacks/Dash Jump Attack Data.asset";
         private const string ArenaProfilePath =
             "Assets/Data/Boss Data/Arena Boss AI Profile.asset";
         private const string ArenaTongueDataPath =
             "Assets/Data/Boss Data/Arena Tongue Attack Data.asset";
         private const string ArenaSporeDataPath =
             "Assets/Data/Boss Data/Arena Spore Attack Data.asset";
+        private const string ArenaJumpDataPath =
+            "Assets/Data/Boss Data/Arena Jump Attack Data.asset";
+        private const string ArenaDashJumpDataPath =
+            "Assets/Data/Boss Data/Arena Dash Jump Attack Data.asset";
 
         private const string BossPrefabPath = "Assets/Prefabs/Enemies/FreeRoam Boss.prefab";
         private const string SporePrefabPath = "Assets/Prefabs/Enemies/Spore Cloud.prefab";
@@ -107,6 +115,9 @@ namespace ProjectSpear.Phase3
         public void BossAIProfileMatchesPreviousPrefabTuning()
         {
             BossAIProfile profile = Load<BossAIProfile>(BossProfilePath);
+            JumpAttackData jump = Load<JumpAttackData>(JumpDataPath);
+            DashJumpAttackData dashJump =
+                Load<DashJumpAttackData>(DashJumpDataPath);
 
             Assert.That(profile.DetectionRange, Is.EqualTo(14f).Within(0.0001f));
             Assert.That(profile.GroundLayers.value, Is.EqualTo(1));
@@ -114,18 +125,18 @@ namespace ProjectSpear.Phase3
             Assert.That(profile.GroundCheckRadius, Is.EqualTo(0.22f).Within(0.0001f));
             Assert.That(profile.TongueObstructionLayers.value, Is.EqualTo(1));
             Assert.That(profile.SporeObstructionLayers.value, Is.EqualTo(1));
-            Assert.That(profile.DashJumpObstructionLayers.value, Is.EqualTo(1));
+            Assert.That(dashJump.DashJumpObstructionLayers.value, Is.EqualTo(1));
 
-            Assert.That(profile.JumpUpVelocity, Is.EqualTo(20f).Within(0.0001f));
-            Assert.That(profile.JumpDistance, Is.EqualTo(4f).Within(0.0001f));
-            Assert.That(profile.JumpMaxHorizontalSpeed, Is.EqualTo(7f).Within(0.0001f));
-            Assert.That(profile.LandingRecovery, Is.EqualTo(0.35f).Within(0.0001f));
+            Assert.That(jump.JumpUpVelocity, Is.EqualTo(20f).Within(0.0001f));
+            Assert.That(jump.JumpDistance, Is.EqualTo(4f).Within(0.0001f));
+            Assert.That(jump.JumpMaxHorizontalSpeed, Is.EqualTo(7f).Within(0.0001f));
+            Assert.That(jump.LandingRecovery, Is.EqualTo(0.35f).Within(0.0001f));
             Assert.That(profile.PreferredDistance, Is.EqualTo(3.5f).Within(0.0001f));
             Assert.That(profile.RetreatDistance, Is.EqualTo(2f).Within(0.0001f));
             Assert.That(profile.DecisionInterval, Is.EqualTo(0.5f).Within(0.0001f));
             Assert.That(profile.DecisionIntervalJitter, Is.EqualTo(0.15f).Within(0.0001f));
-            Assert.That(profile.MaxAirborneDuration, Is.EqualTo(3f).Within(0.0001f));
-            Assert.That(profile.RecoveryCooldown, Is.EqualTo(1f).Within(0.0001f));
+            Assert.That(jump.MaxAirborneDuration, Is.EqualTo(3f).Within(0.0001f));
+            Assert.That(jump.RecoveryCooldown, Is.EqualTo(1f).Within(0.0001f));
 
             Assert.That(profile.JumpTowardWeight, Is.EqualTo(3f).Within(0.0001f));
             Assert.That(profile.JumpAwayWeight, Is.EqualTo(1.5f).Within(0.0001f));
@@ -137,15 +148,15 @@ namespace ProjectSpear.Phase3
                 profile.AttackAfterAttackWeightMultiplier,
                 Is.EqualTo(0.4f).Within(0.0001f));
 
-            Assert.That(profile.DashJumpMinDistance, Is.EqualTo(7f).Within(0.0001f));
-            Assert.That(profile.DashJumpHorizontalSpeed, Is.EqualTo(18f).Within(0.0001f));
-            Assert.That(profile.DashJumpUpVelocity, Is.EqualTo(10f).Within(0.0001f));
-            Assert.That(profile.DashJumpLandingOffset, Is.EqualTo(1f).Within(0.0001f));
-            Assert.That(profile.DashJumpPreparationTime, Is.EqualTo(0.45f).Within(0.0001f));
-            Assert.That(profile.DashJumpRecoveryTime, Is.EqualTo(0.45f).Within(0.0001f));
-            Assert.That(profile.DashJumpCooldown, Is.EqualTo(5f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpMinDistance, Is.EqualTo(7f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpHorizontalSpeed, Is.EqualTo(18f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpUpVelocity, Is.EqualTo(10f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpLandingOffset, Is.EqualTo(1f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpPreparationTime, Is.EqualTo(0.45f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpRecoveryTime, Is.EqualTo(0.45f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpCooldown, Is.EqualTo(5f).Within(0.0001f));
             Assert.That(
-                profile.DashJumpMaxAirborneDuration,
+                dashJump.DashJumpMaxAirborneDuration,
                 Is.EqualTo(2f).Within(0.0001f));
         }
 
@@ -191,28 +202,31 @@ namespace ProjectSpear.Phase3
             // These are the values the arena scene used to override on its boss
             // instance before the migration. They must survive verbatim.
             BossAIProfile profile = Load<BossAIProfile>(ArenaProfilePath);
+            JumpAttackData jump = Load<JumpAttackData>(ArenaJumpDataPath);
+            DashJumpAttackData dashJump =
+                Load<DashJumpAttackData>(ArenaDashJumpDataPath);
             Assert.That(profile.DetectionRange, Is.EqualTo(25f).Within(0.0001f));
-            Assert.That(profile.JumpUpVelocity, Is.EqualTo(25f).Within(0.0001f));
-            Assert.That(profile.JumpDistance, Is.EqualTo(60f).Within(0.0001f));
-            Assert.That(profile.JumpMaxHorizontalSpeed, Is.EqualTo(60f).Within(0.0001f));
-            Assert.That(profile.RecoveryCooldown, Is.EqualTo(0.3f).Within(0.0001f));
+            Assert.That(jump.JumpUpVelocity, Is.EqualTo(25f).Within(0.0001f));
+            Assert.That(jump.JumpDistance, Is.EqualTo(60f).Within(0.0001f));
+            Assert.That(jump.JumpMaxHorizontalSpeed, Is.EqualTo(60f).Within(0.0001f));
+            Assert.That(jump.RecoveryCooldown, Is.EqualTo(0.3f).Within(0.0001f));
             Assert.That(profile.JumpTowardWeight, Is.EqualTo(4f).Within(0.0001f));
             Assert.That(profile.JumpAwayWeight, Is.EqualTo(1f).Within(0.0001f));
             Assert.That(profile.DashJumpWeight, Is.EqualTo(5f).Within(0.0001f));
-            Assert.That(profile.DashJumpMinDistance, Is.EqualTo(10f).Within(0.0001f));
-            Assert.That(profile.DashJumpHorizontalSpeed, Is.EqualTo(100f).Within(0.0001f));
-            Assert.That(profile.DashJumpUpVelocity, Is.EqualTo(16f).Within(0.0001f));
-            Assert.That(profile.DashJumpLandingOffset, Is.EqualTo(10f).Within(0.0001f));
-            Assert.That(profile.DashJumpCooldown, Is.EqualTo(1f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpMinDistance, Is.EqualTo(10f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpHorizontalSpeed, Is.EqualTo(100f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpUpVelocity, Is.EqualTo(16f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpLandingOffset, Is.EqualTo(10f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpCooldown, Is.EqualTo(1f).Within(0.0001f));
             Assert.That(
-                profile.DashJumpMaxAirborneDuration,
+                dashJump.DashJumpMaxAirborneDuration,
                 Is.EqualTo(4f).Within(0.0001f));
 
             // Values the arena did not override keep the prefab value.
-            Assert.That(profile.LandingRecovery, Is.EqualTo(0.35f).Within(0.0001f));
+            Assert.That(jump.LandingRecovery, Is.EqualTo(0.35f).Within(0.0001f));
             Assert.That(profile.PreferredDistance, Is.EqualTo(3.5f).Within(0.0001f));
             Assert.That(profile.DecisionInterval, Is.EqualTo(0.5f).Within(0.0001f));
-            Assert.That(profile.DashJumpPreparationTime, Is.EqualTo(0.45f).Within(0.0001f));
+            Assert.That(dashJump.DashJumpPreparationTime, Is.EqualTo(0.45f).Within(0.0001f));
 
             TongueAttackData tongue = Load<TongueAttackData>(ArenaTongueDataPath);
             Assert.That(tongue.Damage, Is.EqualTo(1));
@@ -275,11 +289,17 @@ namespace ProjectSpear.Phase3
                 BossProfilePath,
                 "detectionRange: 14",
                 "groundCheckRadius: 0.22",
+                "jumpTowardWeight: 3",
+                "repeatWeightMultiplier: 0.35");
+
+            AssertAssetContains(
+                JumpDataPath,
                 "jumpUpVelocity: 20",
                 "jumpDistance: 4",
-                "recoveryCooldown: 1",
-                "jumpTowardWeight: 3",
-                "repeatWeightMultiplier: 0.35",
+                "recoveryCooldown: 1");
+
+            AssertAssetContains(
+                DashJumpDataPath,
                 "dashJumpCooldown: 5",
                 "dashJumpMaxAirborneDuration: 2");
 
@@ -303,8 +323,14 @@ namespace ProjectSpear.Phase3
 
             AssertAssetContains(
                 ArenaProfilePath,
-                "detectionRange: 25",
-                "jumpDistance: 60",
+                "detectionRange: 25");
+
+            AssertAssetContains(
+                ArenaJumpDataPath,
+                "jumpDistance: 60");
+
+            AssertAssetContains(
+                ArenaDashJumpDataPath,
                 "dashJumpHorizontalSpeed: 100");
 
             AssertAssetContains(
@@ -328,7 +354,9 @@ namespace ProjectSpear.Phase3
             {
                 typeof(BossData),
                 typeof(BossAIProfile),
-                typeof(BossAttackData)
+                typeof(BossAttackData),
+                typeof(JumpAttackData),
+                typeof(DashJumpAttackData)
             };
 
             string[] runtimeFields =

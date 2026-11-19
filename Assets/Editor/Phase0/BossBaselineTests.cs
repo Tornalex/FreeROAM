@@ -22,6 +22,10 @@ namespace ProjectSpear.Phase0
             "Assets/Data/Boss Data/Tongue Attack Data.asset";
         private const string SporeDataPath =
             "Assets/Data/Boss Data/Spore Attack Data.asset";
+        private const string JumpDataPath =
+            "Assets/Data/Boss Data/Frog/Attacks/Jump Attack Data.asset";
+        private const string DashJumpDataPath =
+            "Assets/Data/Boss Data/Frog/Attacks/Dash Jump Attack Data.asset";
         private const string BossPrefabPath = "Assets/Prefabs/Enemies/FreeRoam Boss.prefab";
         private const string SporePrefabPath = "Assets/Prefabs/Enemies/Spore Cloud.prefab";
 
@@ -55,6 +59,10 @@ namespace ProjectSpear.Phase0
                 BaselineTestSupport.LoadAsset<TongueAttackData>(TongueDataPath);
             SporeAttackData spores =
                 BaselineTestSupport.LoadAsset<SporeAttackData>(SporeDataPath);
+            JumpAttackData jump =
+                BaselineTestSupport.LoadAsset<JumpAttackData>(JumpDataPath);
+            DashJumpAttackData dashJump =
+                BaselineTestSupport.LoadAsset<DashJumpAttackData>(DashJumpDataPath);
 
             BaselineTestSupport.AssertReference(
                 boss,
@@ -95,25 +103,25 @@ namespace ProjectSpear.Phase0
                 Is.EqualTo(1),
                 "sporeObstructionLayers");
             Assert.That(
-                aiProfile.DashJumpObstructionLayers.value,
+                dashJump.DashJumpObstructionLayers.value,
                 Is.EqualTo(1),
                 "dashJumpObstructionLayers");
 
             BaselineTestSupport.AssertClose(
                 20f,
-                aiProfile.JumpUpVelocity,
+                jump.JumpUpVelocity,
                 "jumpUpVelocity");
             BaselineTestSupport.AssertClose(
                 4f,
-                aiProfile.JumpDistance,
+                jump.JumpDistance,
                 "jumpDistance");
             BaselineTestSupport.AssertClose(
                 7f,
-                aiProfile.JumpMaxHorizontalSpeed,
+                jump.JumpMaxHorizontalSpeed,
                 "jumpMaxHorizontalSpeed");
             BaselineTestSupport.AssertClose(
                 0.35f,
-                aiProfile.LandingRecovery,
+                jump.LandingRecovery,
                 "landingRecovery");
             BaselineTestSupport.AssertClose(
                 3.5f,
@@ -133,11 +141,11 @@ namespace ProjectSpear.Phase0
                 "decisionIntervalJitter");
             BaselineTestSupport.AssertClose(
                 3f,
-                aiProfile.MaxAirborneDuration,
+                jump.MaxAirborneDuration,
                 "maxAirborneDuration");
             BaselineTestSupport.AssertClose(
                 1f,
-                aiProfile.RecoveryCooldown,
+                jump.RecoveryCooldown,
                 "recoveryCooldown");
 
             BaselineTestSupport.AssertClose(
@@ -237,35 +245,35 @@ namespace ProjectSpear.Phase0
 
             BaselineTestSupport.AssertClose(
                 7f,
-                aiProfile.DashJumpMinDistance,
+                dashJump.DashJumpMinDistance,
                 "dashJumpMinDistance");
             BaselineTestSupport.AssertClose(
                 18f,
-                aiProfile.DashJumpHorizontalSpeed,
+                dashJump.DashJumpHorizontalSpeed,
                 "dashJumpHorizontalSpeed");
             BaselineTestSupport.AssertClose(
                 10f,
-                aiProfile.DashJumpUpVelocity,
+                dashJump.DashJumpUpVelocity,
                 "dashJumpUpVelocity");
             BaselineTestSupport.AssertClose(
                 1f,
-                aiProfile.DashJumpLandingOffset,
+                dashJump.DashJumpLandingOffset,
                 "dashJumpLandingOffset");
             BaselineTestSupport.AssertClose(
                 0.45f,
-                aiProfile.DashJumpPreparationTime,
+                dashJump.DashJumpPreparationTime,
                 "dashJumpPreparationTime");
             BaselineTestSupport.AssertClose(
                 0.45f,
-                aiProfile.DashJumpRecoveryTime,
+                dashJump.DashJumpRecoveryTime,
                 "dashJumpRecoveryTime");
             BaselineTestSupport.AssertClose(
                 5f,
-                aiProfile.DashJumpCooldown,
+                dashJump.DashJumpCooldown,
                 "dashJumpCooldown");
             BaselineTestSupport.AssertClose(
                 2f,
-                aiProfile.DashJumpMaxAirborneDuration,
+                dashJump.DashJumpMaxAirborneDuration,
                 "dashJumpMaxAirborneDuration");
 
             Rigidbody2D body = BaselineTestSupport.LoadPrefab(BossPrefabPath)
