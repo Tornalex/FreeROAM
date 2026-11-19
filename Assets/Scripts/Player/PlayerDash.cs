@@ -135,7 +135,7 @@ public class PlayerDash : MonoBehaviour
             _dashTimer -= Time.fixedDeltaTime;
 
             float direction =
-                Mathf.Sign(transform.localScale.x);
+                Mathf.Sign(transform.localRotation.y);
 
             _player.Rb.linearVelocity =
                 new Vector2(

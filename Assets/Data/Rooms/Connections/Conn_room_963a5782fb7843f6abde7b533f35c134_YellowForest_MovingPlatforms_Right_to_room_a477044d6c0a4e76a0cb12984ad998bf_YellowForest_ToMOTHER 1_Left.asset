@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfadc39d44d40644c95aa1824a2bc948, type: 3}
-  m_Name: Conn_room_a477044d6c0a4e76a0cb12984ad998bf_YellowForest_ToMOTHER 1_Left_to_room_3d855db3e83943078a73c53602ba9b2d_YellowForest_Arena_Left
+  m_Name: Conn_room_963a5782fb7843f6abde7b533f35c134_YellowForest_MovingPlatforms_Right_to_room_a477044d6c0a4e76a0cb12984ad998bf_YellowForest_ToMOTHER
+    1_Left
   m_EditorClassIdentifier: Assembly-CSharp::RoomConnection
-  endpointARoomId: room_a477044d6c0a4e76a0cb12984ad998bf
-  endpointADoorId: YellowForest_ToMOTHER 1_Left
-  endpointBRoomId: room_3d855db3e83943078a73c53602ba9b2d
-  endpointBDoorId: YellowForest_Arena_Left
+  endpointARoomId: room_963a5782fb7843f6abde7b533f35c134
+  endpointADoorId: YellowForest_MovingPlatforms_Right
+  endpointBRoomId: room_a477044d6c0a4e76a0cb12984ad998bf
+  endpointBDoorId: YellowForest_ToMOTHER 1_Left
   direction: 0

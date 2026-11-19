@@ -229,7 +229,7 @@ public class PlayerCombat : MonoBehaviour
             if (dir.magnitude <= _player.CombatStats.aimDeadzone)
             {
                 dir = new Vector2(
-                    Mathf.Sign(transform.localScale.x),
+                    Mathf.Sign(transform.localRotation.y),
                     0.15f
                 );
             }

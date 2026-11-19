@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 0825654fc20b2f745bdc929e2408fb7b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5260124330609134778
+    second: Boss Jump Sprite (Side View)_0
+  - first:
+      213: -528503298114293725
+    second: Boss Jump Sprite (Side View)_1
+  - first:
+      213: -1524885106077850876
+    second: Boss Jump Sprite (Side View)_2
+  - first:
+      213: -9035886734145291293
+    second: Boss Jump Sprite (Side View)_3
+  - first:
+      213: -3144808145290632052
+    second: Boss Jump Sprite (Side View)_4
+  - first:
+      213: 476972961251750387
+    second: Boss Jump Sprite (Side View)_5
+  - first:
+      213: 5222454806280446026
+    second: Boss Jump Sprite (Side View)_6
+  - first:
+      213: -2532469633450225451
+    second: Boss Jump Sprite (Side View)_7
+  - first:
+      213: 2806693457743261043
+    second: Boss Jump Sprite (Side View)_8
+  - first:
+      213: -6237052202475488068
+    second: Boss Jump Sprite (Side View)_9
+  - first:
+      213: -6910704663376046065
+    second: Boss Jump Sprite (Side View)_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_0
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 2239
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcc8589537bff840800000000000000
+      internalID: 5260124330609134778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_1
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 2239
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d695fb61c9f4b4fa3de63a7a8a46bb
+      internalID: -528503298114293725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1661
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75252e15850e15e4daea7dae84ac7549
+      internalID: -1524885106077850876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_3
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1661
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a35c15c33a709a46bc3b031e6c421ea
+      internalID: -9035886734145291293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_4
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1661
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2503acca0e0a3c445ad6242372886772
+      internalID: -3144808145290632052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_5
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 1661
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2975d221527f0364ca21cbe0f5059306
+      internalID: 476972961251750387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1083
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a556e34d44e164c8566456bc71f68e
+      internalID: 5222454806280446026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_7
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1083
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a93f953fc8bb0f4fb02706b8893f7d7
+      internalID: -2532469633450225451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_8
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1083
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770194bb6771c75449c418452553de63
+      internalID: 2806693457743261043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_9
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 1083
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bdc06dc7298ce47b96aa0575fcae8f
+      internalID: -6237052202475488068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_10
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 505
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357ce2ab9c6579d41995aeb21955e531
+      internalID: -6910704663376046065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_11
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 505
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc8f63f9f08c4a41a1fd061cbe82749
+      internalID: -601560140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_12
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 505
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68cebf13a96d054193f21fb3a746e7a
+      internalID: -567186947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Jump Sprite (Side View)_13
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 505
+        width: 660
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b025338cb2e895049aef539eb4c28827
+      internalID: -986662333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":660.0,"y":578.0},"gridSpriteOffset":{"x":310.0,"y":183.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
+    nameFileIdTable:
+      Boss Jump Sprite (Side View)_0: 5260124330609134778
+      Boss Jump Sprite (Side View)_1: -528503298114293725
+      Boss Jump Sprite (Side View)_10: -6910704663376046065
+      Boss Jump Sprite (Side View)_11: -601560140
+      Boss Jump Sprite (Side View)_12: -567186947
+      Boss Jump Sprite (Side View)_13: -986662333
+      Boss Jump Sprite (Side View)_2: -1524885106077850876
+      Boss Jump Sprite (Side View)_3: -9035886734145291293
+      Boss Jump Sprite (Side View)_4: -3144808145290632052
+      Boss Jump Sprite (Side View)_5: 476972961251750387
+      Boss Jump Sprite (Side View)_6: 5222454806280446026
+      Boss Jump Sprite (Side View)_7: -2532469633450225451
+      Boss Jump Sprite (Side View)_8: 2806693457743261043
+      Boss Jump Sprite (Side View)_9: -6237052202475488068
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
