@@ -19,6 +19,7 @@ public class GameSceneManager : MonoBehaviour
 
     [Header("Telecamera")]
     [SerializeField] private CinemachineConfiner2D cameraConfiner;
+    [SerializeField] private CameraManager cameraManager;
 
     [Header("Interfaccia Transizione (Game Feel)")]
     [SerializeField] private CanvasGroup transitionCanvasGroup;
@@ -76,6 +77,8 @@ public class GameSceneManager : MonoBehaviour
         public Collider2D[] PlayerColliders;
         public bool[] PlayerColliderEnabled;
         public Collider2D PreviousCameraBounds;
+        public CameraManager.CameraStateSnapshot CameraManagerState;
+        public bool HasCameraManagerState;
         public Transform CameraTransform;
         public Vector3 CameraPosition;
         public Quaternion CameraRotation;
@@ -732,6 +735,12 @@ public class GameSceneManager : MonoBehaviour
             PreviousCameraBounds = cameraConfiner != null ? cameraConfiner.BoundingShape2D : null
         };
 
+        if (cameraManager != null)
+        {
+            snapshot.CameraManagerState = cameraManager.CaptureState();
+            snapshot.HasCameraManagerState = true;
+        }
+
         snapshot.PlayerColliderEnabled = new bool[snapshot.PlayerColliders.Length];
         for (int i = 0; i < snapshot.PlayerColliders.Length; i++)
             snapshot.PlayerColliderEnabled[i] = snapshot.PlayerColliders[i] != null && snapshot.PlayerColliders[i].enabled;
@@ -881,8 +890,6 @@ public class GameSceneManager : MonoBehaviour
     private bool TrySetConnectedCameraBounds(Scene destinationScene, out string error)
     {
         error = null;
-        if (cameraConfiner == null)
-            return true;
 
         Collider2D bounds = null;
         int matches = 0;
@@ -908,14 +915,44 @@ public class GameSceneManager : MonoBehaviour
             return false;
         }
 
-        cameraConfiner.BoundingShape2D = bounds;
-        cameraConfiner.InvalidateBoundingShapeCache();
+        RoomCameraSettings roomSettings = bounds.GetComponent<RoomCameraSettings>();
+        if (cameraManager != null)
+        {
+            bool applied = roomSettings != null
+                ? cameraManager.ApplyRoomSettings(roomSettings)
+                : cameraManager.SetCameraBounds(bounds);
+            if (!applied)
+            {
+                error = $"Could not apply gameplay camera configuration for '{destinationScene.path}'.";
+                return false;
+            }
+
+            return true;
+        }
+
+        if (cameraConfiner != null)
+        {
+            cameraConfiner.BoundingShape2D = bounds;
+            cameraConfiner.InvalidateBoundingShapeCache();
+        }
+
         return true;
     }
 
     private void PositionCameraAtPlayer()
     {
-        if (cameraConfiner == null || playerTransform == null)
+        if (playerTransform == null)
+            return;
+
+        if (cameraManager != null)
+        {
+            cameraManager.ForceFollowingCameraPosition(playerTransform.position);
+            if (cameraConfiner != null)
+                cameraConfiner.InvalidateBoundingShapeCache();
+            return;
+        }
+
+        if (cameraConfiner == null)
             return;
 
         CinemachineCamera camera = cameraConfiner.GetComponent<CinemachineCamera>();
@@ -1303,6 +1340,12 @@ public class GameSceneManager : MonoBehaviour
 
     private void RestoreCameraBoundsSnapshot(ConnectedTransitionSnapshot snapshot)
     {
+        if (cameraManager != null && snapshot.HasCameraManagerState)
+        {
+            cameraManager.RestoreState(snapshot.CameraManagerState);
+            return;
+        }
+
         if (cameraConfiner == null)
             return;
 
@@ -1464,17 +1507,7 @@ public class GameSceneManager : MonoBehaviour
         FocusTargetDoor();
         UpdateCameraBounds();
 
-        if (cameraConfiner != null)
-        {
-            CinemachineCamera cCamera = cameraConfiner.GetComponent<CinemachineCamera>();
-            if (cCamera != null)
-            {
-                Vector3 targetCamPos = new Vector3(playerTransform.position.x, playerTransform.position.y, cCamera.transform.position.z);
-                cCamera.transform.position = targetCamPos;
-                cCamera.ForceCameraPosition(targetCamPos, cCamera.transform.rotation);
-            }
-            cameraConfiner.InvalidateBoundingShapeCache();
-        }
+        PositionCameraAtPlayer();
 
         yield return null;
         yield return null;
@@ -1564,17 +1597,7 @@ public class GameSceneManager : MonoBehaviour
         }
         UpdateCameraBounds();
 
-        if (cameraConfiner != null)
-        {
-            CinemachineCamera cCamera = cameraConfiner.GetComponent<CinemachineCamera>();
-            if (cCamera != null)
-            {
-                Vector3 targetCamPos = new Vector3(playerTransform.position.x, playerTransform.position.y, cCamera.transform.position.z);
-                cCamera.transform.position = targetCamPos;
-                cCamera.ForceCameraPosition(targetCamPos, cCamera.transform.rotation);
-            }
-            cameraConfiner.InvalidateBoundingShapeCache();
-        }
+        PositionCameraAtPlayer();
 
         yield return null;
         yield return null;
@@ -1710,15 +1733,26 @@ public class GameSceneManager : MonoBehaviour
 
     private void UpdateCameraBounds()
     {
-        if (cameraConfiner == null) return;
-
         GameObject boundsObj = GameObject.FindGameObjectWithTag("CameraBounds");
         if (boundsObj != null)
         {
             Collider2D boundsCollider = boundsObj.GetComponent<Collider2D>();
             if (boundsCollider != null)
             {
-                cameraConfiner.BoundingShape2D = boundsCollider;
+                RoomCameraSettings roomSettings =
+                    boundsObj.GetComponent<RoomCameraSettings>();
+                if (cameraManager != null)
+                {
+                    if (roomSettings != null)
+                        cameraManager.ApplyRoomSettings(roomSettings);
+                    else
+                        cameraManager.SetCameraBounds(boundsCollider);
+                }
+                else if (cameraConfiner != null)
+                {
+                    cameraConfiner.BoundingShape2D = boundsCollider;
+                    cameraConfiner.InvalidateBoundingShapeCache();
+                }
             }
         }
     }

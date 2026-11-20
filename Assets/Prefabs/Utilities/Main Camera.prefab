@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3373648901583351784}
   - component: {fileID: 2660820327679911655}
   - component: {fileID: 5245152128152830464}
+  - component: {fileID: 8245829003374264067}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -50,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 1
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -61,12 +62,12 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 45
     OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
+    NearClipPlane: 0.3
+    FarClipPlane: 250
     Dutch: 0
-    ModeOverride: 1
+    ModeOverride: 2
     PhysicalProperties:
       GateFit: 2
       SensorSize: {x: 21.946, y: 16.002}
@@ -105,19 +106,19 @@ MonoBehaviour:
   Composition:
     ScreenPosition: {x: 0.00039061345, y: 0.14999998}
     DeadZone:
-      Enabled: 1
+      Enabled: 0
       Size: {x: 0.05, y: 0.25}
     HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
+      Enabled: 1
+      Size: {x: 0.2, y: 0.35}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: -1.5, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  TargetOffset: {x: 0, y: 0, z: 0}
+  Damping: {x: 0.7499999, y: 1.99957, z: 0}
   Lookahead:
     Enabled: 1
-    Time: 0.75
-    Smoothing: 6
+    Time: 0.05
+    Smoothing: 1
     IgnoreY: 1
 --- !u!114 &3373648901583351784
 MonoBehaviour:
@@ -179,4 +180,29 @@ MonoBehaviour:
   FocusTracking: 0
   FocusTarget: {fileID: 0}
   FocusOffset: 10
-  Profile: {fileID: 11400000, guid: 181495561537b8744b1058e78fd3354b, type: 2}
+  Profile: {fileID: 0}
+--- !u!114 &8245829003374264067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786457181842634019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d28640cd43e49199eb44b7ba430ca25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplorationCameraDynamicDamping
+  groundedProfile:
+    horizontal: 0.75
+    vertical: 2
+  risingProfile:
+    horizontal: 0.75
+    vertical: 2.8
+  fallingProfile:
+    horizontal: 0.75
+    vertical: 0.65
+  dashHorizontalDamping: 0.25
+  transitionSmoothTime: 0.16
+  verticalSpeedThreshold: 0.35
+  verticalSpeedHysteresis: 0.15
