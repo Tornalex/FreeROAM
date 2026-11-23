@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0b898ae54b4bb68f63f6cb3d8cd01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraLookTrigger
-  verticalOffset: -4.31
+  verticalOffset: -2
   enterTransitionDuration: 0.3
   exitTransitionDuration: 0.3
 --- !u!61 &8158354413296144918

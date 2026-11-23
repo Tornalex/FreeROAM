@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -13,15 +15,14 @@ public class PlayerHUD : MonoBehaviour
     [Header("Essence UI")]
     [SerializeField] private GameObject[] essencePoints;
 
-    [Header("Spear UI")]
-    [SerializeField] private TextMeshProUGUI spearStateText;
+    [Header("Scene Name UI")]
+    [SerializeField] private TextMeshProUGUI sceneNameText;
 
     private int _lastHealth = -1;
     private int _lastMaxHealth = -1;
     private float _lastEssence = -1f;
     private float _lastMaxEssence = -1f;
-    private PlayerCombat.SpearUIState _lastSpearState = PlayerCombat.SpearUIState.Ready;
-
+    private string _lastSceneName;
     void Start()
     {
         if (player == null)
@@ -45,7 +46,7 @@ public class PlayerHUD : MonoBehaviour
 
         UpdateHealthUI();
         UpdateEssenceUI();
-        UpdateSpearUI();
+        UpdateSceneNameUI();
     }
 private void UpdateHealthUI()
 {
@@ -93,25 +94,17 @@ private void UpdateHealthUI()
         }
     }
 
-    private void UpdateSpearUI()
+    private void UpdateSceneNameUI()
     {
-        if (player.Combat == null) return;
+        var currentScene = SceneManager.GetActiveScene().name;
 
-        var currentState = player.Combat.CurrentSpearUIState;
-
-        if (currentState != _lastSpearState)
+        if (currentScene != _lastSceneName)
         {
-            _lastSpearState = currentState;
+            _lastSceneName = currentScene;
 
-            if (spearStateText != null)
+            if (sceneNameText != null)
             {
-                spearStateText.text = currentState switch
-                {
-                    PlayerCombat.SpearUIState.Ready => "Spear: Ready",
-                    PlayerCombat.SpearUIState.Thrown => "Spear: Thrown",
-                    PlayerCombat.SpearUIState.Returning => "Spear: Returning",
-                    _ => "Spear: Ready"
-                };
+                sceneNameText.text = currentScene;
             }
         }
     }
