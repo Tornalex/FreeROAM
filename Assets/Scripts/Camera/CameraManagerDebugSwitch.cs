@@ -19,9 +19,11 @@ public class CameraManagerDebugSwitch : MonoBehaviour
             cameraManager.SelectCamera(RoomCameraType.Exploration);
 
         if (Keyboard.current.f2Key.wasPressedThisFrame)
-            cameraManager.SelectCamera(RoomCameraType.Corridor);
+            cameraManager.SelectCamera(RoomCameraType.HorizontalCorridor);
 
         if (Keyboard.current.f3Key.wasPressedThisFrame)
             cameraManager.SelectCamera(RoomCameraType.Fixed);
+        if (Keyboard.current.f4Key.wasPressedThisFrame)
+            cameraManager.SelectCamera(RoomCameraType.VerticalCorridor);
     }
 }

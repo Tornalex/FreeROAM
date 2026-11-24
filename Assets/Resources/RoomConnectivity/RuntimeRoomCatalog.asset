@@ -26,8 +26,10 @@ MonoBehaviour:
   - roomDefinition: {fileID: 11400000, guid: 535e941846f140842b7eb00c5e1e5f27, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_TreeBranch.unity
   - roomDefinition: {fileID: 11400000, guid: 7618c7223785e7c4eaacc2b4a6a162c8, type: 2}
-    scenePath: Assets/Scenes/Rooms/YellowForest_MovingPlatforms.unity
+    scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_MovingPlatforms.unity
   - roomDefinition: {fileID: 11400000, guid: 5df6c4c46144c4f4ab248f7018c4f5ef, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_ToMOTHER 1.unity
+  - roomDefinition: {fileID: 11400000, guid: 16921dfe2b3dd1e4888a318c3722d6bc, type: 2}
+    scenePath: Assets/Scenes/Rooms/YellowForest_MovingPlatforms 1.unity
   - roomDefinition: {fileID: 11400000, guid: 9436aa5634dd09d41a826862ea9ea36c, type: 2}
     scenePath: Assets/Scenes/Rooms/Re-Entry Module/Re-EntryModule_Corridor.unity
