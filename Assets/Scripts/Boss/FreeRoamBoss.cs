@@ -356,6 +356,10 @@ namespace SpearWander.Boss
         private float horizontalTongueRetractTime;
         private Vector3 horizontalTongueOriginBaseLocalPosition;
         private bool horizontalTongueOriginBaseCached;
+        private Vector3 tongueOriginOriginalLocalPosition;
+        private Vector3 horizontalTongueOriginOriginalLocalPosition;
+        private bool tongueOriginOriginalCached;
+        private bool horizontalTongueOriginOriginalCached;
 
         private float dashDirection = 1f;
         private float dashDestinationX;
@@ -397,6 +401,7 @@ namespace SpearWander.Boss
                     this);
             }
 
+            CacheTongueOriginPositions();
             CacheHorizontalTongueOriginBase();
 
             playerFilter = CreateLayerFilter(PlayerLayers.value);
@@ -420,6 +425,20 @@ namespace SpearWander.Boss
             if (isGrounded)
             {
                 lastGroundedPosition = transform.position;
+            }
+        }
+
+        protected override void RotateTowardsPlayer(bool faceRight)
+        {
+            bool facingChanged = facingRight != faceRight;
+
+            base.RotateTowardsPlayer(faceRight);
+
+            // The tongue origins are siblings of Graphics, so they do not
+            // inherit the sprite flip. Mirror them explicitly on a real change.
+            if (facingChanged)
+            {
+                ApplyTongueOriginFacing();
             }
         }
 
@@ -1854,9 +1873,65 @@ namespace SpearWander.Boss
             if (horizontalTongueOrigin == null) return;
             if (horizontalTongueOriginBaseCached) return;
 
+            CacheTongueOriginPositions();
             horizontalTongueOriginBaseLocalPosition =
-                horizontalTongueOrigin.localPosition;
+                horizontalTongueOriginOriginalLocalPosition;
             horizontalTongueOriginBaseCached = true;
+        }
+
+        private void CacheTongueOriginPositions()
+        {
+            if (tongueOrigin != null && !tongueOriginOriginalCached)
+            {
+                tongueOriginOriginalLocalPosition = tongueOrigin.localPosition;
+                tongueOriginOriginalCached = true;
+            }
+
+            if (horizontalTongueOrigin != null && !horizontalTongueOriginOriginalCached)
+            {
+                horizontalTongueOriginOriginalLocalPosition =
+                    horizontalTongueOrigin.localPosition;
+                horizontalTongueOriginOriginalCached = true;
+            }
+        }
+
+        /// <summary>
+        /// Mirrors both tongue origins from their stored authoring positions.
+        /// The horizontal origin's cached attack base follows the mirrored X
+        /// so lowering and restoration keep using the current facing side.
+        /// Origins parented under Graphics already inherit the sprite flip.
+        /// </summary>
+        private void ApplyTongueOriginFacing()
+        {
+            CacheTongueOriginPositions();
+
+            float facingSign = facingRight ? 1f : -1f;
+
+            if (tongueOriginOriginalCached &&
+                !IsMirroredByGraphics(tongueOrigin))
+            {
+                Vector3 mirroredPosition = tongueOriginOriginalLocalPosition;
+                mirroredPosition.x *= facingSign;
+                tongueOrigin.localPosition = mirroredPosition;
+            }
+
+            if (horizontalTongueOriginOriginalCached &&
+                !IsMirroredByGraphics(horizontalTongueOrigin))
+            {
+                Vector3 mirroredPosition = horizontalTongueOriginOriginalLocalPosition;
+                mirroredPosition.x *= facingSign;
+                horizontalTongueOrigin.localPosition = mirroredPosition;
+                horizontalTongueOriginBaseLocalPosition = mirroredPosition;
+                horizontalTongueOriginBaseCached = true;
+            }
+        }
+
+        private bool IsMirroredByGraphics(Transform origin)
+        {
+            return origin != null &&
+                   GraphicsTransform != null &&
+                   origin != GraphicsTransform &&
+                   origin.IsChildOf(GraphicsTransform);
         }
 
         private void RestoreHorizontalTongueOrigin()

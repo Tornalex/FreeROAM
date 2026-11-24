@@ -3,7 +3,8 @@ using UnityEngine;
 public enum RoomCameraType
 {
     Exploration,
-    Corridor,
+    VerticalCorridor,
+    HorizontalCorridor,
     Fixed
 }
 

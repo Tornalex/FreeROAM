@@ -19,7 +19,8 @@ public sealed class CameraManager : MonoBehaviour
 
     [Header("Gameplay Cameras")]
     [SerializeField] private CinemachineCamera explorationCamera;
-    [SerializeField] private CinemachineCamera corridorCamera;
+    [SerializeField] private CinemachineCamera verticalCorridorCamera;
+    [SerializeField] private CinemachineCamera horizontalCorridorCamera;
     [SerializeField] private CinemachineCamera fixedCamera;
 
     private sealed class CameraSwitchRequest
@@ -214,7 +215,7 @@ public sealed class CameraManager : MonoBehaviour
     public bool SetCameraBounds(Collider2D bounds)
     {
         if (!TryGetConfiner(explorationCamera, out CinemachineConfiner2D explorationConfiner) ||
-            !TryGetConfiner(corridorCamera, out CinemachineConfiner2D corridorConfiner) ||
+            !TryGetConfiner(verticalCorridorCamera, out CinemachineConfiner2D corridorConfiner) ||
             !TryGetConfiner(fixedCamera, out CinemachineConfiner2D fixedConfiner))
         {
             Debug.LogError(
@@ -331,16 +332,20 @@ public sealed class CameraManager : MonoBehaviour
         switch (cameraType)
         {
             case RoomCameraType.Exploration:
-                first = corridorCamera;
+                first = verticalCorridorCamera;
                 second = fixedCamera;
                 break;
-            case RoomCameraType.Corridor:
+            case RoomCameraType.VerticalCorridor:
                 first = explorationCamera;
                 second = fixedCamera;
+                break;
+            case RoomCameraType.HorizontalCorridor:
+                first = explorationCamera;
+                second = verticalCorridorCamera;
                 break;
             case RoomCameraType.Fixed:
                 first = explorationCamera;
-                second = corridorCamera;
+                second = verticalCorridorCamera;
                 break;
             default:
                 return false;
@@ -609,11 +614,13 @@ public sealed class CameraManager : MonoBehaviour
     private bool HasAllCameras()
     {
         return explorationCamera != null &&
-               corridorCamera != null &&
+               verticalCorridorCamera != null &&
                fixedCamera != null &&
-               explorationCamera != corridorCamera &&
+               horizontalCorridorCamera != null &&
+               explorationCamera != verticalCorridorCamera &&
                explorationCamera != fixedCamera &&
-               corridorCamera != fixedCamera;
+               verticalCorridorCamera != fixedCamera &&
+               horizontalCorridorCamera != fixedCamera;
     }
 
     private bool TryGetCamera(RoomCameraType cameraType, out CinemachineCamera camera)
@@ -621,7 +628,8 @@ public sealed class CameraManager : MonoBehaviour
         camera = cameraType switch
         {
             RoomCameraType.Exploration => explorationCamera,
-            RoomCameraType.Corridor => corridorCamera,
+            RoomCameraType.VerticalCorridor => verticalCorridorCamera,
+            RoomCameraType.HorizontalCorridor => horizontalCorridorCamera,
             RoomCameraType.Fixed => fixedCamera,
             _ => null
         };

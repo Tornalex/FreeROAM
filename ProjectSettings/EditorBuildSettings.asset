@@ -39,8 +39,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Rooms/Yellow Forest/YellowForest_Arena.unity
     guid: 9317d986153533f4899414046b83322c
   - enabled: 1
-    path: Assets/Scenes/Rooms/YellowForest_MovingPlatforms.unity
+    path: Assets/Scenes/Rooms/Yellow Forest/YellowForest_MovingPlatforms.unity
     guid: 0035e642bd2172a48a1827629342c3b9
+  - enabled: 1
+    path: Assets/Scenes/Rooms/YellowForest_MovingPlatforms 1.unity
+    guid: 6240ba9632e782e41b54758f77c39bf1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0034084e1c777c040b3e449f40cea1a0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c38a0e040731c7743bbf1fbcc7c49e2d, type: 3}

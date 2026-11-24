@@ -59,6 +59,9 @@ TagManager:
   - name: ForeGround
     uniqueID: 4197442741
     locked: 0
+  - name: UI
+    uniqueID: 2538332633
+    locked: 0
   m_RenderingLayers:
   - Default
   - Terrain

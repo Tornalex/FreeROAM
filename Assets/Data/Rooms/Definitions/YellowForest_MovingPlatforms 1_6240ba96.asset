@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaa3d03a070e574d95e18eb877f30a6, type: 3}
+  m_Name: YellowForest_MovingPlatforms 1_6240ba96
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDefinition
+  roomId: room_f063859eb9b74edfb1e8ed3e8874ac65
+  displayName: YellowForest_MovingPlatforms 1
+  sceneName: YellowForest_MovingPlatforms 1
+  sceneGuid: 6240ba9632e782e41b54758f77c39bf1
