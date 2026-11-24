@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Recovery/0 (3).unity.meta
 guid: 0846bd792ace34947843f584596c9e66
 DefaultImporter:
+========
+guid: 16921dfe2b3dd1e4888a318c3722d6bc
+NativeFormatImporter:
+>>>>>>>> a918d4d920748e1191f4d8e692ccb7519b37efb9:Assets/Data/Rooms/Definitions/YellowForest_MovingPlatforms 1_6240ba96.asset.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
