@@ -5,4 +5,5 @@ public enum SFXType
     PogoHit,
     WindBlowing,
     FreeROAMTheme,
+    NineSols_Theme,
 }
