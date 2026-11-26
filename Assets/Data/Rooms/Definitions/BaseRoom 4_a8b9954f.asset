@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: BaseRoom 4
   sceneName: BaseRoom 4
   sceneGuid: a8b9954f2e6331445814299917488eb2
+  area: {fileID: 11400000, guid: d1d1d6045e4ae724cb4f87e9e59e0751, type: 2}

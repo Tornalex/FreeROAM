@@ -9,10 +9,14 @@ public class RoomDefinition : ScriptableObject
     [SerializeField] private string sceneName;
     [SerializeField] private string sceneGuid;
 
+    [Header("Area")]
+    [SerializeField] private AreaDefinition area;
+
     public string RoomId => roomId;
     public string DisplayName => displayName;
     public string SceneName => sceneName;
     public string SceneGuid => sceneGuid;
+    public AreaDefinition Area => area;
 
 #if UNITY_EDITOR
     public void AssignIdentity(string id, string display, string scene, string guid)

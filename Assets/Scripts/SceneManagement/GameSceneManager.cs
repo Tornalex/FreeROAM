@@ -87,6 +87,19 @@ public class GameSceneManager : MonoBehaviour
     public string CurrentRoom => _currentRoomScene;
     public RoomDefinition CurrentRoomDefinition => _currentRoomDefinition;
     public string CurrentRoomId => _currentRoomDefinition != null ? _currentRoomDefinition.RoomId : null;
+    public event Action<RoomDefinition> RoomEntered;
+
+    private void RaiseRoomEntered()
+    {
+        try
+        {
+            RoomEntered?.Invoke(_currentRoomDefinition);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e, this);
+        }
+    }
 
     /// <summary>
     /// Resolves the connection assigned to a source door without starting a
@@ -568,6 +581,8 @@ public class GameSceneManager : MonoBehaviour
                     "[GameSceneManager] Connected transition committed, but fade-in failed: " +
                     fadeInResult.Error, this);
             }
+
+            RaiseRoomEntered();
 
             try
             {
@@ -1514,6 +1529,8 @@ public class GameSceneManager : MonoBehaviour
         yield return null;
 
         yield return StartCoroutine(FadeFromBlack());
+
+        RaiseRoomEntered();
 
         SetPlayerControl(true);
 

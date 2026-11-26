@@ -37,6 +37,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_ToMOTHER 1.unity
   - roomDefinition: {fileID: 11400000, guid: 2d585ca315e48fa468f8b63816c7d544, type: 2}
     scenePath: Assets/Scenes/Rooms/BaseRoom 1.unity
+  - roomDefinition: {fileID: 11400000, guid: c95defe964bcda94e92594bb3a7180be, type: 2}
+    scenePath: Assets/Scenes/Rooms/BaseRoom 5.unity
   - roomDefinition: {fileID: 11400000, guid: 16921dfe2b3dd1e4888a318c3722d6bc, type: 2}
     scenePath: Assets/Scenes/Rooms/YellowForest_MovingPlatforms 1.unity
   - roomDefinition: {fileID: 11400000, guid: 9436aa5634dd09d41a826862ea9ea36c, type: 2}

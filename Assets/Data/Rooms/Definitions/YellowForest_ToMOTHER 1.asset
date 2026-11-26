@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: YellowForest_ToMOTHER 1
   sceneName: YellowForest_ToMOTHER 1
   sceneGuid: 7089b6c8f542bb647b3252c2d33fdb08
+  area: {fileID: 11400000, guid: d1d1d6045e4ae724cb4f87e9e59e0751, type: 2}
