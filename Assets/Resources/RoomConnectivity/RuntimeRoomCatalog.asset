@@ -23,12 +23,20 @@ MonoBehaviour:
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_Arena.unity
   - roomDefinition: {fileID: 11400000, guid: 1d8641c9d04b424449e06b88634309aa, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_BardoHouse.unity
+  - roomDefinition: {fileID: 11400000, guid: d4815465c05263445881a91e63f9a59a, type: 2}
+    scenePath: Assets/Scenes/Rooms/BaseRoom 4.unity
+  - roomDefinition: {fileID: 11400000, guid: 8d9915e72f2eff54d8bc061f10c452d5, type: 2}
+    scenePath: Assets/Scenes/Rooms/BaseRoom 3.unity
   - roomDefinition: {fileID: 11400000, guid: 535e941846f140842b7eb00c5e1e5f27, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_TreeBranch.unity
   - roomDefinition: {fileID: 11400000, guid: 7618c7223785e7c4eaacc2b4a6a162c8, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_MovingPlatforms.unity
+  - roomDefinition: {fileID: 11400000, guid: 8e95531629966fd4f8e30919dd886931, type: 2}
+    scenePath: Assets/Scenes/Rooms/BaseRoom 2.unity
   - roomDefinition: {fileID: 11400000, guid: 5df6c4c46144c4f4ab248f7018c4f5ef, type: 2}
     scenePath: Assets/Scenes/Rooms/Yellow Forest/YellowForest_ToMOTHER 1.unity
+  - roomDefinition: {fileID: 11400000, guid: 2d585ca315e48fa468f8b63816c7d544, type: 2}
+    scenePath: Assets/Scenes/Rooms/BaseRoom 1.unity
   - roomDefinition: {fileID: 11400000, guid: 16921dfe2b3dd1e4888a318c3722d6bc, type: 2}
     scenePath: Assets/Scenes/Rooms/YellowForest_MovingPlatforms 1.unity
   - roomDefinition: {fileID: 11400000, guid: 9436aa5634dd09d41a826862ea9ea36c, type: 2}

@@ -82,6 +82,30 @@ public class PlayerFeet : MonoBehaviour
 
         return _isGrounded;
     }
+    private bool TryPassiveBounce(Collision2D collision)
+    {
+        if (_player == null || _player.Rb == null || _player.PogoStats == null)
+            return false;
+
+        if (!collision.collider.TryGetComponent(out Bouncer bouncer) || !bouncer.BounceOnTouch)
+            return false;
+
+        // Se sta già salendo non ribalzare di nuovo.
+        if (_player.Rb.linearVelocity.y > 0.1f)
+            return false;
+
+        bouncer.OnPogoBounce();
+
+        _player.transform.position += Vector3.up * _player.PogoStats.bounceOffset;
+
+        float force = _player.PogoStats.bounceForce * bouncer.GetBounceMultiplier();
+        _player.Rb.linearVelocity = new Vector2(_player.Rb.linearVelocity.x, force);
+
+        if (_player.Dash != null) _player.Dash.ResetAirDash();
+
+        SFXManager.Instance?.PlaySFX(SFXType.PogoHit);
+        return true;
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -124,9 +148,19 @@ public class PlayerFeet : MonoBehaviour
         };
         _isGrounded = true;
 
-        if (_player != null && _player.Pogo != null && _player.Pogo.enabled && _player.Pogo.IsPlunging)
+        bool pogoActive = _player != null && _player.Pogo != null
+                          && _player.Pogo.enabled && _player.Pogo.IsPlunging;
+
+        if (pogoActive)
         {
             _player.Pogo.OnPogoHit(collision);
+        }
+        else if (TryPassiveBounce(collision))
+        {
+            // Stacca subito il contatto, così il player non risulta "grounded"
+            // sul Bouncer mentre sta salendo.
+            _groundContacts.Remove(groundId);
+            _isGrounded = _groundContacts.Count > 0;
         }
     }
 
