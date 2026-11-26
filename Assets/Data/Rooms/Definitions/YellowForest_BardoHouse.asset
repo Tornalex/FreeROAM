@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: YellowForest_BardoHouse
   sceneName: YellowForest_BardoHouse
   sceneGuid: bbec955bc74c33242bad4bd7e13b2fb2
+  area: {fileID: 11400000, guid: d1d1d6045e4ae724cb4f87e9e59e0751, type: 2}

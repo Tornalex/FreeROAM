@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaa3d03a070e574d95e18eb877f30a6, type: 3}
+  m_Name: BaseRoom 5_56a55769
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDefinition
+  roomId: room_ee3d6dc3880f457f9716e39373f26280
+  displayName: BaseRoom 5
+  sceneName: BaseRoom 5
+  sceneGuid: 56a55769f99bddf498cced9ab011befd
+  area: {fileID: 11400000, guid: d1d1d6045e4ae724cb4f87e9e59e0751, type: 2}

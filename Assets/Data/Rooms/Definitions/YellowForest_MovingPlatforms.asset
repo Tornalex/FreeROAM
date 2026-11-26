@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: YellowForest_MovingPlatforms
   sceneName: YellowForest_MovingPlatforms
   sceneGuid: 0035e642bd2172a48a1827629342c3b9
+  area: {fileID: 11400000, guid: d1d1d6045e4ae724cb4f87e9e59e0751, type: 2}
