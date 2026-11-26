@@ -44,6 +44,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/YellowForest_MovingPlatforms 1.unity
     guid: 6240ba9632e782e41b54758f77c39bf1
+  - enabled: 1
+    path: Assets/Scenes/Rooms/BaseRoom 1.unity
+    guid: 983e13cca3cd6f34b855c538c5169d91
+  - enabled: 1
+    path: Assets/Scenes/Rooms/BaseRoom 2.unity
+    guid: 35a4db14bdffe0a4184e828820bcfb71
+  - enabled: 1
+    path: Assets/Scenes/Rooms/BaseRoom 3.unity
+    guid: ea0da612e75760f4099eb573273055e5
+  - enabled: 1
+    path: Assets/Scenes/Rooms/BaseRoom 4.unity
+    guid: a8b9954f2e6331445814299917488eb2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0034084e1c777c040b3e449f40cea1a0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c38a0e040731c7743bbf1fbcc7c49e2d, type: 3}
